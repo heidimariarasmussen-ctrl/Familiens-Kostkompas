@@ -57,11 +57,48 @@ async function saveCloudPlan(plan=currentPlan){
 }
 function persistPlan(){if(!currentPlan)return;localStorage.setItem('kostkompas-current-plan',JSON.stringify(currentPlan));saveCloudPlan(currentPlan).catch(console.warn)}
 function loginScreen(message=''){
-  app.innerHTML=`<div class="login-shell"><section class="login-card"><div class="brand">Familiens Kostkompas</div><h1>Familielogin</h1><p>Log ind for at åbne den samme aktive madplan på computer og telefon.</p>${message?`<div class="login-message">${message}</div>`:''}<form onsubmit="submitFamilyLogin(event)"><label>E-mail</label><input id="login-email" type="email" autocomplete="username" required><label>Adgangskode</label><input id="login-password" type="password" autocomplete="current-password" required><button class="btn" type="submit">Log ind</button></form><p class="small muted">Brug den Supabase-bruger, du allerede har oprettet.</p></section></div>`;
+  app.innerHTML=`<div class="login-shell"><section class="login-card"><div class="brand">Familiens Kostkompas</div><h1>Familielogin</h1><p>Log ind for at åbne den samme aktive madplan på computer og telefon.</p>${message?`<div class="login-message">${message}</div>`:''}<form onsubmit="submitFamilyLogin(event)"><label>E-mail</label><input id="login-email" type="email" autocomplete="username" required><label>Adgangskode</label><input id="login-password" type="password" autocomplete="current-password" required><button class="btn" type="submit">Log ind</button></form><button class="text-link" onclick="forgotPasswordScreen()">Glemt adgangskode?</button><p class="small muted">Brug den Supabase-bruger, du allerede har oprettet.</p></section></div>`;
 }
 async function submitFamilyLogin(e){
   e.preventDefault();const btn=e.target.querySelector('button');btn.disabled=true;btn.textContent='Logger ind…';
   try{await cloudLogin(document.getElementById('login-email').value.trim(),document.getElementById('login-password').value);await syncAfterLogin();home()}catch(err){loginScreen('Login kunne ikke gennemføres. Kontrollér e-mail og adgangskode.')} 
+}
+function appBaseUrl(){return `${location.origin}${location.pathname}`}
+function forgotPasswordScreen(message=''){
+  app.innerHTML=`<div class="login-shell"><section class="login-card"><div class="brand">Familiens Kostkompas</div><h1>Nulstil adgangskode</h1><p>Skriv din e-mail. Så sender Supabase et link, der åbner Kostkompasset og lader dig vælge en ny adgangskode.</p>${message?`<div class="login-message ${message.startsWith('✓')?'success':''}">${message}</div>`:''}<form onsubmit="requestPasswordReset(event)"><label>E-mail</label><input id="reset-email" type="email" autocomplete="email" required><button class="btn" type="submit">Send reset-link</button></form><button class="text-link" onclick="loginScreen()">← Tilbage til login</button></section></div>`;
+}
+async function requestPasswordReset(e){
+  e.preventDefault();const btn=e.target.querySelector('button');btn.disabled=true;btn.textContent='Sender…';
+  const email=document.getElementById('reset-email').value.trim();
+  try{
+    const r=await fetch(`${SUPABASE_URL}/auth/v1/recover`,{method:'POST',headers:{'apikey':SUPABASE_KEY,'Content-Type':'application/json'},body:JSON.stringify({email,redirect_to:appBaseUrl()})});
+    if(!r.ok){let d={};try{d=await r.json()}catch(_e){};throw new Error(d.msg||d.error_description||'Kunne ikke sende mail')}
+    forgotPasswordScreen('✓ Reset-link er sendt. Tjek din e-mail.');
+  }catch(err){
+    const msg=(err.message||'').toLowerCase().includes('rate')?'Der er sendt for mange mails på kort tid. Vent et øjeblik og prøv igen.':'Kunne ikke sende reset-mailen. Prøv igen om lidt.';
+    forgotPasswordScreen(msg);
+  }
+}
+function parseRecoveryHash(){
+  const raw=location.hash.replace(/^#/,'');if(!raw)return null;
+  const p=new URLSearchParams(raw);if(p.get('type')!=='recovery'||!p.get('access_token'))return null;
+  const expiresIn=Number(p.get('expires_in')||3600);
+  return {access_token:p.get('access_token'),refresh_token:p.get('refresh_token')||'',token_type:p.get('token_type')||'bearer',expires_in:expiresIn,expires_at:Math.floor(Date.now()/1000)+expiresIn,type:'recovery'};
+}
+function newPasswordScreen(message=''){
+  app.innerHTML=`<div class="login-shell"><section class="login-card"><div class="brand">Familiens Kostkompas</div><h1>Vælg ny adgangskode</h1><p>Reset-linket er godkendt. Skriv din nye adgangskode to gange.</p>${message?`<div class="login-message">${message}</div>`:''}<form onsubmit="submitNewPassword(event)"><label>Ny adgangskode</label><input id="new-password" type="password" autocomplete="new-password" minlength="8" required><label>Gentag adgangskode</label><input id="new-password-2" type="password" autocomplete="new-password" minlength="8" required><button class="btn" type="submit">Gem ny adgangskode</button></form><p class="small muted">Brug mindst 8 tegn.</p></section></div>`;
+}
+async function submitNewPassword(e){
+  e.preventDefault();const p1=document.getElementById('new-password').value,p2=document.getElementById('new-password-2').value;
+  if(p1!==p2){newPasswordScreen('De to adgangskoder er ikke ens.');return}
+  const btn=e.target.querySelector('button');btn.disabled=true;btn.textContent='Gemmer…';
+  try{
+    const r=await fetch(`${SUPABASE_URL}/auth/v1/user`,{method:'PUT',headers:{'apikey':SUPABASE_KEY,'Authorization':`Bearer ${cloudSession.access_token}`,'Content-Type':'application/json'},body:JSON.stringify({password:p1})});
+    if(!r.ok){let d={};try{d=await r.json()}catch(_e){};throw new Error(d.msg||d.error_description||'Kunne ikke gemme adgangskoden')}
+    const user=await r.json();cloudSession.user=user;saveCloudSession(cloudSession);history.replaceState({},document.title,appBaseUrl());
+    await syncAfterLogin();home();
+    setTimeout(()=>alert('Din nye adgangskode er gemt. Kostkompasset er nu logget ind.'),100);
+  }catch(err){newPasswordScreen('Kunne ikke gemme den nye adgangskode. Bed om et nyt reset-link og prøv igen.')}
 }
 async function syncAfterLogin(){
   let local=null;try{local=JSON.parse(localStorage.getItem('kostkompas-current-plan')||'null')}catch(e){}
@@ -72,7 +109,12 @@ async function syncAfterLogin(){
   else currentPlan=null;
 }
 function cloudBadge(){return cloudSession?.user?.email?`<button class="sync-pill" onclick="cloudLogout()" title="Log ud">☁ Synkroniseret</button>`:''}
-async function startApp(){loadCloudSession();if(await refreshCloudSession()){try{await syncAfterLogin();home()}catch(e){console.warn(e);restorePlan();home()}}else loginScreen();}
+async function startApp(){
+  loadCloudSession();
+  const recovery=parseRecoveryHash();
+  if(recovery){saveCloudSession(recovery);newPasswordScreen();return}
+  if(await refreshCloudSession()){try{await syncAfterLogin();home()}catch(e){console.warn(e);restorePlan();home()}}else loginScreen();
+}
 
 const app=document.getElementById('app');
 const emoji={"Morgenmad":"🥣","Frokost":"🥗","Aftensmad":"🍲","Mellemmåltider":"🍌","Børnefavoritter 2.0":"💛"};
