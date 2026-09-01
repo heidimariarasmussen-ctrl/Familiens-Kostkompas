@@ -29,3 +29,16 @@
   body { padding-top: env(safe-area-inset-top); }
   .bottomnav { padding-bottom: calc(10px + env(safe-area-inset-bottom)); }
 }
+
+
+/* V2.3 · Vælg selv + visuelt indkøbsoverblik */
+.manual-badge{display:inline-block;margin-top:6px;padding:4px 8px;border-radius:999px;background:#f5e5e2;color:#6a443e;font-size:12px;font-weight:700}
+.choose-btn{background:#eef3e9!important;border-color:#cfdac8!important}
+.picker-overlay{position:fixed;inset:0;background:rgba(18,39,34,.45);z-index:100;display:flex;align-items:flex-end;justify-content:center;padding:24px}
+.picker-panel{width:min(1100px,100%);max-height:90vh;overflow:auto;background:#f7f3ea;border-radius:28px 28px 18px 18px;padding:24px;box-shadow:0 30px 80px rgba(0,0,0,.22)}
+.picker-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}.picker-head h2{font-family:Georgia,serif;color:#173c33;font-size:34px;margin:3px 0 8px}.picker-head p{margin:0;color:#64736f}
+.picker-close{width:44px;height:44px;border-radius:50%;border:1px solid #d9ddd6;background:white;font-size:28px;cursor:pointer}.eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:11px;font-weight:800;color:#64736f}
+.picker-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.picker-card{background:#fffdf8;border:1px solid #d9ddd6;border-radius:20px;overflow:hidden}.picker-card.selected{outline:3px solid #97aa8f}.picker-card img{width:100%;aspect-ratio:4/3;object-fit:cover}.picker-card-body{padding:13px}.picker-card h3{font-family:Georgia,serif;color:#173c33;font-size:18px;margin:0 0 6px}.picker-card .btn{width:100%;margin-top:12px;padding:9px 12px}
+.shopping-plan-section{background:#eef3e9;border:1px solid #d9ddd6;border-radius:26px;padding:22px;margin:10px 0 28px}.shopping-plan-head{display:flex;justify-content:space-between;align-items:flex-start;gap:18px}.shopping-plan-head h2{font-family:Georgia,serif;color:#173c33;margin:4px 0 6px}.shopping-plan-head p{margin:0;color:#64736f}.shopping-days{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:18px}.shopping-day{background:#fffdf8;border:1px solid #d9ddd6;border-radius:18px;padding:14px}.shopping-day h3{font-family:Georgia,serif;color:#173c33;font-size:18px;margin:0 0 12px}.shop-plan-meal{display:grid;grid-template-columns:48px 1fr;gap:9px;padding:8px 0;border-top:1px solid #e7e9e4}.shop-plan-meal:first-of-type{border-top:0}.shop-plan-meal img{width:48px;height:48px;object-fit:cover;border-radius:10px}.shop-plan-meal span{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.04em;color:#64736f}.shop-plan-meal strong{display:block;color:#173c33;font-size:12px;line-height:1.25}.shop-plan-meal small{display:block;color:#936a4e;font-size:10px;margin-top:3px}.shopping-list-title{margin-top:4px}
+@media(max-width:900px){.picker-grid{grid-template-columns:repeat(2,1fr)}.shopping-days{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:580px){.picker-overlay{padding:0}.picker-panel{max-height:94vh;border-radius:24px 24px 0 0;padding:18px}.picker-grid{grid-template-columns:1fr}.shopping-plan-head{display:block}.shopping-plan-head .btn{margin-top:12px}.shopping-days{grid-template-columns:1fr}.meal-tools{gap:6px}.mini-btn{padding:8px 9px}.choose-btn{flex-basis:100%}}
