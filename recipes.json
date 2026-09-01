@@ -1,0 +1,2564 @@
+[
+  {
+    "id": "morgenmad-1",
+    "category": "Morgenmad",
+    "number": 1,
+    "name": "Power-havregrød med blåbær, banan og peanutbutter",
+    "image": "images/rId10.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "10 min",
+    "total": "10 min",
+    "ingredients": [
+      "160 g havregryn",
+      "7 dl vand eller mælk passende til børnene",
+      "1 moden banan",
+      "150 g blåbær",
+      "30 g 100 % smooth peanutbutter"
+    ],
+    "steps": [
+      "Kog havregryn og væske 5-7 minutter.",
+      "Mos bananen og rør den i.",
+      "Fordel i skåle. Mos blåbær let til børnene og rør peanutbutter ud i grøden."
+    ],
+    "taste": "Peanut-banancreme: rør 15 g ekstra 100 % peanutbutter med 1/2 moset banan og 1-2 spsk vand/A38, hvis grøden ønskes ekstra cremet.",
+    "child": "Peanutbutter røres helt ud; giv ikke en tyk klat. Tilpas bærrenes konsistens.",
+    "tip": "Kan også laves med hindbær eller jordbær.",
+    "why": [
+      "Havre giver energi, fibre og plantejern.",
+      "Frugt og bær giver variation og C-vitamin.",
+      "Peanutbutter bidrager med energi og fedt."
+    ]
+  },
+  {
+    "id": "morgenmad-2",
+    "category": "Morgenmad",
+    "number": 2,
+    "name": "Æggetallerken med kartoffel, avocado og kiwi",
+    "image": "images/rId11.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "12 min",
+    "total": "12 min",
+    "ingredients": [
+      "6 æg",
+      "500 g kogte kartofler",
+      "1 stor avocado",
+      "2 kiwier",
+      "10 g smør"
+    ],
+    "steps": [
+      "Lav bløde røræg i smør.",
+      "Lun kartoflerne og skær dem i passende stykker.",
+      "Server med avocado og kiwi."
+    ],
+    "taste": "Avocadocreme: mos 1/2 avocado med 50 g Arla Cultura A38 Øko Naturel 3,5 % og 1 tsk citronsaft.",
+    "child": "Kartoffel og avocado skal være bløde; kiwi skæres i små stykker.",
+    "tip": "God til kogte kartofler fra dagen før.",
+    "why": [
+      "Æg bidrager med protein og mikronæringsstoffer.",
+      "Kartoffel giver en tydelig energikilde.",
+      "Avocado giver fedt, og kiwi bidrager med C-vitamin."
+    ]
+  },
+  {
+    "id": "morgenmad-3",
+    "category": "Morgenmad",
+    "number": 3,
+    "name": "Yoghurt-skål med havre, bær og peanutbutter",
+    "image": "images/rId12.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "5 min",
+    "total": "5 min",
+    "ingredients": [
+      "600 g Arla Cultura A38 Øko Naturel 3,5 %",
+      "100 g havregryn",
+      "150 g bær",
+      "1 banan",
+      "30 g 100 % smooth peanutbutter"
+    ],
+    "steps": [
+      "Fordel A38 i skåle.",
+      "Tilsæt havre, banan og bær.",
+      "Rør peanutbutter grundigt ud i børnenes portion."
+    ],
+    "taste": "Peanutbutter-swirl: rør peanutbutter med 2 spsk A38 før servering.",
+    "child": "Brug bløde/mosede bær og udblandet peanutbutter.",
+    "tip": "Kan samles direkte i skålen.",
+    "why": [
+      "Havre giver energi og plantejern.",
+      "Bær bidrager med C-vitamin.",
+      "Nøddesmør giver fedt og energi."
+    ]
+  },
+  {
+    "id": "morgenmad-4",
+    "category": "Morgenmad",
+    "number": 4,
+    "name": "Banan-havrepandekager med bærcreme",
+    "image": "images/rId13.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "20 min",
+    "total": "25 min",
+    "ingredients": [
+      "2 modne bananer",
+      "4 æg",
+      "140 g havregryn",
+      "30 g 100 % smooth peanutbutter",
+      "10 g smør til panden",
+      "150 g bær",
+      "120 g Arla Cultura A38 Øko Naturel 3,5 %"
+    ],
+    "steps": [
+      "Blend banan, æg, havre og peanutbutter.",
+      "Lad dejen stå 5 minutter og steg små, bløde pandekager i smør.",
+      "Mos bærrene og rør dem med A38."
+    ],
+    "taste": "Bærcreme: 150 g mosede bær + 120 g A38.",
+    "child": "Steg pandekagerne bløde og del dem i passende stykker.",
+    "tip": "Fryseegnede.",
+    "why": [
+      "Æg og havre gør pandekagerne næringstætte.",
+      "Bær giver C-vitamin.",
+      "Peanutbutter og smør bidrager med energi og fedt."
+    ]
+  },
+  {
+    "id": "morgenmad-5",
+    "category": "Morgenmad",
+    "number": 5,
+    "name": "Rugbrødsmorgenmad med æg, avocado og kiwi",
+    "image": "images/rId14.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "10 min",
+    "total": "10 min",
+    "ingredients": [
+      "6 små skiver blødt rugbrød",
+      "4 æg",
+      "1 avocado",
+      "200 g kogte kartofler",
+      "2 kiwier"
+    ],
+    "steps": [
+      "Kog æggene eller lav røræg.",
+      "Server rugbrød, kartoffel, æg og avocado sammen.",
+      "Giv kiwi ved siden af."
+    ],
+    "taste": "Avocado-æggecreme: mos 1/2 avocado med 1 kogt æg og 1 spsk A38.",
+    "child": "Brug blødt rugbrød og små, bløde bidder.",
+    "tip": "Brug gerne rester af kogte kartofler.",
+    "why": [
+      "Rugbrød bidrager med fuldkorn og plantejern.",
+      "Æg giver protein.",
+      "Kiwi giver C-vitamin sammen med plantejernet."
+    ]
+  },
+  {
+    "id": "morgenmad-6",
+    "category": "Morgenmad",
+    "number": 6,
+    "name": "Æble-kanelgrød med mandelsmør og hindbær",
+    "image": "images/rId15.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "10 min",
+    "total": "10 min",
+    "ingredients": [
+      "160 g havregryn",
+      "7 dl vand/mælk",
+      "2 små æbler",
+      "120 g hindbær",
+      "30 g 100 % mandelsmør",
+      "1/2 tsk kanel"
+    ],
+    "steps": [
+      "Riv æblerne fint.",
+      "Kog havre, væske, æble og kanel 5-7 minutter.",
+      "Rør mandelsmør i og top med mosede hindbær."
+    ],
+    "taste": "Mandelsmørcreme: rør 1 spsk mandelsmør med lidt varm grød/væske.",
+    "child": "Æblet rives fint og koges mørt; nøddesmør røres ud.",
+    "tip": "Vælg 100 % mandelsmør med kort ingrediensliste.",
+    "why": [
+      "Havre giver energi og plantejern.",
+      "Hindbær bidrager med C-vitamin.",
+      "Mandelsmør giver fedtvariation."
+    ]
+  },
+  {
+    "id": "morgenmad-7",
+    "category": "Morgenmad",
+    "number": 7,
+    "name": "Bagt havregrød med banan og blåbær",
+    "image": "images/rId16.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "10 min",
+    "total": "35-40 min",
+    "ingredients": [
+      "180 g havregryn",
+      "2 bananer",
+      "3 æg",
+      "4 dl mælk/vand",
+      "150 g blåbær",
+      "30 g 100 % peanutbutter",
+      "10 g smør til formen"
+    ],
+    "steps": [
+      "Tænd ovnen på 190 °C.",
+      "Mos banan og rør med æg, væske, havre og peanutbutter. Vend blåbær i.",
+      "Hæld i smurt form og bag 25-30 minutter."
+    ],
+    "taste": "A38-bærcreme: 120 g A38 + 80 g mosede bær.",
+    "child": "Server blød og afkølet; mos større bær.",
+    "tip": "Kan bages aftenen før.",
+    "why": [
+      "Æg, havre og nøddesmør giver en energirig morgenmad.",
+      "Bær giver frugtvariation og C-vitamin."
+    ]
+  },
+  {
+    "id": "morgenmad-8",
+    "category": "Morgenmad",
+    "number": 8,
+    "name": "Bløde ægge-havrevafler med bær-yoghurt",
+    "image": "images/rId17.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "20 min",
+    "total": "20 min",
+    "ingredients": [
+      "4 æg",
+      "2 bananer",
+      "140 g havregryn",
+      "1 dl mælk/vand",
+      "10 g smør til vaffeljern",
+      "150 g bær",
+      "150 g A38 3,5 %"
+    ],
+    "steps": [
+      "Blend æg, banan, havre og væske.",
+      "Bag bløde vafler i lidt smør.",
+      "Mos bær og rør med A38."
+    ],
+    "taste": "Bær-yoghurt: 150 g A38 + 150 g mosede bær.",
+    "child": "Vaflerne skal være bløde; skær i strimler.",
+    "tip": "Kan fryses enkeltvis.",
+    "why": [
+      "Æg og havre giver protein, energi og plantejern.",
+      "Bær giver C-vitamin.",
+      "A38 giver en cremet dip uden behov for sød desserttopping."
+    ]
+  },
+  {
+    "id": "morgenmad-9",
+    "category": "Morgenmad",
+    "number": 9,
+    "name": "Kartoffel-æggekage med avocado og tomat",
+    "image": "images/rId18.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "15 min",
+    "total": "20 min",
+    "ingredients": [
+      "8 æg",
+      "500 g kogte kartofler",
+      "150 g cherrytomater",
+      "1 avocado",
+      "1 spsk ekstra jomfruolivenolie"
+    ],
+    "steps": [
+      "Skær kartoflerne og varm dem på en pande i olivenolie.",
+      "Pisk æg og hæld over. Læg halverede tomater i og steg under låg, til ægget er fast.",
+      "Server med avocado."
+    ],
+    "taste": "Avocadocreme: mos 1/2 avocado med 40 g A38.",
+    "child": "Tomater skal kvartes og gerne tilberedes bløde; æggekagen skæres i bløde stykker.",
+    "tip": "Brug kartoffelrester.",
+    "why": [
+      "Æg giver protein.",
+      "Kartoffel giver energi.",
+      "Avocado og olivenolie giver fedtvariation."
+    ]
+  },
+  {
+    "id": "morgenmad-10",
+    "category": "Morgenmad",
+    "number": 10,
+    "name": "Røræg på rugbrød med avocadocreme",
+    "image": "images/rId19.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "10 min",
+    "total": "10 min",
+    "ingredients": [
+      "6 æg",
+      "6 små skiver blødt rugbrød",
+      "1 avocado",
+      "2 kiwier",
+      "10 g smør",
+      "60 g A38 3,5 %"
+    ],
+    "steps": [
+      "Lav bløde røræg i smør.",
+      "Mos avocado med A38.",
+      "Server på/ved rugbrød med kiwi."
+    ],
+    "taste": "Avocadocreme: avocado + A38, uden ekstra salt.",
+    "child": "Blødt rugbrød og tyndt lag creme; kiwi i passende stykker.",
+    "tip": "Kan serveres adskilt til børn, der foretrækker komponenter.",
+    "why": [
+      "Æg giver protein.",
+      "Rugbrød giver energi, fuldkorn og plantejern.",
+      "Kiwi bidrager med C-vitamin."
+    ]
+  },
+  {
+    "id": "morgenmad-11",
+    "category": "Morgenmad",
+    "number": 11,
+    "name": "Overnight oats med hindbær og peanutbutter",
+    "image": "images/rId20.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "5 min",
+    "total": "8 timer på køl",
+    "ingredients": [
+      "160 g havregryn",
+      "500 g A38 3,5 %",
+      "2 dl mælk/vand",
+      "150 g hindbær",
+      "1 banan",
+      "30 g 100 % peanutbutter"
+    ],
+    "steps": [
+      "Rør havre, A38 og væske sammen aftenen før.",
+      "Om morgenen tilsættes moset banan og hindbær.",
+      "Rør peanutbutter ud i portionerne."
+    ],
+    "taste": "Ekstra cremet: rør peanutbutter med lidt A38 først.",
+    "child": "Mos hindbær og rør peanutbutter helt ud.",
+    "tip": "Kun ca. 5 minutters aktiv tid om morgenen.",
+    "why": [
+      "Havre giver energi og plantejern.",
+      "Hindbær giver C-vitamin.",
+      "Peanutbutter giver energi og fedt."
+    ]
+  },
+  {
+    "id": "morgenmad-12",
+    "category": "Morgenmad",
+    "number": 12,
+    "name": "Pære-havregrød med tahin og bær",
+    "image": "images/rId21.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "10 min",
+    "total": "10 min",
+    "ingredients": [
+      "160 g havregryn",
+      "7 dl vand/mælk",
+      "2 modne pærer",
+      "25 g Rømer Tahin uden salt Ø",
+      "120 g bær"
+    ],
+    "steps": [
+      "Skær/riv pærerne og kog dem med havre og væske.",
+      "Rør tahin i den færdige grød.",
+      "Top med mosede bær."
+    ],
+    "taste": "Tahincreme: 1 spsk tahin + 1-2 spsk varmt vand røres glat.",
+    "child": "Pæren skal være meget blød; tahin røres jævnt ud.",
+    "tip": "God variation fra peanutbutter.",
+    "why": [
+      "Havre og tahin bidrager med plantebaseret variation.",
+      "Bær giver C-vitamin.",
+      "Tahin giver fedt og energi."
+    ]
+  },
+  {
+    "id": "morgenmad-13",
+    "category": "Morgenmad",
+    "number": 13,
+    "name": "Mini-frittata med kartoffel, broccoli og frugt",
+    "image": "images/rId22.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "10 min",
+    "total": "30 min",
+    "ingredients": [
+      "8 æg",
+      "400 g kogte kartofler",
+      "180 g broccoli",
+      "60 g mild ost",
+      "1 spsk ekstra jomfruolivenolie",
+      "2 kiwier"
+    ],
+    "steps": [
+      "Tænd ovnen på 190 °C.",
+      "Fordel kartoffel og meget mør broccoli i små forme. Hæld pisket æg over og drys ost på.",
+      "Bag 18-20 minutter. Server kiwi til."
+    ],
+    "taste": "Ketchup: server evt. 1-2 tsk Heinz Organic Tomato Ketchup pr. person som smagsgiver.",
+    "child": "Broccoli skal være helt mør; frittata deles i bløde bidder.",
+    "tip": "Kan laves i muffinforme og fryses.",
+    "why": [
+      "Æg giver protein.",
+      "Kartoffel giver energi.",
+      "Broccoli og kiwi giver grønt/frugtvariation."
+    ]
+  },
+  {
+    "id": "morgenmad-14",
+    "category": "Morgenmad",
+    "number": 14,
+    "name": "Bananbrødshavre med yoghurt og bær",
+    "image": "images/rId23.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "10 min",
+    "total": "35 min",
+    "ingredients": [
+      "180 g havregryn",
+      "3 modne bananer",
+      "3 æg",
+      "1 dl mælk",
+      "1 tsk kanel",
+      "150 g A38 3,5 %",
+      "150 g bær"
+    ],
+    "steps": [
+      "Blend banan, æg, mælk og halvdelen af havren. Rør resten af havren i.",
+      "Hæld i lille form og bag 25 minutter ved 190 °C.",
+      "Server med A38 og mosede bær."
+    ],
+    "taste": "A38-bærcreme fungerer som saftigt tilbehør.",
+    "child": "Server blød og i små stykker; bær tilpasses.",
+    "tip": "Kan bages aftenen før.",
+    "why": [
+      "Havre og æg giver energi og protein.",
+      "Bær giver C-vitamin.",
+      "Ingen behov for tilsat sukker."
+    ]
+  },
+  {
+    "id": "morgenmad-15",
+    "category": "Morgenmad",
+    "number": 15,
+    "name": "Bamsebolle 2.0 med æg, avocado og frugt",
+    "image": "images/rId24.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "10 min",
+    "total": "10 min",
+    "ingredients": [
+      "4 Bamseboller 2.0",
+      "4 æg",
+      "1 avocado",
+      "2 kiwier"
+    ],
+    "steps": [
+      "Kog æggene.",
+      "Flæk bollerne og server med æg og avocado.",
+      "Giv kiwi ved siden af."
+    ],
+    "taste": "Avocadocreme: avocado moset med 2 spsk A38.",
+    "child": "Bollen serveres blød og i passende stykker.",
+    "tip": "Brug optøede Bamseboller fra fryseren.",
+    "why": [
+      "Æg giver protein.",
+      "Bollen bidrager med energi og havre.",
+      "Avocado giver fedt og kiwi C-vitamin."
+    ]
+  },
+  {
+    "id": "morgenmad-16",
+    "category": "Morgenmad",
+    "number": 16,
+    "name": "Æble-havrepandekager med peanutcreme",
+    "image": "images/rId25.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "20 min",
+    "total": "20 min",
+    "ingredients": [
+      "2 æbler",
+      "4 æg",
+      "140 g havregryn",
+      "1 banan",
+      "10 g smør",
+      "30 g 100 % peanutbutter",
+      "80 g A38 3,5 %"
+    ],
+    "steps": [
+      "Riv æblerne fint og blend med æg, havre og banan.",
+      "Steg små pandekager i smør.",
+      "Rør peanutbutter med A38 til en glat creme."
+    ],
+    "taste": "Peanutcreme: 30 g peanutbutter + 80 g A38.",
+    "child": "Æblet skal være fintrevet; cremen skal være tynd og glat.",
+    "tip": "Fryseegnede.",
+    "why": [
+      "Havre giver plantejern og energi.",
+      "Æg giver protein.",
+      "Peanutbutter giver fedt og energi."
+    ]
+  },
+  {
+    "id": "morgenmad-17",
+    "category": "Morgenmad",
+    "number": 17,
+    "name": "Yoghurt-banan-bowl med hjemmelavet bærkompot",
+    "image": "images/rId26.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "10 min",
+    "total": "10 min",
+    "ingredients": [
+      "600 g A38 3,5 %",
+      "2 bananer",
+      "100 g havregryn",
+      "200 g frosne bær",
+      "2 spsk vand",
+      "25 g 100 % peanutbutter"
+    ],
+    "steps": [
+      "Kog bærrene med vand 5 minutter og mos dem.",
+      "Fordel A38, banan og havre i skåle.",
+      "Top med afkølet bærkompot og udblandet peanutbutter."
+    ],
+    "taste": "Bærkompotten er uden tilsat sukker.",
+    "child": "Bærkompotten afkøles; peanutbutter røres ud.",
+    "tip": "Lav kompot til 2-3 dage.",
+    "why": [
+      "Bær giver C-vitamin og variation.",
+      "Havre giver energi og plantejern.",
+      "Nøddesmør giver fedt."
+    ]
+  },
+  {
+    "id": "morgenmad-18",
+    "category": "Morgenmad",
+    "number": 18,
+    "name": "Morgenmadstortilla med æg og avocado",
+    "image": "images/rId27.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "15 min",
+    "total": "15 min",
+    "ingredients": [
+      "4 små fuldkornstortillas med enkel ingrediensliste",
+      "6 æg",
+      "1 avocado",
+      "1 rød peberfrugt",
+      "10 g smør",
+      "80 g A38 3,5 %"
+    ],
+    "steps": [
+      "Skær peberfrugt fint og steg den mør i lidt smør.",
+      "Tilsæt æg og lav bløde røræg.",
+      "Fyld tortillas med æg og avocadocreme."
+    ],
+    "taste": "Avocadocreme: avocado + 80 g A38.",
+    "child": "Peberfrugt skal være helt mør; tortilla skæres i små bløde stykker.",
+    "tip": "Vælg tortilla uden unødvendigt lang ingrediensliste.",
+    "why": [
+      "Æg giver protein.",
+      "Tortilla giver energi.",
+      "Avocado giver fedt og peberfrugt C-vitamin."
+    ]
+  },
+  {
+    "id": "morgenmad-19",
+    "category": "Morgenmad",
+    "number": 19,
+    "name": "Sød kartoffel-havrepandekager med blåbær",
+    "image": "images/rId28.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "20 min",
+    "total": "20 min",
+    "ingredients": [
+      "300 g kogt/bagt sød kartoffel",
+      "3 æg",
+      "120 g havregryn",
+      "1 banan",
+      "10 g smør",
+      "150 g blåbær",
+      "120 g A38 3,5 %"
+    ],
+    "steps": [
+      "Mos sød kartoffel og banan. Rør æg og havre i.",
+      "Steg små pandekager i smør.",
+      "Server med mosede blåbær rørt i A38."
+    ],
+    "taste": "Blåbærcreme: 150 g blåbær + 120 g A38.",
+    "child": "Pandekagerne skal være bløde; blåbær moses.",
+    "tip": "Brug rester af bagt sød kartoffel.",
+    "why": [
+      "Sød kartoffel og havre giver energi.",
+      "Æg giver protein.",
+      "Bær bidrager med C-vitamin."
+    ]
+  },
+  {
+    "id": "morgenmad-20",
+    "category": "Morgenmad",
+    "number": 20,
+    "name": "Lakse-æggetallerken med kartoffel og avocado",
+    "image": "images/rId29.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "12 min",
+    "total": "12 min",
+    "ingredients": [
+      "200 g tilberedt laks",
+      "4 æg",
+      "450 g kogte kartofler",
+      "1 avocado",
+      "2 kiwier",
+      "80 g A38 3,5 %",
+      "1 tsk citronsaft",
+      "dild"
+    ],
+    "steps": [
+      "Lav bløde røræg eller kog æggene.",
+      "Lun laks og kartofler.",
+      "Server med avocado, kiwi og citron-dildcreme."
+    ],
+    "taste": "Citron-dildcreme: 80 g A38 + 1 tsk citron + lidt dild.",
+    "child": "Tjek laks meget grundigt for ben; alt skæres i bløde bidder.",
+    "tip": "God til rester af laks.",
+    "why": [
+      "Laks bidrager med omega-3 og protein.",
+      "Æg giver yderligere næringstæthed.",
+      "Kartoffel giver energi og kiwi C-vitamin."
+    ]
+  },
+  {
+    "id": "frokost-1",
+    "category": "Frokost",
+    "number": 1,
+    "name": "Restetallerkenen med dagens dip",
+    "image": "images/rId30.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "5-10 min",
+    "total": "10 min",
+    "ingredients": [
+      "700-900 g rester fra aftensmad",
+      "1 avocado eller 1 spsk ekstra jomfruolivenolie",
+      "2 stk. frugt efter sæson"
+    ],
+    "steps": [
+      "Varm relevante rester grundigt.",
+      "Anret protein, energikilde og grønt.",
+      "Supplér med fedt og frugt efter behov."
+    ],
+    "taste": "Standarddip: 120 g A38 + 1 spsk EVOO + dild/purløg. Til tørre kødrester kan 1 spsk Chosen Foods Classic Avocado Oil Mayo røres i.",
+    "child": "Tilpas hver rest for ben, hårdhed, størrelse og salt.",
+    "tip": "Opbevar rester hurtigt på køl.",
+    "why": [
+      "Gør rigtig familiemad til nem frokost.",
+      "Kan bevare alle fire byggesten.",
+      "Reducerer madspild."
+    ]
+  },
+  {
+    "id": "frokost-2",
+    "category": "Frokost",
+    "number": 2,
+    "name": "Fiskefrokost med kartoffel og avocado-remoulade",
+    "image": "images/rId31.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "10 min",
+    "total": "10 min",
+    "ingredients": [
+      "300 g tilberedt laks eller fiskefrikadeller",
+      "500 g kartofler",
+      "150 g ærter",
+      "1 kiwi",
+      "80 g A38 3,5 %",
+      "30 g Chosen Foods Classic Avocado Oil Mayo",
+      "20 g finthakket syltet agurk",
+      "lidt mild karry"
+    ],
+    "steps": [
+      "Lun fisk og kartofler.",
+      "Damp ærter møre og mos dem let til børnene.",
+      "Rør remouladen og server med kiwi."
+    ],
+    "taste": "Avocado-remoulade: A38 + Chosen Foods Classic Avocado Oil Mayo + finthakket syltet agurk + mild karry.",
+    "child": "Tjek fisk for ben; mos ærter let.",
+    "tip": "God til fiskerester.",
+    "why": [
+      "Fisk giver protein og fiskvariation.",
+      "Kartoffel giver energi.",
+      "Kiwi giver C-vitamin."
+    ]
+  },
+  {
+    "id": "frokost-3",
+    "category": "Frokost",
+    "number": 3,
+    "name": "Æggefrokost med rugbrød og avocadocreme",
+    "image": "images/rId32.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "10 min",
+    "total": "10 min",
+    "ingredients": [
+      "6 æg",
+      "6 små skiver blødt rugbrød",
+      "1 avocado",
+      "200 g broccoli",
+      "1 æble",
+      "80 g A38 3,5 %"
+    ],
+    "steps": [
+      "Kog æg eller lav røræg.",
+      "Damp broccoli mør.",
+      "Mos avocado med A38 og server med rugbrød; riv/damp æble til børnene."
+    ],
+    "taste": "Avocadocreme: 1 avocado + 80 g A38.",
+    "child": "Broccoli skal være mør; råt hårdt æble rives eller tilberedes.",
+    "tip": "Kog æg på forhånd.",
+    "why": [
+      "Æg giver protein.",
+      "Rugbrød giver fuldkorn og plantejern.",
+      "Grønt/frugt giver variation."
+    ]
+  },
+  {
+    "id": "frokost-4",
+    "category": "Frokost",
+    "number": 4,
+    "name": "Rugbrødstallerken med æg, kød/fisk og grønt",
+    "image": "images/rId33.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "10 min",
+    "total": "10 min",
+    "ingredients": [
+      "8 små skiver blødt rugbrød",
+      "4 æg",
+      "150 g rester af laks, kylling eller kød",
+      "1 avocado",
+      "2 kiwier"
+    ],
+    "steps": [
+      "Fordel æg og kød/fisk på eller ved rugbrødet.",
+      "Server avocado og kiwi ved siden af.",
+      "Tilpas rester til passende konsistens."
+    ],
+    "taste": "Til fisk: avocado-remoulade. Til kød: 1-2 tsk Heinz Organic Tomato Ketchup eller lidt Chosen Foods avocado-mayo.",
+    "child": "Brug blødt rugbrød og små bidder.",
+    "tip": "Brug små rester.",
+    "why": [
+      "Rugbrød giver fuldkorn og plantejern.",
+      "Æg og kød/fisk øger næringstætheden.",
+      "Kiwi giver C-vitamin."
+    ]
+  },
+  {
+    "id": "frokost-5",
+    "category": "Frokost",
+    "number": 5,
+    "name": "Mini-tallerken med æg, kartoffel, avocado og ærter",
+    "image": "images/rId34.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "10 min",
+    "total": "10 min",
+    "ingredients": [
+      "4 æg",
+      "400 g kartofler",
+      "1 avocado",
+      "1 banan",
+      "150 g ærter"
+    ],
+    "steps": [
+      "Tilbered æggene.",
+      "Kog ærterne møre og mos dem let.",
+      "Anret alle elementer separat."
+    ],
+    "taste": "Avocadocreme: avocado + 2 spsk A38 + lidt citron.",
+    "child": "Mos ærter let; alle elementer bløde.",
+    "tip": "God til børn der kan lide komponenter.",
+    "why": [
+      "De fire byggesten bliver synlige og enkle.",
+      "Kartoffel og banan giver energi.",
+      "Æg og avocado giver protein/fedt."
+    ]
+  },
+  {
+    "id": "frokost-6",
+    "category": "Frokost",
+    "number": 6,
+    "name": "Lakse-kartoffelfrikadeller med dilddip",
+    "image": "images/rId35.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "20 min",
+    "total": "20 min",
+    "ingredients": [
+      "300 g tilberedt laks",
+      "450 g kogte kartofler",
+      "1 æg",
+      "40 g havregryn",
+      "250 g broccoli",
+      "10 g smør",
+      "150 g A38 3,5 %",
+      "dild",
+      "1 tsk citron"
+    ],
+    "steps": [
+      "Mos laks og kartoffel med æg og havre.",
+      "Form små deller og steg i smør.",
+      "Damp broccoli og rør dilddip."
+    ],
+    "taste": "Dilddip: A38 + dild + citron + 1 tsk EVOO.",
+    "child": "Tjek laks for ben; dellerne skal være bløde.",
+    "tip": "God brug af laks og kartoffelrester.",
+    "why": [
+      "Laks giver omega-3.",
+      "Kartoffel giver energi.",
+      "Havre bidrager med plantejern."
+    ]
+  },
+  {
+    "id": "frokost-7",
+    "category": "Frokost",
+    "number": 7,
+    "name": "Kyllinge-avocadowrap med mild dressing",
+    "image": "images/rId36.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "10 min",
+    "total": "10 min",
+    "ingredients": [
+      "300 g tilberedt kylling",
+      "4 små fuldkornstortillas",
+      "1 avocado",
+      "150 g tomat",
+      "100 g agurk",
+      "120 g A38 3,5 %",
+      "20 g Chosen Foods Classic Avocado Oil Mayo"
+    ],
+    "steps": [
+      "Skær kylling og grønt fint.",
+      "Rør A38 og mayo sammen.",
+      "Fyld tortillas og rul."
+    ],
+    "taste": "Mild dressing: A38 + Chosen Foods avocado-mayo.",
+    "child": "Tomat skæres småt; agurk kan skrælles og tilpasses; tortilla serveres blød.",
+    "tip": "Brug kyllingerester.",
+    "why": [
+      "Kylling giver protein.",
+      "Tortilla giver energi.",
+      "Avocado giver fedt og grønt variation."
+    ]
+  },
+  {
+    "id": "frokost-8",
+    "category": "Frokost",
+    "number": 8,
+    "name": "Mini-pastasalat med kylling, ærter og avocadodressing",
+    "image": "images/rId37.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "15 min",
+    "total": "15 min",
+    "ingredients": [
+      "250 g fuldkornspasta",
+      "250 g tilberedt kylling",
+      "150 g ærter",
+      "1 avocado",
+      "100 g A38 3,5 %",
+      "1 tsk citron"
+    ],
+    "steps": [
+      "Kog pastaen blød og afkøl let.",
+      "Damp ærter møre og mos let til børnene.",
+      "Vend pasta og kylling med blendet avocado-A38-dressing."
+    ],
+    "taste": "Avocadodressing: avocado + A38 + citron.",
+    "child": "Pasta koges blød; ærter moses let.",
+    "tip": "Kan serveres lun.",
+    "why": [
+      "Pasta giver energi.",
+      "Kylling giver protein.",
+      "Avocado giver fedt."
+    ]
+  },
+  {
+    "id": "frokost-9",
+    "category": "Frokost",
+    "number": 9,
+    "name": "Kartoffelmad med æg og mild avocado-remoulade",
+    "image": "images/rId38.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "10 min",
+    "total": "10 min",
+    "ingredients": [
+      "8 små skiver rugbrød",
+      "500 g kogte kartofler",
+      "5 æg",
+      "100 g A38 3,5 %",
+      "30 g Chosen Foods Classic Avocado Oil Mayo",
+      "20 g syltet agurk",
+      "mild karry",
+      "1 kiwi"
+    ],
+    "steps": [
+      "Kog æggene.",
+      "Skær kartofler og æg og læg på rugbrød.",
+      "Rør remoulade og server kiwi til."
+    ],
+    "taste": "Remoulade: A38 + Chosen Foods mayo + lidt syltet agurk + mild karry.",
+    "child": "Brug blødt rugbrød og bløde kartofler.",
+    "tip": "God til kartoffelrester.",
+    "why": [
+      "Æg giver protein.",
+      "Rugbrød og kartoffel giver energi.",
+      "Kiwi giver C-vitamin."
+    ]
+  },
+  {
+    "id": "frokost-10",
+    "category": "Frokost",
+    "number": 10,
+    "name": "Mini-pita med kødboller og yoghurtdressing",
+    "image": "images/rId39.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "10 min",
+    "total": "10 min",
+    "ingredients": [
+      "4 små fuldkornspita",
+      "300 g hjemmelavede kødboller",
+      "150 g tomat",
+      "100 g meget mør peberfrugt",
+      "1 avocado",
+      "150 g A38 3,5 %",
+      "persille"
+    ],
+    "steps": [
+      "Lun pita og kødboller.",
+      "Skær grønt fint og mos avocado.",
+      "Fyld pita og tilsæt urte-A38."
+    ],
+    "taste": "Urtecreme: A38 + persille + 1 tsk EVOO.",
+    "child": "Brød og fyld skal være blødt; tomat skæres småt.",
+    "tip": "Brug kødboller fra fryseren.",
+    "why": [
+      "Kød bidrager med jern.",
+      "Pita giver energi.",
+      "Tomat/peberfrugt bidrager med C-vitamin."
+    ]
+  },
+  {
+    "id": "frokost-11",
+    "category": "Frokost",
+    "number": 11,
+    "name": "Æggemuffins med kartoffelbåde og ketchup",
+    "image": "images/rId40.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "15 min",
+    "total": "35 min",
+    "ingredients": [
+      "8 æg",
+      "200 g broccoli",
+      "80 g mild ost",
+      "700 g kartofler",
+      "1 spsk EVOO",
+      "Heinz Organic Tomato Ketchup til servering"
+    ],
+    "steps": [
+      "Tænd ovnen på 200 °C. Sæt kartoffelbåde i ovnen med EVOO.",
+      "Fordel meget mør broccoli i muffinforme, hæld æg over og drys ost på. Bag 15-18 minutter.",
+      "Server med en lille mængde ketchup."
+    ],
+    "taste": "Færdig: Heinz Organic Tomato Ketchup, ca. 1 tsk til barnet og efter smag til voksne.",
+    "child": "Broccoli skal være meget mør; ketchup bruges som lille smagsgiver.",
+    "tip": "Æggemuffins kan fryses.",
+    "why": [
+      "Æg giver protein.",
+      "Kartoffel giver energi.",
+      "Broccoli giver grøntvariation."
+    ]
+  },
+  {
+    "id": "frokost-12",
+    "category": "Frokost",
+    "number": 12,
+    "name": "Lun linse-kødbowl med kartoffel og tomatcreme",
+    "image": "images/rId41.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "15 min",
+    "total": "30 min",
+    "ingredients": [
+      "250 g hakket oksekød",
+      "100 g røde linser",
+      "500 g kartofler",
+      "300 g passata",
+      "1 gulerod",
+      "1 spsk EVOO",
+      "80 g A38 3,5 %"
+    ],
+    "steps": [
+      "Brun kød i EVOO. Tilsæt revet gulerod, linser, passata og lidt vand; simr 20 minutter.",
+      "Kog kartofler.",
+      "Server med A38 på toppen."
+    ],
+    "taste": "Tomatcreme: rør 80 g A38 i en lille portion lun tomatsauce ved servering.",
+    "child": "Linser og gulerod skal være helt møre.",
+    "tip": "Kan laves af rester fra linse-kødsgryde.",
+    "why": [
+      "Oksekød bidrager med jern.",
+      "Linser giver plantejern.",
+      "Tomat giver C-vitamin og kartoffel energi."
+    ]
+  },
+  {
+    "id": "frokost-13",
+    "category": "Frokost",
+    "number": 13,
+    "name": "Fiskefrikadelle-rugbrød med avocado-remoulade",
+    "image": "images/rId42.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "10 min",
+    "total": "10 min",
+    "ingredients": [
+      "6 små skiver rugbrød",
+      "4-6 små fiskefrikadeller",
+      "1 avocado",
+      "100 g A38 3,5 %",
+      "25 g Chosen Foods Classic Avocado Oil Mayo",
+      "15 g syltet agurk",
+      "mild karry",
+      "2 kiwier"
+    ],
+    "steps": [
+      "Lun fiskefrikadeller.",
+      "Rør remoulade og mos avocado.",
+      "Server på/ved rugbrød med kiwi."
+    ],
+    "taste": "Avocado-remoulade: A38 + Chosen Foods mayo + avocado + lidt syltet agurk/karry.",
+    "child": "Tjek fisk for ben; rugbrød blødt.",
+    "tip": "Brug fiskefrikadeller fra fryseren.",
+    "why": [
+      "Fisk giver fiskvariation.",
+      "Rugbrød giver fuldkorn og plantejern.",
+      "Kiwi giver C-vitamin."
+    ]
+  },
+  {
+    "id": "frokost-14",
+    "category": "Frokost",
+    "number": 14,
+    "name": "Kyllingedeller med sød kartoffel og urtecreme",
+    "image": "images/rId43.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "20 min",
+    "total": "25 min",
+    "ingredients": [
+      "350 g hakket kylling",
+      "1 æg",
+      "40 g havregryn",
+      "600 g sød kartoffel",
+      "250 g broccoli",
+      "10 g smør",
+      "150 g A38 3,5 %",
+      "purløg"
+    ],
+    "steps": [
+      "Form kyllingedeller af kylling, æg og havre og steg i smør.",
+      "Bag eller kog sød kartoffel mør.",
+      "Damp broccoli og rør urtecreme."
+    ],
+    "taste": "Urtecreme: A38 + purløg + 1 tsk EVOO.",
+    "child": "Deller og grønt skal være bløde.",
+    "tip": "Kan laves af frosne kyllingedeller.",
+    "why": [
+      "Kylling giver protein.",
+      "Sød kartoffel giver energi.",
+      "Havre giver plantejern."
+    ]
+  },
+  {
+    "id": "frokost-15",
+    "category": "Frokost",
+    "number": 15,
+    "name": "Cremet pasta med laks, broccoli og citron",
+    "image": "images/rId44.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "15 min",
+    "total": "15 min",
+    "ingredients": [
+      "250 g pasta",
+      "250 g tilberedt laks",
+      "250 g broccoli",
+      "150 g A38 3,5 %",
+      "1 spsk EVOO",
+      "1 tsk citron",
+      "dild"
+    ],
+    "steps": [
+      "Kog pasta og broccoli møre.",
+      "Vend med laks og EVOO.",
+      "Tag gryden af varmen og vend A38, citron og dild i."
+    ],
+    "taste": "Saucen er A38 + EVOO + citron + dild.",
+    "child": "Tjek laks for ben; pasta og broccoli skal være bløde.",
+    "tip": "God restefrokost.",
+    "why": [
+      "Laks giver omega-3.",
+      "Pasta giver energi.",
+      "Broccoli giver grøntvariation."
+    ]
+  },
+  {
+    "id": "frokost-16",
+    "category": "Frokost",
+    "number": 16,
+    "name": "Mini-quesadilla med kylling, avocado og mild ost",
+    "image": "images/rId45.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "15 min",
+    "total": "15 min",
+    "ingredients": [
+      "4 små fuldkornstortillas",
+      "250 g tilberedt kylling",
+      "100 g mild ost",
+      "1 avocado",
+      "100 g tomat",
+      "Heinz Organic Tomato Ketchup til servering"
+    ],
+    "steps": [
+      "Fordel kylling og ost på tortillas, fold dem og varm på tør pande til osten smelter.",
+      "Skær tomat småt og mos avocado.",
+      "Server med avocado og lidt ketchup."
+    ],
+    "taste": "Færdig: Heinz Organic Tomato Ketchup, lille mængde. Avocado fungerer som ekstra dip.",
+    "child": "Quesadilla skal være blød, ikke hårdt sprød; tomat småt.",
+    "tip": "Brug kyllingerester.",
+    "why": [
+      "Kylling giver protein.",
+      "Tortilla giver energi.",
+      "Avocado giver fedt."
+    ]
+  },
+  {
+    "id": "frokost-17",
+    "category": "Frokost",
+    "number": 17,
+    "name": "Oksekødsfrikadeller med rugbrød og ketchup",
+    "image": "images/rId46.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "20 min",
+    "total": "20 min",
+    "ingredients": [
+      "350 g hakket oksekød",
+      "1 æg",
+      "40 g havregryn",
+      "6 små skiver rugbrød",
+      "250 g meget møre grøntsager",
+      "1 avocado",
+      "Heinz Organic Tomato Ketchup"
+    ],
+    "steps": [
+      "Rør kød, æg og havre og form små frikadeller.",
+      "Steg dem gennemstegte i lidt smør.",
+      "Server med rugbrød, grønt, avocado og ketchup."
+    ],
+    "taste": "Færdig: Heinz Organic Tomato Ketchup, lille mængde som smagsgiver.",
+    "child": "Frikadeller bløde og små; grønt meget mørt.",
+    "tip": "Fryseegnede frikadeller.",
+    "why": [
+      "Oksekød giver jern.",
+      "Havre/rugbrød bidrager med plantejern.",
+      "Grønt giver variation."
+    ]
+  },
+  {
+    "id": "frokost-18",
+    "category": "Frokost",
+    "number": 18,
+    "name": "Kartoffel-frittata med tomat og avocadodip",
+    "image": "images/rId47.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "15 min",
+    "total": "20 min",
+    "ingredients": [
+      "8 æg",
+      "500 g kogte kartofler",
+      "150 g tomat",
+      "80 g mild ost",
+      "1 avocado",
+      "100 g A38 3,5 %"
+    ],
+    "steps": [
+      "Fordel kartoffel og tomat i pande/form.",
+      "Hæld pisket æg over, drys ost og tilbered under låg eller i ovn til fast.",
+      "Server med avocadodip."
+    ],
+    "taste": "Avocadodip: avocado + A38.",
+    "child": "Tomat skal være blød og skåret småt.",
+    "tip": "Brug kartoffelrester.",
+    "why": [
+      "Æg giver protein.",
+      "Kartoffel giver energi.",
+      "Tomat bidrager med C-vitamin."
+    ]
+  },
+  {
+    "id": "frokost-19",
+    "category": "Frokost",
+    "number": 19,
+    "name": "Mild hummus-tallerken med æg og blødt brød",
+    "image": "images/rId48.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "15 min",
+    "total": "15 min",
+    "ingredients": [
+      "1 dåse kikærter, ca. 240 g drænet",
+      "25 g Rømer Tahin uden salt Ø",
+      "1 spsk EVOO",
+      "1-2 tsk citron",
+      "4 æg",
+      "6 små skiver blødt brød",
+      "1 rød peberfrugt"
+    ],
+    "steps": [
+      "Blend kikærter, tahin, EVOO, citron og vand glat.",
+      "Kog æg.",
+      "Damp/tilbered peberfrugt mør og server med brød."
+    ],
+    "taste": "Hjemmelavet hummus med få ingredienser; ingen færdig dip nødvendig.",
+    "child": "Hummus skal være helt glat; peberfrugt meget mør.",
+    "tip": "Hummus holder et par dage på køl.",
+    "why": [
+      "Kikærter og tahin giver plantevariation.",
+      "Æg giver protein.",
+      "Peberfrugt bidrager med C-vitamin."
+    ]
+  },
+  {
+    "id": "frokost-20",
+    "category": "Frokost",
+    "number": 20,
+    "name": "Kyllinge-kartoffelbowl med avocado og urtedressing",
+    "image": "images/rId49.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "10 min",
+    "total": "10 min",
+    "ingredients": [
+      "300 g tilberedt kylling",
+      "500 g kogte kartofler",
+      "200 g broccoli",
+      "1 avocado",
+      "120 g A38 3,5 %",
+      "purløg",
+      "1 tsk EVOO"
+    ],
+    "steps": [
+      "Lun kylling og kartofler.",
+      "Damp broccoli mør.",
+      "Server med avocado og urtedressing."
+    ],
+    "taste": "Urtedressing: A38 + purløg + EVOO.",
+    "child": "Alt skæres i bløde bidder.",
+    "tip": "Brug rester.",
+    "why": [
+      "Kylling giver protein.",
+      "Kartoffel giver energi.",
+      "Avocado og EVOO giver fedt."
+    ]
+  },
+  {
+    "id": "aftensmad-1",
+    "category": "Aftensmad",
+    "number": 1,
+    "name": "Ovnbagt laks med kartofler, broccoli og citron-dildsauce",
+    "image": "images/rId9.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "15 min",
+    "total": "40 min",
+    "ingredients": [
+      "500 g laksefilet",
+      "900 g kartofler",
+      "400 g broccoli",
+      "2 spsk EVOO",
+      "150 g A38 3,5 %",
+      "1/2 citron",
+      "dild"
+    ],
+    "steps": [
+      "Tænd ovnen på 200 °C. Bag kartofler med EVOO ca. 30 minutter.",
+      "Læg laksen ind de sidste 12-15 minutter.",
+      "Damp broccoli mør og rør A38 med citron og dild."
+    ],
+    "taste": "Citron-dildsauce: A38 + citron + dild + evt. 1 tsk EVOO.",
+    "child": "Tjek laks grundigt for ben; broccoli meget mør; ingen ekstra salt til barnet.",
+    "tip": "Fordobl laks til frokostrester.",
+    "why": [
+      "Laks giver omega-3.",
+      "Kartoffel giver energi.",
+      "Broccoli/citron giver C-vitamin og grøntvariation."
+    ]
+  },
+  {
+    "id": "aftensmad-2",
+    "category": "Aftensmad",
+    "number": 2,
+    "name": "Fiskefrikadeller med kartofler, grønt og avocado-remoulade",
+    "image": "images/rId50.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "25 min",
+    "total": "30 min",
+    "ingredients": [
+      "500 g hakket torsk/sej",
+      "1 æg",
+      "40 g havregryn",
+      "1 dl mælk",
+      "900 g kartofler",
+      "300 g gulerod/broccoli",
+      "smør",
+      "100 g A38",
+      "30 g Chosen Foods Classic Avocado Oil Mayo",
+      "20 g syltet agurk",
+      "mild karry"
+    ],
+    "steps": [
+      "Rør fisk, æg, havre og mælk. Form og steg i smør.",
+      "Kog kartofler og damp grønt.",
+      "Rør remoulade."
+    ],
+    "taste": "Avocado-remoulade: A38 + Chosen Foods mayo + lidt syltet agurk + mild karry.",
+    "child": "Fiskefrikadeller skal være bløde; tjek for ben.",
+    "tip": "Fryseegnede.",
+    "why": [
+      "Mager fisk giver fiskvariation.",
+      "Havre giver plantejern.",
+      "Kartoffel giver energi."
+    ]
+  },
+  {
+    "id": "aftensmad-3",
+    "category": "Aftensmad",
+    "number": 3,
+    "name": "Mild torsk/sej i cremet sauce",
+    "image": "images/rId51.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "20 min",
+    "total": "25 min",
+    "ingredients": [
+      "500 g torsk/sej",
+      "700 g kartofler",
+      "250 g gulerødder",
+      "150 g ærter",
+      "2 dl fløde",
+      "1 spsk smør",
+      "1 tsk citron",
+      "dild"
+    ],
+    "steps": [
+      "Kog kartofler.",
+      "Damp gulerødder og ærter møre.",
+      "Lad fisken simre forsigtigt i fløde og smør 8-10 minutter; smag mildt til med citron/dild."
+    ],
+    "taste": "Retten har sin egen fløde-dildsauce; ingen færdig condiment nødvendig.",
+    "child": "Tjek fisk for ben; mos ærter let; gulerødder meget møre.",
+    "tip": "Frossen fisk kan bruges efter korrekt optøning.",
+    "why": [
+      "Mager fisk giver protein og fiskvariation.",
+      "Kartoffel giver energi.",
+      "Sauce giver fugt og energi."
+    ]
+  },
+  {
+    "id": "aftensmad-4",
+    "category": "Aftensmad",
+    "number": 4,
+    "name": "Kødsovs PLUS med oksekød, linser og grønt",
+    "image": "images/rId52.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "15 min",
+    "total": "35 min",
+    "ingredients": [
+      "450 g hakket oksekød",
+      "100 g røde linser",
+      "500 g passata",
+      "2 gulerødder",
+      "1 løg",
+      "350 g fuldkornspasta",
+      "1 spsk EVOO",
+      "Heinz Organic Tomato Ketchup efter behov"
+    ],
+    "steps": [
+      "Svits løg og oksekød i EVOO.",
+      "Tilsæt revet gulerod, linser, passata og lidt vand; simr 25 minutter.",
+      "Kog pasta."
+    ],
+    "taste": "Saucen er saftig i sig selv. Til børn der ønsker kendt ketchupsmag kan 1 tsk Heinz Organic Tomato Ketchup røres i portionen.",
+    "child": "Linser/grønt helt møre; hold salt lavt.",
+    "tip": "Fryseegnet.",
+    "why": [
+      "Oksekød giver jern.",
+      "Linser giver plantejern.",
+      "Tomat giver C-vitamin; pasta energi."
+    ]
+  },
+  {
+    "id": "aftensmad-5",
+    "category": "Aftensmad",
+    "number": 5,
+    "name": "Hjemmelavede frikadeller med kartofler, grønt og mild pandesauce",
+    "image": "images/rId53.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "25 min",
+    "total": "30 min",
+    "ingredients": [
+      "500 g hakket kalv/flæsk eller oksekød",
+      "1 æg",
+      "50 g havregryn",
+      "1 dl mælk",
+      "900 g kartofler",
+      "350 g grønt",
+      "smør",
+      "1,5 dl vand",
+      "1 dl fløde"
+    ],
+    "steps": [
+      "Rør fars og steg frikadeller i smør.",
+      "Kog kartofler og damp grønt.",
+      "Kog panden af med vand, tilsæt fløde og lad saucen samle sig."
+    ],
+    "taste": "Mild pandesauce af stegesky, vand og fløde.",
+    "child": "Frikadeller små/bløde; grønt mørt; børneportion før ekstra salt.",
+    "tip": "Fryseegnede frikadeller.",
+    "why": [
+      "Kød bidrager med jern/protein.",
+      "Kartoffel giver energi.",
+      "Pandesauce gør måltidet saftigt og energirigt."
+    ]
+  },
+  {
+    "id": "aftensmad-6",
+    "category": "Aftensmad",
+    "number": 6,
+    "name": "Mild chili con carne med avocadocreme",
+    "image": "images/rId54.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "20 min",
+    "total": "30 min",
+    "ingredients": [
+      "450 g hakket oksekød",
+      "1 dåse kidneybønner, 240 g drænet",
+      "500 g passata",
+      "1 rød peberfrugt",
+      "1 løg",
+      "300 g ris",
+      "1 spsk EVOO",
+      "1 tsk mild paprika",
+      "1 avocado",
+      "100 g A38"
+    ],
+    "steps": [
+      "Svits løg og kød i EVOO.",
+      "Tilsæt finthakket peberfrugt, passata, bønner og paprika; simr 20 minutter.",
+      "Kog ris og mos avocado med A38."
+    ],
+    "taste": "Avocadocreme: avocado + A38.",
+    "child": "Mos bønner let; peberfrugt helt mør; ingen stærk chili.",
+    "tip": "Fryseegnet.",
+    "why": [
+      "Kød og bønner giver jernvariation.",
+      "Tomat/peberfrugt giver C-vitamin.",
+      "Ris giver energi."
+    ]
+  },
+  {
+    "id": "aftensmad-7",
+    "category": "Aftensmad",
+    "number": 7,
+    "name": "Ovnkylling med kartofler, grønt og urtecreme",
+    "image": "images/rId55.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "15 min",
+    "total": "40 min",
+    "ingredients": [
+      "600 g kyllingelårfilet",
+      "900 g kartofler",
+      "500 g gulerod/broccoli",
+      "2 spsk EVOO",
+      "1 tsk timian",
+      "150 g A38",
+      "purløg/persille"
+    ],
+    "steps": [
+      "Tænd ovnen på 200 °C. Vend kartofler/gulerødder i EVOO og timian; læg kylling ved.",
+      "Bag 30-35 minutter. Damp broccoli mør.",
+      "Rør urtecreme."
+    ],
+    "taste": "Urtecreme: A38 + purløg/persille + 1 tsk EVOO.",
+    "child": "Kylling gennemstegt og skåret på tværs af fibre; grønt mørt.",
+    "tip": "Meget lidt aktiv tid.",
+    "why": [
+      "Kylling giver protein.",
+      "Kartoffel giver energi.",
+      "EVOO og creme giver fedtvariation og saftighed."
+    ]
+  },
+  {
+    "id": "aftensmad-8",
+    "category": "Aftensmad",
+    "number": 8,
+    "name": "Cremet kyllingegryde med kartoffel og ærter",
+    "image": "images/rId56.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "20 min",
+    "total": "30 min",
+    "ingredients": [
+      "550 g kyllingelårfilet",
+      "700 g kartofler",
+      "2 gulerødder",
+      "150 g ærter",
+      "2 dl fløde",
+      "1 spsk smør",
+      "persille"
+    ],
+    "steps": [
+      "Brun kylling let i smør.",
+      "Tilsæt kartoffel, gulerod og lidt vand; simr mørt.",
+      "Tilsæt fløde og ærter de sidste 5 minutter."
+    ],
+    "taste": "Retten har egen cremet sauce.",
+    "child": "Mos ærter let; grønt meget mørt; kylling små bløde stykker.",
+    "tip": "God restemad.",
+    "why": [
+      "Kylling giver protein.",
+      "Kartoffel giver energi.",
+      "Cremet sauce giver fugt og energi."
+    ]
+  },
+  {
+    "id": "aftensmad-9",
+    "category": "Aftensmad",
+    "number": 9,
+    "name": "Kyllingefrikadeller med sød kartoffel og avocadocreme",
+    "image": "images/rId57.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "25 min",
+    "total": "35 min",
+    "ingredients": [
+      "500 g hakket kylling",
+      "1 æg",
+      "50 g havregryn",
+      "800 g sød kartoffel",
+      "300 g broccoli",
+      "1 spsk EVOO",
+      "smør",
+      "1 avocado",
+      "100 g A38"
+    ],
+    "steps": [
+      "Rør kylling, æg og havre; steg små frikadeller i smør.",
+      "Bag sød kartoffel mør og damp broccoli.",
+      "Mos avocado med A38."
+    ],
+    "taste": "Avocadocreme: avocado + A38.",
+    "child": "Frikadeller små/bløde; grønt helt mørt.",
+    "tip": "Fryseegnede frikadeller.",
+    "why": [
+      "Kylling/æg giver protein.",
+      "Sød kartoffel giver energi.",
+      "Avocado giver fedt."
+    ]
+  },
+  {
+    "id": "aftensmad-10",
+    "category": "Aftensmad",
+    "number": 10,
+    "name": "Kartoffel-frittata med grønt og ketchup",
+    "image": "images/rId58.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "10 min",
+    "total": "30 min",
+    "ingredients": [
+      "8 æg",
+      "600 g kogte kartofler",
+      "200 g broccoli",
+      "1 rød peberfrugt",
+      "80 g mild ost",
+      "1 spsk EVOO",
+      "Heinz Organic Tomato Ketchup"
+    ],
+    "steps": [
+      "Fordel kartoffel og meget mørt grønt i form.",
+      "Hæld pisket æg over, drys ost.",
+      "Bag 20-25 minutter ved 190 °C."
+    ],
+    "taste": "Færdig: Heinz Organic Tomato Ketchup, lille mængde som smagsgiver.",
+    "child": "Peberfrugt/broccoli helt møre; skær i bløde strimler.",
+    "tip": "God til rester.",
+    "why": [
+      "Æg giver protein.",
+      "Kartoffel giver energi.",
+      "Grønt giver variation."
+    ]
+  },
+  {
+    "id": "aftensmad-11",
+    "category": "Aftensmad",
+    "number": 11,
+    "name": "Langtidskogt oksegryde med fyldig grøntsagssauce",
+    "image": "images/rId59.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "20 min",
+    "total": "2,5-3 timer",
+    "ingredients": [
+      "700 g oksebov",
+      "900 g kartofler",
+      "3 gulerødder",
+      "1 løg",
+      "400 g hakkede tomater",
+      "1 spsk EVOO"
+    ],
+    "steps": [
+      "Brun kød kort i EVOO.",
+      "Tilsæt løg, gulerødder, tomat og vand; lad simre 2-3 timer.",
+      "Tilsæt kartofler de sidste 40 minutter. Blend evt. lidt af grøntsager/sauce for tykkere sovs."
+    ],
+    "taste": "Grydens egen sauce; blend en lille del for ekstra cremet konsistens.",
+    "child": "Kødet skal kunne trækkes fra hinanden; alt grønt helt mørt.",
+    "tip": "Kun ca. 20 min aktiv tid.",
+    "why": [
+      "Oksekød er jernrigt.",
+      "Lang tilberedning giver blød konsistens.",
+      "Kartoffel giver energi og tomat C-vitamin."
+    ]
+  },
+  {
+    "id": "aftensmad-12",
+    "category": "Aftensmad",
+    "number": 12,
+    "name": "Kødboller i tomatsauce med pasta",
+    "image": "images/rId60.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "20 min",
+    "total": "25 min",
+    "ingredients": [
+      "500 g hakket oksekød",
+      "1 æg",
+      "40 g havregryn",
+      "500 g passata",
+      "350 g pasta",
+      "1 spsk EVOO",
+      "1 gulerod"
+    ],
+    "steps": [
+      "Rør kød, æg og havre; form små kødboller.",
+      "Brun dem let i EVOO. Tilsæt passata og fintrevet gulerod; simr 15 minutter.",
+      "Kog pasta."
+    ],
+    "taste": "Tomatsaucen er dip/sovs. Evt. 1 tsk Heinz Organic Tomato Ketchup i børneportionen for mere kendt smag.",
+    "child": "Kødboller små/bløde; pasta koges blød.",
+    "tip": "Fryseegnet.",
+    "why": [
+      "Oksekød giver jern.",
+      "Havre giver plantejern.",
+      "Tomat giver C-vitamin og pasta energi."
+    ]
+  },
+  {
+    "id": "aftensmad-13",
+    "category": "Aftensmad",
+    "number": 13,
+    "name": "Mild kokos-karry med kylling og ris",
+    "image": "images/rId61.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "20 min",
+    "total": "30 min",
+    "ingredients": [
+      "550 g kyllingelårfilet",
+      "400 ml kokosmælk",
+      "2 gulerødder",
+      "150 g ærter",
+      "300 g ris",
+      "1 tsk mild karry"
+    ],
+    "steps": [
+      "Gennemsteg kyllingestykker.",
+      "Tilsæt kokosmælk, gulerod og karry; simr mørt.",
+      "Tilsæt ærter til sidst og server med ris."
+    ],
+    "taste": "Kokos-karrysaucen er rettens sauce.",
+    "child": "Kun mild karry; mos ærter let; gulerødder møre.",
+    "tip": "Kan også laves med hvid fisk.",
+    "why": [
+      "Kokosmælk giver fedtvariation.",
+      "Kylling giver protein.",
+      "Ris giver energi."
+    ]
+  },
+  {
+    "id": "aftensmad-14",
+    "category": "Aftensmad",
+    "number": 14,
+    "name": "Linse-kødsgryde med yoghurtcreme",
+    "image": "images/rId62.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "15 min",
+    "total": "30 min",
+    "ingredients": [
+      "350 g hakket oksekød",
+      "150 g røde linser",
+      "500 g passata",
+      "2 gulerødder",
+      "700 g kartofler",
+      "1 spsk EVOO",
+      "120 g A38"
+    ],
+    "steps": [
+      "Brun oksekød i EVOO.",
+      "Tilsæt linser, passata, revet gulerod og vand; simr 25 minutter.",
+      "Kog kartofler og server med A38."
+    ],
+    "taste": "Yoghurtcreme: A38 + evt. lidt persille.",
+    "child": "Linser/gulerod helt møre; mildt krydret.",
+    "tip": "Fryseegnet.",
+    "why": [
+      "Kød og linser kombinerer jernkilder.",
+      "Tomat giver C-vitamin.",
+      "Kartoffel giver energi."
+    ]
+  },
+  {
+    "id": "aftensmad-15",
+    "category": "Aftensmad",
+    "number": 15,
+    "name": "Tøm-køleskabet-tallerken med passende basisdip",
+    "image": "images/rId63.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "10 min",
+    "total": "10 min",
+    "ingredients": [
+      "400-500 g tilberedt proteinrest",
+      "600 g kogt kartoffel/pasta/ris",
+      "300 g tilberedte grøntsager",
+      "1 avocado eller 1-2 spsk EVOO",
+      "A38, Chosen Foods avocado-mayo eller Heinz Organic Tomato Ketchup efter retten"
+    ],
+    "steps": [
+      "Varm relevante rester grundigt.",
+      "Anret protein, energi og grønt.",
+      "Vælg én passende dip."
+    ],
+    "taste": "Fisk: avocado-remoulade. Kylling: urte-A38. Kød: lidt Heinz Organic Tomato Ketchup eller avocado-mayo. Grønt: avocadocreme.",
+    "child": "Vurder hver rest for ben, hårdhed, størrelse og salt.",
+    "tip": "Brug kun forsvarligt opbevarede rester.",
+    "why": [
+      "Reducerer madspild.",
+      "Bevarer de fire byggesten.",
+      "Gør systemet realistisk."
+    ]
+  },
+  {
+    "id": "aftensmad-16",
+    "category": "Aftensmad",
+    "number": 16,
+    "name": "Cremet laksepasta med broccoli, ærter og citron",
+    "image": "images/rId64.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "20 min",
+    "total": "25 min",
+    "ingredients": [
+      "500 g laks",
+      "350 g pasta",
+      "300 g broccoli",
+      "150 g ærter",
+      "2 dl fløde",
+      "1 spsk EVOO",
+      "1/2 citron",
+      "dild"
+    ],
+    "steps": [
+      "Kog pasta; tilsæt broccoli de sidste minutter.",
+      "Steg/bag laks kort og del i flager.",
+      "Varm fløde med citron/dild, vend pasta, grønt og laks i."
+    ],
+    "taste": "Retten har egen citron-dild-flødesauce.",
+    "child": "Tjek laks for ben; ærter moses let; pasta blød.",
+    "tip": "Kan laves med lakserester.",
+    "why": [
+      "Laks giver omega-3.",
+      "Pasta giver energi.",
+      "Broccoli/ærter giver grøntvariation."
+    ]
+  },
+  {
+    "id": "aftensmad-17",
+    "category": "Aftensmad",
+    "number": 17,
+    "name": "Mild butter-chicken-inspireret kylling med ris",
+    "image": "images/rId65.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "20 min",
+    "total": "25 min",
+    "ingredients": [
+      "600 g kyllingelårfilet",
+      "400 g passata",
+      "150 g A38 3,5 %",
+      "30 g smør",
+      "300 g ris",
+      "2 gulerødder",
+      "1 tsk mild karry",
+      "1/2 tsk paprika"
+    ],
+    "steps": [
+      "Kog ris.",
+      "Brun kylling kort i smør. Tilsæt revet gulerod, passata og milde krydderier; simr 15 minutter.",
+      "Tag af varmen og rør A38 i."
+    ],
+    "taste": "Tomat-smør-A38-sauce; ingen færdig sauce nødvendig.",
+    "child": "Mild krydring; gulerod helt mør; børneportion før ekstra salt.",
+    "tip": "Smager af noget uden stærk chili.",
+    "why": [
+      "Kylling giver protein.",
+      "Ris giver energi.",
+      "Tomat/gulerod giver grønt og saucen gør retten saftig."
+    ]
+  },
+  {
+    "id": "aftensmad-18",
+    "category": "Aftensmad",
+    "number": 18,
+    "name": "Oksekødskofta med ovnkartofler og tahin-yoghurtsauce",
+    "image": "images/rId66.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "25 min",
+    "total": "35 min",
+    "ingredients": [
+      "500 g hakket oksekød",
+      "1 æg",
+      "40 g havregryn",
+      "900 g kartofler",
+      "300 g gulerødder/broccoli",
+      "1 spsk EVOO",
+      "120 g A38",
+      "25 g Rømer Tahin uden salt Ø",
+      "1 tsk citron",
+      "persille"
+    ],
+    "steps": [
+      "Sæt kartoffelbåde i ovnen ved 210 °C med EVOO.",
+      "Rør kød, æg, havre og persille; form aflange små kofta og steg/gennemtilbered.",
+      "Damp grønt og rør tahinsauce."
+    ],
+    "taste": "Tahin-yoghurtsauce: A38 + Rømer Tahin uden salt Ø + citron + vand til passende konsistens.",
+    "child": "Kofta små/bløde; tahin røres helt glat; grønt mørt.",
+    "tip": "Kan fryses som små kofta.",
+    "why": [
+      "Oksekød giver jern.",
+      "Kartoffel giver energi.",
+      "Tahin giver fedtvariation."
+    ]
+  },
+  {
+    "id": "aftensmad-19",
+    "category": "Aftensmad",
+    "number": 19,
+    "name": "Mild fisketaco med avocado og limecreme",
+    "image": "images/rId67.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "20 min",
+    "total": "20 min",
+    "ingredients": [
+      "500 g torsk/sej",
+      "8 små bløde tortillas",
+      "1 avocado",
+      "200 g meget mør kål eller broccoli",
+      "150 g tomat",
+      "150 g A38",
+      "1 lime",
+      "1 spsk EVOO",
+      "mild paprika"
+    ],
+    "steps": [
+      "Steg/bag fisken med EVOO og lidt paprika 8-10 minutter.",
+      "Tilbered grønt mørt og skær tomat småt.",
+      "Mos avocado og rør A38 med lidt lime. Server i bløde tortillas."
+    ],
+    "taste": "Limecreme: A38 + avocado + lidt lime.",
+    "child": "Tjek fisk for ben; tortilla blød; grønt tilberedt mørt; meget lidt lime til barnet.",
+    "tip": "Server elementerne separat til barnet hvis lettere.",
+    "why": [
+      "Fisk giver protein og fiskvariation.",
+      "Tortilla giver energi.",
+      "Avocado giver fedt."
+    ]
+  },
+  {
+    "id": "aftensmad-20",
+    "category": "Aftensmad",
+    "number": 20,
+    "name": "Kylling i mild tomat-mascarponesauce med pasta og broccoli",
+    "image": "images/rId68.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "20 min",
+    "total": "25 min",
+    "ingredients": [
+      "600 g kyllingelårfilet",
+      "350 g pasta",
+      "400 g passata",
+      "125 g mascarpone",
+      "300 g broccoli",
+      "1 spsk EVOO",
+      "1 tsk mild paprika"
+    ],
+    "steps": [
+      "Kog pasta og broccoli møre.",
+      "Brun kylling i EVOO; tilsæt passata og paprika og simr til gennemstegt.",
+      "Rør mascarpone i og vend med pasta/broccoli."
+    ],
+    "taste": "Retten har egen tomat-mascarponesauce.",
+    "child": "Broccoli meget mør; kylling små bløde stykker; mild krydring.",
+    "tip": "Kan laves i én stor pande.",
+    "why": [
+      "Kylling giver protein.",
+      "Pasta giver energi.",
+      "Tomat/broccoli giver grøntvariation; sauce giver saftighed."
+    ]
+  },
+  {
+    "id": "mellemmaltid-1",
+    "category": "Mellemmåltider",
+    "number": 1,
+    "name": "Kogt æg med kiwi og banan",
+    "image": "images/rId69.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "10 min",
+    "total": "10 min",
+    "ingredients": [
+      "4 æg",
+      "2 kiwier",
+      "1 banan"
+    ],
+    "steps": [
+      "Kog æggene 8-9 minutter.",
+      "Del æg og frugt passende og server."
+    ],
+    "taste": "Ingen dip nødvendig.",
+    "child": "Frugt skal være blød/tilpasset.",
+    "tip": "Godt ved lang tid til næste måltid.",
+    "why": [
+      "Æg gør mellemmåltidet næringstæt.",
+      "Frugt giver energi og C-vitamin."
+    ]
+  },
+  {
+    "id": "mellemmaltid-2",
+    "category": "Mellemmåltider",
+    "number": 2,
+    "name": "Avocadomad med kiwi",
+    "image": "images/rId70.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "5 min",
+    "total": "10-30 min",
+    "ingredients": [
+      "4 små skiver blødt rugbrød",
+      "1 avocado",
+      "2 kiwier"
+    ],
+    "steps": [
+      "Mos avocado på rugbrød.",
+      "Skær brødet i små stykker.",
+      "Server kiwi ved siden af."
+    ],
+    "taste": "Avocadoen er selve cremen.",
+    "child": "Brug blødt rugbrød og moden avocado.",
+    "tip": "5 min",
+    "why": [
+      "Rugbrød giver energi og plantejern.",
+      "Avocado giver fedt.",
+      "Kiwi giver C-vitamin."
+    ]
+  },
+  {
+    "id": "mellemmaltid-3",
+    "category": "Mellemmåltider",
+    "number": 3,
+    "name": "A38 med bær og havre",
+    "image": "images/rId71.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "5 min",
+    "total": "5 min",
+    "ingredients": [
+      "400 g A38 3,5 %",
+      "60 g havregryn",
+      "120 g bær"
+    ],
+    "steps": [
+      "Fordel A38.",
+      "Rør havre og bær i.",
+      "Mos bær efter behov."
+    ],
+    "taste": "Ingen ekstra dip.",
+    "child": "Brug bløde/mosede bær.",
+    "tip": "Kan samles straks.",
+    "why": [
+      "Havre giver energi/plantejern.",
+      "Bær giver C-vitamin."
+    ]
+  },
+  {
+    "id": "mellemmaltid-4",
+    "category": "Mellemmåltider",
+    "number": 4,
+    "name": "Banan med peanutbuttercreme",
+    "image": "images/rId72.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "5 min",
+    "total": "5 min",
+    "ingredients": [
+      "2 bananer",
+      "30 g 100 % smooth peanutbutter",
+      "50 g A38 3,5 %"
+    ],
+    "steps": [
+      "Mos/skær banan.",
+      "Rør peanutbutter med A38.",
+      "Server som tynd creme til bananen."
+    ],
+    "taste": "Peanutbuttercreme: peanutbutter + A38.",
+    "child": "Ingen tyk klat peanutbutter.",
+    "tip": "Kun tre ingredienser.",
+    "why": [
+      "Banan giver energi.",
+      "Peanutbutter giver fedt/energi."
+    ]
+  },
+  {
+    "id": "mellemmaltid-5",
+    "category": "Mellemmåltider",
+    "number": 5,
+    "name": "Mini-havrepandekager med bærcreme",
+    "image": "images/rId73.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "5 min",
+    "total": "5 min",
+    "ingredients": [
+      "8-12 mini-havrepandekager",
+      "120 g bær",
+      "100 g A38 3,5 %"
+    ],
+    "steps": [
+      "Lun pandekager.",
+      "Mos bær og rør med A38.",
+      "Server."
+    ],
+    "taste": "Bærcreme: A38 + bær.",
+    "child": "Pandekager bløde; bær tilpasses.",
+    "tip": "Brug fryserlager.",
+    "why": [
+      "Pandekager bidrager med æg/havre.",
+      "Bær giver C-vitamin."
+    ]
+  },
+  {
+    "id": "mellemmaltid-6",
+    "category": "Mellemmåltider",
+    "number": 6,
+    "name": "Mild ost, blød pære og brød",
+    "image": "images/rId74.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "5 min",
+    "total": "5 min",
+    "ingredients": [
+      "80 g mild ost",
+      "1 stor moden pære",
+      "4 små skiver blødt brød"
+    ],
+    "steps": [
+      "Skær ost passende.",
+      "Brug meget moden pære eller damp den let.",
+      "Server med brød."
+    ],
+    "taste": "Ingen dip nødvendig.",
+    "child": "Pære skal være helt blød.",
+    "tip": "Varier med ikke-mejeribaserede snacks.",
+    "why": [
+      "Brød giver energi.",
+      "Ost giver mejeri/protein/fedt.",
+      "Pære giver frugtvariation."
+    ]
+  },
+  {
+    "id": "mellemmaltid-7",
+    "category": "Mellemmåltider",
+    "number": 7,
+    "name": "Mini-havregrød med banan og bær",
+    "image": "images/rId75.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "8 min",
+    "total": "8 min",
+    "ingredients": [
+      "80 g havregryn",
+      "3,5 dl vand/mælk",
+      "1 banan",
+      "80 g bær"
+    ],
+    "steps": [
+      "Kog blød grød.",
+      "Mos banan i.",
+      "Top med bær."
+    ],
+    "taste": "Evt. 1 tsk 100 % peanutbutter rørt helt ud.",
+    "child": "Afkøl; bær moses.",
+    "tip": "God ved større appetit.",
+    "why": [
+      "Havre giver energi/plantejern.",
+      "Bær giver C-vitamin."
+    ]
+  },
+  {
+    "id": "mellemmaltid-8",
+    "category": "Mellemmåltider",
+    "number": 8,
+    "name": "Lille fiskefrikadelle med avocado-remoulade",
+    "image": "images/rId76.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "7 min",
+    "total": "7 min",
+    "ingredients": [
+      "4 små fiskefrikadeller",
+      "1 kiwi",
+      "100 g meget mørt grønt",
+      "60 g A38",
+      "15 g Chosen Foods Classic Avocado Oil Mayo",
+      "lidt syltet agurk/karry"
+    ],
+    "steps": [
+      "Lun fiskefrikadeller.",
+      "Rør lille portion remoulade.",
+      "Server med kiwi og grønt."
+    ],
+    "taste": "A38 + Chosen Foods avocado-mayo + lidt syltet agurk/karry.",
+    "child": "Tjek fisk for ben; grønt meget mørt.",
+    "tip": "Brug fryserlager.",
+    "why": [
+      "Giver fiskvariation.",
+      "Frugt/grønt giver C-vitamin."
+    ]
+  },
+  {
+    "id": "mellemmaltid-9",
+    "category": "Mellemmåltider",
+    "number": 9,
+    "name": "Mini-frikadelle med avocado og ketchup",
+    "image": "images/rId77.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "5 min",
+    "total": "5 min",
+    "ingredients": [
+      "4 små hjemmelavede frikadeller",
+      "1 avocado",
+      "1 banan",
+      "Heinz Organic Tomato Ketchup"
+    ],
+    "steps": [
+      "Lun frikadeller.",
+      "Del passende.",
+      "Server med avocado, banan og lidt ketchup."
+    ],
+    "taste": "Færdig: Heinz Organic Tomato Ketchup, ca. 1 tsk til barnet.",
+    "child": "Frikadeller bløde/små.",
+    "tip": "God brug af fryserfrikadeller.",
+    "why": [
+      "Kød giver jern/protein.",
+      "Avocado giver fedt.",
+      "Banan giver energi."
+    ]
+  },
+  {
+    "id": "mellemmaltid-10",
+    "category": "Mellemmåltider",
+    "number": 10,
+    "name": "Mini-restetallerken med basisdip",
+    "image": "images/rId78.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "5 min",
+    "total": "5 min",
+    "ingredients": [
+      "300-400 g gode rester",
+      "frugt/grønt efter behov",
+      "A38/avocado/Chosen Foods mayo efter retten"
+    ],
+    "steps": [
+      "Varm relevante rester.",
+      "Anret lille portion.",
+      "Vælg passende dip."
+    ],
+    "taste": "Fisk: remoulade; kylling: urte-A38; grønt: avocado.",
+    "child": "Tjek ben, hårdhed, størrelse og salt.",
+    "tip": "Vælg mindre portion tæt på hovedmåltid.",
+    "why": [
+      "Rigtig mad kan være mellemmåltid.",
+      "Reducerer madspild."
+    ]
+  },
+  {
+    "id": "mellemmaltid-11",
+    "category": "Mellemmåltider",
+    "number": 11,
+    "name": "Bamsebolle 2.0 med avocado og æg",
+    "image": "images/rId79.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "10 min",
+    "total": "10 min",
+    "ingredients": [
+      "2-4 Bamseboller 2.0",
+      "2 æg",
+      "1 avocado"
+    ],
+    "steps": [
+      "Kog æg.",
+      "Flæk boller.",
+      "Server med avocado og æg."
+    ],
+    "taste": "Avocado fungerer som smørelse/dip.",
+    "child": "Bollen blød og i passende stykker.",
+    "tip": "Brug fra fryser.",
+    "why": [
+      "Bollen giver energi.",
+      "Æg giver protein.",
+      "Avocado giver fedt."
+    ]
+  },
+  {
+    "id": "mellemmaltid-12",
+    "category": "Mellemmåltider",
+    "number": 12,
+    "name": "Mini ægge-havrevaffel med bærcreme",
+    "image": "images/rId80.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "5 min",
+    "total": "5 min",
+    "ingredients": [
+      "4 små ægge-havrevafler",
+      "100 g A38",
+      "100 g bær"
+    ],
+    "steps": [
+      "Lun vafler.",
+      "Mos bær og rør med A38.",
+      "Server."
+    ],
+    "taste": "Bærcreme: A38 + bær.",
+    "child": "Vaffel blød; bær moses.",
+    "tip": "Fryseegnet.",
+    "why": [
+      "Æg/havre giver næringstæthed.",
+      "Bær giver C-vitamin."
+    ]
+  },
+  {
+    "id": "mellemmaltid-13",
+    "category": "Mellemmåltider",
+    "number": 13,
+    "name": "Blødt banan-havrebrød med peanutcreme",
+    "image": "images/rId81.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "5 min",
+    "total": "5 min",
+    "ingredients": [
+      "4 små skiver hjemmelavet banan-havrebrød",
+      "20 g 100 % peanutbutter",
+      "50 g A38"
+    ],
+    "steps": [
+      "Lun evt. brødet.",
+      "Rør peanutbutter med A38.",
+      "Smør et tyndt lag på."
+    ],
+    "taste": "Peanutcreme: peanutbutter + A38.",
+    "child": "Brød blødt; peanutcreme tynd.",
+    "tip": "God fryser-snack.",
+    "why": [
+      "Havre/banan giver energi.",
+      "Peanutbutter giver fedt."
+    ]
+  },
+  {
+    "id": "mellemmaltid-14",
+    "category": "Mellemmåltider",
+    "number": 14,
+    "name": "Avocado-banancreme på blødt rugbrød",
+    "image": "images/rId82.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "5 min",
+    "total": "5 min",
+    "ingredients": [
+      "4 små skiver blødt rugbrød",
+      "1 avocado",
+      "1 banan",
+      "1 tsk citron"
+    ],
+    "steps": [
+      "Mos avocado og banan.",
+      "Rør lidt citron i.",
+      "Smør tyndt på rugbrød."
+    ],
+    "taste": "Avocado-banancreme er hjemmelavet med tre ingredienser.",
+    "child": "Brød blødt; cremen glat.",
+    "tip": "Kan også spises med ske.",
+    "why": [
+      "Rugbrød giver plantejern/energi.",
+      "Avocado giver fedt.",
+      "Banan giver energi."
+    ]
+  },
+  {
+    "id": "mellemmaltid-15",
+    "category": "Mellemmåltider",
+    "number": 15,
+    "name": "Mini æggemuffin med kartoffel og broccoli",
+    "image": "images/rId83.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "5 min",
+    "total": "5 min",
+    "ingredients": [
+      "4 mini-æggemuffins",
+      "200 g kogte kartofler",
+      "100 g meget mør broccoli",
+      "Heinz Organic Tomato Ketchup"
+    ],
+    "steps": [
+      "Lun muffins og kartoffel.",
+      "Server med broccoli.",
+      "Tilføj lidt ketchup."
+    ],
+    "taste": "Færdig: Heinz Organic Tomato Ketchup, lille mængde.",
+    "child": "Alt blødt og passende skåret.",
+    "tip": "Brug fryserlager.",
+    "why": [
+      "Æg giver protein.",
+      "Kartoffel giver energi.",
+      "Broccoli giver grønt."
+    ]
+  },
+  {
+    "id": "mellemmaltid-16",
+    "category": "Mellemmåltider",
+    "number": 16,
+    "name": "A38 med bærkompot og bløde havreflager",
+    "image": "images/rId84.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "10 min",
+    "total": "10 min",
+    "ingredients": [
+      "400 g A38 3,5 %",
+      "150 g frosne bær",
+      "60 g havregryn",
+      "1/2 banan"
+    ],
+    "steps": [
+      "Kog bær 5 min og mos med banan.",
+      "Fordel A38 og havre.",
+      "Top med afkølet kompot."
+    ],
+    "taste": "Bærkompot fungerer som sauce.",
+    "child": "Kompot afkøles; havre kan blødgøres i A38.",
+    "tip": "Lav ekstra kompot.",
+    "why": [
+      "Bær giver C-vitamin.",
+      "Havre giver energi/plantejern.",
+      "Ingen tilsat sukker nødvendig."
+    ]
+  },
+  {
+    "id": "mellemmaltid-17",
+    "category": "Mellemmåltider",
+    "number": 17,
+    "name": "Mini hummusmad med kiwi",
+    "image": "images/rId85.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "5 min",
+    "total": "5 min",
+    "ingredients": [
+      "4 små skiver blødt brød",
+      "120 g hjemmelavet hummus",
+      "2 kiwier"
+    ],
+    "steps": [
+      "Smør et tyndt lag hummus på brød.",
+      "Skær i passende stykker.",
+      "Server kiwi."
+    ],
+    "taste": "Hummus: kikærter + Rømer Tahin uden salt Ø + EVOO + citron + vand.",
+    "child": "Hummus helt glat; brød blødt.",
+    "tip": "Brug hummus fra frokost.",
+    "why": [
+      "Kikærter/tahin giver plantevariation.",
+      "Brød giver energi.",
+      "Kiwi giver C-vitamin."
+    ]
+  },
+  {
+    "id": "mellemmaltid-18",
+    "category": "Mellemmåltider",
+    "number": 18,
+    "name": "Sød kartoffel-havrepandekage med yoghurtcreme",
+    "image": "images/rId86.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "5 min",
+    "total": "5 min",
+    "ingredients": [
+      "6-8 små sød kartoffel-havrepandekager",
+      "100 g A38",
+      "80 g bær"
+    ],
+    "steps": [
+      "Lun pandekager.",
+      "Mos bær og rør med A38.",
+      "Server."
+    ],
+    "taste": "A38-bærcreme.",
+    "child": "Pandekager bløde.",
+    "tip": "Fryseegnet.",
+    "why": [
+      "Sød kartoffel/havre giver energi.",
+      "Bær giver C-vitamin."
+    ]
+  },
+  {
+    "id": "mellemmaltid-19",
+    "category": "Mellemmåltider",
+    "number": 19,
+    "name": "Æble-havremuffin med peanutcreme",
+    "image": "images/rId87.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "5 min",
+    "total": "5 min",
+    "ingredients": [
+      "4 små hjemmelavede æble-havremuffins uden meget tilsat sukker",
+      "20 g 100 % peanutbutter",
+      "50 g A38"
+    ],
+    "steps": [
+      "Lun evt. muffins.",
+      "Rør peanutbutter og A38.",
+      "Server tynd creme ved siden af."
+    ],
+    "taste": "Peanutcreme: peanutbutter + A38.",
+    "child": "Muffin blød; creme tynd.",
+    "tip": "God batch-snack.",
+    "why": [
+      "Havre giver energi/plantejern.",
+      "Peanutbutter giver fedt."
+    ]
+  },
+  {
+    "id": "mellemmaltid-20",
+    "category": "Mellemmåltider",
+    "number": 20,
+    "name": "Mini lakse-kartoffeldelle med avocadodip",
+    "image": "images/rId88.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "5 min",
+    "total": "5 min",
+    "ingredients": [
+      "4 små lakse-kartoffeldeller",
+      "1 avocado",
+      "60 g A38",
+      "1 kiwi"
+    ],
+    "steps": [
+      "Lun deller.",
+      "Mos avocado med A38.",
+      "Server med kiwi."
+    ],
+    "taste": "Avocadodip: avocado + A38.",
+    "child": "Tjek fisk for ben; deller bløde.",
+    "tip": "Brug fryserlager.",
+    "why": [
+      "Laks giver omega-3.",
+      "Kartoffel giver energi.",
+      "Avocado giver fedt."
+    ]
+  },
+  {
+    "id": "bornefavorit-1",
+    "category": "Børnefavoritter 2.0",
+    "number": 1,
+    "name": "Bamsebolle 2.0",
+    "image": "images/rId89.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "15-20 min",
+    "total": "ca. 2 timer inkl. hævning",
+    "ingredients": [
+      "300 ml lunkent vand",
+      "15 g gær",
+      "1 æg",
+      "100 g naturel yoghurt",
+      "35 g smeltet smør",
+      "100 g finblendede havregryn",
+      "400-450 g hvedemel",
+      "1/2 tsk salt"
+    ],
+    "steps": [
+      "Rør gæren ud i vandet. Tilsæt æg, yoghurt og smør.",
+      "Rør havre og salt i; tilsæt mel til en blød dej.",
+      "Hæv 1 time, form ca. 14 små boller og efterhæv 25-30 minutter.",
+      "Bag ved 200 °C i 12-14 minutter."
+    ],
+    "taste": "Kan serveres med avocado, æg eller tynd peanutcreme.",
+    "child": "Server blød og i passende stykker.",
+    "tip": "Bag dobbelt og frys enkeltvis.",
+    "why": [
+      "Bevarer det bløde, lyse bolleformat.",
+      "Havre og æg gør hverdagsversionen mere næringstæt."
+    ]
+  },
+  {
+    "id": "bornefavorit-2",
+    "category": "Børnefavoritter 2.0",
+    "number": 2,
+    "name": "Marie-kiks 2.0",
+    "image": "images/rId90.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "20 min",
+    "total": "ca. 55 min",
+    "ingredients": [
+      "125 g hvedemel",
+      "75 g finblendede havregryn",
+      "50 g koldt smør",
+      "15-20 g sukker",
+      "1 æg",
+      "1/2 tsk bagepulver",
+      "lidt vanilje",
+      "1-2 spsk vand/mælk"
+    ],
+    "steps": [
+      "Bland mel, havre, sukker og bagepulver.",
+      "Smuldr smør i; tilsæt æg og saml dejen.",
+      "Køl 20 minutter, rul meget tyndt, stik ud og prik.",
+      "Bag ved 175 °C i 9-12 minutter."
+    ],
+    "taste": "Ingen dip nødvendig.",
+    "child": "Kiks kan være tørre/sprøde; barnet skal sidde roligt og være under opsyn.",
+    "tip": "Rul meget tyndt for sprødhed.",
+    "why": [
+      "Det er stadig en kiks, men med havre.",
+      "Princippet er accept og gradvis forbedring, ikke at gøre hyggemad til health food."
+    ]
+  },
+  {
+    "id": "bornefavorit-3",
+    "category": "Børnefavoritter 2.0",
+    "number": 3,
+    "name": "Mini-pandekager 2.0",
+    "image": "images/rId91.png",
+    "portion": "2 voksne + 2 børn (ca. 15 mdr.)",
+    "active": "20 min",
+    "total": "25 min",
+    "ingredients": [
+      "2 modne bananer",
+      "3 æg",
+      "100 g havregryn",
+      "2 spsk 100 % peanutbutter",
+      "evt. 1/2 tsk kanel",
+      "smør",
+      "evt. 1-2 spsk vand"
+    ],
+    "steps": [
+      "Blend banan, æg, havre og peanutbutter.",
+      "Lad stå 5 minutter og justér med vand.",
+      "Steg 20-24 små, bløde pandekager i smør."
+    ],
+    "taste": "Server evt. med A38-bærcreme.",
+    "child": "Steg bløde; peanutbutter er indarbejdet i dejen.",
+    "tip": "Lav dobbelt og frys fladt.",
+    "why": [
+      "Bevarer det lille, bløde pandekageformat.",
+      "Æg, havre og nøddesmør gør versionen næringstæt."
+    ]
+  }
+]
