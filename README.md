@@ -32,3 +32,5 @@ Når siden ligger på HTTPS, virker PWA-installation og offline-cache korrekt.
 
 ## Begrænsning i denne version
 Data gemmes lokalt på hver enhed. Det betyder, at favoritter og madplan ikke automatisk synkroniserer mellem to telefoner endnu.
+
+Opdateret 1. september 2026
