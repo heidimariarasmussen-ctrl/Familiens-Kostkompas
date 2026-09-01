@@ -71,7 +71,8 @@ async function requestPasswordReset(e){
   e.preventDefault();const btn=e.target.querySelector('button');btn.disabled=true;btn.textContent='Sender…';
   const email=document.getElementById('reset-email').value.trim();
   try{
-    const r=await fetch(`${SUPABASE_URL}/auth/v1/recover`,{method:'POST',headers:{'apikey':SUPABASE_KEY,'Content-Type':'application/json'},body:JSON.stringify({email,redirect_to:appBaseUrl()})});
+    const redirectUrl='https://heidimariarasmussen-ctrl.github.io/Familiens-Kostkompas/';
+    const r=await fetch(`${SUPABASE_URL}/auth/v1/recover?redirect_to=${encodeURIComponent(redirectUrl)}`,{method:'POST',headers:{'apikey':SUPABASE_KEY,'Content-Type':'application/json'},body:JSON.stringify({email})});
     if(!r.ok){let d={};try{d=await r.json()}catch(_e){};throw new Error(d.msg||d.error_description||'Kunne ikke sende mail')}
     forgotPasswordScreen('✓ Reset-link er sendt. Tjek din e-mail.');
   }catch(err){
