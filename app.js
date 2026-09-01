@@ -20,13 +20,67 @@ async function installApp(){
 }
 
 let recipes=[];let currentCategory=null;let scale=1;let currentPlan=null;
+
+// ----- V2.4: Fælles aktiv madplan via Supabase -----
+const SUPABASE_URL='https://rjipiaghngxzaqgmcawr.supabase.co';
+const SUPABASE_KEY='sb_publishable_ceyzhUI2V1kIKTpbQTZ0fQ_mJoT2NHI';
+let cloudSession=null;
+const sessionKey='kostkompas-supabase-session';
+function loadCloudSession(){try{cloudSession=JSON.parse(localStorage.getItem(sessionKey)||'null')}catch(e){cloudSession=null}}
+function saveCloudSession(s){cloudSession=s;if(s)localStorage.setItem(sessionKey,JSON.stringify(s));else localStorage.removeItem(sessionKey)}
+function sessionValid(){return cloudSession?.access_token && (!cloudSession.expires_at || cloudSession.expires_at*1000>Date.now()+60000)}
+async function refreshCloudSession(){
+  if(sessionValid())return true;
+  if(!cloudSession?.refresh_token)return false;
+  try{
+    const r=await fetch(`${SUPABASE_URL}/auth/v1/token?grant_type=refresh_token`,{method:'POST',headers:{'apikey':SUPABASE_KEY,'Content-Type':'application/json'},body:JSON.stringify({refresh_token:cloudSession.refresh_token})});
+    if(!r.ok)throw new Error('refresh'); const d=await r.json(); d.expires_at=Math.floor(Date.now()/1000)+(d.expires_in||3600); saveCloudSession(d); return true;
+  }catch(e){saveCloudSession(null);return false}
+}
+async function cloudLogin(email,password){
+  const r=await fetch(`${SUPABASE_URL}/auth/v1/token?grant_type=password`,{method:'POST',headers:{'apikey':SUPABASE_KEY,'Content-Type':'application/json'},body:JSON.stringify({email,password})});
+  if(!r.ok){let d={};try{d=await r.json()}catch(e){};throw new Error(d.error_description||d.msg||'Login mislykkedes')}
+  const d=await r.json();d.expires_at=Math.floor(Date.now()/1000)+(d.expires_in||3600);saveCloudSession(d);return d;
+}
+async function cloudLogout(){saveCloudSession(null);currentPlan=null;localStorage.removeItem('kostkompas-current-plan');loginScreen('Du er logget ud.');}
+async function cloudHeaders(){if(!await refreshCloudSession())return null;return {'apikey':SUPABASE_KEY,'Authorization':`Bearer ${cloudSession.access_token}`,'Content-Type':'application/json'};}
+async function fetchCloudPlan(){
+  const h=await cloudHeaders();if(!h)return null;
+  const r=await fetch(`${SUPABASE_URL}/rest/v1/active_plan?id=eq.1&select=plan_data,updated_at`,{headers:h});
+  if(!r.ok)throw new Error('Kunne ikke hente den fælles madplan');const rows=await r.json();return rows[0]?.plan_data||{};
+}
+async function saveCloudPlan(plan=currentPlan){
+  if(!plan)return;localStorage.setItem('kostkompas-current-plan',JSON.stringify(plan));
+  const h=await cloudHeaders();if(!h)return;
+  const r=await fetch(`${SUPABASE_URL}/rest/v1/active_plan?id=eq.1`,{method:'PATCH',headers:{...h,'Prefer':'return=minimal'},body:JSON.stringify({plan_data:plan,updated_at:new Date().toISOString()})});
+  if(!r.ok)console.warn('Cloud save failed',await r.text());
+}
+function persistPlan(){if(!currentPlan)return;localStorage.setItem('kostkompas-current-plan',JSON.stringify(currentPlan));saveCloudPlan(currentPlan).catch(console.warn)}
+function loginScreen(message=''){
+  app.innerHTML=`<div class="login-shell"><section class="login-card"><div class="brand">Familiens Kostkompas</div><h1>Familielogin</h1><p>Log ind for at åbne den samme aktive madplan på computer og telefon.</p>${message?`<div class="login-message">${message}</div>`:''}<form onsubmit="submitFamilyLogin(event)"><label>E-mail</label><input id="login-email" type="email" autocomplete="username" required><label>Adgangskode</label><input id="login-password" type="password" autocomplete="current-password" required><button class="btn" type="submit">Log ind</button></form><p class="small muted">Brug den Supabase-bruger, du allerede har oprettet.</p></section></div>`;
+}
+async function submitFamilyLogin(e){
+  e.preventDefault();const btn=e.target.querySelector('button');btn.disabled=true;btn.textContent='Logger ind…';
+  try{await cloudLogin(document.getElementById('login-email').value.trim(),document.getElementById('login-password').value);await syncAfterLogin();home()}catch(err){loginScreen('Login kunne ikke gennemføres. Kontrollér e-mail og adgangskode.')} 
+}
+async function syncAfterLogin(){
+  let local=null;try{local=JSON.parse(localStorage.getItem('kostkompas-current-plan')||'null')}catch(e){}
+  const remote=await fetchCloudPlan();
+  const remoteHasPlan=remote && Array.isArray(remote.items) && remote.items.length;
+  if(remoteHasPlan){currentPlan=remote;localStorage.setItem('kostkompas-current-plan',JSON.stringify(remote));}
+  else if(local){currentPlan=local;await saveCloudPlan(local);}
+  else currentPlan=null;
+}
+function cloudBadge(){return cloudSession?.user?.email?`<button class="sync-pill" onclick="cloudLogout()" title="Log ud">☁ Synkroniseret</button>`:''}
+async function startApp(){loadCloudSession();if(await refreshCloudSession()){try{await syncAfterLogin();home()}catch(e){console.warn(e);restorePlan();home()}}else loginScreen();}
+
 const app=document.getElementById('app');
 const emoji={"Morgenmad":"🥣","Frokost":"🥗","Aftensmad":"🍲","Mellemmåltider":"🍌","Børnefavoritter 2.0":"💛"};
 const favs=()=>JSON.parse(localStorage.getItem('kostkompas-favs')||'[]');
 const saveFavs=x=>localStorage.setItem('kostkompas-favs',JSON.stringify(x));
 const nav=()=>`<nav class="bottomnav"><button onclick="home()">🏠<br>Hjem</button><button onclick="library()">📚<br>Opskrifter</button><button onclick="planner()">📅<br>Madplan</button><button onclick="favorites()">♥<br>Favoritter</button><button onclick="knowledge()">🧭<br>Kompas</button></nav>`;
 function card(r){return `<article class="card" onclick="showRecipe('${r.id}')"><img class="photo" src="${r.image}" alt="${r.name}"><div class="card-body"><span class="badge">${r.category}</span><h3>${r.name}</h3><div class="meta">${r.active||''} aktiv · ${r.total||''}</div></div></article>`}
-function home(){app.innerHTML=`<div class="shell"><div class="topbar"><div><div class="brand">Familiens Kostkompas</div><div class="tag">Næringstæt · realistisk · børnevenlig familiemad</div></div></div><section class="hero"><div class="hero-copy"><h1>Hvad skal vi spise?</h1><p>80 familieopskrifter + Børnefavoritter 2.0. Find en ret nu, gem favoritter eller lad Kostkompasset lave en madplan med rester og indkøbsliste.</p><div class="actions"><button class="btn" onclick="planner()">Lav madplan</button><button class="btn secondary" onclick="planToday()">Planlæg i dag</button><button class="btn secondary" onclick="library()">Se alle opskrifter</button></div></div><div class="hero-art">🍽️</div></section><div class="grid">${["Morgenmad","Frokost","Aftensmad","Mellemmåltider"].map(c=>`<div class="cat" onclick="library('${c}')"><span>${emoji[c]}</span><h3>${c}</h3><div class="small">20 opskrifter</div></div>`).join('')}</div><div class="section-title"><h2>Inspiration</h2><button class="btn secondary" onclick="library('Børnefavoritter 2.0')">Børnefavoritter 2.0</button></div><div class="cards">${pickInspiration().map(card).join('')}</div></div>${nav()}`}
+function home(){app.innerHTML=`<div class="shell"><div class="topbar"><div><div class="brand">Familiens Kostkompas</div><div class="tag">Næringstæt · realistisk · børnevenlig familiemad</div></div>${cloudBadge()}</div><section class="hero"><div class="hero-copy"><h1>Hvad skal vi spise?</h1><p>80 familieopskrifter + Børnefavoritter 2.0. Find en ret nu, gem favoritter eller lad Kostkompasset lave en madplan med rester og indkøbsliste.</p><div class="actions"><button class="btn" onclick="planner()">Lav madplan</button><button class="btn secondary" onclick="planToday()">Planlæg i dag</button><button class="btn secondary" onclick="library()">Se alle opskrifter</button></div></div><div class="hero-art">🍽️</div></section><div class="grid">${["Morgenmad","Frokost","Aftensmad","Mellemmåltider"].map(c=>`<div class="cat" onclick="library('${c}')"><span>${emoji[c]}</span><h3>${c}</h3><div class="small">20 opskrifter</div></div>`).join('')}</div><div class="section-title"><h2>Inspiration</h2><button class="btn secondary" onclick="library('Børnefavoritter 2.0')">Børnefavoritter 2.0</button></div><div class="cards">${pickInspiration().map(card).join('')}</div></div>${nav()}`}
 function pickInspiration(){return ['aftensmad-1','morgenmad-4','frokost-15'].map(id=>recipes.find(r=>r.id===id)).filter(Boolean)}
 function library(cat){currentCategory=cat||null;const rs=cat?recipes.filter(r=>r.category===cat):recipes;app.innerHTML=`<div class="shell"><div class="section-title"><h2>${cat||'Alle opskrifter'}</h2><button class="btn secondary" onclick="home()">← Tilbage</button></div><input class="search" id="q" placeholder="Søg efter ret eller ingrediens…" oninput="filterList()"><div class="cards" id="cards">${rs.map(card).join('')}</div></div>${nav()}`}
 function filterList(){const q=document.getElementById('q').value.toLowerCase();let rs=currentCategory?recipes.filter(r=>r.category===currentCategory):recipes;rs=rs.filter(r=>r.name.toLowerCase().includes(q)||r.ingredients.join(' ').toLowerCase().includes(q));document.getElementById('cards').innerHTML=rs.map(card).join('')||'<div class="empty">Ingen resultater.</div>'}
@@ -63,7 +117,7 @@ function generatePlan(){
     out.push({day:i+1,breakfast,lunch,dinner,snack,leftoverLunch:leftover,makeDouble:false,manual:{}})
   }
   currentPlan={days,busy,items:out,created:Date.now()};
-  localStorage.setItem('kostkompas-current-plan',JSON.stringify(currentPlan));renderCurrentPlan()
+  persistPlan();renderCurrentPlan()
 }
 function restorePlan(){try{currentPlan=JSON.parse(localStorage.getItem('kostkompas-current-plan')||'null')}catch(e){currentPlan=null}}
 function dayName(i){
@@ -133,7 +187,7 @@ function chooseManualMeal(dayIndex,key,recipeId){
   }
   // A manually chosen snack is never overwritten. Otherwise let snack continue to follow the day's ingredients.
   if((key==='breakfast'||key==='lunch'||key==='dinner')&&!d.manual.snack)d.snack=pickSnack([d.breakfast,d.lunch,d.dinner],dayIndex);
-  localStorage.setItem('kostkompas-current-plan',JSON.stringify(currentPlan));closeManualPicker();renderCurrentPlan();
+  persistPlan();closeManualPicker();renderCurrentPlan();
 }
 
 function randomOther(list,currentId){
@@ -173,7 +227,7 @@ function swapMeal(dayIndex,key){
     }else d.makeDouble=false;
   }
   if((key==='breakfast'||key==='lunch'||key==='dinner')&&!d.manual.snack)d.snack=pickSnack([d.breakfast,d.lunch,d.dinner],dayIndex+Math.floor(Math.random()*5));
-  localStorage.setItem('kostkompas-current-plan',JSON.stringify(currentPlan));renderCurrentPlan();
+  persistPlan();renderCurrentPlan();
 }
 function renderCurrentPlan(){
   if(!currentPlan){planner();return}
@@ -308,4 +362,4 @@ function clearShoppingChecks(){
   shoppingList();
 }
 function knowledge(){app.innerHTML=`<div class="shell"><div class="section-title"><h2>Kostkompasset</h2><button class="btn secondary" onclick="home()">← Tilbage</button></div><p class="muted">Den korte hverdagsretning fra familiens Kostsystem.</p><div class="knowledge"><div class="note"><b>🌿 Rigtig mad først</b><br><br>Genkendelige, minimalt forarbejdede råvarer er fundamentet.</div><div class="note"><b>🍽️ Fire byggesten</b><br><br>Jern/protein + energi/stivelse + grønt/frugt + fedt.</div><div class="note"><b>🔄 Variation</b><br><br>Vurder dagen og især ugen frem for hvert enkelt måltid.</div><div class="note"><b>👨‍👩‍👧‍👦 Én grundmad</b><br><br>Børnene spiser familiens mad tilpasset salt, styrke, konsistens og størrelse.</div><div class="note"><b>🐟 Fisk fast i ugen</b><br><br>Variér fed og mager fisk; fed fisk regelmæssigt.</div><div class="note"><b>🥑 Fedtvariation</b><br><br>Fed fisk, olivenolie, avocado, nøddesmør, æg, smør og mejeri.</div><div class="note"><b>🩸 Jern hver dag</b><br><br>Tænk C-vitamin sammen med relevante plantejernskilder.</div><div class="note"><b>👶 Alderssikkerhed</b><br><br>Tilpas hårde/runde fødevarer, hele nødder og andre kvælningsrisici.</div></div></div>${nav()}`}
-fetch('recipes.json').then(r=>r.json()).then(d=>{recipes=d;restorePlan();home()});
+fetch('recipes.json').then(r=>r.json()).then(d=>{recipes=d;startApp()}).catch(()=>loginScreen('Opskrifterne kunne ikke indlæses. Prøv at genindlæse siden.'));
