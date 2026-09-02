@@ -1,4 +1,4 @@
-const CACHE = 'kostkompas-v3-5';
+const CACHE = 'kostkompas-v3-6';
 const CORE = [
   './',
   './index.html',

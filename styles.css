@@ -108,3 +108,27 @@
 .draft-meal{display:grid;grid-template-columns:140px 1fr;gap:16px;padding:12px 0;border-top:1px solid #e1e4dd}
 .draft-meal b{color:#6b746e}
 @media(max-width:760px){.quick-shopping-grid{grid-template-columns:1fr}.draft-meal{grid-template-columns:1fr;gap:3px}.quick-shopping{padding:18px}}
+
+
+/* V3.6 – forside: samme opbygning, bredere godkendt familiebillede og tydeligere hierarki */
+@media (min-width: 901px){
+  .shell{max-width:1640px;padding-left:28px;padding-right:28px}
+  .hero{grid-template-columns:1fr 1fr;align-items:stretch}
+  .hero-copy{padding:36px 42px;min-width:0}
+  .hero h1{font-size:clamp(54px,5.1vw,82px);max-width:760px}
+  .hero p{font-size:17px;max-width:760px}
+  .hero-art{min-height:0;display:flex;align-items:center;justify-content:center;background:#f1e4d8}
+  .hero-art img{width:100%;height:100%;min-height:0;object-fit:cover;object-position:center center}
+  .home-actions{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;max-width:760px}
+  .home-action{min-height:64px;padding:12px 15px;border-radius:18px;font-size:15px;line-height:1.2}
+  .home-action span{font-size:19px}
+  .action-plan{background:#245045;color:#fff}
+  .action-quick{background:#df7f5b;color:#fff}
+  .action-shopping{background:#dbe9e5;color:#173d33;border-color:#c5d9d3}
+  .action-today{background:#a9bea5;color:#163c32}
+  .action-recipes{background:#fffdf9;color:#173d33;border-color:#ccd7ce}
+  .action-pantry{background:#f8ecd2;color:#5d4927;border-color:#ead5a7}
+}
+@media (min-width: 1280px){
+  .hero-art img{object-fit:cover;object-position:center 48%}
+}
