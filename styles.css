@@ -71,3 +71,15 @@
 .nutrition-summary{display:grid;grid-template-columns:minmax(260px,.8fr) 1.2fr;gap:18px;align-items:center;background:linear-gradient(135deg,#eaf1e5,#fffaf2);border:1px solid var(--line);border-radius:24px;padding:20px;margin:14px 0 20px}.nutrition-summary h3{font-family:Georgia,serif;color:var(--ink);font-size:25px;margin:4px 0 6px}.nutrition-summary p{margin:0;color:var(--muted);line-height:1.45}.nutrition-chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}.nutrition-chip{display:inline-flex;align-items:center;border-radius:999px;padding:8px 11px;font-size:12px;font-weight:800}.nutrition-chip.ok{background:#dfeadd;color:#285347}.nutrition-chip.attention{background:#f7e7db;color:#7a5643}
 .day-adjusted{box-shadow:inset 0 0 0 2px rgba(156,174,145,.18)}.day-mode-controls{display:flex;align-items:center;gap:7px;flex-wrap:wrap;padding:10px 0 12px;border-bottom:1px solid var(--line)}.day-mode-controls>span{font-size:11px;text-transform:uppercase;letter-spacing:.06em;font-weight:800;color:var(--muted);margin-right:2px}.day-mode-btn{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 10px;color:var(--ink);font-size:11px;font-weight:700;cursor:pointer}.day-mode-btn.active{background:var(--ink);color:#fff;border-color:var(--ink)}.special-meal{background:#faf2e8;border-radius:14px;padding-left:10px;padding-right:10px;margin-top:5px}.freeze-btn.active{background:#e8f0f3;border-color:#b7ccd3}.no-photo img{display:none}
 @media(max-width:780px){.nutrition-summary{grid-template-columns:1fr}.nutrition-chips{justify-content:flex-start}.day-mode-controls{align-items:flex-start}.day-mode-controls>span{flex-basis:100%}}
+
+/* V3.1 · Hurtig nu + spiser ude pr. måltid */
+.quick-home-btn{box-shadow:0 8px 22px rgba(43,73,60,.14)}
+.meal-out-btn.active{background:#f3e8dc;border-color:#d8bda4;color:#674936}
+.meal-row.meal-out{background:#fbf6ef;border:1px dashed #d9c7b3}
+.quick-category-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:24px}
+.quick-category{appearance:none;border:1px solid #dde3dc;background:#fff;border-radius:20px;padding:24px 18px;text-align:left;cursor:pointer;box-shadow:0 8px 22px rgba(38,54,46,.06);transition:.18s ease;color:inherit}
+.quick-category:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(38,54,46,.09)}
+.quick-category span{font-size:30px;display:block;margin-bottom:14px}.quick-category strong{display:block;font-size:18px;color:#183d32}.quick-category small{display:block;margin-top:5px;color:#718079}
+.quick-result{display:grid;grid-template-columns:minmax(280px,.9fr) 1.1fr;gap:34px;align-items:center;background:#fff;border:1px solid #e3e6e0;border-radius:24px;padding:22px;box-shadow:0 10px 28px rgba(38,54,46,.07)}
+.quick-result img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:18px}.quick-result h2{margin:10px 0 10px}.quick-time{display:inline-flex;padding:7px 10px;border-radius:999px;background:#edf4ee;color:#315a48;font-size:13px;font-weight:700}
+@media(max-width:760px){.quick-category-grid{grid-template-columns:1fr 1fr}.quick-result{grid-template-columns:1fr;gap:20px}.quick-category{padding:18px 15px}}
