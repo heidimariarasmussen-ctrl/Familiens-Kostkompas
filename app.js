@@ -265,7 +265,7 @@ function generatePlan(){
     else{const prev=out[i-1].dinner;const ln=lunchMap[prev.number]||1;lunch=rBy('Frokost',ln);leftover=true;out[i-1].makeDouble=true}
     const bIds=breakfastByBusy[busy];const breakfast=rBy('Morgenmad',bIds[i%bIds.length]);
     const snack=pickSnack([breakfast,lunch,dinner],i);
-    out.push({day:i+1,breakfast,lunch,dinner,snack,leftoverLunch:leftover,makeDouble:false,manual:{}})
+    out.push({day:i+1,breakfast,lunch,dinner,snack,leftoverLunch:leftover,makeDouble:false,freezeExtra:false,mode:'normal',manual:{}})
   }
   currentPlan={days,busy,items:out,created:Date.now()};
   persistPlan();renderCurrentPlan()
@@ -279,7 +279,8 @@ function dayName(i){
   const date=d.toLocaleDateString('da-DK',{day:'numeric',month:'short'});
   return `${weekday.charAt(0).toUpperCase()+weekday.slice(1)} · ${date}`;
 }
-function mealRow(label,r,note='',dayIndex=null,key=null){
+function mealRow(label,r,note='',dayIndex=null,key=null,extraTools=''){
+  if(!r)return `<div class="meal-row"><div class="meal-label">${label}</div><div><div class="meal-name">Ikke planlagt</div>${note?`<div class="meal-note">${note}</div>`:''}</div></div>`;
   const manual=dayIndex!==null&&key&&currentPlan?.items?.[dayIndex]?.manual?.[key];
   return `<div class="meal-row">
     <div class="meal-label">${label}</div>
@@ -291,8 +292,40 @@ function mealRow(label,r,note='',dayIndex=null,key=null){
     <div class="meal-tools">
       <button class="mini-btn" onclick="showRecipe('${r.id}')">Opskrift</button>
       ${dayIndex!==null&&key?`<button class="mini-btn" onclick="swapMeal(${dayIndex},'${key}')">↻ Byt ret</button><button class="mini-btn choose-btn" onclick="openManualPicker(${dayIndex},'${key}')">☰ Vælg selv ret</button>`:''}
+      ${extraTools||''}
     </div>
   </div>`;
+}
+function dayMode(d){return d?.mode||'normal'}
+function dayModeLabel(d){return ({normal:currentPlan?.busy==='high'?'Høj travlhed':currentPlan?.busy==='low'?'God tid':'Normal hverdag',busy:'Travl dag',out:'Spiser ude',children:'Kun børn hjemme'})[dayMode(d)]||'Normal hverdag'}
+function freshLunchForDay(dayIndex){const ids=firstLunchByBusy[currentPlan?.busy||'normal']||firstLunchByBusy.normal;return rBy('Frokost',ids[dayIndex%ids.length])||rBy('Frokost',3)}
+function unlinkNextLunch(dayIndex){
+  const d=currentPlan.items[dayIndex];d.makeDouble=false;
+  if(dayIndex<currentPlan.items.length-1){const next=currentPlan.items[dayIndex+1];if(!next.manual)next.manual={};if(!next.manual.lunch&&next.leftoverLunch){next.lunch=freshLunchForDay(dayIndex+1);next.leftoverLunch=false}}
+}
+function linkNextLunch(dayIndex){
+  const d=currentPlan.items[dayIndex];if(dayIndex>=currentPlan.items.length-1)return;
+  const next=currentPlan.items[dayIndex+1];if(!next.manual)next.manual={};
+  if(!next.manual.lunch){const ln=lunchMap[d.dinner.number]||1;next.lunch=rBy('Frokost',ln)||rBy('Frokost',1);next.leftoverLunch=true;d.makeDouble=true;d.freezeExtra=false}
+}
+function setDayMode(dayIndex,mode){
+  if(!currentPlan)return;ensureManualFlags();const d=currentPlan.items[dayIndex];d.mode=mode;
+  if(mode==='out'||mode==='children'){unlinkNextLunch(dayIndex);d.freezeExtra=false}
+  else{
+    if(mode==='busy'&&!d.manual.dinner&&minutes(d.dinner?.active)>20){const quick=recipes.filter(r=>r.category==='Aftensmad'&&minutes(r.active)<=20&&!/timer|2,5|3 timer/i.test(r.total||''));const q=randomOther(quick,d.dinner?.id);if(q)d.dinner=q}
+    linkNextLunch(dayIndex);
+  }
+  if(!d.manual.snack)d.snack=pickSnack([d.breakfast,d.lunch,d.dinner],dayIndex);
+  persistPlan();renderCurrentPlan();
+}
+function toggleFreezeExtra(dayIndex){const d=currentPlan?.items?.[dayIndex];if(!d||d.makeDouble||dayMode(d)==='out'||dayMode(d)==='children')return;d.freezeExtra=!d.freezeExtra;persistPlan();renderCurrentPlan()}
+function dayModeControls(i,d){return `<div class="day-mode-controls"><span>Tilpas dagen:</span>${[['normal','Normal'],['busy','Travl'],['out','Spiser ude'],['children','Kun børn hjemme']].map(([v,l])=>`<button class="day-mode-btn ${dayMode(d)===v?'active':''}" onclick="setDayMode(${i},'${v}')">${l}</button>`).join('')}</div>`}
+function dinnerPlanRow(d,i){
+  if(dayMode(d)==='out')return `<div class="meal-row special-meal"><div class="meal-label">Aftensmad</div><div><div class="meal-name">🍽️ I spiser ude</div><div class="meal-note">Aftensmaden tælles ikke med i indkøbslisten, og næste dags frokost planlægges uden rester herfra.</div></div></div>`;
+  const child=dayMode(d)==='children';
+  const notes=[];if(child)notes.push('Kun børnene spiser hjemme · indkøb beregnes som ca. ½ familieportion');if(d.makeDouble)notes.push('Lav dobbelt: aftensmad i dag → frokost i morgen');if(d.freezeExtra&&!d.makeDouble)notes.push('Lav dobbelt og frys den ekstra portion');
+  const freezeTool=!child&&!d.makeDouble?`<button class="mini-btn freeze-btn ${d.freezeExtra?'active':''}" onclick="toggleFreezeExtra(${i})">❄ ${d.freezeExtra?'Frys ekstra ✓':'Frys ekstra'}</button>`:'';
+  return mealRow('Aftensmad',d.dinner,notes.join(' · '),i,'dinner',freezeTool);
 }
 
 function categoryForPlanKey(key){return {breakfast:'Morgenmad',lunch:'Frokost',dinner:'Aftensmad',snack:'Mellemmåltider'}[key]}
@@ -382,7 +415,9 @@ function swapMeal(dayIndex,key){
 }
 function renderCurrentPlan(){
   if(!currentPlan){planner();return}
-  const f=nutritionCheck(currentPlan);
+  currentPlan.items.forEach(d=>{if(!d.mode)d.mode='normal';if(typeof d.freezeExtra!=='boolean')d.freezeExtra=false});
+  const f=nutritionCheck(currentPlan),passed=f.filter(x=>x.ok).length;
+  const keyFilter=f.filter(x=>['Jern hver dag','C-vitamin ved plantejern','Fisk og omega-3','Fedtvariation','Variation over ugen'].includes(x.label));
   app.innerHTML=`<div class="shell">
     <div class="section-title">
       <h2>${currentPlan.days}-dages madplan</h2>
@@ -392,33 +427,45 @@ function renderCurrentPlan(){
       <button class="btn" onclick="shoppingList()">🛒 Indkøbsliste</button>
       <button class="btn secondary" onclick="generatePlanFromStored()">↻ Lav en anden plan</button>
     </div>
-    <div class="engine-note"><b>Byt kun det, der ikke passer.</b> Brug “Byt ret” på et enkelt måltid. Resten af planen bevares. Hvis du bytter en aftensmad, opdateres næste dags restefrokost automatisk.</div>
+    <section class="nutrition-summary"><div><span class="eyebrow">Ugens Ernæringsfilter</span><h3>${passed} af ${f.length} pejlemærker ser gode ud</h3><p>Et hurtigt overblik efter Kostkompasset – ikke kalorietælling eller en rigid sundhedsscore.</p></div><div class="nutrition-chips">${keyFilter.map(x=>`<span class="nutrition-chip ${x.ok?'ok':'attention'}">${x.ok?'✓':'•'} ${x.label}</span>`).join('')}</div></section>
+    <div class="engine-note"><b>Planen er fleksibel.</b> Tilpas hver dag som normal, travl, spis ude eller kun børn hjemme. Rester og indkøbsliste justeres automatisk.</div>
     <div class="week">
-      ${currentPlan.items.map((d,i)=>`<section class="day-card">
-        <div class="day-head"><h3>${dayName(d.day)}</h3><span class="day-tag">${currentPlan.busy==='high'?'Høj travlhed':currentPlan.busy==='low'?'God tid':'Normal hverdag'}</span></div>
+      ${currentPlan.items.map((d,i)=>`<section class="day-card ${dayMode(d)!=='normal'?'day-adjusted':''}">
+        <div class="day-head"><h3>${dayName(d.day)}</h3><span class="day-tag">${dayModeLabel(d)}</span></div>
+        ${dayModeControls(i,d)}
         ${mealRow('Morgenmad',d.breakfast,'',i,'breakfast')}
         ${mealRow('Frokost',d.lunch,d.leftoverLunch?'Planlagt fra gårsdagens aftensmad · indkøb tælles via dobbelt aftensmad':'',i,'lunch')}
-        ${mealRow('Aftensmad',d.dinner,d.makeDouble?'Lav dobbelt: aftensmad i dag → frokost i morgen':'',i,'dinner')}
+        ${dinnerPlanRow(d,i)}
         ${mealRow('Mellemmåltid',d.snack,'',i,'snack')}
       </section>`).join('')}
     </div>
-    <div class="section-title"><h2>Ernæringsfilter</h2></div>
+    <div class="section-title"><h2>Ernæringsfilter · detaljer</h2></div>
     <div class="filter-check">${f.map(x=>`<div class="check-card ${x.ok?'':'warn'}"><strong>${x.ok?'✓':'•'} ${x.label}</strong>${x.text}</div>`).join('')}</div>
   </div>${nav()}`;
 }
 function generatePlanFromStored(){const s=JSON.parse(localStorage.getItem('kostkompas-plan-settings')||'{"days":4,"busy":"normal"}');planner();setTimeout(()=>{document.getElementById('days').value=s.days;document.getElementById('busy').value=s.busy;generatePlan()},0)}
-function nutritionCheck(plan){const ds=plan.items.map(x=>x.dinner);const all=plan.items.flatMap(x=>[x.breakfast,x.lunch,x.dinner,x.snack]).filter(Boolean);const text=all.map(r=>(r.name+' '+r.ingredients.join(' ')+' '+r.why.join(' ')).toLowerCase()).join(' ');const dinnerText=ds.map(r=>r.name.toLowerCase()).join(' ');const fish=ds.filter(r=>/laks|fisk|torsk|sej/.test(r.name.toLowerCase())).length;const fatFish=ds.filter(r=>/laks/.test(r.name.toLowerCase())).length;const ironDays=plan.items.filter(d=>[d.breakfast,d.lunch,d.dinner,d.snack].some(r=>/oksekød|kød|æg|laks|fisk|havre|linser|bønner|rugbrød/i.test((r.name+' '+r.ingredients.join(' '))))).length;return [
-{label:'Jern hver dag',ok:ironDays===plan.days,text:`Jernkilder optræder på ${ironDays} af ${plan.days} dage.`},
-{label:'C-vitamin ved plantejern',ok:/bær|kiwi|tomat|passata|peberfrugt|broccoli/.test(text),text:'Planen kombinerer relevante plantejernsmåltider med frugt, bær eller grønt med C-vitamin.'},
-{label:'Fisk og omega-3',ok:fatFish>=1 && (plan.days<5?fish>=1:fish>=2),text:`${fish} fiskeaftener, heraf ${fatFish} med laks/fed fisk.`},
-{label:'Energi nok',ok:/kartoffel|pasta|ris|havre|rugbrød|banan|tortilla|brød/.test(text),text:'Måltiderne indeholder gennemgående tydelige energikilder.'},
-{label:'Fedtvariation',ok:/evoo|olivenolie/.test(text)&&/avocado|peanutbutter|tahin|laks|smør/.test(text),text:'Olivenolie kombineres med bl.a. avocado, nøddesmør, fisk, æg, smør eller mejeri.'},
-{label:'Mejeri i balance',ok:true,text:'Mejeri indgår som del af måltiderne og er ikke planens eneste protein-/fedtkilde.'},
-{label:'Variation over ugen',ok:new Set(ds.map(r=>dinnerRole(r))).size>=Math.min(3,plan.days),text:'Aftensmaden varierer mellem flere proteintyper og måltidsroller.'},
-{label:'Salt og forarbejdning',ok:true,text:'Planen er bygget af Kostkompas-opskrifter; børneportioner tilpasses fortsat for salt.'},
-{label:'Alderssikkerhed',ok:true,text:'Brug opskrifternes konkrete 15-måneders-tilpasninger ved servering.'},
-{label:'D-vitaminrutine',ok:true,text:'Håndteres separat efter familiens faste rutine, ikke via madplanen.'}
-]}
+function nutritionCheck(plan){
+  const activeDinners=plan.items.filter(d=>dayMode(d)!=='out').map(x=>x.dinner).filter(Boolean);
+  const all=plan.items.flatMap(d=>[d.breakfast,d.lunch,dayMode(d)==='out'?null:d.dinner,d.snack]).filter(Boolean);
+  const text=all.map(r=>(r.name+' '+r.ingredients.join(' ')+' '+(r.why||[]).join(' ')).toLowerCase()).join(' ');
+  const fish=activeDinners.filter(r=>/laks|fisk|torsk|sej/.test(r.name.toLowerCase())).length;
+  const fatFish=activeDinners.filter(r=>/laks/.test(r.name.toLowerCase())).length;
+  const ironDays=plan.items.filter(d=>[d.breakfast,d.lunch,dayMode(d)==='out'?null:d.dinner,d.snack].filter(Boolean).some(r=>/oksekød|kød|æg|laks|fisk|havre|linser|bønner|rugbrød/i.test((r.name+' '+r.ingredients.join(' '))))).length;
+  const roles=new Set(activeDinners.map(r=>dinnerRole(r)));
+  const fishTarget=plan.days<5?1:2;
+  return [
+  {label:'Jern hver dag',ok:ironDays===plan.days,text:`Jernkilder optræder på ${ironDays} af ${plan.days} dage.`},
+  {label:'C-vitamin ved plantejern',ok:/bær|kiwi|tomat|passata|peberfrugt|broccoli|clementin|appelsin/.test(text),text:'Planen indeholder frugt, bær eller grønt med C-vitamin sammen med ugens plantejernskilder.'},
+  {label:'Fisk og omega-3',ok:fatFish>=1&&fish>=fishTarget,text:`${fish} planlagte fiskeaftener hjemme, heraf ${fatFish} med laks/fed fisk.${plan.items.some(d=>dayMode(d)==='out')?' Ude-aftener vurderes ikke som fiskemåltid.':''}`},
+  {label:'Energi nok',ok:/kartoffel|pasta|ris|havre|rugbrød|banan|tortilla|brød/.test(text),text:'Måltiderne indeholder gennemgående tydelige energikilder til både voksne og små børn.'},
+  {label:'Fedtvariation',ok:/evoo|olivenolie/.test(text)&&/avocado|peanutbutter|tahin|laks|smør|æg|yoghurt/.test(text),text:'Olivenolie kombineres med andre fedtkilder som avocado, nøddesmør, fisk, æg, smør eller mejeri.'},
+  {label:'Mejeri i balance',ok:true,text:'Mejeri indgår som del af måltiderne og er ikke planens eneste protein-/fedtkilde.'},
+  {label:'Variation over ugen',ok:roles.size>=Math.min(3,Math.max(1,activeDinners.length)),text:`De ${activeDinners.length} planlagte hjemmeaftener varierer mellem ${roles.size} måltidsroller/proteintyper.`},
+  {label:'Salt og forarbejdning',ok:true,text:'Planen er bygget af Kostkompas-opskrifter; børneportioner tilpasses fortsat for salt og færdigprodukter vælges efter Kostsystemet.'},
+  {label:'Alderssikkerhed',ok:true,text:'Brug opskrifternes konkrete småbørnstilpasninger ved servering.'},
+  {label:'D-vitaminrutine',ok:true,text:'Håndteres separat efter familiens faste rutine, ikke via madplanen.'}
+  ]
+}
 function dinnerRole(r){const n=Number(r.number);for(const [k,a] of Object.entries(dinnerPools))if(a.includes(n))return k;return 'other'}
 
 function parseFraction(s){if(/^\d+\/\d+$/.test(s)){const[a,b]=s.split('/').map(Number);return a/b}return Number(s.replace(',','.'))}
@@ -461,7 +508,7 @@ function parseIngredient(s,m=1){
   return {name:normName(rest||x),qty,unit,raw:x};
 }
 function categoryFor(name){const n=name.toLowerCase();if(/laks|torsk|sej|fisk|kylling|oksekød|kalv|flæsk|kød/.test(n))return 'Fisk & kød';if(/æg|a38|yoghurt|ost|mascarpone|fløde|mælk|smør/.test(n))return 'Mejeri & æg';if(/kartof|broccoli|guler|avocado|kiwi|banan|bær|æble|pære|peber|tomat|citron|lime|løg|agurk|ærter|kål|dild|persille|purløg/.test(n))return 'Frugt & grønt';if(/havre|pasta|ris|rugbrød|brød|tortilla|pita|linser|bønner|kikærter|passata|tomater|kokosmælk|tahin|peanut|mandel|mel/.test(n))return 'Kolonial';return 'Andet'}
-function buildShopping(plan){const map=new Map();const addRecipe=(r,m=1)=>{r.ingredients.forEach(s=>{const p=parseIngredient(s,m);const key=p.name+'|'+p.unit;if(!map.has(key))map.set(key,{...p,qty:p.qty||0,count:p.qty?0:1});else{const o=map.get(key);if(p.qty)o.qty+=p.qty;else o.count+=1}})};plan.items.forEach((d,i)=>{addRecipe(d.breakfast,1);if(i===0||!d.leftoverLunch)addRecipe(d.lunch,1);addRecipe(d.dinner,d.makeDouble?2:1);addRecipe(d.snack,1)});const groups={};for(const v of map.values()){const c=categoryFor(v.name);(groups[c]??=[]).push(v)}return groups}
+function buildShopping(plan){const map=new Map();const addRecipe=(r,m=1)=>{if(!r)return;r.ingredients.forEach(s=>{const p=parseIngredient(s,m);const key=p.name+'|'+p.unit;if(!map.has(key))map.set(key,{...p,qty:p.qty||0,count:p.qty?0:1});else{const o=map.get(key);if(p.qty)o.qty+=p.qty;else o.count+=1}})};plan.items.forEach((d,i)=>{addRecipe(d.breakfast,1);if(i===0||!d.leftoverLunch)addRecipe(d.lunch,1);if(dayMode(d)!=='out'){const dinnerMultiplier=dayMode(d)==='children'?0.5:(d.makeDouble||d.freezeExtra?2:1);addRecipe(d.dinner,dinnerMultiplier)}addRecipe(d.snack,1)});const groups={};for(const v of map.values()){const c=categoryFor(v.name);(groups[c]??=[]).push(v)}return groups}
 function fmtItem(v){
   if(v.qty){
     let q=Math.round(v.qty*10)/10;
@@ -475,11 +522,12 @@ function fmtItem(v){
 }
 
 function shoppingPlanMeal(label,r,note=''){
+  if(!r)return `<div class="shop-plan-meal no-photo"><div></div><div><span>${label}</span><strong>Ikke planlagt</strong>${note?`<small>${note}</small>`:''}</div></div>`;
   return `<div class="shop-plan-meal"><img src="${r.image}" alt=""><div><span>${label}</span><strong>${r.name}</strong>${note?`<small>${note}</small>`:''}</div></div>`
 }
 function shoppingPlanOverview(){
-  return `<section class="shopping-plan-section"><div class="shopping-plan-head"><div><span class="eyebrow">Overblik</span><h2>Madplanen du handler til</h2><p>Her kan du hurtigt se, hvilke måltider indkøbslisten dækker.</p></div><button class="btn secondary" onclick="renderCurrentPlan()">Redigér madplan</button></div>
-    <div class="shopping-days">${currentPlan.items.map((d,i)=>`<article class="shopping-day"><h3>${dayName(d.day)}</h3>${shoppingPlanMeal('Morgenmad',d.breakfast)}${shoppingPlanMeal('Frokost',d.lunch,d.leftoverLunch?'Rester fra dagen før':'')}${shoppingPlanMeal('Aftensmad',d.dinner,d.makeDouble?'Lav dobbelt → frokost i morgen':'')}${shoppingPlanMeal('Mellemmåltid',d.snack)}</article>`).join('')}</div>
+  return `<section class="shopping-plan-section"><div class="shopping-plan-head"><div><span class="eyebrow">Overblik</span><h2>Madplanen du handler til</h2><p>Her kan du hurtigt se, hvilke måltider indkøbslisten dækker – inkl. jeres tilpassede dage.</p></div><button class="btn secondary" onclick="renderCurrentPlan()">Redigér madplan</button></div>
+    <div class="shopping-days">${currentPlan.items.map((d,i)=>`<article class="shopping-day"><h3>${dayName(d.day)}</h3>${shoppingPlanMeal('Morgenmad',d.breakfast)}${shoppingPlanMeal('Frokost',d.lunch,d.leftoverLunch?'Rester fra dagen før':'')}${dayMode(d)==='out'?shoppingPlanMeal('Aftensmad',null,'Spiser ude · intet indkøb'):shoppingPlanMeal('Aftensmad',d.dinner,dayMode(d)==='children'?'Kun børn hjemme · ca. ½ familieportion':d.makeDouble?'Lav dobbelt → frokost i morgen':d.freezeExtra?'Lav dobbelt → ekstra i fryseren':'')}${shoppingPlanMeal('Mellemmåltid',d.snack)}</article>`).join('')}</div>
   </section>`
 }
 
@@ -516,7 +564,7 @@ function shoppingList(){
     <div class="section-title"><h2>Indkøbsliste</h2><button class="btn secondary" onclick="renderCurrentPlan()">← Madplan</button></div>
     ${shoppingPlanOverview()}
     <div class="shopping-list-toolbar"><div><span class="eyebrow">Klar til butikken</span><h2>Det skal du handle</h2><p class="muted">${neededCount} varelinjer · ${Math.min(checkedCount,neededCount)} afkrydset</p></div><div class="actions"><button class="btn secondary" onclick="pantry()">🏡 Basislager</button><button class="btn secondary" onclick="clearShoppingChecks()">Nulstil flueben</button></div></div>
-    <p class="muted">Samme ingrediens samles så vidt muligt på tværs af retterne. Planlagte restefrokoster tælles ikke dobbelt. Flueben og basislager synkroniseres mellem jeres enheder.</p>
+    <p class="muted">Samme ingrediens samles så vidt muligt på tværs af retterne. Planlagte restefrokoster tælles ikke dobbelt. Ude-aftener fjernes, og “kun børn hjemme” regnes som ca. en halv familieportion. Flueben og basislager synkroniseres mellem jeres enheder.</p>
     <div class="shopping-wrap">
       <div class="shop-card">
         ${order.filter(c=>groups[c]?.length).map(c=>`<div class="shop-cat"><h4>${c}</h4>${groups[c].sort((a,b)=>a.name.localeCompare(b.name)).map(v=>{const key=`shop:${c}:${v.name}:${v.unit}`;return `<label class="shop-item"><input type="checkbox" ${shoppingChecks[key]?'checked':''} onchange="saveShoppingCheck('${encodeURIComponent(key)}',this.checked)"><span>${fmtItem(v)}</span></label>`}).join('')}</div>`).join('')||'<div class="empty">Alt på listen er enten afkrydset eller markeret som basislager.</div>'}
