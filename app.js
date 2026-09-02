@@ -23,9 +23,7 @@ let recipes=[];let currentCategory=null;let scale=1;let currentPlan=null;let rec
 const feedbackKey='kostkompas-recipe-feedback';
 const pantryKey='kostkompas-pantry';
 const shoppingChecksKey='kostkompas-shop-checked';
-// Fryserlogik: kun de dele af aftensmaden, der er egnede til at lave ekstra og fryse.
-// Indeks peger på ingredienserne i opskriftsbiblioteket. Tilbehør som pasta/ris/kartofler,
-// frisk avocado og kolde yoghurtcremer bliver derfor ikke automatisk fordoblet.
+// Fryserlogik: kun de dele af aftensmaden, der egner sig til at lave ekstra og fryse.
 const freezerParts={
   'aftensmad-2':{label:'fiskefrikadellerne',idx:[0,1,2,3]},
   'aftensmad-3':{label:'fisk og cremet sauce',idx:[0,2,3,4,5,6,7]},
@@ -215,16 +213,60 @@ function showRecipe(id){scale=1;renderRecipe(id)}
 function recipePlanFreezerHtml(r){
   if(!currentPlan||r.category!=='Aftensmad')return '';
   const freezer=freezerParts[r.id];
-  if(!freezer)return `<div class="recipe-plan-freezer"><b>Fryser</b><p>Denne ret er ikke markeret som en af de retter, hvor Kostkompasset automatisk laver en ekstra fryseportion.</p></div>`;
+  if(!freezer)return '';
   const matches=currentPlan.items.map((d,i)=>({d,i})).filter(x=>x.d.dinner?.id===r.id&&!mealIsOut(x.d,'dinner'));
-  if(!matches.length)return `<div class="recipe-plan-freezer"><b>❄ God til fryseren</b><p>Hvis retten kommer på en madplan, kan du her vælge at lave ekstra ${freezer.label}. Tilbehøret bliver ikke automatisk fordoblet.</p></div>`;
+  if(!matches.length)return '';
   return `<div class="recipe-plan-freezer"><b>❄ Lav ekstra til fryseren</b><p>Kostkompasset lægger kun ekstra <strong>${freezer.label}</strong> på indkøbslisten – ikke hele retten.</p><div class="freezer-plan-options">${matches.map(({d,i})=>`<button class="btn secondary small ${d.freezeExtra?'active':''}" onclick="toggleFreezeExtraFromRecipe(${i},'${r.id}')">${d.freezeExtra?'✓ Ekstra til fryser · ':''}${dayName(d.day)}${d.freezeExtra?'':' · tilføj fryseportion'}</button>`).join('')}</div></div>`;
 }
-function renderRecipe(id){const r=recipes.find(x=>x.id===id),is=favs().includes(id);app.innerHTML=`<div class="shell"><button class="btn secondary" onclick="library('${r.category}')">← ${r.category}</button><article class="recipe"><button class="heart" onclick="toggleFav('${id}')">${is?'♥':'♡'}</button><img class="recipe-hero" src="${r.image}" alt="${r.name}"><span class="badge">${r.category}</span><h1>${r.name}</h1><div class="info"><div><b>Portion</b><br>${r.portion}</div><div><b>Aktiv tid</b><br>${r.active}</div><div><b>Samlet tid</b><br>${r.total}</div></div><div class="portionbar"><button class="${scale===1?'active':''}" onclick="setScale('${id}',1)">Kun i dag</button><button class="${scale===2?'active':''}" onclick="setScale('${id}',2)">Dobbelt portion</button></div>${recipePlanFreezerHtml(r)}<h3>Ingredienser ${scale===2?'· dobbelt portion':''}</h3><ul>${r.ingredients.map(x=>`<li>${scaleIngredient(x,scale)}</li>`).join('')}</ul><h3>Sådan gør du</h3><ol>${r.steps.map(x=>`<li>${x}</li>`).join('')}</ol>${r.taste?`<div class="note"><b>Sovs / dip / smag</b><br>${r.taste}</div>`:''}${r.child?`<div class="note pink" style="margin-top:10px"><b>Til børn på ca. 15 måneder</b><br>${r.child}</div>`:''}${r.tip?`<div class="note" style="margin-top:10px"><b>Praktisk tip</b><br>${r.tip}</div>`:''}<h3>Hvorfor er den god for børnene?</h3><ul>${r.why.map(x=>`<li>${x}</li>`).join('')}</ul>${feedbackHtml(id)}</article></div>${nav()}`;initFeedbackSelection(id)}
 function toggleFreezeExtraFromRecipe(dayIndex,recipeId){
   const d=currentPlan?.items?.[dayIndex];if(!d||d.dinner?.id!==recipeId||mealIsOut(d,'dinner'))return;
   d.freezeExtra=!d.freezeExtra;persistPlan();renderRecipe(recipeId);
 }
+function renderRecipe(id){const r=recipes.find(x=>x.id===id),is=favs().includes(id);app.innerHTML=`<div class="shell"><button class="btn secondary" onclick="library('${r.category}')">← ${r.category}</button><article class="recipe"><button class="heart" onclick="toggleFav('${id}')">${is?'♥':'♡'}</button><img class="recipe-hero" src="${r.image}" alt="${r.name}"><span class="badge">${r.category}</span><h1>${r.name}</h1><div class="info"><div><b>Portion</b><br>${r.portion}</div><div><b>Aktiv tid</b><br>${r.active}</div><div><b>Samlet tid</b><br>${r.total}</div></div><div class="portionbar"><button class="${scale===1?'active':''}" onclick="setScale('${id}',1)">Kun i dag</button><button class="${scale===2?'active':''}" onclick="setScale('${id}',2)">Dobbelt portion</button></div>${recipePlanFreezerHtml(r)}<h3>Ingredienser ${scale===2?'· dobbelt portion':''}</h3><ul>${r.ingredients.map(x=>`<li>${scaleIngredient(x,scale)}</li>`).join('')}</ul><h3>Sådan gør du</h3><ol>${r.steps.map(x=>`<li>${x}</li>`).join('')}</ol>${r.taste?`<div class="note"><b>Sovs / dip / smag</b><br>${r.taste}</div>`:''}${r.child?`<div class="note pink" style="margin-top:10px"><b>Til børn på ca. 15 måneder</b><br>${r.child}</div>`:''}${r.tip?`<div class="note" style="margin-top:10px"><b>Praktisk tip</b><br>${r.tip}</div>`:''}<h3>Hvorfor er den god for børnene?</h3><ul>${r.why.map(x=>`<li>${x}</li>`).join('')}</ul>${feedbackHtml(id)}</article></div>${nav()}`;initFeedbackSelection(id)}
+
+const feedbackReactions=[
+  {value:'loved',emoji:'😍',label:'Spiste godt'},
+  {value:'tasted',emoji:'🙂',label:'Smagte / spiste lidt'},
+  {value:'barely',emoji:'😐',label:'Næsten ikke'},
+  {value:'refused',emoji:'🙅',label:'Ville ikke'}
+];
+function escapeHtml(v=''){return String(v).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+function feedbackReaction(value){return feedbackReactions.find(x=>x.value===value)||null}
+function feedbackEntries(recipeId){return Array.isArray(recipeFeedback[recipeId])?recipeFeedback[recipeId]:[]}
+function feedbackDate(iso){try{return new Intl.DateTimeFormat('da-DK',{day:'numeric',month:'short',year:'numeric'}).format(new Date(iso))}catch(e){return ''}}
+function feedbackHtml(recipeId){
+  const entries=feedbackEntries(recipeId).slice().sort((a,b)=>new Date(b.createdAt)-new Date(a.createdAt));
+  return `<section class="feedback-card"><div class="feedback-title"><div><span class="eyebrow">Børnenes reaktion</span><h3>Hvordan gik retten?</h3><p>Gem en lille observation. Det gør det lettere at se, hvad børnene accepterer over tid.</p></div><span class="feedback-count">${entries.length?`${entries.length} ${entries.length===1?'note':'noter'}`:'Ny'}</span></div>
+    <input type="hidden" id="feedback-reaction-${recipeId}" value="">
+    <div class="reaction-grid">${feedbackReactions.map(x=>`<button type="button" class="reaction-btn" data-reaction="${x.value}" onclick="selectFeedbackReaction('${recipeId}','${x.value}')"><span>${x.emoji}</span><small>${x.label}</small></button>`).join('')}</div>
+    <label class="feedback-label" for="feedback-note-${recipeId}">Note <span>valgfri</span></label>
+    <textarea class="feedback-textarea" id="feedback-note-${recipeId}" maxlength="500" placeholder="Fx: Begge spiste laks og kartofler. Broccoli blev smagt, men ikke spist."></textarea>
+    <div class="feedback-actions"><button class="btn" type="button" onclick="saveRecipeFeedback('${recipeId}')">Gem reaktion</button><span class="small muted">Gemmes med dato og synkroniseres mellem jeres enheder.</span></div>
+    ${entries.length?`<div class="feedback-history"><h4>Tidligere reaktioner</h4>${entries.map(e=>{const r=feedbackReaction(e.reaction);return `<article class="feedback-entry"><div class="feedback-entry-head"><div><span class="feedback-emoji">${r?.emoji||'📝'}</span><strong>${r?.label||'Note'}</strong><time>${feedbackDate(e.createdAt)}</time></div><button class="feedback-delete" type="button" onclick="deleteRecipeFeedback('${recipeId}','${e.id}')" aria-label="Slet note">Slet</button></div>${e.note?`<p>${escapeHtml(e.note)}</p>`:''}</article>`}).join('')}</div>`:''}
+  </section>`;
+}
+function initFeedbackSelection(recipeId){selectFeedbackReaction(recipeId,'',false)}
+function selectFeedbackReaction(recipeId,value,update=true){
+  const hidden=document.getElementById(`feedback-reaction-${recipeId}`);if(hidden)hidden.value=value;
+  document.querySelectorAll('.reaction-btn').forEach(btn=>btn.classList.toggle('selected',btn.dataset.reaction===value));
+}
+async function saveRecipeFeedback(recipeId){
+  const reaction=document.getElementById(`feedback-reaction-${recipeId}`)?.value||'';
+  const note=(document.getElementById(`feedback-note-${recipeId}`)?.value||'').trim();
+  if(!reaction&&!note){alert('Vælg en reaktion eller skriv en kort note først.');return}
+  const entry={id:`${Date.now()}-${Math.random().toString(36).slice(2,8)}`,reaction,note,createdAt:new Date().toISOString()};
+  recipeFeedback[recipeId]=[...(feedbackEntries(recipeId)),entry];
+  await saveRecipeFeedbackCloud();
+  renderRecipe(recipeId);
+}
+async function deleteRecipeFeedback(recipeId,entryId){
+  recipeFeedback[recipeId]=feedbackEntries(recipeId).filter(x=>x.id!==entryId);
+  if(!recipeFeedback[recipeId].length)delete recipeFeedback[recipeId];
+  await saveRecipeFeedbackCloud();
+  renderRecipe(recipeId);
+}
+
+function scaleIngredient(s,m){if(m===1)return s;return s.replace(/^(\d+(?:[.,]\d+)?)(\s*)/,(_,n,sp)=>String(parseFloat(n.replace(',','.'))*m).replace('.',',')+sp).replace(/^(\d+)\/(\d+)/,(_,a,b)=>`${Number(a)*m}/${b}`)}
 function setScale(id,s){scale=s;renderRecipe(id)}
 function toggleFav(id){let f=favs();f=f.includes(id)?f.filter(x=>x!==id):[...f,id];saveFavs(f);renderRecipe(id)}
 function favorites(){const rs=recipes.filter(r=>favs().includes(r.id));app.innerHTML=`<div class="shell"><div class="section-title"><h2>Favoritter</h2><button class="btn secondary" onclick="home()">← Tilbage</button></div><div class="cards">${rs.length?rs.map(card).join(''):'<div class="empty">Tryk ♡ på en opskrift for at gemme den her.</div>'}</div></div>${nav()}`}
@@ -328,7 +370,7 @@ function plannedMealRow(label,d,i,key,note=''){
 }
 function dinnerPlanRow(d,i){
   if(mealIsOut(d,'dinner'))return plannedMealRow('Aftensmad',d,i,'dinner');
-  const notes=[];if(d.makeDouble)notes.push('Lav dobbelt: aftensmad i dag → frokost i morgen');if(d.freezeExtra){const fp=freezerParts[d.dinner?.id];notes.push(fp?`Ekstra ${fp.label} til fryseren`:'Ekstra til fryseren')}
+  const notes=[];if(d.makeDouble)notes.push('Lav dobbelt: aftensmad i dag → frokost i morgen');if(d.freezeExtra){const fp=freezerParts[d.dinner?.id];if(fp)notes.push(`Ekstra ${fp.label} til fryseren`)}
   return mealRow('Aftensmad',d.dinner,notes.join(' · '),i,'dinner',mealOutButton(i,'dinner'));
 }
 function ensureManualFlags(){if(!currentPlan)return;currentPlan.items.forEach(d=>{if(!d.manual)d.manual={}})}
@@ -494,6 +536,18 @@ function buildShopping(plan){
   });
   const groups={};for(const v of map.values()){const c=categoryFor(v.name);(groups[c]??=[]).push(v)}return groups
 }
+function fmtItem(v){
+  if(v.qty){
+    let q=Math.round(v.qty*10)/10;
+    let unit=v.unit;
+    if(unit==='g'&&q>=1000){q=Math.round(q/100)/10;unit='kg'}
+    if(unit==='ml'&&q>=1000){q=Math.round(q/100)/10;unit='l'}
+    const pretty=v.name.charAt(0).toUpperCase()+v.name.slice(1);
+    return `${String(q).replace('.',',')} ${unit} ${pretty}`;
+  }
+  return v.raw||v.name;
+}
+
 function shoppingPlanMeal(label,r,note=''){
   if(!r)return `<div class="shop-plan-meal no-photo"><div></div><div><span>${label}</span><strong>Ikke planlagt</strong>${note?`<small>${note}</small>`:''}</div></div>`;
   return `<div class="shop-plan-meal"><img src="${r.image}" alt=""><div><span>${label}</span><strong>${r.name}</strong>${note?`<small>${note}</small>`:''}</div></div>`

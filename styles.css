@@ -84,7 +84,7 @@
 .quick-result img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:18px}.quick-result h2{margin:10px 0 10px}.quick-time{display:inline-flex;padding:7px 10px;border-radius:999px;background:#edf4ee;color:#315a48;font-size:13px;font-weight:700}
 @media(max-width:760px){.quick-category-grid{grid-template-columns:1fr 1fr}.quick-result{grid-template-columns:1fr;gap:20px}.quick-category{padding:18px 15px}}
 
-/* V3.2 · Fryservalg inde på opskriften */
+/* V3.2.1 · Fryservalg inde på opskriften */
 .recipe-plan-freezer{margin:16px 0 24px;padding:16px 18px;border:1px solid var(--line,#d9ddd3);border-radius:18px;background:#f4f7ef}
 .recipe-plan-freezer p{margin:6px 0 12px;color:var(--muted,#68736d);line-height:1.45}
 .freezer-plan-options{display:flex;flex-wrap:wrap;gap:8px}
