@@ -100,3 +100,11 @@
 @media(max-width:900px){.home-actions{grid-template-columns:1fr 1fr}.home-action:first-child{grid-column:1/-1}.site-brand-copy strong{font-size:26px}}
 @media(max-width:620px){.site-header{align-items:flex-start}.site-brand{gap:9px}.logo-mark{width:46px;height:46px}.site-brand-copy strong{font-size:21px}.site-brand-copy small{display:none}.site-header .sync-pill{font-size:11px;padding:7px 9px}.home-actions{grid-template-columns:1fr 1fr}.home-action{min-height:48px;font-size:14px;padding:10px 11px}.home-action:first-child{grid-column:1/-1}.home-section-head{margin-top:26px}.home-section-head h2{font-size:27px}.meal-category-grid .cat{min-height:130px;padding:17px}.inspiration-title{align-items:flex-end}.inspiration-title .btn{padding:9px 11px;font-size:13px}}
 @media(max-width:410px){.site-brand-copy strong{font-size:18px}.logo-mark{width:42px;height:42px}.home-actions{grid-template-columns:1fr}.home-action:first-child{grid-column:auto}.inspiration-title{align-items:flex-start;flex-direction:column}.inspiration-title .btn{align-self:flex-start}}
+/* V3.5 · Hverdagsflow */
+.action-shopping{background:#d8e6e1!important;color:#173f37!important;border-color:#b8d0c7!important}
+.home-plan-hint{margin:12px 0 0;font-size:.92rem;color:#6a746f}
+.quick-shopping{margin-top:28px;padding:24px;border:1px solid #d7ddd6;border-radius:28px;background:#fbfaf6}
+.quick-shopping-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;margin-top:18px}
+.draft-meal{display:grid;grid-template-columns:140px 1fr;gap:16px;padding:12px 0;border-top:1px solid #e1e4dd}
+.draft-meal b{color:#6b746e}
+@media(max-width:760px){.quick-shopping-grid{grid-template-columns:1fr}.draft-meal{grid-template-columns:1fr;gap:3px}.quick-shopping{padding:18px}}
