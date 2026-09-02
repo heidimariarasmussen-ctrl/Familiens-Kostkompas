@@ -373,6 +373,31 @@ function dinnerPlanRow(d,i){
   const notes=[];if(d.makeDouble)notes.push('Lav dobbelt: aftensmad i dag → frokost i morgen');if(d.freezeExtra){const fp=freezerParts[d.dinner?.id];if(fp)notes.push(`Ekstra ${fp.label} til fryseren`)}
   return mealRow('Aftensmad',d.dinner,notes.join(' · '),i,'dinner',mealOutButton(i,'dinner'));
 }
+function categoryForPlanKey(key){return {breakfast:'Morgenmad',lunch:'Frokost',dinner:'Aftensmad',snack:'Mellemmåltider'}[key]}
+function keyLabel(key){return {breakfast:'morgenmad',lunch:'frokost',dinner:'aftensmad',snack:'mellemmåltid'}[key]}
+function openManualPicker(dayIndex,key){
+  const category=categoryForPlanKey(key);
+  const rs=recipes.filter(r=>r.category===category);
+  closeManualPicker();
+  const overlay=document.createElement('div');overlay.id='manual-picker';overlay.className='picker-overlay';
+  overlay.innerHTML=`<div class="picker-panel">
+    <div class="picker-head"><div><div class="eyebrow">${dayName(currentPlan?.items?.[dayIndex]?.day||dayIndex+1)}</div><h2>Vælg selv ${keyLabel(key)}</h2><p>Vælg frit fra de ${rs.length} retter i kategorien.</p></div><button class="picker-close" onclick="closeManualPicker()">×</button></div>
+    <input class="search" id="manual-q" placeholder="Søg…" oninput="filterManualPicker(${dayIndex},'${key}')">
+    <div class="picker-grid" id="manual-picker-grid">${rs.map(r=>manualPickCard(r,dayIndex,key)).join('')}</div>
+  </div>`;
+  overlay.addEventListener('click',e=>{if(e.target===overlay)closeManualPicker()});
+  document.body.appendChild(overlay);document.body.style.overflow='hidden';
+}
+function manualPickCard(r,dayIndex,key){
+  const selected=currentPlan?.items?.[dayIndex]?.[key]?.id===r.id;
+  return `<article class="picker-card ${selected?'selected':''}"><img src="${r.image}" alt="${r.name}"><div class="picker-card-body"><h3>${r.name}</h3><div class="meta">${r.active||''} aktiv · ${r.total||''}</div><button class="btn ${selected?'secondary':''}" onclick="chooseManualMeal(${dayIndex},'${key}','${r.id}')">${selected?'Valgt nu':'Vælg denne'}</button></div></article>`
+}
+function filterManualPicker(dayIndex,key){
+  const q=(document.getElementById('manual-q')?.value||'').toLowerCase();const category=categoryForPlanKey(key);
+  const rs=recipes.filter(r=>r.category===category&&(r.name.toLowerCase().includes(q)||r.ingredients.join(' ').toLowerCase().includes(q)));
+  const grid=document.getElementById('manual-picker-grid');if(grid)grid.innerHTML=rs.map(r=>manualPickCard(r,dayIndex,key)).join('')||'<div class="empty">Ingen retter matcher søgningen.</div>';
+}
+function closeManualPicker(){const el=document.getElementById('manual-picker');if(el)el.remove();document.body.style.overflow=''}
 function ensureManualFlags(){if(!currentPlan)return;currentPlan.items.forEach(d=>{if(!d.manual)d.manual={}})}
 function chooseManualMeal(dayIndex,key,recipeId){
   if(!currentPlan)return;ensureManualFlags();
@@ -430,6 +455,7 @@ function swapMeal(dayIndex,key){
   persistPlan();renderCurrentPlan();
 }
 function renderCurrentPlan(){
+  closeManualPicker();
   if(!currentPlan){planner();return}
   currentPlan.items.forEach(d=>{if(!d.outMeals||typeof d.outMeals!=='object')d.outMeals={};if(typeof d.freezeExtra!=='boolean')d.freezeExtra=false});
   const f=nutritionCheck(currentPlan),passed=f.filter(x=>x.ok).length;
