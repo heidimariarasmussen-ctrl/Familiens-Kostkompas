@@ -19,7 +19,8 @@ async function installApp(){
   alert('På iPhone/iPad: tryk Del → Føj til hjemmeskærm. På Android/Chrome: brug browsermenuen → Installer app.');
 }
 
-let recipes=[];let currentCategory=null;let scale=1;let currentPlan=null;
+let recipes=[];let currentCategory=null;let scale=1;let currentPlan=null;let recipeFeedback={};
+const feedbackKey='kostkompas-recipe-feedback';
 
 // ----- V2.4: Fælles aktiv madplan via Supabase -----
 const SUPABASE_URL='https://rjipiaghngxzaqgmcawr.supabase.co';
@@ -42,20 +43,32 @@ async function cloudLogin(email,password){
   if(!r.ok){let d={};try{d=await r.json()}catch(e){};throw new Error(d.error_description||d.msg||'Login mislykkedes')}
   const d=await r.json();d.expires_at=Math.floor(Date.now()/1000)+(d.expires_in||3600);saveCloudSession(d);return d;
 }
-async function cloudLogout(){saveCloudSession(null);currentPlan=null;localStorage.removeItem('kostkompas-current-plan');loginScreen('Du er logget ud.');}
+async function cloudLogout(){saveCloudSession(null);currentPlan=null;recipeFeedback={};localStorage.removeItem('kostkompas-current-plan');localStorage.removeItem(feedbackKey);loginScreen('Du er logget ud.');}
 async function cloudHeaders(){if(!await refreshCloudSession())return null;return {'apikey':SUPABASE_KEY,'Authorization':`Bearer ${cloudSession.access_token}`,'Content-Type':'application/json'};}
 async function fetchCloudPlan(){
   const h=await cloudHeaders();if(!h)return null;
   const r=await fetch(`${SUPABASE_URL}/rest/v1/active_plan?id=eq.1&select=plan_data,updated_at`,{headers:h});
   if(!r.ok)throw new Error('Kunne ikke hente den fælles madplan');const rows=await r.json();return rows[0]?.plan_data||{};
 }
-async function saveCloudPlan(plan=currentPlan){
-  if(!plan)return;localStorage.setItem('kostkompas-current-plan',JSON.stringify(plan));
+async function saveCloudState(state){
   const h=await cloudHeaders();if(!h)return;
-  const r=await fetch(`${SUPABASE_URL}/rest/v1/active_plan?id=eq.1`,{method:'PATCH',headers:{...h,'Prefer':'return=minimal'},body:JSON.stringify({plan_data:plan,updated_at:new Date().toISOString()})});
+  const r=await fetch(`${SUPABASE_URL}/rest/v1/active_plan?id=eq.1`,{method:'PATCH',headers:{...h,'Prefer':'return=minimal'},body:JSON.stringify({plan_data:state||{},updated_at:new Date().toISOString()})});
   if(!r.ok)console.warn('Cloud save failed',await r.text());
 }
-function persistPlan(){if(!currentPlan)return;localStorage.setItem('kostkompas-current-plan',JSON.stringify(currentPlan));saveCloudPlan(currentPlan).catch(console.warn)}
+async function saveCloudPlan(plan=currentPlan){
+  if(!plan)return;
+  plan.recipeFeedback=recipeFeedback;
+  localStorage.setItem('kostkompas-current-plan',JSON.stringify(plan));
+  await saveCloudState(plan);
+}
+function persistPlan(){if(!currentPlan)return;currentPlan.recipeFeedback=recipeFeedback;localStorage.setItem('kostkompas-current-plan',JSON.stringify(currentPlan));saveCloudPlan(currentPlan).catch(console.warn)}
+function loadRecipeFeedback(){try{recipeFeedback=JSON.parse(localStorage.getItem(feedbackKey)||'{}')||{}}catch(e){recipeFeedback={}}}
+function persistRecipeFeedbackLocal(){localStorage.setItem(feedbackKey,JSON.stringify(recipeFeedback))}
+async function saveRecipeFeedbackCloud(){
+  persistRecipeFeedbackLocal();
+  if(currentPlan){currentPlan.recipeFeedback=recipeFeedback;persistPlan();return}
+  try{const remote=await fetchCloudPlan()||{};remote.recipeFeedback=recipeFeedback;await saveCloudState(remote)}catch(e){console.warn('Feedback cloud save failed',e)}
+}
 function loginScreen(message=''){
   app.innerHTML=`<div class="login-shell"><section class="login-card"><div class="brand">Familiens Kostkompas</div><h1>Familielogin</h1><p>Log ind for at åbne den samme aktive madplan på computer og telefon.</p>${message?`<div class="login-message">${message}</div>`:''}<form onsubmit="submitFamilyLogin(event)"><label>E-mail</label><input id="login-email" type="email" autocomplete="username" required><label>Adgangskode</label><input id="login-password" type="password" autocomplete="current-password" required><button class="btn" type="submit">Log ind</button></form><button class="text-link" onclick="forgotPasswordScreen()">Glemt adgangskode?</button><p class="small muted">Brug den Supabase-bruger, du allerede har oprettet.</p></section></div>`;
 }
@@ -102,15 +115,21 @@ async function submitNewPassword(e){
   }catch(err){newPasswordScreen('Kunne ikke gemme den nye adgangskode. Bed om et nyt reset-link og prøv igen.')}
 }
 async function syncAfterLogin(){
+  loadRecipeFeedback();
   let local=null;try{local=JSON.parse(localStorage.getItem('kostkompas-current-plan')||'null')}catch(e){}
-  const remote=await fetchCloudPlan();
-  const remoteHasPlan=remote && Array.isArray(remote.items) && remote.items.length;
-  if(remoteHasPlan){currentPlan=remote;localStorage.setItem('kostkompas-current-plan',JSON.stringify(remote));}
-  else if(local){currentPlan=local;await saveCloudPlan(local);}
+  const localHasPlan=local && Array.isArray(local.items) && local.items.length;
+  const remote=await fetchCloudPlan()||{};
+  const remoteHasPlan=Array.isArray(remote.items) && remote.items.length;
+  const remoteFeedback=remote.recipeFeedback&&typeof remote.recipeFeedback==='object'?remote.recipeFeedback:{};
+  if(Object.keys(remoteFeedback).length){recipeFeedback=remoteFeedback;persistRecipeFeedbackLocal()}
+  else if(Object.keys(recipeFeedback).length){remote.recipeFeedback=recipeFeedback;await saveCloudState(remote)}
+  if(remoteHasPlan){currentPlan=remote;currentPlan.recipeFeedback=recipeFeedback;localStorage.setItem('kostkompas-current-plan',JSON.stringify(currentPlan));}
+  else if(localHasPlan){currentPlan=local;currentPlan.recipeFeedback=recipeFeedback;await saveCloudPlan(currentPlan);}
   else currentPlan=null;
 }
 function cloudBadge(){return cloudSession?.user?.email?`<button class="sync-pill" onclick="cloudLogout()" title="Log ud">☁ Synkroniseret</button>`:''}
 async function startApp(){
+  loadRecipeFeedback();
   loadCloudSession();
   const recovery=parseRecoveryHash();
   if(recovery){saveCloudSession(recovery);newPasswordScreen();return}
@@ -128,7 +147,50 @@ function pickInspiration(){return ['aftensmad-1','morgenmad-4','frokost-15'].map
 function library(cat){currentCategory=cat||null;const rs=cat?recipes.filter(r=>r.category===cat):recipes;app.innerHTML=`<div class="shell"><div class="section-title"><h2>${cat||'Alle opskrifter'}</h2><button class="btn secondary" onclick="home()">← Tilbage</button></div><input class="search" id="q" placeholder="Søg efter ret eller ingrediens…" oninput="filterList()"><div class="cards" id="cards">${rs.map(card).join('')}</div></div>${nav()}`}
 function filterList(){const q=document.getElementById('q').value.toLowerCase();let rs=currentCategory?recipes.filter(r=>r.category===currentCategory):recipes;rs=rs.filter(r=>r.name.toLowerCase().includes(q)||r.ingredients.join(' ').toLowerCase().includes(q));document.getElementById('cards').innerHTML=rs.map(card).join('')||'<div class="empty">Ingen resultater.</div>'}
 function showRecipe(id){scale=1;renderRecipe(id)}
-function renderRecipe(id){const r=recipes.find(x=>x.id===id),is=favs().includes(id);app.innerHTML=`<div class="shell"><button class="btn secondary" onclick="library('${r.category}')">← ${r.category}</button><article class="recipe"><button class="heart" onclick="toggleFav('${id}')">${is?'♥':'♡'}</button><img class="recipe-hero" src="${r.image}" alt="${r.name}"><span class="badge">${r.category}</span><h1>${r.name}</h1><div class="info"><div><b>Portion</b><br>${r.portion}</div><div><b>Aktiv tid</b><br>${r.active}</div><div><b>Samlet tid</b><br>${r.total}</div></div><div class="portionbar"><button class="${scale===1?'active':''}" onclick="setScale('${id}',1)">Kun i dag</button><button class="${scale===2?'active':''}" onclick="setScale('${id}',2)">Dobbelt · rester/frys</button></div><h3>Ingredienser ${scale===2?'· dobbelt portion':''}</h3><ul>${r.ingredients.map(x=>`<li>${scaleIngredient(x,scale)}</li>`).join('')}</ul><h3>Sådan gør du</h3><ol>${r.steps.map(x=>`<li>${x}</li>`).join('')}</ol>${r.taste?`<div class="note"><b>Sovs / dip / smag</b><br>${r.taste}</div>`:''}${r.child?`<div class="note pink" style="margin-top:10px"><b>Til børn på ca. 15 måneder</b><br>${r.child}</div>`:''}${r.tip?`<div class="note" style="margin-top:10px"><b>Praktisk tip</b><br>${r.tip}</div>`:''}<h3>Hvorfor er den god for børnene?</h3><ul>${r.why.map(x=>`<li>${x}</li>`).join('')}</ul></article></div>${nav()}`}
+function renderRecipe(id){const r=recipes.find(x=>x.id===id),is=favs().includes(id);app.innerHTML=`<div class="shell"><button class="btn secondary" onclick="library('${r.category}')">← ${r.category}</button><article class="recipe"><button class="heart" onclick="toggleFav('${id}')">${is?'♥':'♡'}</button><img class="recipe-hero" src="${r.image}" alt="${r.name}"><span class="badge">${r.category}</span><h1>${r.name}</h1><div class="info"><div><b>Portion</b><br>${r.portion}</div><div><b>Aktiv tid</b><br>${r.active}</div><div><b>Samlet tid</b><br>${r.total}</div></div><div class="portionbar"><button class="${scale===1?'active':''}" onclick="setScale('${id}',1)">Kun i dag</button><button class="${scale===2?'active':''}" onclick="setScale('${id}',2)">Dobbelt · rester/frys</button></div><h3>Ingredienser ${scale===2?'· dobbelt portion':''}</h3><ul>${r.ingredients.map(x=>`<li>${scaleIngredient(x,scale)}</li>`).join('')}</ul><h3>Sådan gør du</h3><ol>${r.steps.map(x=>`<li>${x}</li>`).join('')}</ol>${r.taste?`<div class="note"><b>Sovs / dip / smag</b><br>${r.taste}</div>`:''}${r.child?`<div class="note pink" style="margin-top:10px"><b>Til børn på ca. 15 måneder</b><br>${r.child}</div>`:''}${r.tip?`<div class="note" style="margin-top:10px"><b>Praktisk tip</b><br>${r.tip}</div>`:''}<h3>Hvorfor er den god for børnene?</h3><ul>${r.why.map(x=>`<li>${x}</li>`).join('')}</ul>${feedbackHtml(id)}</article></div>${nav()}`;initFeedbackSelection(id)}
+
+const feedbackReactions=[
+  {value:'loved',emoji:'😍',label:'Spiste godt'},
+  {value:'tasted',emoji:'🙂',label:'Smagte / spiste lidt'},
+  {value:'barely',emoji:'😐',label:'Næsten ikke'},
+  {value:'refused',emoji:'🙅',label:'Ville ikke'}
+];
+function escapeHtml(v=''){return String(v).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+function feedbackReaction(value){return feedbackReactions.find(x=>x.value===value)||null}
+function feedbackEntries(recipeId){return Array.isArray(recipeFeedback[recipeId])?recipeFeedback[recipeId]:[]}
+function feedbackDate(iso){try{return new Intl.DateTimeFormat('da-DK',{day:'numeric',month:'short',year:'numeric'}).format(new Date(iso))}catch(e){return ''}}
+function feedbackHtml(recipeId){
+  const entries=feedbackEntries(recipeId).slice().sort((a,b)=>new Date(b.createdAt)-new Date(a.createdAt));
+  return `<section class="feedback-card"><div class="feedback-title"><div><span class="eyebrow">Børnenes reaktion</span><h3>Hvordan gik retten?</h3><p>Gem en lille observation. Det gør det lettere at se, hvad børnene accepterer over tid.</p></div><span class="feedback-count">${entries.length?`${entries.length} ${entries.length===1?'note':'noter'}`:'Ny'}</span></div>
+    <input type="hidden" id="feedback-reaction-${recipeId}" value="">
+    <div class="reaction-grid">${feedbackReactions.map(x=>`<button type="button" class="reaction-btn" data-reaction="${x.value}" onclick="selectFeedbackReaction('${recipeId}','${x.value}')"><span>${x.emoji}</span><small>${x.label}</small></button>`).join('')}</div>
+    <label class="feedback-label" for="feedback-note-${recipeId}">Note <span>valgfri</span></label>
+    <textarea class="feedback-textarea" id="feedback-note-${recipeId}" maxlength="500" placeholder="Fx: Begge spiste laks og kartofler. Broccoli blev smagt, men ikke spist."></textarea>
+    <div class="feedback-actions"><button class="btn" type="button" onclick="saveRecipeFeedback('${recipeId}')">Gem reaktion</button><span class="small muted">Gemmes med dato og synkroniseres mellem jeres enheder.</span></div>
+    ${entries.length?`<div class="feedback-history"><h4>Tidligere reaktioner</h4>${entries.map(e=>{const r=feedbackReaction(e.reaction);return `<article class="feedback-entry"><div class="feedback-entry-head"><div><span class="feedback-emoji">${r?.emoji||'📝'}</span><strong>${r?.label||'Note'}</strong><time>${feedbackDate(e.createdAt)}</time></div><button class="feedback-delete" type="button" onclick="deleteRecipeFeedback('${recipeId}','${e.id}')" aria-label="Slet note">Slet</button></div>${e.note?`<p>${escapeHtml(e.note)}</p>`:''}</article>`}).join('')}</div>`:''}
+  </section>`;
+}
+function initFeedbackSelection(recipeId){selectFeedbackReaction(recipeId,'',false)}
+function selectFeedbackReaction(recipeId,value,update=true){
+  const hidden=document.getElementById(`feedback-reaction-${recipeId}`);if(hidden)hidden.value=value;
+  document.querySelectorAll('.reaction-btn').forEach(btn=>btn.classList.toggle('selected',btn.dataset.reaction===value));
+}
+async function saveRecipeFeedback(recipeId){
+  const reaction=document.getElementById(`feedback-reaction-${recipeId}`)?.value||'';
+  const note=(document.getElementById(`feedback-note-${recipeId}`)?.value||'').trim();
+  if(!reaction&&!note){alert('Vælg en reaktion eller skriv en kort note først.');return}
+  const entry={id:`${Date.now()}-${Math.random().toString(36).slice(2,8)}`,reaction,note,createdAt:new Date().toISOString()};
+  recipeFeedback[recipeId]=[...(feedbackEntries(recipeId)),entry];
+  await saveRecipeFeedbackCloud();
+  renderRecipe(recipeId);
+}
+async function deleteRecipeFeedback(recipeId,entryId){
+  recipeFeedback[recipeId]=feedbackEntries(recipeId).filter(x=>x.id!==entryId);
+  if(!recipeFeedback[recipeId].length)delete recipeFeedback[recipeId];
+  await saveRecipeFeedbackCloud();
+  renderRecipe(recipeId);
+}
+
 function scaleIngredient(s,m){if(m===1)return s;return s.replace(/^(\d+(?:[.,]\d+)?)(\s*)/,(_,n,sp)=>String(parseFloat(n.replace(',','.'))*m).replace('.',',')+sp).replace(/^(\d+)\/(\d+)/,(_,a,b)=>`${Number(a)*m}/${b}`)}
 function setScale(id,s){scale=s;renderRecipe(id)}
 function toggleFav(id){let f=favs();f=f.includes(id)?f.filter(x=>x!==id):[...f,id];saveFavs(f);renderRecipe(id)}
