@@ -19,27 +19,12 @@ async function installApp(){
   alert('På iPhone/iPad: tryk Del → Føj til hjemmeskærm. På Android/Chrome: brug browsermenuen → Installer app.');
 }
 
-let recipes=[];let currentCategory=null;let scale=1;let currentPlan=null;let recipeFeedback={};let pantryState={};let shoppingChecks={};
+let recipes=[];let baseRecipes=[];let currentCategory=null;let scale=1;let currentPlan=null;let recipeFeedback={};let pantryState={};let shoppingChecks={};let customRecipes=[];let planHistory=[];
 const feedbackKey='kostkompas-recipe-feedback';
 const pantryKey='kostkompas-pantry';
 const shoppingChecksKey='kostkompas-shop-checked';
-// Fryserlogik: kun de dele af aftensmaden, der egner sig til at lave ekstra og fryse.
-const freezerParts={
-  'aftensmad-2':{label:'fiskefrikadellerne',idx:[0,1,2,3]},
-  'aftensmad-3':{label:'fisk og cremet sauce',idx:[0,2,3,4,5,6,7]},
-  'aftensmad-4':{label:'kødsovsen',idx:[0,1,2,3,4,6]},
-  'aftensmad-5':{label:'frikadellerne',idx:[0,1,2,3]},
-  'aftensmad-6':{label:'chilien',idx:[0,1,2,3,4,6,7]},
-  'aftensmad-8':{label:'kyllingegryden uden kartofler',idx:[0,2,3,4,5,6]},
-  'aftensmad-9':{label:'kyllingefrikadellerne',idx:[0,1,2]},
-  'aftensmad-11':{label:'oksegryden uden kartofler',idx:[0,2,3,4,5]},
-  'aftensmad-12':{label:'kødboller og tomatsauce',idx:[0,1,2,3,5,6]},
-  'aftensmad-13':{label:'kylling i kokos-karry',idx:[0,1,2,3,5]},
-  'aftensmad-14':{label:'linse-kødsgryden uden kartofler og yoghurtcreme',idx:[0,1,2,3,5]},
-  'aftensmad-17':{label:'butter-chicken-saucen med kylling',idx:[0,1,2,3,5,6,7]},
-  'aftensmad-18':{label:'oksekødskoftaerne',idx:[0,1,2]},
-  'aftensmad-20':{label:'kylling i tomat-mascarponesauce',idx:[0,2,3,5]}
-};
+const customRecipesKey='kostkompas-custom-recipes';
+const planHistoryKey='kostkompas-plan-history';
 const defaultPantryItems=[
   {id:'oliveoil',name:'Ekstra jomfruolivenolie',category:'Fedt & smag',keywords:['olivenolie','ekstra jomfruolivenolie']},
   {id:'butter',name:'Smør',category:'Køl',keywords:['smør']},
@@ -56,10 +41,15 @@ const defaultPantryItems=[
 function loadHouseholdState(){
   try{pantryState=JSON.parse(localStorage.getItem(pantryKey)||'{}')||{}}catch(e){pantryState={}}
   try{shoppingChecks=JSON.parse(localStorage.getItem(shoppingChecksKey)||'{}')||{}}catch(e){shoppingChecks={}}
+  try{customRecipes=JSON.parse(localStorage.getItem(customRecipesKey)||'[]')||[]}catch(e){customRecipes=[]}
+  try{planHistory=JSON.parse(localStorage.getItem(planHistoryKey)||'[]')||[]}catch(e){planHistory=[]}
   if(!Array.isArray(pantryState.custom))pantryState.custom=[];
   if(!pantryState.items||typeof pantryState.items!=='object')pantryState.items={};
+  if(!Array.isArray(customRecipes))customRecipes=[];
+  if(!Array.isArray(planHistory))planHistory=[];
 }
-function saveHouseholdStateLocal(){localStorage.setItem(pantryKey,JSON.stringify(pantryState));localStorage.setItem(shoppingChecksKey,JSON.stringify(shoppingChecks))}
+function rebuildRecipes(){recipes=[...baseRecipes,...customRecipes]}
+function saveHouseholdStateLocal(){localStorage.setItem(pantryKey,JSON.stringify(pantryState));localStorage.setItem(shoppingChecksKey,JSON.stringify(shoppingChecks));localStorage.setItem(customRecipesKey,JSON.stringify(customRecipes));localStorage.setItem(planHistoryKey,JSON.stringify(planHistory))}
 async function saveHouseholdStateCloud(){
   saveHouseholdStateLocal();
   try{
@@ -67,8 +57,10 @@ async function saveHouseholdStateCloud(){
     remote.recipeFeedback=recipeFeedback;
     remote.pantryState=pantryState;
     remote.shoppingChecks=shoppingChecks;
+    remote.customRecipes=customRecipes;
+    remote.planHistory=planHistory;
     await saveCloudState(remote);
-    if(currentPlan){currentPlan.pantryState=pantryState;currentPlan.shoppingChecks=shoppingChecks;localStorage.setItem('kostkompas-current-plan',JSON.stringify(currentPlan))}
+    if(currentPlan){currentPlan.pantryState=pantryState;currentPlan.shoppingChecks=shoppingChecks;currentPlan.customRecipes=customRecipes;currentPlan.planHistory=planHistory;localStorage.setItem('kostkompas-current-plan',JSON.stringify(currentPlan))}
   }catch(e){console.warn('Household cloud save failed',e)}
 }
 function allPantryItems(){return [...defaultPantryItems,...(pantryState.custom||[])]}
@@ -100,7 +92,7 @@ async function cloudLogin(email,password){
   if(!r.ok){let d={};try{d=await r.json()}catch(e){};throw new Error(d.error_description||d.msg||'Login mislykkedes')}
   const d=await r.json();d.expires_at=Math.floor(Date.now()/1000)+(d.expires_in||3600);saveCloudSession(d);return d;
 }
-async function cloudLogout(){saveCloudSession(null);currentPlan=null;recipeFeedback={};pantryState={};shoppingChecks={};localStorage.removeItem('kostkompas-current-plan');localStorage.removeItem(feedbackKey);localStorage.removeItem(pantryKey);localStorage.removeItem(shoppingChecksKey);loginScreen('Du er logget ud.');}
+async function cloudLogout(){saveCloudSession(null);currentPlan=null;recipeFeedback={};pantryState={};shoppingChecks={};customRecipes=[];planHistory=[];localStorage.removeItem('kostkompas-current-plan');localStorage.removeItem(feedbackKey);localStorage.removeItem(pantryKey);localStorage.removeItem(shoppingChecksKey);localStorage.removeItem(customRecipesKey);localStorage.removeItem(planHistoryKey);rebuildRecipes();loginScreen('Du er logget ud.');}
 async function cloudHeaders(){if(!await refreshCloudSession())return null;return {'apikey':SUPABASE_KEY,'Authorization':`Bearer ${cloudSession.access_token}`,'Content-Type':'application/json'};}
 async function fetchCloudPlan(){
   const h=await cloudHeaders();if(!h)return null;
@@ -114,11 +106,11 @@ async function saveCloudState(state){
 }
 async function saveCloudPlan(plan=currentPlan){
   if(!plan)return;
-  plan.recipeFeedback=recipeFeedback;plan.pantryState=pantryState;plan.shoppingChecks=shoppingChecks;
+  plan.recipeFeedback=recipeFeedback;plan.pantryState=pantryState;plan.shoppingChecks=shoppingChecks;plan.customRecipes=customRecipes;plan.planHistory=planHistory;
   localStorage.setItem('kostkompas-current-plan',JSON.stringify(plan));
   await saveCloudState(plan);
 }
-function persistPlan(){if(!currentPlan)return;currentPlan.recipeFeedback=recipeFeedback;currentPlan.pantryState=pantryState;currentPlan.shoppingChecks=shoppingChecks;localStorage.setItem('kostkompas-current-plan',JSON.stringify(currentPlan));saveCloudPlan(currentPlan).catch(console.warn)}
+function persistPlan(){if(!currentPlan)return;currentPlan.recipeFeedback=recipeFeedback;currentPlan.pantryState=pantryState;currentPlan.shoppingChecks=shoppingChecks;currentPlan.customRecipes=customRecipes;currentPlan.planHistory=planHistory;localStorage.setItem('kostkompas-current-plan',JSON.stringify(currentPlan));saveCloudPlan(currentPlan).catch(console.warn)}
 function loadRecipeFeedback(){try{recipeFeedback=JSON.parse(localStorage.getItem(feedbackKey)||'{}')||{}}catch(e){recipeFeedback={}}}
 function persistRecipeFeedbackLocal(){localStorage.setItem(feedbackKey,JSON.stringify(recipeFeedback))}
 async function saveRecipeFeedbackCloud(){
@@ -182,12 +174,17 @@ async function syncAfterLogin(){
   else if(Object.keys(recipeFeedback).length){remote.recipeFeedback=recipeFeedback;await saveCloudState(remote)}
   const remotePantry=remote.pantryState&&typeof remote.pantryState==='object'?remote.pantryState:null;
   const remoteChecks=remote.shoppingChecks&&typeof remote.shoppingChecks==='object'?remote.shoppingChecks:null;
+  const remoteCustom=Array.isArray(remote.customRecipes)?remote.customRecipes:null;
+  const remoteHistory=Array.isArray(remote.planHistory)?remote.planHistory:null;
   if(remotePantry){pantryState=remotePantry;if(!Array.isArray(pantryState.custom))pantryState.custom=[];if(!pantryState.items)pantryState.items={}}
   else if(Object.keys(pantryState.items||{}).length||(pantryState.custom||[]).length)remote.pantryState=pantryState;
   if(remoteChecks)shoppingChecks=remoteChecks;else if(Object.keys(shoppingChecks).length)remote.shoppingChecks=shoppingChecks;
+  if(remoteCustom){customRecipes=remoteCustom}else if(customRecipes.length)remote.customRecipes=customRecipes;
+  if(remoteHistory){planHistory=remoteHistory}else if(planHistory.length)remote.planHistory=planHistory;
+  rebuildRecipes();
   saveHouseholdStateLocal();
-  if(remoteHasPlan){currentPlan=remote;currentPlan.recipeFeedback=recipeFeedback;currentPlan.pantryState=pantryState;currentPlan.shoppingChecks=shoppingChecks;localStorage.setItem('kostkompas-current-plan',JSON.stringify(currentPlan));}
-  else if(localHasPlan){currentPlan=local;currentPlan.recipeFeedback=recipeFeedback;currentPlan.pantryState=pantryState;currentPlan.shoppingChecks=shoppingChecks;await saveCloudPlan(currentPlan);}
+  if(remoteHasPlan){currentPlan=remote;currentPlan.recipeFeedback=recipeFeedback;currentPlan.pantryState=pantryState;currentPlan.shoppingChecks=shoppingChecks;currentPlan.customRecipes=customRecipes;currentPlan.planHistory=planHistory;localStorage.setItem('kostkompas-current-plan',JSON.stringify(currentPlan));}
+  else if(localHasPlan){currentPlan=local;currentPlan.recipeFeedback=recipeFeedback;currentPlan.pantryState=pantryState;currentPlan.shoppingChecks=shoppingChecks;currentPlan.customRecipes=customRecipes;currentPlan.planHistory=planHistory;await saveCloudPlan(currentPlan);}
   else {currentPlan=null;if(!remotePantry||!remoteChecks){remote.pantryState=pantryState;remote.shoppingChecks=shoppingChecks;await saveCloudState(remote)}}
 }
 function cloudBadge(){return cloudSession?.user?.email?`<button class="sync-pill" onclick="cloudLogout()" title="Log ud">☁ Synkroniseret</button>`:''}
@@ -204,25 +201,14 @@ const emoji={"Morgenmad":"🥣","Frokost":"🥗","Aftensmad":"🍲","Mellemmålt
 const favs=()=>JSON.parse(localStorage.getItem('kostkompas-favs')||'[]');
 const saveFavs=x=>localStorage.setItem('kostkompas-favs',JSON.stringify(x));
 const nav=()=>`<nav class="bottomnav"><button onclick="home()">🏠<br>Hjem</button><button onclick="library()">📚<br>Opskrifter</button><button onclick="planner()">📅<br>Madplan</button><button onclick="pantry()">🏡<br>Basislager</button><button onclick="favorites()">♥<br>Favoritter</button><button onclick="knowledge()">🧭<br>Kompas</button></nav>`;
-function card(r){return `<article class="card" onclick="showRecipe('${r.id}')"><img class="photo" src="${r.image}" alt="${r.name}"><div class="card-body"><span class="badge">${r.category}</span><h3>${r.name}</h3><div class="meta">${r.active||''} aktiv · ${r.total||''}</div></div></article>`}
-function home(){app.innerHTML=`<div class="shell"><div class="topbar"><div><div class="brand">Familiens Kostkompas</div><div class="tag">Næringstæt · realistisk · børnevenlig familiemad</div></div>${cloudBadge()}</div><section class="hero"><div class="hero-copy"><h1>Hvad skal vi spise?</h1><p>80 familieopskrifter + Børnefavoritter 2.0. Find en ret nu, gem favoritter eller lad Kostkompasset lave en madplan med rester og indkøbsliste.</p><div class="actions"><button class="btn quick-home-btn" onclick="quickNow()">⚡ Jeg skal bruge noget hurtigt nu</button><button class="btn" onclick="planner()">Lav madplan</button><button class="btn secondary" onclick="planToday()">Planlæg i dag</button><button class="btn secondary" onclick="library()">Se alle opskrifter</button><button class="btn secondary" onclick="pantry()">Basislager</button></div></div><div class="hero-art"><img src="familien-forside.png" alt="Familien samlet omkring spisebordet"></div></section><div class="grid">${["Morgenmad","Frokost","Aftensmad","Mellemmåltider"].map(c=>`<div class="cat" onclick="library('${c}')"><span>${emoji[c]}</span><h3>${c}</h3><div class="small">20 opskrifter</div></div>`).join('')}</div><div class="section-title"><h2>Inspiration</h2><button class="btn secondary" onclick="library('Børnefavoritter 2.0')">Børnefavoritter 2.0</button></div><div class="cards">${pickInspiration().map(card).join('')}</div></div>${nav()}`}
+function recipeMedia(r,cls='photo'){return r.image?`<img class="${cls}" src="${r.image}" alt="${escapeHtml(r.name)}">`:`<div class="${cls} custom-recipe-placeholder"><span>🍽️</span><small>Familiens egen</small></div>`}
+function card(r){return `<article class="card" onclick="showRecipe('${r.id}')">${recipeMedia(r)}<div class="card-body"><span class="badge">${r.category}</span>${r.isCustom?'<span class="custom-badge">Egen ret</span>':''}<h3>${escapeHtml(r.name)}</h3><div class="meta">${r.active||''} aktiv · ${r.total||''}</div></div></article>`}
+function home(){app.innerHTML=`<div class="shell"><div class="topbar"><div><div class="brand">Familiens Kostkompas</div><div class="tag">Næringstæt · realistisk · børnevenlig familiemad</div></div>${cloudBadge()}</div><section class="hero"><div class="hero-copy"><h1>Hvad skal vi spise?</h1><p>80 familieopskrifter + jeres egne retter + Børnefavoritter 2.0. Find en ret nu, gem favoritter eller lad Kostkompasset lave en personlig madplan med rester og indkøbsliste.</p><div class="actions"><button class="btn quick-home-btn" onclick="quickNow()">⚡ Jeg skal bruge noget hurtigt nu</button><button class="btn" onclick="planner()">Lav madplan</button><button class="btn secondary" onclick="planToday()">Planlæg i dag</button><button class="btn secondary" onclick="library()">Se alle opskrifter</button><button class="btn secondary" onclick="pantry()">Basislager</button><button class="btn secondary" onclick="customRecipeEditor()">➕ Tilføj egen ret</button></div></div><div class="hero-art"><img src="familien-forside.png" alt="Familien samlet omkring spisebordet"></div></section><div class="grid">${["Morgenmad","Frokost","Aftensmad","Mellemmåltider"].map(c=>`<div class="cat" onclick="library('${c}')"><span>${emoji[c]}</span><h3>${c}</h3><div class="small">${recipes.filter(r=>r.category===c).length} opskrifter</div></div>`).join('')}</div><div class="section-title"><h2>Inspiration</h2><button class="btn secondary" onclick="library('Børnefavoritter 2.0')">Børnefavoritter 2.0</button></div><div class="cards">${pickInspiration().map(card).join('')}</div></div>${nav()}`}
 function pickInspiration(){return ['aftensmad-1','morgenmad-4','frokost-15'].map(id=>recipes.find(r=>r.id===id)).filter(Boolean)}
-function library(cat){currentCategory=cat||null;const rs=cat?recipes.filter(r=>r.category===cat):recipes;app.innerHTML=`<div class="shell"><div class="section-title"><h2>${cat||'Alle opskrifter'}</h2><button class="btn secondary" onclick="home()">← Tilbage</button></div><input class="search" id="q" placeholder="Søg efter ret eller ingrediens…" oninput="filterList()"><div class="cards" id="cards">${rs.map(card).join('')}</div></div>${nav()}`}
+function library(cat){currentCategory=cat||null;const rs=cat?recipes.filter(r=>r.category===cat):recipes;app.innerHTML=`<div class="shell"><div class="section-title"><h2>${cat||'Alle opskrifter'}</h2><div class="actions"><button class="btn secondary" onclick="customRecipeEditor()">➕ Egen ret</button><button class="btn secondary" onclick="home()">← Tilbage</button></div></div><input class="search" id="q" placeholder="Søg efter ret eller ingrediens…" oninput="filterList()"><div class="cards" id="cards">${rs.map(card).join('')}</div></div>${nav()}`}
 function filterList(){const q=document.getElementById('q').value.toLowerCase();let rs=currentCategory?recipes.filter(r=>r.category===currentCategory):recipes;rs=rs.filter(r=>r.name.toLowerCase().includes(q)||r.ingredients.join(' ').toLowerCase().includes(q));document.getElementById('cards').innerHTML=rs.map(card).join('')||'<div class="empty">Ingen resultater.</div>'}
 function showRecipe(id){scale=1;renderRecipe(id)}
-function recipePlanFreezerHtml(r){
-  if(!currentPlan||r.category!=='Aftensmad')return '';
-  const freezer=freezerParts[r.id];
-  if(!freezer)return '';
-  const matches=currentPlan.items.map((d,i)=>({d,i})).filter(x=>x.d.dinner?.id===r.id&&!mealIsOut(x.d,'dinner'));
-  if(!matches.length)return '';
-  return `<div class="recipe-plan-freezer"><b>❄ Lav ekstra til fryseren</b><p>Kostkompasset lægger kun ekstra <strong>${freezer.label}</strong> på indkøbslisten – ikke hele retten.</p><div class="freezer-plan-options">${matches.map(({d,i})=>`<button class="btn secondary small ${d.freezeExtra?'active':''}" onclick="toggleFreezeExtraFromRecipe(${i},'${r.id}')">${d.freezeExtra?'✓ Ekstra til fryser · ':''}${dayName(d.day)}${d.freezeExtra?'':' · tilføj fryseportion'}</button>`).join('')}</div></div>`;
-}
-function toggleFreezeExtraFromRecipe(dayIndex,recipeId){
-  const d=currentPlan?.items?.[dayIndex];if(!d||d.dinner?.id!==recipeId||mealIsOut(d,'dinner'))return;
-  d.freezeExtra=!d.freezeExtra;persistPlan();renderRecipe(recipeId);
-}
-function renderRecipe(id){const r=recipes.find(x=>x.id===id),is=favs().includes(id);app.innerHTML=`<div class="shell"><button class="btn secondary" onclick="library('${r.category}')">← ${r.category}</button><article class="recipe"><button class="heart" onclick="toggleFav('${id}')">${is?'♥':'♡'}</button><img class="recipe-hero" src="${r.image}" alt="${r.name}"><span class="badge">${r.category}</span><h1>${r.name}</h1><div class="info"><div><b>Portion</b><br>${r.portion}</div><div><b>Aktiv tid</b><br>${r.active}</div><div><b>Samlet tid</b><br>${r.total}</div></div><div class="portionbar"><button class="${scale===1?'active':''}" onclick="setScale('${id}',1)">Kun i dag</button><button class="${scale===2?'active':''}" onclick="setScale('${id}',2)">Dobbelt portion</button></div>${recipePlanFreezerHtml(r)}<h3>Ingredienser ${scale===2?'· dobbelt portion':''}</h3><ul>${r.ingredients.map(x=>`<li>${scaleIngredient(x,scale)}</li>`).join('')}</ul><h3>Sådan gør du</h3><ol>${r.steps.map(x=>`<li>${x}</li>`).join('')}</ol>${r.taste?`<div class="note"><b>Sovs / dip / smag</b><br>${r.taste}</div>`:''}${r.child?`<div class="note pink" style="margin-top:10px"><b>Til børn på ca. 15 måneder</b><br>${r.child}</div>`:''}${r.tip?`<div class="note" style="margin-top:10px"><b>Praktisk tip</b><br>${r.tip}</div>`:''}<h3>Hvorfor er den god for børnene?</h3><ul>${r.why.map(x=>`<li>${x}</li>`).join('')}</ul>${feedbackHtml(id)}</article></div>${nav()}`;initFeedbackSelection(id)}
+function renderRecipe(id){const r=recipes.find(x=>x.id===id);if(!r){library();return}const is=favs().includes(id);app.innerHTML=`<div class="shell"><button class="btn secondary" onclick="library('${r.category}')">← ${r.category}</button><article class="recipe"><button class="heart" onclick="toggleFav('${id}')">${is?'♥':'♡'}</button>${r.isCustom?`<div class="recipe-custom-actions"><button class="btn secondary small" onclick="customRecipeEditor('${id}')">Redigér egen ret</button><button class="text-link danger" onclick="deleteCustomRecipe('${id}')">Slet</button></div>`:''}${recipeMedia(r,'recipe-hero')}<span class="badge">${r.category}</span>${r.isCustom?'<span class="custom-badge">Familiens egen</span>':''}<h1>${escapeHtml(r.name)}</h1><div class="info"><div><b>Portion</b><br>${r.portion}</div><div><b>Aktiv tid</b><br>${r.active}</div><div><b>Samlet tid</b><br>${r.total}</div></div><div class="portionbar"><button class="${scale===1?'active':''}" onclick="setScale('${id}',1)">Kun i dag</button><button class="${scale===2?'active':''}" onclick="setScale('${id}',2)">Dobbelt portion</button></div><h3>Ingredienser ${scale===2?'· dobbelt portion':''}</h3><ul>${r.ingredients.map(x=>`<li>${scaleIngredient(x,scale)}</li>`).join('')}</ul><h3>Sådan gør du</h3><ol>${r.steps.map(x=>`<li>${x}</li>`).join('')}</ol>${r.taste?`<div class="note"><b>Sovs / dip / smag</b><br>${r.taste}</div>`:''}${r.child?`<div class="note pink" style="margin-top:10px"><b>Til børn på ca. 15 måneder</b><br>${r.child}</div>`:''}${r.tip?`<div class="note" style="margin-top:10px"><b>Praktisk tip</b><br>${r.tip}</div>`:''}<h3>Hvorfor er den god for børnene?</h3><ul>${(r.why||[]).map(x=>`<li>${x}</li>`).join('')}</ul>${feedbackHtml(id)}</article></div>${nav()}`;initFeedbackSelection(id)}
 
 const feedbackReactions=[
   {value:'loved',emoji:'😍',label:'Spiste godt'},
@@ -281,7 +267,7 @@ function quickMeal(category){
   else list=list.sort((a,b)=>minutes(a.active)-minutes(b.active)).slice(0,8);
   const r=list[Math.floor(Math.random()*Math.min(list.length,5))];
   if(!r){library(category);return}
-  app.innerHTML=`<div class="shell"><div class="section-title"><div><span class="eyebrow">Hurtigt ${category==='Mellemmåltider'?'mellemmåltid':category.toLowerCase()}</span><h2>Prøv denne</h2></div><button class="btn secondary" onclick="quickNow()">← Vælg måltid</button></div><section class="quick-result"><img src="${r.image}" alt="${r.name}"><div><span class="quick-time">⚡ ${r.active||'Kort aktiv tid'}</span><h2>${r.name}</h2><p>${r.why?.[0]||'En hurtig ret fra familiens eget opskriftsbibliotek.'}</p><div class="actions"><button class="btn" onclick="showRecipe('${r.id}')">Se opskrift</button><button class="btn secondary" onclick="quickMeal('${category}')">↻ Foreslå en anden</button></div></div></section></div>${nav()}`;
+  app.innerHTML=`<div class="shell"><div class="section-title"><div><span class="eyebrow">Hurtigt ${category==='Mellemmåltider'?'mellemmåltid':category.toLowerCase()}</span><h2>Prøv denne</h2></div><button class="btn secondary" onclick="quickNow()">← Vælg måltid</button></div><section class="quick-result">${recipeMedia(r,'quick-result-media')}<div><span class="quick-time">⚡ ${r.active||'Kort aktiv tid'}</span><h2>${r.name}</h2><p>${r.why?.[0]||'En hurtig ret fra familiens eget opskriftsbibliotek.'}</p><div class="actions"><button class="btn" onclick="showRecipe('${r.id}')">Se opskrift</button><button class="btn secondary" onclick="quickMeal('${category}')">↻ Foreslå en anden</button></div></div></section></div>${nav()}`;
 }
 function planToday(){const cats=["Morgenmad","Frokost","Aftensmad","Mellemmåltider"];app.innerHTML=`<div class="shell"><div class="section-title"><h2>Planlæg i dag</h2><button class="btn secondary" onclick="home()">← Tilbage</button></div><p class="muted">Vælg dagens fire måltider. Dine valg gemmes på denne enhed.</p><div class="plan-grid">${cats.map(c=>{const opts=recipes.filter(r=>r.category===c);return `<div class="plan-slot"><h3>${emoji[c]} ${c}</h3><select style="width:100%;padding:12px;border-radius:12px;border:1px solid #d9ddd6" onchange="localStorage.setItem('plan-${c}',this.value)"><option value="">Vælg ret…</option>${opts.map(r=>`<option ${localStorage.getItem('plan-'+c)===r.id?'selected':''} value="${r.id}">${r.name}</option>`).join('')}</select></div>`}).join('')}</div></div>${nav()}`}
 
@@ -293,21 +279,45 @@ const firstLunchByBusy={high:[1,3,5,20,4],normal:[3,5,19,4,9],low:[6,10,11,18,19
 const lunchMap={1:15,16:15,2:13,3:2,19:13,4:12,5:17,6:12,11:12,12:10,14:12,18:17,7:20,8:20,9:14,13:7,17:8,20:16,10:18,15:1};
 function rBy(cat,n){return recipes.find(r=>r.category===cat && Number(r.number)===Number(n))}
 function minutes(s){const m=(s||'').match(/(\d+)/);return m?Number(m[1]):99}
-function chooseDinner(pool,used,busy,seed){let ids=dinnerPools[pool]||[];let candidates=ids.map(n=>rBy('Aftensmad',n)).filter(Boolean).filter(r=>!used.has(r.id));if(!candidates.length)candidates=ids.map(n=>rBy('Aftensmad',n)).filter(Boolean);if(busy==='high'){const quick=candidates.filter(r=>minutes(r.active)<=20 && !/timer|2,5|3 timer/i.test(r.total||''));if(quick.length)candidates=quick}return candidates[seed%candidates.length]}
-function pickSnack(dayMeals,index){const text=dayMeals.map(r=>r?.ingredients?.join(' ')||'').join(' ').toLowerCase();let ids=[];if(text.includes('bær'))ids.push(3,5,16);if(text.includes('banan'))ids.push(4,7);if(text.includes('avocado'))ids.push(2,9);if(text.includes('laks')||text.includes('fisk'))ids.push(8,20);if(text.includes('æg'))ids.push(1,15);ids.push(3,4,7,2,1);return rBy('Mellemmåltider',ids[index%ids.length]||3)}
-function planner(){const saved=JSON.parse(localStorage.getItem('kostkompas-plan-settings')||'{"days":4}');app.innerHTML=`<div class="shell"><div class="section-title"><h2>Lav madplan</h2><button class="btn secondary" onclick="home()">← Tilbage</button></div><p class="muted">Motoren følger Kostsystemets rækkefølge: aftensmad først → næste dags frokost fra rester → morgenmad → mellemmåltider fra de samme råvarer → indkøbsliste → Ernæringsfilter.</p><div class="planner-controls"><div class="control"><label>Antal dage</label><select id="days"><option ${saved.days==3?'selected':''}>3</option><option ${saved.days==4?'selected':''}>4</option><option ${saved.days==5?'selected':''}>5</option><option ${saved.days==7?'selected':''}>7</option></select></div><div class="control"><label>Familie</label><select disabled><option>2 voksne + 2 små børn</option></select></div></div><div class="plan-actions"><button class="btn" onclick="generatePlan()">✨ Generér madplan</button>${currentPlan?'<button class="btn secondary" onclick="renderCurrentPlan()">Vis seneste plan</button>':''}</div><div class="engine-note"><b>Rester er aktive.</b> Når næste dags frokost bygges af aftensmaden, markeres aftensmaden som “lav dobbelt”, og frokosten tælles ikke dobbelt i indkøbslisten.</div></div>${nav()}`}
+
+function recentRecipeIds(){
+  const ids=[];(planHistory||[]).slice(-5).forEach(p=>(p.recipeIds||[]).forEach(id=>ids.push(id)));return ids;
+}
+function feedbackScore(recipeId){
+  const entries=feedbackEntries(recipeId).slice(-6);let score=0;
+  entries.forEach(e=>{if(e.reaction==='loved')score+=3;else if(e.reaction==='tasted')score+=1;else if(e.reaction==='barely')score-=0.5;else if(e.reaction==='refused')score-=1;});
+  return Math.max(-3,Math.min(6,score));
+}
+function recipeAffinityScore(r){
+  if(!r)return -999;let score=feedbackScore(r.id);
+  const recent=recentRecipeIds();const occurrences=recent.filter(id=>id===r.id).length;score-=occurrences*2.5;
+  if(favs().includes(r.id))score+=1;
+  return score;
+}
+function pickPersonalized(candidates,used=new Set(),seed=0){
+  let list=(candidates||[]).filter(Boolean);if(!list.length)return null;
+  const unused=list.filter(r=>!used.has(r.id));if(unused.length)list=unused;
+  const ranked=list.map((r,i)=>({r,score:recipeAffinityScore(r)+(((seed+i*7)%11)/100)})).sort((a,b)=>b.score-a.score);
+  return ranked[0]?.r||list[seed%list.length];
+}
+function customDinnersForPool(pool){return customRecipes.filter(r=>r.category==='Aftensmad'&&r.planGroup===pool)}
+function chooseDinner(pool,used,busy,seed){let ids=dinnerPools[pool]||[];let candidates=[...ids.map(n=>rBy('Aftensmad',n)).filter(Boolean),...customDinnersForPool(pool)];if(busy==='high'){const quick=candidates.filter(r=>minutes(r.active)<=20&&!/timer|2,5|3 timer/i.test(r.total||''));if(quick.length)candidates=quick}return pickPersonalized(candidates,used,seed)}
+function pickSnack(dayMeals,index){const text=dayMeals.map(r=>r?.ingredients?.join(' ')||'').join(' ').toLowerCase();let ids=[];if(text.includes('bær'))ids.push(3,5,16);if(text.includes('banan'))ids.push(4,7);if(text.includes('avocado'))ids.push(2,9);if(text.includes('laks')||text.includes('fisk'))ids.push(8,20);if(text.includes('æg'))ids.push(1,15);ids.push(3,4,7,2,1);const ingredientMatches=ids.map(n=>rBy('Mellemmåltider',n)).filter(Boolean);const customs=customRecipes.filter(r=>r.category==='Mellemmåltider');return pickPersonalized([...ingredientMatches,...customs],new Set(),index)||rBy('Mellemmåltider',3)}
+function planner(){const saved=JSON.parse(localStorage.getItem('kostkompas-plan-settings')||'{"days":4}');app.innerHTML=`<div class="shell"><div class="section-title"><h2>Lav madplan</h2><button class="btn secondary" onclick="home()">← Tilbage</button></div><p class="muted">Motoren følger Kostsystemets rækkefølge og bruger nu også børnenes tidligere reaktioner og de seneste madplaner. Favoritter får et lille løft, mens nyligt brugte retter nedprioriteres – uden at afviste retter forsvinder permanent.</p><div class="planner-controls"><div class="control"><label>Antal dage</label><select id="days"><option ${saved.days==3?'selected':''}>3</option><option ${saved.days==4?'selected':''}>4</option><option ${saved.days==5?'selected':''}>5</option><option ${saved.days==7?'selected':''}>7</option></select></div><div class="control"><label>Familie</label><select disabled><option>2 voksne + 2 små børn</option></select></div></div><div class="plan-actions"><button class="btn" onclick="generatePlan()">✨ Generér madplan</button>${currentPlan?'<button class="btn secondary" onclick="renderCurrentPlan()">Vis seneste plan</button>':''}</div><div class="engine-note"><b>Personlig motor er aktiv.</b> Børnenes reaktioner påvirker forslagene nænsomt, og tidligere retter hjælper med variation.<br><br><b>Rester er aktive.</b> Når næste dags frokost bygges af aftensmaden, markeres aftensmaden som “lav dobbelt”, og frokosten tælles ikke dobbelt i indkøbslisten.</div></div>${nav()}`}
+function archiveCurrentPlan(){if(!currentPlan?.items?.length)return;const recipeIds=[];currentPlan.items.forEach(d=>['breakfast','lunch','dinner','snack'].forEach(k=>{if(d[k]?.id&&!recipeIds.includes(d[k].id))recipeIds.push(d[k].id)}));planHistory=[...(planHistory||[]),{created:currentPlan.created||Date.now(),recipeIds}].slice(-8);saveHouseholdStateLocal()}
 function generatePlan(){
+  archiveCurrentPlan();
   const days=Number(document.getElementById('days').value),busy='normal';
   localStorage.setItem('kostkompas-plan-settings',JSON.stringify({days}));
   const pattern=patterns[days];const used=new Set();const out=[];
   for(let i=0;i<days;i++){
     const dinner=chooseDinner(pattern[i],used,busy,i);used.add(dinner.id);
     let lunch,leftover=false;
-    if(i===0){const ids=firstLunchByBusy[busy];lunch=rBy('Frokost',ids[i%ids.length])}
-    else{const prev=out[i-1].dinner;const ln=lunchMap[prev.number]||1;lunch=rBy('Frokost',ln);leftover=true;out[i-1].makeDouble=true}
-    const bIds=breakfastByBusy[busy];const breakfast=rBy('Morgenmad',bIds[i%bIds.length]);
+    if(i===0){const ids=firstLunchByBusy[busy];const base=ids.map(n=>rBy('Frokost',n)).filter(Boolean);lunch=pickPersonalized([...base,...customRecipes.filter(r=>r.category==='Frokost')],new Set(),i)}
+    else{const prev=out[i-1].dinner;if(prev.isCustom){lunch=prev}else{const ln=lunchMap[prev.number]||1;lunch=rBy('Frokost',ln)}leftover=true;out[i-1].makeDouble=true}
+    const bIds=breakfastByBusy[busy];const breakfast=pickPersonalized([...bIds.map(n=>rBy('Morgenmad',n)).filter(Boolean),...customRecipes.filter(r=>r.category==='Morgenmad')],new Set(),i);
     const snack=pickSnack([breakfast,lunch,dinner],i);
-    out.push({day:i+1,breakfast,lunch,dinner,snack,leftoverLunch:leftover,makeDouble:false,freezeExtra:false,outMeals:{},manual:{}})
+    out.push({day:i+1,breakfast,lunch,dinner,snack,leftoverLunch:leftover,makeDouble:false,outMeals:{},manual:{}})
   }
   currentPlan={days,busy:'normal',items:out,created:Date.now()};
   persistPlan();renderCurrentPlan()
@@ -348,12 +358,11 @@ function unlinkNextLunch(dayIndex){
 function linkNextLunch(dayIndex){
   const d=currentPlan.items[dayIndex];if(dayIndex>=currentPlan.items.length-1||mealIsOut(d,'dinner'))return;
   const next=currentPlan.items[dayIndex+1];if(!next.manual)next.manual={};
-  if(!next.manual.lunch&&!mealIsOut(next,'lunch')){const ln=lunchMap[d.dinner.number]||1;next.lunch=rBy('Frokost',ln)||rBy('Frokost',1);next.leftoverLunch=true;d.makeDouble=true;d.freezeExtra=false}
+  if(!next.manual.lunch&&!mealIsOut(next,'lunch')){if(d.dinner?.isCustom)next.lunch=d.dinner;else{const ln=lunchMap[d.dinner.number]||1;next.lunch=rBy('Frokost',ln)||rBy('Frokost',1)}next.leftoverLunch=true;d.makeDouble=true}
 }
 function toggleMealOut(dayIndex,key){
   if(!currentPlan)return;ensureManualFlags();const d=currentPlan.items[dayIndex];if(!d.outMeals)d.outMeals={};const next=!d.outMeals[key];d.outMeals[key]=next;
   if(key==='dinner'){
-    d.freezeExtra=false;
     if(next)unlinkNextLunch(dayIndex);else linkNextLunch(dayIndex);
   }
   if(key==='lunch'&&dayIndex>0&&d.leftoverLunch){
@@ -370,7 +379,7 @@ function plannedMealRow(label,d,i,key,note=''){
 }
 function dinnerPlanRow(d,i){
   if(mealIsOut(d,'dinner'))return plannedMealRow('Aftensmad',d,i,'dinner');
-  const notes=[];if(d.makeDouble)notes.push('Lav dobbelt: aftensmad i dag → frokost i morgen');if(d.freezeExtra){const fp=freezerParts[d.dinner?.id];if(fp)notes.push(`Ekstra ${fp.label} til fryseren`)}
+  const notes=[];if(d.makeDouble)notes.push('Lav dobbelt: aftensmad i dag → frokost i morgen');
   return mealRow('Aftensmad',d.dinner,notes.join(' · '),i,'dinner',mealOutButton(i,'dinner'));
 }
 function categoryForPlanKey(key){return {breakfast:'Morgenmad',lunch:'Frokost',dinner:'Aftensmad',snack:'Mellemmåltider'}[key]}
@@ -390,7 +399,7 @@ function openManualPicker(dayIndex,key){
 }
 function manualPickCard(r,dayIndex,key){
   const selected=currentPlan?.items?.[dayIndex]?.[key]?.id===r.id;
-  return `<article class="picker-card ${selected?'selected':''}"><img src="${r.image}" alt="${r.name}"><div class="picker-card-body"><h3>${r.name}</h3><div class="meta">${r.active||''} aktiv · ${r.total||''}</div><button class="btn ${selected?'secondary':''}" onclick="chooseManualMeal(${dayIndex},'${key}','${r.id}')">${selected?'Valgt nu':'Vælg denne'}</button></div></article>`
+  return `<article class="picker-card ${selected?'selected':''}">${recipeMedia(r,'picker-media')}<div class="picker-card-body"><h3>${r.name}</h3><div class="meta">${r.active||''} aktiv · ${r.total||''}</div><button class="btn ${selected?'secondary':''}" onclick="chooseManualMeal(${dayIndex},'${key}','${r.id}')">${selected?'Valgt nu':'Vælg denne'}</button></div></article>`
 }
 function filterManualPicker(dayIndex,key){
   const q=(document.getElementById('manual-q')?.value||'').toLowerCase();const category=categoryForPlanKey(key);
@@ -408,7 +417,7 @@ function chooseManualMeal(dayIndex,key,recipeId){
     if(dayIndex<currentPlan.items.length-1){
       const nextDay=currentPlan.items[dayIndex+1];if(!nextDay.manual)nextDay.manual={};
       if(!nextDay.manual.lunch){
-        const ln=lunchMap[r.number]||1;nextDay.lunch=rBy('Frokost',ln)||rBy('Frokost',1);nextDay.leftoverLunch=true;d.makeDouble=true;
+        if(r.isCustom)nextDay.lunch=r;else{const ln=lunchMap[r.number]||1;nextDay.lunch=rBy('Frokost',ln)||rBy('Frokost',1)}nextDay.leftoverLunch=true;d.makeDouble=true;
       }else{
         d.makeDouble=false;
       }
@@ -457,7 +466,7 @@ function swapMeal(dayIndex,key){
 function renderCurrentPlan(){
   closeManualPicker();
   if(!currentPlan){planner();return}
-  currentPlan.items.forEach(d=>{if(!d.outMeals||typeof d.outMeals!=='object')d.outMeals={};if(typeof d.freezeExtra!=='boolean')d.freezeExtra=false});
+  currentPlan.items.forEach(d=>{if(!d.outMeals||typeof d.outMeals!=='object')d.outMeals={};});
   const f=nutritionCheck(currentPlan),passed=f.filter(x=>x.ok).length;
   const keyFilter=f.filter(x=>['Jern hver dag','C-vitamin ved plantejern','Fisk og omega-3','Fedtvariation','Variation over ugen'].includes(x.label));
   app.innerHTML=`<div class="shell">
@@ -553,11 +562,10 @@ function buildShopping(plan){
   const map=new Map();
   const addIngredient=(raw,m=1)=>{const p=parseIngredient(raw,m);const key=p.name+'|'+p.unit;if(!map.has(key))map.set(key,{...p,qty:p.qty||0,count:p.qty?0:1});else{const o=map.get(key);if(p.qty)o.qty+=p.qty;else o.count+=1}};
   const addRecipe=(r,m=1)=>{if(!r)return;r.ingredients.forEach(s=>addIngredient(s,m))};
-  const addFreezerPart=(r)=>{const fp=freezerParts[r?.id];if(!r||!fp)return;fp.idx.forEach(i=>{if(r.ingredients[i])addIngredient(r.ingredients[i],1)})};
   plan.items.forEach((d,i)=>{
     if(!mealIsOut(d,'breakfast'))addRecipe(d.breakfast,1);
     if(!mealIsOut(d,'lunch')&&(i===0||!d.leftoverLunch))addRecipe(d.lunch,1);
-    if(!mealIsOut(d,'dinner')){addRecipe(d.dinner,d.makeDouble?2:1);if(d.freezeExtra)addFreezerPart(d.dinner)}
+    if(!mealIsOut(d,'dinner'))addRecipe(d.dinner,d.makeDouble?2:1)
     if(!mealIsOut(d,'snack'))addRecipe(d.snack,1)
   });
   const groups={};for(const v of map.values()){const c=categoryFor(v.name);(groups[c]??=[]).push(v)}return groups
@@ -576,14 +584,49 @@ function fmtItem(v){
 
 function shoppingPlanMeal(label,r,note=''){
   if(!r)return `<div class="shop-plan-meal no-photo"><div></div><div><span>${label}</span><strong>Ikke planlagt</strong>${note?`<small>${note}</small>`:''}</div></div>`;
-  return `<div class="shop-plan-meal"><img src="${r.image}" alt=""><div><span>${label}</span><strong>${r.name}</strong>${note?`<small>${note}</small>`:''}</div></div>`
+  return `<div class="shop-plan-meal">${r.image?`<img src="${r.image}" alt="">`:`<div class="shop-plan-placeholder">🍽️</div>`}<div><span>${label}</span><strong>${r.name}</strong>${note?`<small>${note}</small>`:''}</div></div>`
 }
 function shoppingPlanOverview(){
   return `<section class="shopping-plan-section"><div class="shopping-plan-head"><div><span class="eyebrow">Overblik</span><h2>Madplanen du handler til</h2><p>Her kan du hurtigt se, hvilke måltider indkøbslisten dækker – inkl. jeres tilpassede dage.</p></div><button class="btn secondary" onclick="renderCurrentPlan()">Redigér madplan</button></div>
-    <div class="shopping-days">${currentPlan.items.map((d,i)=>`<article class="shopping-day"><h3>${dayName(d.day)}</h3>${mealIsOut(d,'breakfast')?shoppingPlanMeal('Morgenmad',null,'Spiser ude · intet indkøb'):shoppingPlanMeal('Morgenmad',d.breakfast)}${mealIsOut(d,'lunch')?shoppingPlanMeal('Frokost',null,'Spiser ude · intet indkøb'):shoppingPlanMeal('Frokost',d.lunch,d.leftoverLunch?'Rester fra dagen før':'')}${mealIsOut(d,'dinner')?shoppingPlanMeal('Aftensmad',null,'Spiser ude · intet indkøb'):shoppingPlanMeal('Aftensmad',d.dinner,d.makeDouble?'Lav dobbelt → frokost i morgen':d.freezeExtra?`Ekstra ${freezerParts[d.dinner?.id]?.label||'fryseportion'} → fryser`:'')}${mealIsOut(d,'snack')?shoppingPlanMeal('Mellemmåltid',null,'Spiser ude · intet indkøb'):shoppingPlanMeal('Mellemmåltid',d.snack)}</article>`).join('')}</div>
+    <div class="shopping-days">${currentPlan.items.map((d,i)=>`<article class="shopping-day"><h3>${dayName(d.day)}</h3>${mealIsOut(d,'breakfast')?shoppingPlanMeal('Morgenmad',null,'Spiser ude · intet indkøb'):shoppingPlanMeal('Morgenmad',d.breakfast)}${mealIsOut(d,'lunch')?shoppingPlanMeal('Frokost',null,'Spiser ude · intet indkøb'):shoppingPlanMeal('Frokost',d.lunch,d.leftoverLunch?'Rester fra dagen før':'')}${mealIsOut(d,'dinner')?shoppingPlanMeal('Aftensmad',null,'Spiser ude · intet indkøb'):shoppingPlanMeal('Aftensmad',d.dinner,d.makeDouble?'Lav dobbelt → frokost i morgen':'')}${mealIsOut(d,'snack')?shoppingPlanMeal('Mellemmåltid',null,'Spiser ude · intet indkøb'):shoppingPlanMeal('Mellemmåltid',d.snack)}</article>`).join('')}</div>
   </section>`
 }
 
+
+function customRecipeEditor(id=''){
+  const existing=id?customRecipes.find(r=>r.id===id):null;
+  const category=existing?.category||'Aftensmad';
+  const groups=[['fatFish','Fed fisk'],['leanFish','Mager fisk'],['beef','Oksekød / rødt kød'],['chicken','Kylling / fjerkræ'],['egg','Æg / bælgfrugter / vegetarisk']];
+  app.innerHTML=`<div class="shell"><div class="section-title"><div><span class="eyebrow">Familiens egne retter</span><h2>${existing?'Redigér egen ret':'Tilføj jeres egen ret'}</h2></div><button class="btn secondary" onclick="library()">← Opskrifter</button></div>
+  <p class="muted">Egne retter synkroniseres mellem jeres enheder og kan vælges i madplanen. Aftensmadsretter kan også bruges af den personlige madplansmotor, når du angiver rettens hovedtype.</p>
+  <form class="custom-recipe-form" onsubmit="saveCustomRecipe(event,'${existing?.id||''}')">
+    <div class="custom-form-grid"><label><span>Navn</span><input id="cr-name" required value="${escapeHtml(existing?.name||'')}" placeholder="Fx Mormors frikadeller"></label>
+    <label><span>Kategori</span><select id="cr-category" onchange="toggleCustomPlanGroup()">${['Morgenmad','Frokost','Aftensmad','Mellemmåltider'].map(c=>`<option ${c===category?'selected':''}>${c}</option>`).join('')}</select></label>
+    <label><span>Aktiv tid</span><input id="cr-active" value="${escapeHtml(existing?.active||'20 min')}" placeholder="Fx 20 min"></label>
+    <label><span>Samlet tid</span><input id="cr-total" value="${escapeHtml(existing?.total||'30 min')}" placeholder="Fx 30 min"></label></div>
+    <label id="cr-plan-group-wrap" class="custom-wide"><span>Hovedtype til madplansmotoren</span><select id="cr-plan-group">${groups.map(([v,l])=>`<option value="${v}" ${existing?.planGroup===v?'selected':''}>${l}</option>`).join('')}</select><small>Bruges kun, hvis retten er aftensmad.</small></label>
+    <label class="custom-wide"><span>Ingredienser · én pr. linje</span><textarea id="cr-ingredients" required rows="8" placeholder="500 g hakket oksekød\n1 løg\n700 g kartofler">${escapeHtml((existing?.ingredients||[]).join('\n'))}</textarea></label>
+    <label class="custom-wide"><span>Fremgangsmåde · ét trin pr. linje</span><textarea id="cr-steps" required rows="8" placeholder="Hak løget fint.\nSteg kødet.\nServer med ...">${escapeHtml((existing?.steps||[]).join('\n'))}</textarea></label>
+    <label class="custom-wide"><span>Sovs / dip / smag <small>valgfrit</small></span><textarea id="cr-taste" rows="3">${escapeHtml(existing?.taste||'')}</textarea></label>
+    <label class="custom-wide"><span>Småbørnstilpasning <small>valgfrit</small></span><textarea id="cr-child" rows="3">${escapeHtml(existing?.child||'')}</textarea></label>
+    <label class="custom-wide"><span>Hvorfor passer retten i Kostkompasset? <small>én pointe pr. linje</small></span><textarea id="cr-why" rows="4">${escapeHtml((existing?.why||[]).join('\n'))}</textarea></label>
+    <div class="custom-recipe-actions"><button class="btn" type="submit">${existing?'Gem ændringer':'Tilføj retten'}</button>${existing?`<button class="btn secondary" type="button" onclick="showRecipe('${existing.id}')">Annullér</button>`:''}</div>
+  </form></div>${nav()}`;
+  toggleCustomPlanGroup();
+}
+function toggleCustomPlanGroup(){const wrap=document.getElementById('cr-plan-group-wrap');if(wrap)wrap.style.display=document.getElementById('cr-category')?.value==='Aftensmad'?'grid':'none'}
+function linesFrom(id){return (document.getElementById(id)?.value||'').split(/\n+/).map(x=>x.trim()).filter(Boolean)}
+async function saveCustomRecipe(e,id=''){
+  e.preventDefault();const category=document.getElementById('cr-category').value;const existing=id?customRecipes.find(r=>r.id===id):null;
+  const recipe={id:existing?.id||`egen-${Date.now()}`,name:document.getElementById('cr-name').value.trim(),category,number:null,portion:'2 voksne + 2 børn',active:document.getElementById('cr-active').value.trim()||'20 min',total:document.getElementById('cr-total').value.trim()||document.getElementById('cr-active').value.trim()||'20 min',ingredients:linesFrom('cr-ingredients'),steps:linesFrom('cr-steps'),taste:document.getElementById('cr-taste').value.trim(),child:document.getElementById('cr-child').value.trim(),tip:'',why:linesFrom('cr-why'),image:'',isCustom:true,planGroup:category==='Aftensmad'?document.getElementById('cr-plan-group').value:''};
+  if(existing)customRecipes=customRecipes.map(r=>r.id===id?recipe:r);else customRecipes.push(recipe);
+  if(currentPlan?.items?.length)currentPlan.items.forEach(d=>['breakfast','lunch','dinner','snack'].forEach(k=>{if(d[k]?.id===recipe.id)d[k]=recipe}));
+  rebuildRecipes();saveHouseholdStateLocal();await saveHouseholdStateCloud();if(currentPlan)persistPlan();showRecipe(recipe.id);
+}
+async function deleteCustomRecipe(id){
+  const r=customRecipes.find(x=>x.id===id);if(!r)return;const inPlan=currentPlan?.items?.some(d=>['breakfast','lunch','dinner','snack'].some(k=>d[k]?.id===id));if(inPlan){alert('Retten er med i den aktive madplan. Byt den først ud i madplanen, og slet den derefter.');return}if(!confirm(`Slet “${r.name}”?`))return;
+  customRecipes=customRecipes.filter(x=>x.id!==id);delete recipeFeedback[id];let f=favs().filter(x=>x!==id);saveFavs(f);rebuildRecipes();saveHouseholdStateLocal();await saveHouseholdStateCloud();library();
+}
 function pantry(){
   loadHouseholdState();
   const items=allPantryItems();
@@ -617,7 +660,7 @@ function shoppingList(){
     <div class="section-title"><h2>Indkøbsliste</h2><button class="btn secondary" onclick="renderCurrentPlan()">← Madplan</button></div>
     ${shoppingPlanOverview()}
     <div class="shopping-list-toolbar"><div><span class="eyebrow">Klar til butikken</span><h2>Det skal du handle</h2><p class="muted">${neededCount} varelinjer · ${Math.min(checkedCount,neededCount)} afkrydset</p></div><div class="actions"><button class="btn secondary" onclick="pantry()">🏡 Basislager</button><button class="btn secondary" onclick="clearShoppingChecks()">Nulstil flueben</button></div></div>
-    <p class="muted">Samme ingrediens samles så vidt muligt på tværs af retterne. Planlagte restefrokoster tælles ikke dobbelt. Ude-aftener fjernes, og “kun børn hjemme” regnes som ca. en halv familieportion. Flueben og basislager synkroniseres mellem jeres enheder.</p>
+    <p class="muted">Samme ingrediens samles så vidt muligt på tværs af retterne. Planlagte restefrokoster tælles ikke dobbelt. Måltider markeret som “Spiser ude” fjernes automatisk. Flueben og basislager synkroniseres mellem jeres enheder.</p>
     <div class="shopping-wrap">
       <div class="shop-card">
         ${order.filter(c=>groups[c]?.length).map(c=>`<div class="shop-cat"><h4>${c}</h4>${groups[c].sort((a,b)=>a.name.localeCompare(b.name)).map(v=>{const key=`shop:${c}:${v.name}:${v.unit}`;return `<label class="shop-item"><input type="checkbox" ${shoppingChecks[key]?'checked':''} onchange="saveShoppingCheck('${encodeURIComponent(key)}',this.checked)"><span>${fmtItem(v)}</span></label>`}).join('')}</div>`).join('')||'<div class="empty">Alt på listen er enten afkrydset eller markeret som basislager.</div>'}
@@ -631,4 +674,4 @@ function saveShoppingCheck(encoded,checkedValue){
 }
 function clearShoppingChecks(){shoppingChecks={};saveHouseholdStateLocal();saveHouseholdStateCloud().then(shoppingList).catch(()=>shoppingList())}
 function knowledge(){app.innerHTML=`<div class="shell"><div class="section-title"><h2>Kostkompasset</h2><button class="btn secondary" onclick="home()">← Tilbage</button></div><p class="muted">Den korte hverdagsretning fra familiens Kostsystem.</p><div class="knowledge"><div class="note"><b>🌿 Rigtig mad først</b><br><br>Genkendelige, minimalt forarbejdede råvarer er fundamentet.</div><div class="note"><b>🍽️ Fire byggesten</b><br><br>Jern/protein + energi/stivelse + grønt/frugt + fedt.</div><div class="note"><b>🔄 Variation</b><br><br>Vurder dagen og især ugen frem for hvert enkelt måltid.</div><div class="note"><b>👨‍👩‍👧‍👦 Én grundmad</b><br><br>Børnene spiser familiens mad tilpasset salt, styrke, konsistens og størrelse.</div><div class="note"><b>🐟 Fisk fast i ugen</b><br><br>Variér fed og mager fisk; fed fisk regelmæssigt.</div><div class="note"><b>🥑 Fedtvariation</b><br><br>Fed fisk, olivenolie, avocado, nøddesmør, æg, smør og mejeri.</div><div class="note"><b>🩸 Jern hver dag</b><br><br>Tænk C-vitamin sammen med relevante plantejernskilder.</div><div class="note"><b>👶 Alderssikkerhed</b><br><br>Tilpas hårde/runde fødevarer, hele nødder og andre kvælningsrisici.</div></div></div>${nav()}`}
-fetch('recipes.json').then(r=>r.json()).then(d=>{recipes=d;startApp()}).catch(()=>loginScreen('Opskrifterne kunne ikke indlæses. Prøv at genindlæse siden.'));
+fetch('recipes.json').then(r=>r.json()).then(d=>{baseRecipes=d;loadHouseholdState();rebuildRecipes();startApp()}).catch(()=>loginScreen('Opskrifterne kunne ikke indlæses. Prøv at genindlæse siden.'));
