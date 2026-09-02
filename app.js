@@ -19,8 +19,48 @@ async function installApp(){
   alert('På iPhone/iPad: tryk Del → Føj til hjemmeskærm. På Android/Chrome: brug browsermenuen → Installer app.');
 }
 
-let recipes=[];let currentCategory=null;let scale=1;let currentPlan=null;let recipeFeedback={};
+let recipes=[];let currentCategory=null;let scale=1;let currentPlan=null;let recipeFeedback={};let pantryState={};let shoppingChecks={};
 const feedbackKey='kostkompas-recipe-feedback';
+const pantryKey='kostkompas-pantry';
+const shoppingChecksKey='kostkompas-shop-checked';
+const defaultPantryItems=[
+  {id:'oliveoil',name:'Ekstra jomfruolivenolie',category:'Fedt & smag',keywords:['olivenolie','ekstra jomfruolivenolie']},
+  {id:'butter',name:'Smør',category:'Køl',keywords:['smør']},
+  {id:'spices',name:'Milde krydderier',category:'Fedt & smag',keywords:['paprika','karry','timian','oregano','kanel','spidskommen','krydderi']},
+  {id:'oats',name:'Havregryn',category:'Kolonial',keywords:['havregryn']},
+  {id:'rice',name:'Ris',category:'Kolonial',keywords:['ris']},
+  {id:'pasta',name:'Pasta',category:'Kolonial',keywords:['pasta']},
+  {id:'ryebread',name:'Rugbrød',category:'Brød',keywords:['rugbrød']},
+  {id:'passata',name:'Passata / tomatprodukter',category:'Kolonial',keywords:['passata','hakkede tomater','tomatpuré','tomatprodukter']},
+  {id:'nutbutter',name:'100 % nøddesmør / peanutbutter',category:'Kolonial',keywords:['nøddesmør','peanutbutter','mandelsmør']},
+  {id:'yoghurt',name:'A38 / naturel yoghurt',category:'Køl',keywords:['a38','yoghurt']},
+  {id:'flour',name:'Mel',category:'Kolonial',keywords:['mel']}
+];
+function loadHouseholdState(){
+  try{pantryState=JSON.parse(localStorage.getItem(pantryKey)||'{}')||{}}catch(e){pantryState={}}
+  try{shoppingChecks=JSON.parse(localStorage.getItem(shoppingChecksKey)||'{}')||{}}catch(e){shoppingChecks={}}
+  if(!Array.isArray(pantryState.custom))pantryState.custom=[];
+  if(!pantryState.items||typeof pantryState.items!=='object')pantryState.items={};
+}
+function saveHouseholdStateLocal(){localStorage.setItem(pantryKey,JSON.stringify(pantryState));localStorage.setItem(shoppingChecksKey,JSON.stringify(shoppingChecks))}
+async function saveHouseholdStateCloud(){
+  saveHouseholdStateLocal();
+  try{
+    const remote=await fetchCloudPlan()||{};
+    remote.recipeFeedback=recipeFeedback;
+    remote.pantryState=pantryState;
+    remote.shoppingChecks=shoppingChecks;
+    await saveCloudState(remote);
+    if(currentPlan){currentPlan.pantryState=pantryState;currentPlan.shoppingChecks=shoppingChecks;localStorage.setItem('kostkompas-current-plan',JSON.stringify(currentPlan))}
+  }catch(e){console.warn('Household cloud save failed',e)}
+}
+function allPantryItems(){return [...defaultPantryItems,...(pantryState.custom||[])]}
+function pantryHas(id){return !!pantryState.items?.[id]}
+function pantryMatches(name){
+  const n=normName(name).toLowerCase();
+  return allPantryItems().some(item=>pantryHas(item.id)&&(item.keywords||[item.name]).some(k=>n.includes(String(k).toLowerCase())));
+}
+
 
 // ----- V2.4: Fælles aktiv madplan via Supabase -----
 const SUPABASE_URL='https://rjipiaghngxzaqgmcawr.supabase.co';
@@ -43,7 +83,7 @@ async function cloudLogin(email,password){
   if(!r.ok){let d={};try{d=await r.json()}catch(e){};throw new Error(d.error_description||d.msg||'Login mislykkedes')}
   const d=await r.json();d.expires_at=Math.floor(Date.now()/1000)+(d.expires_in||3600);saveCloudSession(d);return d;
 }
-async function cloudLogout(){saveCloudSession(null);currentPlan=null;recipeFeedback={};localStorage.removeItem('kostkompas-current-plan');localStorage.removeItem(feedbackKey);loginScreen('Du er logget ud.');}
+async function cloudLogout(){saveCloudSession(null);currentPlan=null;recipeFeedback={};pantryState={};shoppingChecks={};localStorage.removeItem('kostkompas-current-plan');localStorage.removeItem(feedbackKey);localStorage.removeItem(pantryKey);localStorage.removeItem(shoppingChecksKey);loginScreen('Du er logget ud.');}
 async function cloudHeaders(){if(!await refreshCloudSession())return null;return {'apikey':SUPABASE_KEY,'Authorization':`Bearer ${cloudSession.access_token}`,'Content-Type':'application/json'};}
 async function fetchCloudPlan(){
   const h=await cloudHeaders();if(!h)return null;
@@ -57,11 +97,11 @@ async function saveCloudState(state){
 }
 async function saveCloudPlan(plan=currentPlan){
   if(!plan)return;
-  plan.recipeFeedback=recipeFeedback;
+  plan.recipeFeedback=recipeFeedback;plan.pantryState=pantryState;plan.shoppingChecks=shoppingChecks;
   localStorage.setItem('kostkompas-current-plan',JSON.stringify(plan));
   await saveCloudState(plan);
 }
-function persistPlan(){if(!currentPlan)return;currentPlan.recipeFeedback=recipeFeedback;localStorage.setItem('kostkompas-current-plan',JSON.stringify(currentPlan));saveCloudPlan(currentPlan).catch(console.warn)}
+function persistPlan(){if(!currentPlan)return;currentPlan.recipeFeedback=recipeFeedback;currentPlan.pantryState=pantryState;currentPlan.shoppingChecks=shoppingChecks;localStorage.setItem('kostkompas-current-plan',JSON.stringify(currentPlan));saveCloudPlan(currentPlan).catch(console.warn)}
 function loadRecipeFeedback(){try{recipeFeedback=JSON.parse(localStorage.getItem(feedbackKey)||'{}')||{}}catch(e){recipeFeedback={}}}
 function persistRecipeFeedbackLocal(){localStorage.setItem(feedbackKey,JSON.stringify(recipeFeedback))}
 async function saveRecipeFeedbackCloud(){
@@ -115,7 +155,7 @@ async function submitNewPassword(e){
   }catch(err){newPasswordScreen('Kunne ikke gemme den nye adgangskode. Bed om et nyt reset-link og prøv igen.')}
 }
 async function syncAfterLogin(){
-  loadRecipeFeedback();
+  loadRecipeFeedback();loadHouseholdState();
   let local=null;try{local=JSON.parse(localStorage.getItem('kostkompas-current-plan')||'null')}catch(e){}
   const localHasPlan=local && Array.isArray(local.items) && local.items.length;
   const remote=await fetchCloudPlan()||{};
@@ -123,13 +163,19 @@ async function syncAfterLogin(){
   const remoteFeedback=remote.recipeFeedback&&typeof remote.recipeFeedback==='object'?remote.recipeFeedback:{};
   if(Object.keys(remoteFeedback).length){recipeFeedback=remoteFeedback;persistRecipeFeedbackLocal()}
   else if(Object.keys(recipeFeedback).length){remote.recipeFeedback=recipeFeedback;await saveCloudState(remote)}
-  if(remoteHasPlan){currentPlan=remote;currentPlan.recipeFeedback=recipeFeedback;localStorage.setItem('kostkompas-current-plan',JSON.stringify(currentPlan));}
-  else if(localHasPlan){currentPlan=local;currentPlan.recipeFeedback=recipeFeedback;await saveCloudPlan(currentPlan);}
-  else currentPlan=null;
+  const remotePantry=remote.pantryState&&typeof remote.pantryState==='object'?remote.pantryState:null;
+  const remoteChecks=remote.shoppingChecks&&typeof remote.shoppingChecks==='object'?remote.shoppingChecks:null;
+  if(remotePantry){pantryState=remotePantry;if(!Array.isArray(pantryState.custom))pantryState.custom=[];if(!pantryState.items)pantryState.items={}}
+  else if(Object.keys(pantryState.items||{}).length||(pantryState.custom||[]).length)remote.pantryState=pantryState;
+  if(remoteChecks)shoppingChecks=remoteChecks;else if(Object.keys(shoppingChecks).length)remote.shoppingChecks=shoppingChecks;
+  saveHouseholdStateLocal();
+  if(remoteHasPlan){currentPlan=remote;currentPlan.recipeFeedback=recipeFeedback;currentPlan.pantryState=pantryState;currentPlan.shoppingChecks=shoppingChecks;localStorage.setItem('kostkompas-current-plan',JSON.stringify(currentPlan));}
+  else if(localHasPlan){currentPlan=local;currentPlan.recipeFeedback=recipeFeedback;currentPlan.pantryState=pantryState;currentPlan.shoppingChecks=shoppingChecks;await saveCloudPlan(currentPlan);}
+  else {currentPlan=null;if(!remotePantry||!remoteChecks){remote.pantryState=pantryState;remote.shoppingChecks=shoppingChecks;await saveCloudState(remote)}}
 }
 function cloudBadge(){return cloudSession?.user?.email?`<button class="sync-pill" onclick="cloudLogout()" title="Log ud">☁ Synkroniseret</button>`:''}
 async function startApp(){
-  loadRecipeFeedback();
+  loadRecipeFeedback();loadHouseholdState();
   loadCloudSession();
   const recovery=parseRecoveryHash();
   if(recovery){saveCloudSession(recovery);newPasswordScreen();return}
@@ -140,9 +186,9 @@ const app=document.getElementById('app');
 const emoji={"Morgenmad":"🥣","Frokost":"🥗","Aftensmad":"🍲","Mellemmåltider":"🍌","Børnefavoritter 2.0":"💛"};
 const favs=()=>JSON.parse(localStorage.getItem('kostkompas-favs')||'[]');
 const saveFavs=x=>localStorage.setItem('kostkompas-favs',JSON.stringify(x));
-const nav=()=>`<nav class="bottomnav"><button onclick="home()">🏠<br>Hjem</button><button onclick="library()">📚<br>Opskrifter</button><button onclick="planner()">📅<br>Madplan</button><button onclick="favorites()">♥<br>Favoritter</button><button onclick="knowledge()">🧭<br>Kompas</button></nav>`;
+const nav=()=>`<nav class="bottomnav"><button onclick="home()">🏠<br>Hjem</button><button onclick="library()">📚<br>Opskrifter</button><button onclick="planner()">📅<br>Madplan</button><button onclick="pantry()">🏡<br>Basislager</button><button onclick="favorites()">♥<br>Favoritter</button><button onclick="knowledge()">🧭<br>Kompas</button></nav>`;
 function card(r){return `<article class="card" onclick="showRecipe('${r.id}')"><img class="photo" src="${r.image}" alt="${r.name}"><div class="card-body"><span class="badge">${r.category}</span><h3>${r.name}</h3><div class="meta">${r.active||''} aktiv · ${r.total||''}</div></div></article>`}
-function home(){app.innerHTML=`<div class="shell"><div class="topbar"><div><div class="brand">Familiens Kostkompas</div><div class="tag">Næringstæt · realistisk · børnevenlig familiemad</div></div>${cloudBadge()}</div><section class="hero"><div class="hero-copy"><h1>Hvad skal vi spise?</h1><p>80 familieopskrifter + Børnefavoritter 2.0. Find en ret nu, gem favoritter eller lad Kostkompasset lave en madplan med rester og indkøbsliste.</p><div class="actions"><button class="btn" onclick="planner()">Lav madplan</button><button class="btn secondary" onclick="planToday()">Planlæg i dag</button><button class="btn secondary" onclick="library()">Se alle opskrifter</button></div></div><div class="hero-art"><img src="familien-forside.png" alt="Familien samlet omkring spisebordet"></div></section><div class="grid">${["Morgenmad","Frokost","Aftensmad","Mellemmåltider"].map(c=>`<div class="cat" onclick="library('${c}')"><span>${emoji[c]}</span><h3>${c}</h3><div class="small">20 opskrifter</div></div>`).join('')}</div><div class="section-title"><h2>Inspiration</h2><button class="btn secondary" onclick="library('Børnefavoritter 2.0')">Børnefavoritter 2.0</button></div><div class="cards">${pickInspiration().map(card).join('')}</div></div>${nav()}`}
+function home(){app.innerHTML=`<div class="shell"><div class="topbar"><div><div class="brand">Familiens Kostkompas</div><div class="tag">Næringstæt · realistisk · børnevenlig familiemad</div></div>${cloudBadge()}</div><section class="hero"><div class="hero-copy"><h1>Hvad skal vi spise?</h1><p>80 familieopskrifter + Børnefavoritter 2.0. Find en ret nu, gem favoritter eller lad Kostkompasset lave en madplan med rester og indkøbsliste.</p><div class="actions"><button class="btn" onclick="planner()">Lav madplan</button><button class="btn secondary" onclick="planToday()">Planlæg i dag</button><button class="btn secondary" onclick="library()">Se alle opskrifter</button><button class="btn secondary" onclick="pantry()">Basislager</button></div></div><div class="hero-art"><img src="familien-forside.png" alt="Familien samlet omkring spisebordet"></div></section><div class="grid">${["Morgenmad","Frokost","Aftensmad","Mellemmåltider"].map(c=>`<div class="cat" onclick="library('${c}')"><span>${emoji[c]}</span><h3>${c}</h3><div class="small">20 opskrifter</div></div>`).join('')}</div><div class="section-title"><h2>Inspiration</h2><button class="btn secondary" onclick="library('Børnefavoritter 2.0')">Børnefavoritter 2.0</button></div><div class="cards">${pickInspiration().map(card).join('')}</div></div>${nav()}`}
 function pickInspiration(){return ['aftensmad-1','morgenmad-4','frokost-15'].map(id=>recipes.find(r=>r.id===id)).filter(Boolean)}
 function library(cat){currentCategory=cat||null;const rs=cat?recipes.filter(r=>r.category===cat):recipes;app.innerHTML=`<div class="shell"><div class="section-title"><h2>${cat||'Alle opskrifter'}</h2><button class="btn secondary" onclick="home()">← Tilbage</button></div><input class="search" id="q" placeholder="Søg efter ret eller ingrediens…" oninput="filterList()"><div class="cards" id="cards">${rs.map(card).join('')}</div></div>${nav()}`}
 function filterList(){const q=document.getElementById('q').value.toLowerCase();let rs=currentCategory?recipes.filter(r=>r.category===currentCategory):recipes;rs=rs.filter(r=>r.name.toLowerCase().includes(q)||r.ingredients.join(' ').toLowerCase().includes(q));document.getElementById('cards').innerHTML=rs.map(card).join('')||'<div class="empty">Ingen resultater.</div>'}
@@ -437,34 +483,51 @@ function shoppingPlanOverview(){
   </section>`
 }
 
+function pantry(){
+  loadHouseholdState();
+  const items=allPantryItems();
+  const cats=[...new Set(items.map(x=>x.category||'Andet'))];
+  app.innerHTML=`<div class="shell"><div class="section-title"><div><span class="eyebrow">Det har vi hjemme</span><h2>Basislager</h2></div><button class="btn secondary" onclick="home()">← Tilbage</button></div>
+  <p class="muted">Markér de varer, I normalt har hjemme lige nu. Når de er markeret, holder Kostkompasset dem ude af hovedindkøbslisten og viser dem i stedet som “har hjemme”. Status synkroniseres mellem computer og telefon.</p>
+  <div class="pantry-summary"><div><strong>${items.filter(x=>pantryHas(x.id)).length}</strong><span>varer markeret hjemme</span></div><button class="btn secondary" onclick="setAllPantry(false)">Ryd markeringer</button></div>
+  <div class="pantry-groups">${cats.map(cat=>`<section class="shop-card pantry-card"><h3>${cat}</h3><div class="basis-list">${items.filter(x=>(x.category||'Andet')===cat).map(x=>`<label class="pantry-item"><input type="checkbox" ${pantryHas(x.id)?'checked':''} onchange="togglePantry('${x.id}',this.checked)"><span>${escapeHtml(x.name)}</span>${String(x.id).startsWith('custom-')?`<button type="button" class="feedback-delete" onclick="event.preventDefault();event.stopPropagation();removeCustomPantry('${x.id}')">Slet</button>`:''}</label>`).join('')}</div></section>`).join('')}</div>
+  <section class="shop-card add-pantry"><h3>Tilføj jeres egen basisvare</h3><div class="add-pantry-row"><input id="pantry-new" class="search" placeholder="Fx chiafrø eller kokosmælk"><button class="btn" onclick="addCustomPantry()">Tilføj</button></div><p class="small muted">Egne varer bliver også brugt til at sortere indkøbslisten, når navnet matcher en ingrediens.</p></section></div>${nav()}`;
+}
+function togglePantry(id,value){pantryState.items[id]=value;saveHouseholdStateCloud().catch(console.warn)}
+function setAllPantry(value){allPantryItems().forEach(x=>pantryState.items[x.id]=value);saveHouseholdStateCloud().then(pantry).catch(()=>pantry())}
+function addCustomPantry(){
+  const input=document.getElementById('pantry-new');const name=(input?.value||'').trim();if(!name)return;
+  const id='custom-'+Date.now();pantryState.custom.push({id,name,category:'Egne varer',keywords:[name.toLowerCase()]});pantryState.items[id]=true;
+  saveHouseholdStateCloud().then(pantry).catch(()=>pantry());
+}
+function removeCustomPantry(id){pantryState.custom=(pantryState.custom||[]).filter(x=>x.id!==id);delete pantryState.items[id];saveHouseholdStateCloud().then(pantry).catch(()=>pantry())}
+function splitShoppingByPantry(groups){
+  const need={},home={};
+  Object.entries(groups).forEach(([cat,vals])=>vals.forEach(v=>{const target=pantryMatches(v.name)?home:need;(target[cat]??=[]).push(v)}));
+  return {need,home};
+}
 function shoppingList(){
   if(!currentPlan){planner();return}
-  const groups=buildShopping(currentPlan);
+  loadHouseholdState();
+  const rawGroups=buildShopping(currentPlan);const split=splitShoppingByPantry(rawGroups);const groups=split.need,atHome=split.home;
   const order=['Frugt & grønt','Fisk & kød','Mejeri & æg','Kolonial','Andet'];
-  const basis=['Ekstra jomfruolivenolie','Smør','Krydderier (mild karry, paprika, timian m.m.)','Citron/lime efter plan','A38 / naturel yoghurt','100 % nøddesmør','Passata / tomatprodukter','Havregryn','Ris / pasta / rugbrød efter plan'];
-  const checked=JSON.parse(localStorage.getItem('kostkompas-shop-checked')||'{}');
+  const neededCount=Object.values(groups).reduce((n,a)=>n+a.length,0);const checkedCount=Object.keys(shoppingChecks).filter(k=>shoppingChecks[k]&&k.startsWith('shop:')).length;
   app.innerHTML=`<div class="shell">
     <div class="section-title"><h2>Indkøbsliste</h2><button class="btn secondary" onclick="renderCurrentPlan()">← Madplan</button></div>
     ${shoppingPlanOverview()}
-    <div class="section-title shopping-list-title"><h2>Det skal du handle</h2><button class="btn secondary" onclick="clearShoppingChecks()">Nulstil flueben</button></div>
-    <p class="muted">Listen følger altid den aktuelle madplan. En planlagt restefrokost tælles via den dobbelte aftensmad og lægges ikke til endnu en gang.</p>
+    <div class="shopping-list-toolbar"><div><span class="eyebrow">Klar til butikken</span><h2>Det skal du handle</h2><p class="muted">${neededCount} varelinjer · ${Math.min(checkedCount,neededCount)} afkrydset</p></div><div class="actions"><button class="btn secondary" onclick="pantry()">🏡 Basislager</button><button class="btn secondary" onclick="clearShoppingChecks()">Nulstil flueben</button></div></div>
+    <p class="muted">Samme ingrediens samles så vidt muligt på tværs af retterne. Planlagte restefrokoster tælles ikke dobbelt. Flueben og basislager synkroniseres mellem jeres enheder.</p>
     <div class="shopping-wrap">
       <div class="shop-card">
-        ${order.filter(c=>groups[c]?.length).map(c=>`<div class="shop-cat"><h4>${c}</h4>${groups[c].sort((a,b)=>a.name.localeCompare(b.name)).map(v=>{const key=`shop:${c}:${v.name}:${v.unit}`;return `<label class="shop-item"><input type="checkbox" ${checked[key]?'checked':''} onchange="saveShoppingCheck('${encodeURIComponent(key)}',this.checked)"><span>${fmtItem(v)}</span></label>`}).join('')}</div>`).join('')}
+        ${order.filter(c=>groups[c]?.length).map(c=>`<div class="shop-cat"><h4>${c}</h4>${groups[c].sort((a,b)=>a.name.localeCompare(b.name)).map(v=>{const key=`shop:${c}:${v.name}:${v.unit}`;return `<label class="shop-item"><input type="checkbox" ${shoppingChecks[key]?'checked':''} onchange="saveShoppingCheck('${encodeURIComponent(key)}',this.checked)"><span>${fmtItem(v)}</span></label>`}).join('')}</div>`).join('')||'<div class="empty">Alt på listen er enten afkrydset eller markeret som basislager.</div>'}
       </div>
-      <aside class="shop-card"><h3>Tjek basislager</h3><div class="basis-list">${basis.map((x,i)=>{const key=`basis:${i}:${x}`;return `<label><input type="checkbox" ${checked[key]?'checked':''} onchange="saveShoppingCheck('${encodeURIComponent(key)}',this.checked)"><span>${x}</span></label>`}).join('')}</div><div class="engine-note" style="margin-top:18px"><b>Praktisk kontrol:</b><br>Se køleskab, fryser og skab igennem før indkøb. Flueben gemmes på denne enhed.</div></aside>
+      <aside class="shop-card"><div class="section-title compact"><h3>Har hjemme</h3><button class="text-link" onclick="pantry()">Redigér</button></div><div class="basis-list">${order.filter(c=>atHome[c]?.length).map(c=>atHome[c].sort((a,b)=>a.name.localeCompare(b.name)).map(v=>`<label class="home-item"><span>✓</span><span>${fmtItem(v)}</span></label>`).join('')).join('')||'<p class="muted small">Ingen ingredienser fra planen er markeret som basislager endnu.</p>'}</div><div class="engine-note" style="margin-top:18px"><b>Tjek før du handler:</b><br>Hvis en basisvare er ved at være tom, fjern markeringen i Basislager – så kommer den tilbage på hovedlisten.</div></aside>
     </div>
   </div>${nav()}`;
 }
 function saveShoppingCheck(encoded,checkedValue){
-  const key=decodeURIComponent(encoded);
-  const state=JSON.parse(localStorage.getItem('kostkompas-shop-checked')||'{}');
-  state[key]=checkedValue;
-  localStorage.setItem('kostkompas-shop-checked',JSON.stringify(state));
+  const key=decodeURIComponent(encoded);shoppingChecks[key]=checkedValue;saveHouseholdStateLocal();saveHouseholdStateCloud().catch(console.warn);
 }
-function clearShoppingChecks(){
-  localStorage.removeItem('kostkompas-shop-checked');
-  shoppingList();
-}
+function clearShoppingChecks(){shoppingChecks={};saveHouseholdStateLocal();saveHouseholdStateCloud().then(shoppingList).catch(()=>shoppingList())}
 function knowledge(){app.innerHTML=`<div class="shell"><div class="section-title"><h2>Kostkompasset</h2><button class="btn secondary" onclick="home()">← Tilbage</button></div><p class="muted">Den korte hverdagsretning fra familiens Kostsystem.</p><div class="knowledge"><div class="note"><b>🌿 Rigtig mad først</b><br><br>Genkendelige, minimalt forarbejdede råvarer er fundamentet.</div><div class="note"><b>🍽️ Fire byggesten</b><br><br>Jern/protein + energi/stivelse + grønt/frugt + fedt.</div><div class="note"><b>🔄 Variation</b><br><br>Vurder dagen og især ugen frem for hvert enkelt måltid.</div><div class="note"><b>👨‍👩‍👧‍👦 Én grundmad</b><br><br>Børnene spiser familiens mad tilpasset salt, styrke, konsistens og størrelse.</div><div class="note"><b>🐟 Fisk fast i ugen</b><br><br>Variér fed og mager fisk; fed fisk regelmæssigt.</div><div class="note"><b>🥑 Fedtvariation</b><br><br>Fed fisk, olivenolie, avocado, nøddesmør, æg, smør og mejeri.</div><div class="note"><b>🩸 Jern hver dag</b><br><br>Tænk C-vitamin sammen med relevante plantejernskilder.</div><div class="note"><b>👶 Alderssikkerhed</b><br><br>Tilpas hårde/runde fødevarer, hele nødder og andre kvælningsrisici.</div></div></div>${nav()}`}
 fetch('recipes.json').then(r=>r.json()).then(d=>{recipes=d;startApp()}).catch(()=>loginScreen('Opskrifterne kunne ikke indlæses. Prøv at genindlæse siden.'));
