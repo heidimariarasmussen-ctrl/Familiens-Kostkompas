@@ -1,0 +1,2156 @@
+{
+  "morgenmad-1": {
+    "name": "Power-havregrød med blåbær, banan og peanutbutter",
+    "adult": [
+      "55 g havregryn",
+      "2,25 dl vand eller mælk passende til børnene",
+      "1/2 moden banan",
+      "50 g blåbær",
+      "10 g 100 % smooth peanutbutter"
+    ],
+    "kids2": [
+      "40 g havregryn",
+      "1,75 dl vand eller mælk passende til børnene",
+      "1/2 moden banan",
+      "40 g blåbær",
+      "10 g 100 % smooth peanutbutter"
+    ],
+    "family": [
+      "160 g havregryn",
+      "7 dl vand eller mælk passende til børnene",
+      "1 moden banan",
+      "150 g blåbær",
+      "30 g 100 % smooth peanutbutter"
+    ]
+  },
+  "morgenmad-2": {
+    "name": "Æggetallerken med kartoffel, avocado og kiwi",
+    "adult": [
+      "2 æg",
+      "165 g kogte kartofler",
+      "1/2 stor avocado",
+      "1 kiwi",
+      "5 g smør"
+    ],
+    "kids2": [
+      "2 æg",
+      "135 g kogte kartofler",
+      "1/2 stor avocado",
+      "1 kiwi",
+      "5 g smør"
+    ],
+    "family": [
+      "6 æg",
+      "500 g kogte kartofler",
+      "1 stor avocado",
+      "2 kiwier",
+      "10 g smør"
+    ]
+  },
+  "morgenmad-3": {
+    "name": "Yoghurt-skål med havre, bær og peanutbutter",
+    "adult": [
+      "200 g Arla Cultura A38 Øko Naturel 3,5 %",
+      "35 g havregryn",
+      "50 g bær",
+      "1/2 banan",
+      "10 g 100 % smooth peanutbutter"
+    ],
+    "kids2": [
+      "150 g Arla Cultura A38 Øko Naturel 3,5 %",
+      "25 g havregryn",
+      "40 g bær",
+      "1/2 banan",
+      "10 g 100 % smooth peanutbutter"
+    ],
+    "family": [
+      "600 g Arla Cultura A38 Øko Naturel 3,5 %",
+      "100 g havregryn",
+      "150 g bær",
+      "1 banan",
+      "30 g 100 % smooth peanutbutter"
+    ]
+  },
+  "morgenmad-4": {
+    "name": "Banan-havrepandekager med bærcreme",
+    "adult": [
+      "1 moden banan",
+      "2 æg",
+      "70 g havregryn",
+      "15 g 100 % smooth peanutbutter",
+      "5 g smør til panden",
+      "50 g bær",
+      "45 g Arla Cultura A38 Øko Naturel 3,5 %"
+    ],
+    "kids2": [
+      "1 moden banan",
+      "2 æg",
+      "70 g havregryn",
+      "15 g 100 % smooth peanutbutter",
+      "5 g smør til panden",
+      "40 g bær",
+      "40 g Arla Cultura A38 Øko Naturel 3,5 %"
+    ],
+    "family": [
+      "2 modne bananer",
+      "4 æg",
+      "140 g havregryn",
+      "30 g 100 % smooth peanutbutter",
+      "10 g smør til panden",
+      "150 g bær",
+      "120 g Arla Cultura A38 Øko Naturel 3,5 %"
+    ]
+  },
+  "morgenmad-5": {
+    "name": "Rugbrødsmorgenmad med æg, avocado og kiwi",
+    "adult": [
+      "2 små skiver blødt rugbrød",
+      "2 æg",
+      "1/2 avocado",
+      "65 g kogte kartofler",
+      "1 kiwi"
+    ],
+    "kids2": [
+      "2 små skiver blødt rugbrød",
+      "2 æg",
+      "1/2 avocado",
+      "55 g kogte kartofler",
+      "1 kiwi"
+    ],
+    "family": [
+      "6 små skiver blødt rugbrød",
+      "4 æg",
+      "1 avocado",
+      "200 g kogte kartofler",
+      "2 kiwier"
+    ]
+  },
+  "morgenmad-6": {
+    "name": "Æble-kanelgrød med mandelsmør og hindbær",
+    "adult": [
+      "55 g havregryn",
+      "2,25 dl vand/mælk",
+      "1 lille æble",
+      "40 g hindbær",
+      "10 g 100 % mandelsmør",
+      "1/4 tsk kanel"
+    ],
+    "kids2": [
+      "40 g havregryn",
+      "1,75 dl vand/mælk",
+      "1 lille æble",
+      "30 g hindbær",
+      "10 g 100 % mandelsmør",
+      "1/4 tsk kanel"
+    ],
+    "family": [
+      "160 g havregryn",
+      "7 dl vand/mælk",
+      "2 små æbler",
+      "120 g hindbær",
+      "30 g 100 % mandelsmør",
+      "1/2 tsk kanel"
+    ]
+  },
+  "morgenmad-7": {
+    "name": "Bagt havregrød med banan og blåbær",
+    "adult": [
+      "60 g havregryn",
+      "1 banan",
+      "1 æg",
+      "1,25 dl mælk/vand",
+      "50 g blåbær",
+      "10 g 100 % peanutbutter",
+      "5 g smør til formen"
+    ],
+    "kids2": [
+      "60 g havregryn",
+      "1 banan",
+      "1 æg",
+      "1,25 dl mælk/vand",
+      "50 g blåbær",
+      "10 g 100 % peanutbutter",
+      "5 g smør til formen"
+    ],
+    "family": [
+      "180 g havregryn",
+      "2 bananer",
+      "3 æg",
+      "4 dl mælk/vand",
+      "150 g blåbær",
+      "30 g 100 % peanutbutter",
+      "10 g smør til formen"
+    ]
+  },
+  "morgenmad-8": {
+    "name": "Bløde ægge-havrevafler med bær-yoghurt",
+    "adult": [
+      "2 æg",
+      "1 banan",
+      "70 g havregryn",
+      "0,5 dl mælk/vand",
+      "5 g smør til vaffeljern",
+      "50 g bær",
+      "55 g A38 3,5 %"
+    ],
+    "kids2": [
+      "2 æg",
+      "1 banan",
+      "70 g havregryn",
+      "0,5 dl mælk/vand",
+      "5 g smør til vaffeljern",
+      "40 g bær",
+      "50 g A38 3,5 %"
+    ],
+    "family": [
+      "4 æg",
+      "2 bananer",
+      "140 g havregryn",
+      "1 dl mælk/vand",
+      "10 g smør til vaffeljern",
+      "150 g bær",
+      "150 g A38 3,5 %"
+    ]
+  },
+  "morgenmad-9": {
+    "name": "Kartoffel-æggekage med avocado og tomat",
+    "adult": [
+      "2 æg",
+      "125 g kogte kartofler",
+      "40 g cherrytomater",
+      "1/2 avocado",
+      "1 tsk ekstra jomfruolivenolie"
+    ],
+    "kids2": [
+      "2 æg",
+      "125 g kogte kartofler",
+      "40 g cherrytomater",
+      "1/2 avocado",
+      "1 tsk ekstra jomfruolivenolie"
+    ],
+    "family": [
+      "8 æg",
+      "500 g kogte kartofler",
+      "150 g cherrytomater",
+      "1 avocado",
+      "1 spsk ekstra jomfruolivenolie"
+    ]
+  },
+  "morgenmad-10": {
+    "name": "Røræg på rugbrød med avocadocreme",
+    "adult": [
+      "2 æg",
+      "2 små skiver blødt rugbrød",
+      "1/2 avocado",
+      "1 kiwi",
+      "5 g smør",
+      "25 g A38 3,5 %"
+    ],
+    "kids2": [
+      "2 æg",
+      "2 små skiver blødt rugbrød",
+      "1/2 avocado",
+      "1 kiwi",
+      "5 g smør",
+      "20 g A38 3,5 %"
+    ],
+    "family": [
+      "6 æg",
+      "6 små skiver blødt rugbrød",
+      "1 avocado",
+      "2 kiwier",
+      "10 g smør",
+      "60 g A38 3,5 %"
+    ]
+  },
+  "morgenmad-11": {
+    "name": "Overnight oats med hindbær og peanutbutter",
+    "adult": [
+      "55 g havregryn",
+      "165 g A38 3,5 %",
+      "0,75 dl mælk/vand",
+      "50 g hindbær",
+      "1/2 banan",
+      "10 g 100 % peanutbutter"
+    ],
+    "kids2": [
+      "40 g havregryn",
+      "125 g A38 3,5 %",
+      "0,5 dl mælk/vand",
+      "40 g hindbær",
+      "1/2 banan",
+      "10 g 100 % peanutbutter"
+    ],
+    "family": [
+      "160 g havregryn",
+      "500 g A38 3,5 %",
+      "2 dl mælk/vand",
+      "150 g hindbær",
+      "1 banan",
+      "30 g 100 % peanutbutter"
+    ]
+  },
+  "morgenmad-12": {
+    "name": "Pære-havregrød med tahin og bær",
+    "adult": [
+      "55 g havregryn",
+      "2,25 dl vand/mælk",
+      "1 moden pære",
+      "10 g Rømer Tahin uden salt Ø",
+      "40 g bær"
+    ],
+    "kids2": [
+      "40 g havregryn",
+      "1,75 dl vand/mælk",
+      "1 moden pære",
+      "10 g Rømer Tahin uden salt Ø",
+      "30 g bær"
+    ],
+    "family": [
+      "160 g havregryn",
+      "7 dl vand/mælk",
+      "2 modne pærer",
+      "25 g Rømer Tahin uden salt Ø",
+      "120 g bær"
+    ]
+  },
+  "morgenmad-13": {
+    "name": "Mini-frittata med kartoffel, broccoli og frugt",
+    "adult": [
+      "2 æg",
+      "100 g kogte kartofler",
+      "45 g broccoli",
+      "15 g mild ost",
+      "1 tsk ekstra jomfruolivenolie",
+      "1 kiwi"
+    ],
+    "kids2": [
+      "2 æg",
+      "100 g kogte kartofler",
+      "45 g broccoli",
+      "15 g mild ost",
+      "1 tsk ekstra jomfruolivenolie",
+      "1 kiwi"
+    ],
+    "family": [
+      "8 æg",
+      "400 g kogte kartofler",
+      "180 g broccoli",
+      "60 g mild ost",
+      "1 spsk ekstra jomfruolivenolie",
+      "2 kiwier"
+    ]
+  },
+  "morgenmad-14": {
+    "name": "Bananbrødshavre med yoghurt og bær",
+    "adult": [
+      "60 g havregryn",
+      "1 moden banan",
+      "1 æg",
+      "0,5 dl mælk",
+      "1/4 tsk kanel",
+      "55 g A38 3,5 %",
+      "50 g bær"
+    ],
+    "kids2": [
+      "60 g havregryn",
+      "1 moden banan",
+      "1 æg",
+      "0,5 dl mælk",
+      "1/4 tsk kanel",
+      "50 g A38 3,5 %",
+      "40 g bær"
+    ],
+    "family": [
+      "180 g havregryn",
+      "3 modne bananer",
+      "3 æg",
+      "1 dl mælk",
+      "1 tsk kanel",
+      "150 g A38 3,5 %",
+      "150 g bær"
+    ]
+  },
+  "morgenmad-15": {
+    "name": "Bamsebolle 2.0 med æg, avocado og frugt",
+    "adult": [
+      "1 Bamsebolle 2.0",
+      "2 æg",
+      "1/2 avocado",
+      "1 kiwi"
+    ],
+    "kids2": [
+      "2 Bamseboller 2.0",
+      "2 æg",
+      "1/2 avocado",
+      "1 kiwi"
+    ],
+    "family": [
+      "4 Bamseboller 2.0",
+      "4 æg",
+      "1 avocado",
+      "2 kiwier"
+    ]
+  },
+  "morgenmad-16": {
+    "name": "Æble-havrepandekager med peanutcreme",
+    "adult": [
+      "1 æble",
+      "2 æg",
+      "70 g havregryn",
+      "1/2 banan",
+      "5 g smør",
+      "10 g 100 % peanutbutter",
+      "30 g A38 3,5 %"
+    ],
+    "kids2": [
+      "1 æble",
+      "2 æg",
+      "70 g havregryn",
+      "1/2 banan",
+      "5 g smør",
+      "10 g 100 % peanutbutter",
+      "25 g A38 3,5 %"
+    ],
+    "family": [
+      "2 æbler",
+      "4 æg",
+      "140 g havregryn",
+      "1 banan",
+      "10 g smør",
+      "30 g 100 % peanutbutter",
+      "80 g A38 3,5 %"
+    ]
+  },
+  "morgenmad-17": {
+    "name": "Yoghurt-banan-bowl med hjemmelavet bærkompot",
+    "adult": [
+      "200 g A38 3,5 %",
+      "1 banan",
+      "35 g havregryn",
+      "65 g frosne bær",
+      "2 tsk vand",
+      "10 g 100 % peanutbutter"
+    ],
+    "kids2": [
+      "150 g A38 3,5 %",
+      "1 banan",
+      "25 g havregryn",
+      "50 g frosne bær",
+      "2 tsk vand",
+      "10 g 100 % peanutbutter"
+    ],
+    "family": [
+      "600 g A38 3,5 %",
+      "2 bananer",
+      "100 g havregryn",
+      "200 g frosne bær",
+      "2 spsk vand",
+      "25 g 100 % peanutbutter"
+    ]
+  },
+  "morgenmad-18": {
+    "name": "Morgenmadstortilla med æg og avocado",
+    "adult": [
+      "1 lille fuldkornstortilla med enkel ingrediensliste",
+      "2 æg",
+      "1/2 avocado",
+      "1/2 rød peberfrugt",
+      "5 g smør",
+      "30 g A38 3,5 %"
+    ],
+    "kids2": [
+      "2 små fuldkornstortillas med enkel ingrediensliste",
+      "2 æg",
+      "1/2 avocado",
+      "1/2 rød peberfrugt",
+      "5 g smør",
+      "25 g A38 3,5 %"
+    ],
+    "family": [
+      "4 små fuldkornstortillas med enkel ingrediensliste",
+      "6 æg",
+      "1 avocado",
+      "1 rød peberfrugt",
+      "10 g smør",
+      "80 g A38 3,5 %"
+    ]
+  },
+  "morgenmad-19": {
+    "name": "Sød kartoffel-havrepandekager med blåbær",
+    "adult": [
+      "100 g kogt/bagt sød kartoffel",
+      "1 æg",
+      "40 g havregryn",
+      "1/2 banan",
+      "5 g smør",
+      "50 g blåbær",
+      "45 g A38 3,5 %"
+    ],
+    "kids2": [
+      "100 g kogt/bagt sød kartoffel",
+      "1 æg",
+      "40 g havregryn",
+      "1/2 banan",
+      "5 g smør",
+      "40 g blåbær",
+      "40 g A38 3,5 %"
+    ],
+    "family": [
+      "300 g kogt/bagt sød kartoffel",
+      "3 æg",
+      "120 g havregryn",
+      "1 banan",
+      "10 g smør",
+      "150 g blåbær",
+      "120 g A38 3,5 %"
+    ]
+  },
+  "morgenmad-20": {
+    "name": "Lakse-æggetallerken med kartoffel og avocado",
+    "adult": [
+      "65 g tilberedt laks",
+      "2 æg",
+      "150 g kogte kartofler",
+      "1/2 avocado",
+      "1 kiwi",
+      "30 g A38 3,5 %",
+      "1/2 tsk citronsaft",
+      "1 tsk finthakket dild"
+    ],
+    "kids2": [
+      "45 g tilberedt laks",
+      "2 æg",
+      "120 g kogte kartofler",
+      "1/2 avocado",
+      "1 kiwi",
+      "25 g A38 3,5 %",
+      "1/2 tsk citronsaft",
+      "1/2 tsk finthakket dild"
+    ],
+    "family": [
+      "200 g tilberedt laks",
+      "4 æg",
+      "450 g kogte kartofler",
+      "1 avocado",
+      "2 kiwier",
+      "80 g A38 3,5 %",
+      "1 tsk citronsaft",
+      "dild"
+    ]
+  },
+  "frokost-1": {
+    "name": "Restetallerkenen med dagens dip",
+    "adult": [
+      "230-300 g rester fra aftensmad",
+      "1/2 avocado eller 1 tsk ekstra jomfruolivenolie",
+      "1 stk. frugt efter sæson"
+    ],
+    "kids2": [
+      "175-225 g rester fra aftensmad",
+      "1/2 avocado eller 1 tsk ekstra jomfruolivenolie",
+      "1 stk. frugt efter sæson"
+    ],
+    "family": [
+      "700-900 g rester fra aftensmad",
+      "1 avocado eller 1 spsk ekstra jomfruolivenolie",
+      "2 stk. frugt efter sæson"
+    ]
+  },
+  "frokost-2": {
+    "name": "Fiskefrokost med kartoffel og avocado-remoulade",
+    "adult": [
+      "100 g tilberedt laks eller fiskefrikadeller",
+      "165 g kartofler",
+      "45 g ærter",
+      "1/2 kiwi",
+      "30 g A38 3,5 %",
+      "10 g Chosen Foods Classic Avocado Oil Mayo",
+      "5 g finthakket syltet agurk",
+      "lidt mild karry"
+    ],
+    "kids2": [
+      "65 g tilberedt laks eller fiskefrikadeller",
+      "135 g kartofler",
+      "40 g ærter",
+      "1/2 kiwi",
+      "25 g A38 3,5 %",
+      "10 g Chosen Foods Classic Avocado Oil Mayo",
+      "5 g finthakket syltet agurk",
+      "lidt mild karry"
+    ],
+    "family": [
+      "300 g tilberedt laks eller fiskefrikadeller",
+      "500 g kartofler",
+      "150 g ærter",
+      "1 kiwi",
+      "80 g A38 3,5 %",
+      "30 g Chosen Foods Classic Avocado Oil Mayo",
+      "20 g finthakket syltet agurk",
+      "lidt mild karry"
+    ]
+  },
+  "frokost-3": {
+    "name": "Æggefrokost med rugbrød og avocadocreme",
+    "adult": [
+      "2 æg",
+      "2 små skiver blødt rugbrød",
+      "1/2 avocado",
+      "60 g broccoli",
+      "1/2 æble",
+      "30 g A38 3,5 %"
+    ],
+    "kids2": [
+      "2 æg",
+      "2 små skiver blødt rugbrød",
+      "1/2 avocado",
+      "50 g broccoli",
+      "1/2 æble",
+      "25 g A38 3,5 %"
+    ],
+    "family": [
+      "6 æg",
+      "6 små skiver blødt rugbrød",
+      "1 avocado",
+      "200 g broccoli",
+      "1 æble",
+      "80 g A38 3,5 %"
+    ]
+  },
+  "frokost-4": {
+    "name": "Rugbrødstallerken med æg, kød/fisk og grønt",
+    "adult": [
+      "2 små skiver blødt rugbrød",
+      "2 æg",
+      "50 g rester af laks, kylling eller kød",
+      "1/2 avocado",
+      "1 kiwi"
+    ],
+    "kids2": [
+      "2 små skiver blødt rugbrød",
+      "2 æg",
+      "35 g rester af laks, kylling eller kød",
+      "1/2 avocado",
+      "1 kiwi"
+    ],
+    "family": [
+      "8 små skiver blødt rugbrød",
+      "4 æg",
+      "150 g rester af laks, kylling eller kød",
+      "1 avocado",
+      "2 kiwier"
+    ]
+  },
+  "frokost-5": {
+    "name": "Mini-tallerken med æg, kartoffel, avocado og ærter",
+    "adult": [
+      "2 æg",
+      "130 g kartofler",
+      "1/2 avocado",
+      "1/2 banan",
+      "45 g ærter"
+    ],
+    "kids2": [
+      "2 æg",
+      "110 g kartofler",
+      "1/2 avocado",
+      "1/2 banan",
+      "40 g ærter"
+    ],
+    "family": [
+      "4 æg",
+      "400 g kartofler",
+      "1 avocado",
+      "1 banan",
+      "150 g ærter"
+    ]
+  },
+  "frokost-6": {
+    "name": "Lakse-kartoffelfrikadeller med dilddip",
+    "adult": [
+      "100 g tilberedt laks",
+      "150 g kogte kartofler",
+      "1 lille æg",
+      "15 g havregryn",
+      "75 g broccoli",
+      "5 g smør",
+      "55 g A38 3,5 %",
+      "1 tsk finthakket dild",
+      "1/2 tsk citron"
+    ],
+    "kids2": [
+      "65 g tilberedt laks",
+      "120 g kogte kartofler",
+      "1 lille æg",
+      "10 g havregryn",
+      "65 g broccoli",
+      "5 g smør",
+      "50 g A38 3,5 %",
+      "1/2 tsk finthakket dild",
+      "1/2 tsk citron"
+    ],
+    "family": [
+      "300 g tilberedt laks",
+      "450 g kogte kartofler",
+      "1 æg",
+      "40 g havregryn",
+      "250 g broccoli",
+      "10 g smør",
+      "150 g A38 3,5 %",
+      "dild",
+      "1 tsk citron"
+    ]
+  },
+  "frokost-7": {
+    "name": "Kyllinge-avocadowrap med mild dressing",
+    "adult": [
+      "100 g tilberedt kylling",
+      "1 lille fuldkornstortilla",
+      "1/2 avocado",
+      "45 g tomat",
+      "35 g agurk",
+      "45 g A38 3,5 %",
+      "5 g Chosen Foods Classic Avocado Oil Mayo"
+    ],
+    "kids2": [
+      "65 g tilberedt kylling",
+      "2 små fuldkornstortillas",
+      "1/2 avocado",
+      "40 g tomat",
+      "25 g agurk",
+      "40 g A38 3,5 %",
+      "5 g Chosen Foods Classic Avocado Oil Mayo"
+    ],
+    "family": [
+      "300 g tilberedt kylling",
+      "4 små fuldkornstortillas",
+      "1 avocado",
+      "150 g tomat",
+      "100 g agurk",
+      "120 g A38 3,5 %",
+      "20 g Chosen Foods Classic Avocado Oil Mayo"
+    ]
+  },
+  "frokost-8": {
+    "name": "Mini-pastasalat med kylling, ærter og avocadodressing",
+    "adult": [
+      "70 g fuldkornspasta",
+      "85 g tilberedt kylling",
+      "45 g ærter",
+      "1/2 avocado",
+      "40 g A38 3,5 %",
+      "1/2 tsk citron"
+    ],
+    "kids2": [
+      "50 g fuldkornspasta",
+      "55 g tilberedt kylling",
+      "40 g ærter",
+      "1/2 avocado",
+      "35 g A38 3,5 %",
+      "1/2 tsk citron"
+    ],
+    "family": [
+      "250 g fuldkornspasta",
+      "250 g tilberedt kylling",
+      "150 g ærter",
+      "1 avocado",
+      "100 g A38 3,5 %",
+      "1 tsk citron"
+    ]
+  },
+  "frokost-9": {
+    "name": "Kartoffelmad med æg og mild avocado-remoulade",
+    "adult": [
+      "2 små skiver rugbrød",
+      "165 g kogte kartofler",
+      "2 æg",
+      "40 g A38 3,5 %",
+      "10 g Chosen Foods Classic Avocado Oil Mayo",
+      "5 g syltet agurk",
+      "1/4 tsk mild karry",
+      "1/2 kiwi"
+    ],
+    "kids2": [
+      "2 små skiver rugbrød",
+      "135 g kogte kartofler",
+      "2 æg",
+      "35 g A38 3,5 %",
+      "10 g Chosen Foods Classic Avocado Oil Mayo",
+      "5 g syltet agurk",
+      "1/4 tsk mild karry",
+      "1/2 kiwi"
+    ],
+    "family": [
+      "8 små skiver rugbrød",
+      "500 g kogte kartofler",
+      "5 æg",
+      "100 g A38 3,5 %",
+      "30 g Chosen Foods Classic Avocado Oil Mayo",
+      "20 g syltet agurk",
+      "mild karry",
+      "1 kiwi"
+    ]
+  },
+  "frokost-10": {
+    "name": "Mini-pita med kødboller og yoghurtdressing",
+    "adult": [
+      "1 lille fuldkornspita",
+      "100 g hjemmelavede kødboller",
+      "45 g tomat",
+      "30 g meget mør peberfrugt",
+      "1/2 avocado",
+      "55 g A38 3,5 %",
+      "1 tsk finthakket persille"
+    ],
+    "kids2": [
+      "2 små fuldkornspita",
+      "65 g hjemmelavede kødboller",
+      "40 g tomat",
+      "25 g meget mør peberfrugt",
+      "1/2 avocado",
+      "50 g A38 3,5 %",
+      "1/2 tsk finthakket persille"
+    ],
+    "family": [
+      "4 små fuldkornspita",
+      "300 g hjemmelavede kødboller",
+      "150 g tomat",
+      "100 g meget mør peberfrugt",
+      "1 avocado",
+      "150 g A38 3,5 %",
+      "persille"
+    ]
+  },
+  "frokost-11": {
+    "name": "Æggemuffins med kartoffelbåde og ketchup",
+    "adult": [
+      "2 æg",
+      "50 g broccoli",
+      "20 g mild ost",
+      "195 g kartofler",
+      "1 tsk EVOO",
+      "1 tsk Heinz Organic Tomato Ketchup til servering"
+    ],
+    "kids2": [
+      "2 æg",
+      "50 g broccoli",
+      "20 g mild ost",
+      "155 g kartofler",
+      "1 tsk EVOO",
+      "1 tsk Heinz Organic Tomato Ketchup til servering"
+    ],
+    "family": [
+      "8 æg",
+      "200 g broccoli",
+      "80 g mild ost",
+      "700 g kartofler",
+      "1 spsk EVOO",
+      "Heinz Organic Tomato Ketchup til servering"
+    ]
+  },
+  "frokost-12": {
+    "name": "Lun linse-kødbowl med kartoffel og tomatcreme",
+    "adult": [
+      "85 g hakket oksekød",
+      "35 g røde linser",
+      "165 g kartofler",
+      "100 g passata",
+      "1/2 gulerod",
+      "1 tsk EVOO",
+      "30 g A38 3,5 %"
+    ],
+    "kids2": [
+      "55 g hakket oksekød",
+      "25 g røde linser",
+      "135 g kartofler",
+      "75 g passata",
+      "1/2 gulerod",
+      "1 tsk EVOO",
+      "25 g A38 3,5 %"
+    ],
+    "family": [
+      "250 g hakket oksekød",
+      "100 g røde linser",
+      "500 g kartofler",
+      "300 g passata",
+      "1 gulerod",
+      "1 spsk EVOO",
+      "80 g A38 3,5 %"
+    ]
+  },
+  "frokost-13": {
+    "name": "Fiskefrikadelle-rugbrød med avocado-remoulade",
+    "adult": [
+      "2 små skiver rugbrød",
+      "2 små fiskefrikadeller",
+      "1/2 avocado",
+      "40 g A38 3,5 %",
+      "10 g Chosen Foods Classic Avocado Oil Mayo",
+      "5 g syltet agurk",
+      "1/4 tsk mild karry",
+      "1 kiwi"
+    ],
+    "kids2": [
+      "2 små skiver rugbrød",
+      "2 små fiskefrikadeller",
+      "1/2 avocado",
+      "35 g A38 3,5 %",
+      "10 g Chosen Foods Classic Avocado Oil Mayo",
+      "5 g syltet agurk",
+      "1/4 tsk mild karry",
+      "1 kiwi"
+    ],
+    "family": [
+      "6 små skiver rugbrød",
+      "4-6 små fiskefrikadeller",
+      "1 avocado",
+      "100 g A38 3,5 %",
+      "25 g Chosen Foods Classic Avocado Oil Mayo",
+      "15 g syltet agurk",
+      "mild karry",
+      "2 kiwier"
+    ]
+  },
+  "frokost-14": {
+    "name": "Kyllingedeller med sød kartoffel og urtecreme",
+    "adult": [
+      "115 g hakket kylling",
+      "1 lille æg",
+      "15 g havregryn",
+      "200 g sød kartoffel",
+      "75 g broccoli",
+      "5 g smør",
+      "55 g A38 3,5 %",
+      "1 tsk finthakket purløg"
+    ],
+    "kids2": [
+      "75 g hakket kylling",
+      "1 lille æg",
+      "10 g havregryn",
+      "160 g sød kartoffel",
+      "65 g broccoli",
+      "5 g smør",
+      "50 g A38 3,5 %",
+      "1/2 tsk finthakket purløg"
+    ],
+    "family": [
+      "350 g hakket kylling",
+      "1 æg",
+      "40 g havregryn",
+      "600 g sød kartoffel",
+      "250 g broccoli",
+      "10 g smør",
+      "150 g A38 3,5 %",
+      "purløg"
+    ]
+  },
+  "frokost-15": {
+    "name": "Cremet pasta med laks, broccoli og citron",
+    "adult": [
+      "70 g pasta",
+      "85 g tilberedt laks",
+      "75 g broccoli",
+      "55 g A38 3,5 %",
+      "1 tsk EVOO",
+      "1/2 tsk citron",
+      "1 tsk finthakket dild"
+    ],
+    "kids2": [
+      "50 g pasta",
+      "55 g tilberedt laks",
+      "65 g broccoli",
+      "50 g A38 3,5 %",
+      "1 tsk EVOO",
+      "1/2 tsk citron",
+      "1/2 tsk finthakket dild"
+    ],
+    "family": [
+      "250 g pasta",
+      "250 g tilberedt laks",
+      "250 g broccoli",
+      "150 g A38 3,5 %",
+      "1 spsk EVOO",
+      "1 tsk citron",
+      "dild"
+    ]
+  },
+  "frokost-16": {
+    "name": "Mini-quesadilla med kylling, avocado og mild ost",
+    "adult": [
+      "1 lille fuldkornstortilla",
+      "85 g tilberedt kylling",
+      "35 g mild ost",
+      "1/2 avocado",
+      "30 g tomat",
+      "1 tsk Heinz Organic Tomato Ketchup til servering"
+    ],
+    "kids2": [
+      "2 små fuldkornstortillas",
+      "55 g tilberedt kylling",
+      "25 g mild ost",
+      "1/2 avocado",
+      "25 g tomat",
+      "1 tsk Heinz Organic Tomato Ketchup til servering"
+    ],
+    "family": [
+      "4 små fuldkornstortillas",
+      "250 g tilberedt kylling",
+      "100 g mild ost",
+      "1 avocado",
+      "100 g tomat",
+      "Heinz Organic Tomato Ketchup til servering"
+    ]
+  },
+  "frokost-17": {
+    "name": "Oksekødsfrikadeller med rugbrød og ketchup",
+    "adult": [
+      "115 g hakket oksekød",
+      "1 lille æg",
+      "15 g havregryn",
+      "2 små skiver rugbrød",
+      "75 g meget møre grøntsager",
+      "1/2 avocado",
+      "1 tsk Heinz Organic Tomato Ketchup"
+    ],
+    "kids2": [
+      "75 g hakket oksekød",
+      "1 lille æg",
+      "10 g havregryn",
+      "2 små skiver rugbrød",
+      "65 g meget møre grøntsager",
+      "1/2 avocado",
+      "1 tsk Heinz Organic Tomato Ketchup"
+    ],
+    "family": [
+      "350 g hakket oksekød",
+      "1 æg",
+      "40 g havregryn",
+      "6 små skiver rugbrød",
+      "250 g meget møre grøntsager",
+      "1 avocado",
+      "Heinz Organic Tomato Ketchup"
+    ]
+  },
+  "frokost-18": {
+    "name": "Kartoffel-frittata med tomat og avocadodip",
+    "adult": [
+      "2 æg",
+      "125 g kogte kartofler",
+      "40 g tomat",
+      "20 g mild ost",
+      "1/2 avocado",
+      "40 g A38 3,5 %"
+    ],
+    "kids2": [
+      "2 æg",
+      "125 g kogte kartofler",
+      "40 g tomat",
+      "20 g mild ost",
+      "1/2 avocado",
+      "35 g A38 3,5 %"
+    ],
+    "family": [
+      "8 æg",
+      "500 g kogte kartofler",
+      "150 g tomat",
+      "80 g mild ost",
+      "1 avocado",
+      "100 g A38 3,5 %"
+    ]
+  },
+  "frokost-19": {
+    "name": "Mild hummus-tallerken med æg og blødt brød",
+    "adult": [
+      "80 g kikærter, drænet",
+      "10 g Rømer Tahin uden salt Ø",
+      "1 tsk EVOO",
+      "1/2 tsk citron",
+      "2 æg",
+      "2 små skiver blødt brød",
+      "1/2 rød peberfrugt"
+    ],
+    "kids2": [
+      "60 g kikærter, drænet",
+      "10 g Rømer Tahin uden salt Ø",
+      "1 tsk EVOO",
+      "1/2 tsk citron",
+      "2 æg",
+      "2 små skiver blødt brød",
+      "1/2 rød peberfrugt"
+    ],
+    "family": [
+      "1 dåse kikærter, ca. 240 g drænet",
+      "25 g Rømer Tahin uden salt Ø",
+      "1 spsk EVOO",
+      "1-2 tsk citron",
+      "4 æg",
+      "6 små skiver blødt brød",
+      "1 rød peberfrugt"
+    ]
+  },
+  "frokost-20": {
+    "name": "Kyllinge-kartoffelbowl med avocado og urtedressing",
+    "adult": [
+      "100 g tilberedt kylling",
+      "165 g kogte kartofler",
+      "60 g broccoli",
+      "1/2 avocado",
+      "45 g A38 3,5 %",
+      "1 tsk finthakket purløg",
+      "1/2 tsk EVOO"
+    ],
+    "kids2": [
+      "65 g tilberedt kylling",
+      "135 g kogte kartofler",
+      "50 g broccoli",
+      "1/2 avocado",
+      "40 g A38 3,5 %",
+      "1/2 tsk finthakket purløg",
+      "1/2 tsk EVOO"
+    ],
+    "family": [
+      "300 g tilberedt kylling",
+      "500 g kogte kartofler",
+      "200 g broccoli",
+      "1 avocado",
+      "120 g A38 3,5 %",
+      "purløg",
+      "1 tsk EVOO"
+    ]
+  },
+  "aftensmad-1": {
+    "name": "Ovnbagt laks med kartofler, broccoli og citron-dildsauce",
+    "adult": [
+      "165 g laksefilet",
+      "250 g kartofler",
+      "120 g broccoli",
+      "2 tsk EVOO",
+      "55 g A38 3,5 %",
+      "1/4 citron",
+      "1 tsk finthakket dild"
+    ],
+    "kids2": [
+      "110 g laksefilet",
+      "200 g kartofler",
+      "100 g broccoli",
+      "2 tsk EVOO",
+      "50 g A38 3,5 %",
+      "1/4 citron",
+      "1/2 tsk finthakket dild"
+    ],
+    "family": [
+      "500 g laksefilet",
+      "900 g kartofler",
+      "400 g broccoli",
+      "2 spsk EVOO",
+      "150 g A38 3,5 %",
+      "1/2 citron",
+      "dild"
+    ]
+  },
+  "aftensmad-2": {
+    "name": "Fiskefrikadeller med kartofler, grønt og avocado-remoulade",
+    "adult": [
+      "165 g hakket torsk/sej",
+      "1 lille æg",
+      "15 g havregryn",
+      "0,5 dl mælk",
+      "250 g kartofler",
+      "90 g gulerod/broccoli",
+      "5 g smør",
+      "40 g A38",
+      "10 g Chosen Foods Classic Avocado Oil Mayo",
+      "5 g syltet agurk",
+      "1/4 tsk mild karry"
+    ],
+    "kids2": [
+      "110 g hakket torsk/sej",
+      "1 lille æg",
+      "10 g havregryn",
+      "0,5 dl mælk",
+      "200 g kartofler",
+      "75 g gulerod/broccoli",
+      "5 g smør",
+      "35 g A38",
+      "10 g Chosen Foods Classic Avocado Oil Mayo",
+      "5 g syltet agurk",
+      "1/4 tsk mild karry"
+    ],
+    "family": [
+      "500 g hakket torsk/sej",
+      "1 æg",
+      "40 g havregryn",
+      "1 dl mælk",
+      "900 g kartofler",
+      "300 g gulerod/broccoli",
+      "smør",
+      "100 g A38",
+      "30 g Chosen Foods Classic Avocado Oil Mayo",
+      "20 g syltet agurk",
+      "mild karry"
+    ]
+  },
+  "aftensmad-3": {
+    "name": "Mild torsk/sej i cremet sauce",
+    "adult": [
+      "165 g torsk/sej",
+      "195 g kartofler",
+      "85 g gulerødder",
+      "45 g ærter",
+      "0,75 dl fløde",
+      "1 tsk smør",
+      "1/2 tsk citron",
+      "1 tsk finthakket dild"
+    ],
+    "kids2": [
+      "110 g torsk/sej",
+      "155 g kartofler",
+      "65 g gulerødder",
+      "40 g ærter",
+      "0,75 dl fløde",
+      "1 tsk smør",
+      "1/2 tsk citron",
+      "1/2 tsk finthakket dild"
+    ],
+    "family": [
+      "500 g torsk/sej",
+      "700 g kartofler",
+      "250 g gulerødder",
+      "150 g ærter",
+      "2 dl fløde",
+      "1 spsk smør",
+      "1 tsk citron",
+      "dild"
+    ]
+  },
+  "aftensmad-4": {
+    "name": "Kødsovs PLUS med oksekød, linser og grønt",
+    "adult": [
+      "150 g hakket oksekød",
+      "35 g røde linser",
+      "165 g passata",
+      "1 gulerod",
+      "1/2 løg",
+      "100 g fuldkornspasta",
+      "1 tsk EVOO",
+      "1 tsk Heinz Organic Tomato Ketchup efter behov"
+    ],
+    "kids2": [
+      "100 g hakket oksekød",
+      "25 g røde linser",
+      "125 g passata",
+      "1 gulerod",
+      "1/2 løg",
+      "70 g fuldkornspasta",
+      "1 tsk EVOO",
+      "1 tsk Heinz Organic Tomato Ketchup efter behov"
+    ],
+    "family": [
+      "450 g hakket oksekød",
+      "100 g røde linser",
+      "500 g passata",
+      "2 gulerødder",
+      "1 løg",
+      "350 g fuldkornspasta",
+      "1 spsk EVOO",
+      "Heinz Organic Tomato Ketchup efter behov"
+    ]
+  },
+  "aftensmad-5": {
+    "name": "Hjemmelavede frikadeller med kartofler, grønt og mild pandesauce",
+    "adult": [
+      "165 g hakket kalv/flæsk eller oksekød",
+      "1 lille æg",
+      "15 g havregryn",
+      "0,5 dl mælk",
+      "250 g kartofler",
+      "105 g grønt",
+      "5 g smør",
+      "0,5 dl vand",
+      "0,5 dl fløde"
+    ],
+    "kids2": [
+      "110 g hakket kalv/flæsk eller oksekød",
+      "1 lille æg",
+      "15 g havregryn",
+      "0,5 dl mælk",
+      "200 g kartofler",
+      "90 g grønt",
+      "5 g smør",
+      "0,5 dl vand",
+      "0,5 dl fløde"
+    ],
+    "family": [
+      "500 g hakket kalv/flæsk eller oksekød",
+      "1 æg",
+      "50 g havregryn",
+      "1 dl mælk",
+      "900 g kartofler",
+      "350 g grønt",
+      "smør",
+      "1,5 dl vand",
+      "1 dl fløde"
+    ]
+  },
+  "aftensmad-6": {
+    "name": "Mild chili con carne med avocadocreme",
+    "adult": [
+      "150 g hakket oksekød",
+      "80 g kidneybønner, drænet",
+      "165 g passata",
+      "1/2 rød peberfrugt",
+      "1/2 løg",
+      "85 g ris",
+      "1 tsk EVOO",
+      "1/4 tsk mild paprika",
+      "1/2 avocado",
+      "40 g A38"
+    ],
+    "kids2": [
+      "100 g hakket oksekød",
+      "60 g kidneybønner, drænet",
+      "125 g passata",
+      "1/2 rød peberfrugt",
+      "1/2 løg",
+      "60 g ris",
+      "1 tsk EVOO",
+      "1/4 tsk mild paprika",
+      "1/2 avocado",
+      "35 g A38"
+    ],
+    "family": [
+      "450 g hakket oksekød",
+      "1 dåse kidneybønner, 240 g drænet",
+      "500 g passata",
+      "1 rød peberfrugt",
+      "1 løg",
+      "300 g ris",
+      "1 spsk EVOO",
+      "1 tsk mild paprika",
+      "1 avocado",
+      "100 g A38"
+    ]
+  },
+  "aftensmad-7": {
+    "name": "Ovnkylling med kartofler, grønt og urtecreme",
+    "adult": [
+      "200 g kyllingelårfilet",
+      "250 g kartofler",
+      "150 g gulerod/broccoli",
+      "2 tsk EVOO",
+      "1/4 tsk timian",
+      "55 g A38",
+      "1 tsk finthakket purløg/persille"
+    ],
+    "kids2": [
+      "130 g kyllingelårfilet",
+      "200 g kartofler",
+      "125 g gulerod/broccoli",
+      "2 tsk EVOO",
+      "1/4 tsk timian",
+      "50 g A38",
+      "1/2 tsk finthakket purløg/persille"
+    ],
+    "family": [
+      "600 g kyllingelårfilet",
+      "900 g kartofler",
+      "500 g gulerod/broccoli",
+      "2 spsk EVOO",
+      "1 tsk timian",
+      "150 g A38",
+      "purløg/persille"
+    ]
+  },
+  "aftensmad-8": {
+    "name": "Cremet kyllingegryde med kartoffel og ærter",
+    "adult": [
+      "180 g kyllingelårfilet",
+      "195 g kartofler",
+      "1 gulerod",
+      "45 g ærter",
+      "0,75 dl fløde",
+      "1 tsk smør",
+      "1 tsk finthakket persille"
+    ],
+    "kids2": [
+      "120 g kyllingelårfilet",
+      "155 g kartofler",
+      "1 gulerod",
+      "40 g ærter",
+      "0,75 dl fløde",
+      "1 tsk smør",
+      "1/2 tsk finthakket persille"
+    ],
+    "family": [
+      "550 g kyllingelårfilet",
+      "700 g kartofler",
+      "2 gulerødder",
+      "150 g ærter",
+      "2 dl fløde",
+      "1 spsk smør",
+      "persille"
+    ]
+  },
+  "aftensmad-9": {
+    "name": "Kyllingefrikadeller med sød kartoffel og avocadocreme",
+    "adult": [
+      "165 g hakket kylling",
+      "1 lille æg",
+      "15 g havregryn",
+      "225 g sød kartoffel",
+      "90 g broccoli",
+      "1 tsk EVOO",
+      "5 g smør",
+      "1/2 avocado",
+      "40 g A38"
+    ],
+    "kids2": [
+      "110 g hakket kylling",
+      "1 lille æg",
+      "15 g havregryn",
+      "175 g sød kartoffel",
+      "75 g broccoli",
+      "1 tsk EVOO",
+      "5 g smør",
+      "1/2 avocado",
+      "35 g A38"
+    ],
+    "family": [
+      "500 g hakket kylling",
+      "1 æg",
+      "50 g havregryn",
+      "800 g sød kartoffel",
+      "300 g broccoli",
+      "1 spsk EVOO",
+      "smør",
+      "1 avocado",
+      "100 g A38"
+    ]
+  },
+  "aftensmad-10": {
+    "name": "Kartoffel-frittata med grønt og ketchup",
+    "adult": [
+      "2 æg",
+      "150 g kogte kartofler",
+      "50 g broccoli",
+      "1/2 rød peberfrugt",
+      "20 g mild ost",
+      "1 tsk EVOO",
+      "1 tsk Heinz Organic Tomato Ketchup"
+    ],
+    "kids2": [
+      "2 æg",
+      "150 g kogte kartofler",
+      "50 g broccoli",
+      "1/2 rød peberfrugt",
+      "20 g mild ost",
+      "1 tsk EVOO",
+      "1 tsk Heinz Organic Tomato Ketchup"
+    ],
+    "family": [
+      "8 æg",
+      "600 g kogte kartofler",
+      "200 g broccoli",
+      "1 rød peberfrugt",
+      "80 g mild ost",
+      "1 spsk EVOO",
+      "Heinz Organic Tomato Ketchup"
+    ]
+  },
+  "aftensmad-11": {
+    "name": "Langtidskogt oksegryde med fyldig grøntsagssauce",
+    "adult": [
+      "230 g oksebov",
+      "250 g kartofler",
+      "1 gulerod",
+      "1/2 løg",
+      "120 g hakkede tomater",
+      "1 tsk EVOO"
+    ],
+    "kids2": [
+      "155 g oksebov",
+      "200 g kartofler",
+      "1 gulerod",
+      "1/2 løg",
+      "100 g hakkede tomater",
+      "1 tsk EVOO"
+    ],
+    "family": [
+      "700 g oksebov",
+      "900 g kartofler",
+      "3 gulerødder",
+      "1 løg",
+      "400 g hakkede tomater",
+      "1 spsk EVOO"
+    ]
+  },
+  "aftensmad-12": {
+    "name": "Kødboller i tomatsauce med pasta",
+    "adult": [
+      "165 g hakket oksekød",
+      "1 lille æg",
+      "15 g havregryn",
+      "165 g passata",
+      "100 g pasta",
+      "1 tsk EVOO",
+      "1/2 gulerod"
+    ],
+    "kids2": [
+      "110 g hakket oksekød",
+      "1 lille æg",
+      "10 g havregryn",
+      "125 g passata",
+      "70 g pasta",
+      "1 tsk EVOO",
+      "1/2 gulerod"
+    ],
+    "family": [
+      "500 g hakket oksekød",
+      "1 æg",
+      "40 g havregryn",
+      "500 g passata",
+      "350 g pasta",
+      "1 spsk EVOO",
+      "1 gulerod"
+    ]
+  },
+  "aftensmad-13": {
+    "name": "Mild kokos-karry med kylling og ris",
+    "adult": [
+      "180 g kyllingelårfilet",
+      "125 ml kokosmælk",
+      "1 gulerod",
+      "45 g ærter",
+      "85 g ris",
+      "1/4 tsk mild karry"
+    ],
+    "kids2": [
+      "120 g kyllingelårfilet",
+      "100 ml kokosmælk",
+      "1 gulerod",
+      "40 g ærter",
+      "60 g ris",
+      "1/4 tsk mild karry"
+    ],
+    "family": [
+      "550 g kyllingelårfilet",
+      "400 ml kokosmælk",
+      "2 gulerødder",
+      "150 g ærter",
+      "300 g ris",
+      "1 tsk mild karry"
+    ]
+  },
+  "aftensmad-14": {
+    "name": "Linse-kødsgryde med yoghurtcreme",
+    "adult": [
+      "115 g hakket oksekød",
+      "50 g røde linser",
+      "165 g passata",
+      "1 gulerod",
+      "195 g kartofler",
+      "1 tsk EVOO",
+      "45 g A38"
+    ],
+    "kids2": [
+      "75 g hakket oksekød",
+      "40 g røde linser",
+      "125 g passata",
+      "1 gulerod",
+      "155 g kartofler",
+      "1 tsk EVOO",
+      "40 g A38"
+    ],
+    "family": [
+      "350 g hakket oksekød",
+      "150 g røde linser",
+      "500 g passata",
+      "2 gulerødder",
+      "700 g kartofler",
+      "1 spsk EVOO",
+      "120 g A38"
+    ]
+  },
+  "aftensmad-15": {
+    "name": "Tøm-køleskabet-tallerken med passende basisdip",
+    "adult": [
+      "130-165 g tilberedt proteinrest",
+      "200 g kogt kartoffel/pasta/ris",
+      "90 g tilberedte grøntsager",
+      "1/2 avocado eller 1 tsk EVOO",
+      "ca. 1 spsk passende basisdip"
+    ],
+    "kids2": [
+      "90-110 g tilberedt proteinrest",
+      "160 g kogt kartoffel/pasta/ris",
+      "75 g tilberedte grøntsager",
+      "1/2 avocado eller 1 tsk EVOO",
+      "ca. 1 spsk passende basisdip"
+    ],
+    "family": [
+      "400-500 g tilberedt proteinrest",
+      "600 g kogt kartoffel/pasta/ris",
+      "300 g tilberedte grøntsager",
+      "1 avocado eller 1-2 spsk EVOO",
+      "A38, Chosen Foods avocado-mayo eller Heinz Organic Tomato Ketchup efter retten"
+    ]
+  },
+  "aftensmad-16": {
+    "name": "Cremet laksepasta med broccoli, ærter og citron",
+    "adult": [
+      "165 g laks",
+      "100 g pasta",
+      "90 g broccoli",
+      "45 g ærter",
+      "0,75 dl fløde",
+      "1 tsk EVOO",
+      "1/4 citron",
+      "1 tsk finthakket dild"
+    ],
+    "kids2": [
+      "110 g laks",
+      "70 g pasta",
+      "75 g broccoli",
+      "40 g ærter",
+      "0,75 dl fløde",
+      "1 tsk EVOO",
+      "1/4 citron",
+      "1/2 tsk finthakket dild"
+    ],
+    "family": [
+      "500 g laks",
+      "350 g pasta",
+      "300 g broccoli",
+      "150 g ærter",
+      "2 dl fløde",
+      "1 spsk EVOO",
+      "1/2 citron",
+      "dild"
+    ]
+  },
+  "aftensmad-17": {
+    "name": "Mild butter-chicken-inspireret kylling med ris",
+    "adult": [
+      "200 g kyllingelårfilet",
+      "130 g passata",
+      "55 g A38 3,5 %",
+      "10 g smør",
+      "85 g ris",
+      "1 gulerod",
+      "1/4 tsk mild karry",
+      "1/4 tsk paprika"
+    ],
+    "kids2": [
+      "130 g kyllingelårfilet",
+      "100 g passata",
+      "50 g A38 3,5 %",
+      "10 g smør",
+      "60 g ris",
+      "1 gulerod",
+      "1/4 tsk mild karry",
+      "1/4 tsk paprika"
+    ],
+    "family": [
+      "600 g kyllingelårfilet",
+      "400 g passata",
+      "150 g A38 3,5 %",
+      "30 g smør",
+      "300 g ris",
+      "2 gulerødder",
+      "1 tsk mild karry",
+      "1/2 tsk paprika"
+    ]
+  },
+  "aftensmad-18": {
+    "name": "Oksekødskofta med ovnkartofler og tahin-yoghurtsauce",
+    "adult": [
+      "165 g hakket oksekød",
+      "1 lille æg",
+      "15 g havregryn",
+      "250 g kartofler",
+      "90 g gulerødder/broccoli",
+      "1 tsk EVOO",
+      "45 g A38",
+      "10 g Rømer Tahin uden salt Ø",
+      "1/2 tsk citron",
+      "1 tsk finthakket persille"
+    ],
+    "kids2": [
+      "110 g hakket oksekød",
+      "1 lille æg",
+      "10 g havregryn",
+      "200 g kartofler",
+      "75 g gulerødder/broccoli",
+      "1 tsk EVOO",
+      "40 g A38",
+      "10 g Rømer Tahin uden salt Ø",
+      "1/2 tsk citron",
+      "1/2 tsk finthakket persille"
+    ],
+    "family": [
+      "500 g hakket oksekød",
+      "1 æg",
+      "40 g havregryn",
+      "900 g kartofler",
+      "300 g gulerødder/broccoli",
+      "1 spsk EVOO",
+      "120 g A38",
+      "25 g Rømer Tahin uden salt Ø",
+      "1 tsk citron",
+      "persille"
+    ]
+  },
+  "aftensmad-19": {
+    "name": "Mild fisketaco med avocado og limecreme",
+    "adult": [
+      "165 g torsk/sej",
+      "1 lille blød tortilla",
+      "1/2 avocado",
+      "60 g meget mør kål eller broccoli",
+      "45 g tomat",
+      "55 g A38",
+      "1/2 lime",
+      "1 tsk EVOO",
+      "1/4 tsk mild paprika"
+    ],
+    "kids2": [
+      "110 g torsk/sej",
+      "2 små bløde tortillas",
+      "1/2 avocado",
+      "50 g meget mør kål eller broccoli",
+      "40 g tomat",
+      "50 g A38",
+      "1/2 lime",
+      "1 tsk EVOO",
+      "1/4 tsk mild paprika"
+    ],
+    "family": [
+      "500 g torsk/sej",
+      "8 små bløde tortillas",
+      "1 avocado",
+      "200 g meget mør kål eller broccoli",
+      "150 g tomat",
+      "150 g A38",
+      "1 lime",
+      "1 spsk EVOO",
+      "mild paprika"
+    ]
+  },
+  "aftensmad-20": {
+    "name": "Kylling i mild tomat-mascarponesauce med pasta og broccoli",
+    "adult": [
+      "200 g kyllingelårfilet",
+      "100 g pasta",
+      "130 g passata",
+      "50 g mascarpone",
+      "90 g broccoli",
+      "1 tsk EVOO",
+      "1/4 tsk mild paprika"
+    ],
+    "kids2": [
+      "130 g kyllingelårfilet",
+      "70 g pasta",
+      "100 g passata",
+      "40 g mascarpone",
+      "75 g broccoli",
+      "1 tsk EVOO",
+      "1/4 tsk mild paprika"
+    ],
+    "family": [
+      "600 g kyllingelårfilet",
+      "350 g pasta",
+      "400 g passata",
+      "125 g mascarpone",
+      "300 g broccoli",
+      "1 spsk EVOO",
+      "1 tsk mild paprika"
+    ]
+  },
+  "mellemmaltid-1": {
+    "name": "Kogt æg med kiwi og banan",
+    "adult": [
+      "1 æg",
+      "1 kiwi",
+      "1/2 banan"
+    ],
+    "kids2": [
+      "2 æg",
+      "1 kiwi",
+      "1/2 banan"
+    ],
+    "family": [
+      "4 æg",
+      "2 kiwier",
+      "1 banan"
+    ]
+  },
+  "mellemmaltid-2": {
+    "name": "Avocadomad med kiwi",
+    "adult": [
+      "1 lille skive blødt rugbrød",
+      "1/2 avocado",
+      "1 kiwi"
+    ],
+    "kids2": [
+      "2 små skiver blødt rugbrød",
+      "1/2 avocado",
+      "1 kiwi"
+    ],
+    "family": [
+      "4 små skiver blødt rugbrød",
+      "1 avocado",
+      "2 kiwier"
+    ]
+  },
+  "mellemmaltid-3": {
+    "name": "A38 med bær og havre",
+    "adult": [
+      "130 g A38 3,5 %",
+      "20 g havregryn",
+      "35 g bær"
+    ],
+    "kids2": [
+      "100 g A38 3,5 %",
+      "15 g havregryn",
+      "30 g bær"
+    ],
+    "family": [
+      "400 g A38 3,5 %",
+      "60 g havregryn",
+      "120 g bær"
+    ]
+  },
+  "mellemmaltid-4": {
+    "name": "Banan med peanutbuttercreme",
+    "adult": [
+      "1 banan",
+      "10 g 100 % smooth peanutbutter",
+      "20 g A38 3,5 %"
+    ],
+    "kids2": [
+      "1 banan",
+      "10 g 100 % smooth peanutbutter",
+      "15 g A38 3,5 %"
+    ],
+    "family": [
+      "2 bananer",
+      "30 g 100 % smooth peanutbutter",
+      "50 g A38 3,5 %"
+    ]
+  },
+  "mellemmaltid-5": {
+    "name": "Mini-havrepandekager med bærcreme",
+    "adult": [
+      "3 mini-havrepandekager",
+      "35 g bær",
+      "40 g A38 3,5 %"
+    ],
+    "kids2": [
+      "4 mini-havrepandekager",
+      "30 g bær",
+      "35 g A38 3,5 %"
+    ],
+    "family": [
+      "8-12 mini-havrepandekager",
+      "120 g bær",
+      "100 g A38 3,5 %"
+    ]
+  },
+  "mellemmaltid-6": {
+    "name": "Mild ost, blød pære og brød",
+    "adult": [
+      "25 g mild ost",
+      "1/2 stor moden pære",
+      "1 lille skive blødt brød"
+    ],
+    "kids2": [
+      "20 g mild ost",
+      "1/2 stor moden pære",
+      "2 små skiver blødt brød"
+    ],
+    "family": [
+      "80 g mild ost",
+      "1 stor moden pære",
+      "4 små skiver blødt brød"
+    ]
+  },
+  "mellemmaltid-7": {
+    "name": "Mini-havregrød med banan og bær",
+    "adult": [
+      "25 g havregryn",
+      "1 dl vand/mælk",
+      "1/2 banan",
+      "25 g bær"
+    ],
+    "kids2": [
+      "20 g havregryn",
+      "1 dl vand/mælk",
+      "1/2 banan",
+      "20 g bær"
+    ],
+    "family": [
+      "80 g havregryn",
+      "3,5 dl vand/mælk",
+      "1 banan",
+      "80 g bær"
+    ]
+  },
+  "mellemmaltid-8": {
+    "name": "Lille fiskefrikadelle med avocado-remoulade",
+    "adult": [
+      "1 lille fiskefrikadelle",
+      "1/2 kiwi",
+      "30 g meget mørt grønt",
+      "25 g A38",
+      "5 g Chosen Foods Classic Avocado Oil Mayo",
+      "lidt syltet agurk/karry"
+    ],
+    "kids2": [
+      "2 små fiskefrikadeller",
+      "1/2 kiwi",
+      "25 g meget mørt grønt",
+      "20 g A38",
+      "5 g Chosen Foods Classic Avocado Oil Mayo",
+      "lidt syltet agurk/karry"
+    ],
+    "family": [
+      "4 små fiskefrikadeller",
+      "1 kiwi",
+      "100 g meget mørt grønt",
+      "60 g A38",
+      "15 g Chosen Foods Classic Avocado Oil Mayo",
+      "lidt syltet agurk/karry"
+    ]
+  },
+  "mellemmaltid-9": {
+    "name": "Mini-frikadelle med avocado og ketchup",
+    "adult": [
+      "1 lille hjemmelavet frikadelle",
+      "1/2 avocado",
+      "1/2 banan",
+      "1 tsk Heinz Organic Tomato Ketchup"
+    ],
+    "kids2": [
+      "2 små hjemmelavede frikadeller",
+      "1/2 avocado",
+      "1/2 banan",
+      "1 tsk Heinz Organic Tomato Ketchup"
+    ],
+    "family": [
+      "4 små hjemmelavede frikadeller",
+      "1 avocado",
+      "1 banan",
+      "Heinz Organic Tomato Ketchup"
+    ]
+  },
+  "mellemmaltid-10": {
+    "name": "Mini-restetallerken med basisdip",
+    "adult": [
+      "90-120 g gode rester",
+      "ca. 75 g frugt/grønt",
+      "ca. 1 spsk valgt basisdip"
+    ],
+    "kids2": [
+      "75-100 g gode rester",
+      "ca. 60 g frugt/grønt",
+      "ca. 1 spsk valgt basisdip"
+    ],
+    "family": [
+      "300-400 g gode rester",
+      "frugt/grønt efter behov",
+      "A38/avocado/Chosen Foods mayo efter retten"
+    ]
+  },
+  "mellemmaltid-11": {
+    "name": "Bamsebolle 2.0 med avocado og æg",
+    "adult": [
+      "1 Bamsebolle 2.0",
+      "1 æg",
+      "1/2 avocado"
+    ],
+    "kids2": [
+      "2 Bamseboller 2.0",
+      "1 æg",
+      "1/2 avocado"
+    ],
+    "family": [
+      "2-4 Bamseboller 2.0",
+      "2 æg",
+      "1 avocado"
+    ]
+  },
+  "mellemmaltid-12": {
+    "name": "Mini ægge-havrevaffel med bærcreme",
+    "adult": [
+      "1 lille ægge-havrevaffel",
+      "40 g A38",
+      "30 g bær"
+    ],
+    "kids2": [
+      "2 små ægge-havrevafler",
+      "35 g A38",
+      "25 g bær"
+    ],
+    "family": [
+      "4 små ægge-havrevafler",
+      "100 g A38",
+      "100 g bær"
+    ]
+  },
+  "mellemmaltid-13": {
+    "name": "Blødt banan-havrebrød med peanutcreme",
+    "adult": [
+      "1 lille skive hjemmelavet banan-havrebrød",
+      "5 g 100 % peanutbutter",
+      "20 g A38"
+    ],
+    "kids2": [
+      "2 små skiver hjemmelavet banan-havrebrød",
+      "5 g 100 % peanutbutter",
+      "15 g A38"
+    ],
+    "family": [
+      "4 små skiver hjemmelavet banan-havrebrød",
+      "20 g 100 % peanutbutter",
+      "50 g A38"
+    ]
+  },
+  "mellemmaltid-14": {
+    "name": "Avocado-banancreme på blødt rugbrød",
+    "adult": [
+      "1 lille skive blødt rugbrød",
+      "1/2 avocado",
+      "1/2 banan",
+      "1/2 tsk citron"
+    ],
+    "kids2": [
+      "2 små skiver blødt rugbrød",
+      "1/2 avocado",
+      "1/2 banan",
+      "1/2 tsk citron"
+    ],
+    "family": [
+      "4 små skiver blødt rugbrød",
+      "1 avocado",
+      "1 banan",
+      "1 tsk citron"
+    ]
+  },
+  "mellemmaltid-15": {
+    "name": "Mini æggemuffin med kartoffel og broccoli",
+    "adult": [
+      "1 mini-æggemuffin",
+      "65 g kogte kartofler",
+      "30 g meget mør broccoli",
+      "1 tsk Heinz Organic Tomato Ketchup"
+    ],
+    "kids2": [
+      "2 mini-æggemuffins",
+      "55 g kogte kartofler",
+      "25 g meget mør broccoli",
+      "1 tsk Heinz Organic Tomato Ketchup"
+    ],
+    "family": [
+      "4 mini-æggemuffins",
+      "200 g kogte kartofler",
+      "100 g meget mør broccoli",
+      "Heinz Organic Tomato Ketchup"
+    ]
+  },
+  "mellemmaltid-16": {
+    "name": "A38 med bærkompot og bløde havreflager",
+    "adult": [
+      "130 g A38 3,5 %",
+      "45 g frosne bær",
+      "20 g havregryn",
+      "1/4 banan"
+    ],
+    "kids2": [
+      "100 g A38 3,5 %",
+      "40 g frosne bær",
+      "15 g havregryn",
+      "1/4 banan"
+    ],
+    "family": [
+      "400 g A38 3,5 %",
+      "150 g frosne bær",
+      "60 g havregryn",
+      "1/2 banan"
+    ]
+  },
+  "mellemmaltid-17": {
+    "name": "Mini hummusmad med kiwi",
+    "adult": [
+      "1 lille skive blødt brød",
+      "35 g hjemmelavet hummus",
+      "1 kiwi"
+    ],
+    "kids2": [
+      "2 små skiver blødt brød",
+      "30 g hjemmelavet hummus",
+      "1 kiwi"
+    ],
+    "family": [
+      "4 små skiver blødt brød",
+      "120 g hjemmelavet hummus",
+      "2 kiwier"
+    ]
+  },
+  "mellemmaltid-18": {
+    "name": "Sød kartoffel-havrepandekage med yoghurtcreme",
+    "adult": [
+      "2 små sød kartoffel-havrepandekager",
+      "40 g A38",
+      "25 g bær"
+    ],
+    "kids2": [
+      "4 små sød kartoffel-havrepandekager",
+      "35 g A38",
+      "20 g bær"
+    ],
+    "family": [
+      "6-8 små sød kartoffel-havrepandekager",
+      "100 g A38",
+      "80 g bær"
+    ]
+  },
+  "mellemmaltid-19": {
+    "name": "Æble-havremuffin med peanutcreme",
+    "adult": [
+      "1 lille hjemmelavet æble-havremuffin uden meget tilsat sukker",
+      "5 g 100 % peanutbutter",
+      "20 g A38"
+    ],
+    "kids2": [
+      "2 små hjemmelavede æble-havremuffins uden meget tilsat sukker",
+      "5 g 100 % peanutbutter",
+      "15 g A38"
+    ],
+    "family": [
+      "4 små hjemmelavede æble-havremuffins uden meget tilsat sukker",
+      "20 g 100 % peanutbutter",
+      "50 g A38"
+    ]
+  },
+  "mellemmaltid-20": {
+    "name": "Mini lakse-kartoffeldelle med avocadodip",
+    "adult": [
+      "1 lille lakse-kartoffeldelle",
+      "1/2 avocado",
+      "25 g A38",
+      "1/2 kiwi"
+    ],
+    "kids2": [
+      "2 små lakse-kartoffeldeller",
+      "1/2 avocado",
+      "20 g A38",
+      "1/2 kiwi"
+    ],
+    "family": [
+      "4 små lakse-kartoffeldeller",
+      "1 avocado",
+      "60 g A38",
+      "1 kiwi"
+    ]
+  }
+}
