@@ -174,3 +174,7 @@
   .flex-plan-board .flex-meal-row,.flex-plan-board .flex-meal-row.individual{grid-template-columns:1fr}
   .flex-plan-board .profile-avatar-wrap,.flex-plan-board .profile-avatar{width:48px;height:48px}
 }
+
+/* V3.9 · fleksibel spiser-ude + portionskontekst */
+.flex-person-tools{display:flex;gap:6px;flex-wrap:wrap;align-items:center}.flex-person-meal.is-out{background:#faf1e8;border-color:#ead6c5;justify-content:center}.flex-out-name{font-weight:800;color:#765b4a;line-height:1.3}.flex-person-meal .meal-out-btn{white-space:nowrap}.portion-context-note{margin:14px 0 4px;background:#f3f7f3;border-color:#d6e4da}.portion-context-note b{color:var(--ink)}
+@media(max-width:780px){.flex-person-tools{align-items:stretch}.flex-person-tools .mini-btn{flex:1 1 auto}.flex-person-meal.is-out{min-height:78px}}
