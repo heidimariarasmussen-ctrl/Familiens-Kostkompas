@@ -1,4 +1,4 @@
-const CACHE = 'kostkompas-v3-9';
+const CACHE = 'kostkompas-v3-10';
 const CORE = [
   './',
   './index.html',
@@ -10,7 +10,12 @@ const CORE = [
   './icons/icon-512.png',
   './icons/apple-touch-icon.png',
   './familien-forside.png',
-  './portions-v3.json'
+  './portions-v3.json',
+  './planner-shared.png',
+  './planner-flex.png',
+  './profile-alex.png',
+  './profile-heidi.png',
+  './profile-kids.png'
 ];
 
 self.addEventListener('install', event => {

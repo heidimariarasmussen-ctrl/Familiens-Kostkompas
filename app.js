@@ -316,10 +316,9 @@ function planner(){
     <p class="muted planner-intro">Vælg den enkle fælles plan eller den fleksible plan, når Alex, Heidi og Sophia + Carlo ikke skal spise det samme til alle måltider.</p>
     ${currentPlan?`<div class="engine-note"><b>Nuværende:</b> ${activeLabel}. <button class="text-link inline-link" onclick="renderCurrentPlan()">Åbn den nuværende madplan</button></div>`:''}
     <div class="planner-mode-grid">
-      <button class="planner-mode-card shared" onclick="commonPlanner()"><span class="planner-mode-icon">👨‍👩‍👧‍👦</span><div><h3>Fælles madplan</h3><p>Den nuværende madplansmotor. Hele familien får som udgangspunkt samme grundret.</p><span class="planner-mode-cta">Lav fælles madplan →</span></div></button>
-      <button class="planner-mode-card flexible" onclick="flexiblePlanner()"><span class="planner-mode-icon">◉ ◉ ◉</span><div><h3>Fleksibel madplan</h3><p>Alex, Heidi og Sophia + Carlo får hver sin kolonne. Fælles ret vises samlet på én linje.</p><span class="planner-mode-cta">Lav fleksibel madplan →</span></div></button>
+      <button class="planner-mode-card shared" onclick="commonPlanner()"><span class="planner-mode-visual"><img src="planner-shared.png" alt=""></span><div><h3>Fælles madplan</h3><p>Den nuværende madplansmotor. Hele familien får som udgangspunkt samme grundret.</p><span class="planner-mode-cta">Lav fælles madplan →</span></div></button>
+      <button class="planner-mode-card flexible" onclick="flexiblePlanner()"><span class="planner-mode-visual"><img src="planner-flex.png" alt=""></span><div><h3>Fleksibel madplan</h3><p>Alex, Heidi og Sophia + Carlo får hver sin kolonne. Fælles ret vises samlet på én linje.</p><span class="planner-mode-cta">Lav fleksibel madplan →</span></div></button>
     </div>
-    <div class="engine-note"><b>Fast familieopsætning:</b> Sophia + Carlo står altid sammen og regnes som 2 små børn. Der er ingen 1-barnsportion.</div>
   </div>${nav()}`;
 }
 function commonPlanner(){const saved=JSON.parse(localStorage.getItem('kostkompas-plan-settings')||'{"days":4}');app.innerHTML=`<div class="shell">${siteHeader()}<div class="section-title"><div><span class="eyebrow">Fælles madplan</span><h2>Madplan</h2></div><button class="btn secondary" onclick="planner()">← Tilbage</button></div><p class="muted">Motoren følger Kostsystemets rækkefølge og bruger nu også børnenes tidligere reaktioner og de seneste madplaner. Favoritter får et lille løft, mens nyligt brugte retter nedprioriteres – uden at afviste retter forsvinder permanent.</p><div class="planner-controls"><div class="control"><label>Antal dage</label><select id="days"><option ${saved.days==3?'selected':''}>3</option><option ${saved.days==4?'selected':''}>4</option><option ${saved.days==5?'selected':''}>5</option><option ${saved.days==7?'selected':''}>7</option></select></div><div class="control"><label>Familie</label><select disabled><option>2 voksne + 2 små børn</option></select></div></div><div class="plan-actions">${currentPlan?'<button class="btn" onclick="renderCurrentPlan()">📅 Nuværende madplan</button>':''}<button class="btn secondary" onclick="generatePlan()">✨ Lav forslag til ny madplan</button></div><div class="engine-note"><b>Personlig motor er aktiv.</b> Børnenes reaktioner påvirker forslagene nænsomt, og tidligere retter hjælper med variation.<br><br><b>Rester er aktive.</b> Når næste dags frokost bygges af aftensmaden, markeres aftensmaden som “lav dobbelt”, og frokosten tælles ikke dobbelt i indkøbslisten.</div></div>${nav()}`}
@@ -357,7 +356,6 @@ function flexiblePlanner(){
     ${flexProfileHeader(true)}
     <div class="planner-controls"><div class="control"><label>Antal dage</label><select id="flex-days"><option ${saved.days==3?'selected':''}>3</option><option ${saved.days==4?'selected':''}>4</option><option ${saved.days==5?'selected':''}>5</option><option ${saved.days==7?'selected':''}>7</option></select></div><div class="control"><label>Familie</label><select disabled><option>Alex · Heidi · Sophia + Carlo</option></select></div></div>
     <div class="plan-actions">${currentPlan?'<button class="btn" onclick="renderCurrentPlan()">📅 Nuværende madplan</button>':''}<button class="btn secondary" onclick="generateFlexiblePlan()">✨ Lav fleksibelt forslag</button></div>
-    <div class="engine-note"><b>Portionslogik fra MASTER v3.</b> Alex og Heidi bruger hver den kuraterede “1 voksen”-portion. Sophia + Carlo bruger altid “2 små børn”. Når alle får samme ret, bruges den præcise familieportion “2 voksne + 2 små børn”.</div>
   </div>${nav()}`;
 }
 function generateFlexiblePlan(){const days=Number(document.getElementById('flex-days').value);localStorage.setItem('kostkompas-flex-settings',JSON.stringify({days}));const items=createBasePlanItems(days);items.forEach(d=>{d.leftoverLunch=false;d.makeDouble=false;d.flex=seedFlexForDay(d)});draftPlan={planType:'flex',days,busy:'normal',items,created:Date.now()};renderFlexibleDraft()}
@@ -636,14 +634,18 @@ function normName(s){
 }
 function parseIngredient(s,m=1){
   let x=s.trim();
-  let match=x.match(/^(\d+(?:[.,]\d+)?|\d+\/\d+)\s*(g|kg|ml|dl|l|spsk|tsk|stk\.?|dåse|dåser|små skiver|skiver)?\s*(.*)$/i);
+  // Brøker først, understøt intervaller (fx 200-225 g), og kræv ordgrænse efter enheder.
+  // Det forhindrer fx "2 gulerødder" i at blive læst som "2 g ulerødder".
+  let match=x.match(/^(\d+\/\d+|\d+(?:[.,]\d+)?)(?:\s*[-–]\s*(\d+\/\d+|\d+(?:[.,]\d+)?))?\s*(?:(kg|ml|dl|g|l|spsk|tsk|stk\.?|dåse|dåser|små skiver|skiver)\b)?\s*(.*)$/i);
   if(!match)return {name:normName(x),display:x,qty:null,unit:'',raw:x};
 
-  let qty=parseFraction(match[1])*m;
-  let unit=(match[2]||'stk').toLowerCase().replace('.','');
-  let rest=(match[3]||'').trim();
+  const low=parseFraction(match[1]);
+  const high=match[2]?parseFraction(match[2]):low;
+  let qty=high*m; // brug øvre ende på indkøbslisten, så der er nok
+  let unit=(match[3]||'stk').toLowerCase().replace('.','');
+  let rest=(match[4]||'').trim();
 
-  rest=rest.replace(/^(stor|store|lille|små|moden|modne|fintrevet|revet|kogt|kogte|tilberedt|meget mør|blødt|bløde)\s+/i,'');
+  rest=rest.replace(/^(stor|store|lille|små|moden|modne|fintrevet|revet|kogt|kogte|tilberedt|meget mør|blødt|bløde|hjemmelavet|hjemmelavede)\s+/i,'');
 
   if(unit==='kg'){qty*=1000;unit='g'}
   if(unit==='l'){qty*=1000;unit='ml'}
@@ -653,11 +655,23 @@ function parseIngredient(s,m=1){
   return {name:normName(rest||x),qty,unit,raw:x};
 }
 function categoryFor(name){const n=name.toLowerCase();if(/laks|torsk|sej|fisk|kylling|oksekød|kalv|flæsk|kød/.test(n))return 'Fisk & kød';if(/æg|a38|yoghurt|ost|mascarpone|fløde|mælk|smør/.test(n))return 'Mejeri & æg';if(/kartof|broccoli|guler|avocado|kiwi|banan|bær|æble|pære|peber|tomat|citron|lime|løg|agurk|ærter|kål|dild|persille|purløg/.test(n))return 'Frugt & grønt';if(/havre|pasta|ris|rugbrød|brød|tortilla|pita|linser|bønner|kikærter|passata|tomater|kokosmælk|tahin|peanut|mandel|mel/.test(n))return 'Kolonial';return 'Andet'}
+const preparedComponentRecipes={
+  'mellemmaltid-5':{
+    adult:['1 banan','2 æg','50 g havregryn','1 spsk 100 % peanutbutter','5 g smør'],
+    kids2:['1 banan','2 æg','50 g havregryn','1 spsk 100 % peanutbutter','5 g smør'],
+    family:['1 banan','2 æg','50 g havregryn','1 spsk 100 % peanutbutter','5 g smør']
+  },
+  'mellemmaltid-12':{adult:['2 æg','1 banan','70 g havregryn','50 ml mælk/vand','5 g smør'],kids2:['2 æg','1 banan','70 g havregryn','50 ml mælk/vand','5 g smør'],family:['4 æg','2 bananer','140 g havregryn','100 ml mælk/vand','10 g smør']},
+  'mellemmaltid-18':{adult:['100 g sød kartoffel','1 æg','40 g havregryn','1/2 banan','5 g smør'],kids2:['100 g sød kartoffel','1 æg','40 g havregryn','1/2 banan','5 g smør'],family:['300 g sød kartoffel','3 æg','120 g havregryn','1 banan','10 g smør']},
+  'mellemmaltid-20':{adult:['100 g laks','150 g kartofler','1 æg','15 g havregryn','5 g smør'],kids2:['65 g laks','125 g kartofler','1 æg','10 g havregryn','5 g smør'],family:['300 g laks','450 g kartofler','1 æg','40 g havregryn','10 g smør']}
+};
+function preparedComponentLines(r,kind){return preparedComponentRecipes[r?.id]?.[kind]||null}
+function isPreparedComponentLine(raw){return /mini-havrepandekag|ægge-havrevaffel|sød kartoffel-havrepandekag|lakse-kartoffeldelle/i.test(raw)}
 function buildShopping(plan){
   const map=new Map();
   const addIngredient=(raw,m=1)=>{const p=parseIngredient(raw,m);const key=p.name+'|'+p.unit;if(!map.has(key))map.set(key,{...p,qty:p.qty||0,count:p.qty?0:1});else{const o=map.get(key);if(p.qty)o.qty+=p.qty;else o.count+=1}};
   const addRecipe=(r,m=1)=>{if(!r)return;r.ingredients.forEach(s=>addIngredient(s,m))};
-  const addPortion=(r,kind)=>{if(!r)return;const data=portionData[r.id];if(data?.[kind])data[kind].forEach(x=>addIngredient(x,1));else addRecipe(r,1)};
+  const addPortion=(r,kind)=>{if(!r)return;const data=portionData[r.id];if(data?.[kind]){const component=preparedComponentLines(r,kind);data[kind].filter(x=>!isPreparedComponentLine(x)).forEach(x=>addIngredient(x,1));if(component)component.forEach(x=>addIngredient(x,1));}else addRecipe(r,1)};
   if(plan.planType==='flex'){
     plan.items.forEach(d=>['breakfast','lunch','dinner','snack'].forEach(key=>{
       const st=flexMealState(d,key);
