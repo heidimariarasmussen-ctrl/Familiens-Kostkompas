@@ -133,7 +133,7 @@
   .hero-art img{object-fit:cover;object-position:center 48%}
 }
 
-/* V3.7 · Fælles / fleksibel madplan med familieprofiler */
+/* V3.8 · Fælles / fleksibel madplan med familieprofiler */
 .planner-intro{max-width:900px}
 .planner-mode-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin:22px 0}
 .planner-mode-card{appearance:none;border:1px solid var(--line);border-radius:26px;background:var(--card);padding:26px;display:flex;align-items:flex-start;gap:18px;text-align:left;color:inherit;cursor:pointer;box-shadow:0 10px 28px rgba(33,61,52,.06);transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease}
@@ -150,3 +150,27 @@
   .flex-meal-row,.flex-meal-row.individual{grid-template-columns:1fr;gap:8px}.flex-meal-label{padding-top:3px}.flex-meal-row.shared .flex-shared-cell{grid-column:1;display:grid;gap:10px}.flex-row-tools{flex-wrap:wrap}.flex-collapse-tools{grid-column:1;justify-content:flex-start}.flex-person-meal{position:relative;padding-top:34px}.flex-person-meal:before{content:"Profil";position:absolute;top:10px;left:12px;font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:800}.flex-person-meal:nth-of-type(2):before{content:"Alex"}.flex-person-meal:nth-of-type(3):before{content:"Heidi"}.flex-person-meal:nth-of-type(4):before{content:"Sophia + Carlo"}
 }
 @media(max-width:430px){.planner-mode-card{gap:12px}.planner-mode-icon{width:48px;height:48px;border-radius:15px;font-size:21px}.planner-mode-card h3{font-size:22px}.flex-profile-grid{gap:5px}.profile-avatar-wrap,.profile-avatar{width:48px;height:48px}.flex-profile-card strong{font-size:12px}.flex-profile-card small{font-size:10px}}
+
+/* V3.8 · profiler og måltider er én samlet planflade */
+.flex-plan-board{border:1px solid var(--line);border-radius:26px;background:#fbfaf6;overflow:hidden;margin-top:18px}
+.flex-plan-board>.flex-profile-grid{margin:0;padding:16px 18px 14px;border:0;border-bottom:1px solid var(--line);border-radius:0;background:#f7f7f2}
+.flex-plan-board>.flex-week{padding:0 18px 18px;gap:0}
+.flex-plan-board .flex-day{border:0;border-radius:0;box-shadow:none;background:transparent;padding:0}
+.flex-plan-board .flex-day+.flex-day{border-top:2px solid #dfe4df;margin-top:10px;padding-top:8px}
+.flex-plan-board .day-head{padding:18px 0 10px}
+.flex-plan-board .day-head h3{margin:0}
+.flex-plan-board .flex-meal-row{grid-template-columns:145px repeat(3,minmax(0,1fr))}
+.flex-plan-board .flex-profile-grid{grid-template-columns:145px repeat(3,minmax(0,1fr))}
+.flex-plan-board .flex-profile-card{padding:0 8px}
+.flex-plan-board .profile-avatar-wrap,.flex-plan-board .profile-avatar{width:58px;height:58px}
+.flex-person-meal{transition:border-color .15s ease,box-shadow .15s ease}
+.flex-person-meal:hover{border-color:#b9ccc2;box-shadow:0 5px 14px rgba(33,61,52,.06)}
+.flex-meal-row.individual .flex-person-meal{min-height:92px}
+@media(max-width:700px){
+  .flex-plan-board{border-radius:20px}
+  .flex-plan-board>.flex-profile-grid{grid-template-columns:repeat(3,minmax(0,1fr));padding:12px 8px}
+  .flex-plan-board>.flex-profile-grid .flex-profile-spacer{display:none}
+  .flex-plan-board>.flex-week{padding:0 12px 14px}
+  .flex-plan-board .flex-meal-row,.flex-plan-board .flex-meal-row.individual{grid-template-columns:1fr}
+  .flex-plan-board .profile-avatar-wrap,.flex-plan-board .profile-avatar{width:48px;height:48px}
+}
