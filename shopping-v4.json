@@ -9714,5 +9714,101 @@
         "raw": "1 kiwi"
       }
     ]
+  },
+  "alex-havregryn-maelk-rosiner": {
+    "adult": [
+      {
+        "id": "oats",
+        "amount": 80,
+        "unit": "g",
+        "raw": "80 g havregryn"
+      },
+      {
+        "id": "milk",
+        "amount": 250,
+        "unit": "ml",
+        "raw": "250 ml mælk"
+      },
+      {
+        "id": "raisins",
+        "amount": 25,
+        "unit": "g",
+        "raw": "25 g rosiner"
+      }
+    ]
+  },
+  "heidi-skyr-yoghurt-protein-chia": {
+    "adult": [
+      {
+        "id": "skyr",
+        "amount": 150,
+        "unit": "g",
+        "raw": "150 g skyr naturel"
+      },
+      {
+        "id": "greek_yogurt",
+        "amount": 100,
+        "unit": "g",
+        "raw": "100 g græsk yoghurt naturel"
+      },
+      {
+        "id": "protein_powder",
+        "amount": 30,
+        "unit": "g",
+        "raw": "30 g proteinpulver"
+      },
+      {
+        "id": "banana",
+        "amount": 1,
+        "unit": "piece",
+        "raw": "1 banan"
+      },
+      {
+        "id": "mixed_berries",
+        "amount": 100,
+        "unit": "g",
+        "raw": "100 g blandede bær"
+      },
+      {
+        "id": "chia",
+        "amount": 10,
+        "unit": "g",
+        "raw": "10 g chiafrø"
+      }
+    ]
+  },
+  "heidi-rugbroed-koldroeget-laks": {
+    "adult": [
+      {
+        "id": "ryebread",
+        "amount": 1.5,
+        "unit": "slice",
+        "raw": "1,5 skive rugbrød"
+      },
+      {
+        "id": "cottage_cheese",
+        "amount": 75,
+        "unit": "g",
+        "raw": "75 g hytteost"
+      },
+      {
+        "id": "cold_smoked_salmon",
+        "amount": 75,
+        "unit": "g",
+        "raw": "75 g koldrøget laks"
+      },
+      {
+        "id": "dill_dressing",
+        "amount": 25,
+        "unit": "g",
+        "raw": "25 g dilddressing"
+      },
+      {
+        "id": "dill",
+        "amount": 1,
+        "unit": "bunch",
+        "raw": "frisk dild"
+      }
+    ]
   }
 }

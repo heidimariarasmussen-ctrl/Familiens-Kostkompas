@@ -2560,5 +2560,116 @@
       "Bevarer det lille, bløde pandekageformat.",
       "Æg, havre og nøddesmør gør versionen næringstæt."
     ]
+  },
+  {
+    "id": "alex-havregryn-maelk-rosiner",
+    "category": "Morgenmad",
+    "number": null,
+    "name": "Havregryn med mælk og rosiner",
+    "image": "images/alex-oatmeal.png",
+    "portion": "1 voksen · kun Alex",
+    "active": "2 min",
+    "total": "2 min",
+    "ingredients": [
+      "80 g havregryn",
+      "250 ml mælk",
+      "25 g rosiner",
+      "Evt. et nip kanel"
+    ],
+    "steps": [
+      "Kom havregryn i en skål.",
+      "Hæld mælken over.",
+      "Fordel rosinerne ovenpå.",
+      "Drys eventuelt med lidt kanel."
+    ],
+    "taste": "Rosiner giver sødme; et lille drys kanel kan bruges efter smag.",
+    "child": "",
+    "tip": "Alex-favorit til hverdagsmorgener.",
+    "why": [
+      "Havregryn giver fuldkorn, fibre og en enkel energikilde.",
+      "Mælk bidrager med protein og calcium.",
+      "Rosiner giver sødme og gør morgenmaden hurtig at samle."
+    ],
+    "audience": [
+      "alex"
+    ],
+    "personalOwner": "alex",
+    "adultOnly": true,
+    "weekdayFavorite": true
+  },
+  {
+    "id": "heidi-skyr-yoghurt-protein-chia",
+    "category": "Morgenmad",
+    "number": null,
+    "name": "Skyr/yoghurt med protein, banan, bær og chiafrø",
+    "image": "images/heidi-skyr.png",
+    "portion": "1 voksen · kun Heidi",
+    "active": "5 min",
+    "total": "5 min",
+    "ingredients": [
+      "150 g skyr naturel",
+      "100 g græsk yoghurt naturel",
+      "30 g proteinpulver (1 scoop)",
+      "1 banan",
+      "100 g blandede bær, friske eller frosne",
+      "10 g chiafrø"
+    ],
+    "steps": [
+      "Kom skyr og græsk yoghurt i en skål.",
+      "Tilsæt proteinpulver og rør grundigt, til blandingen er ensartet.",
+      "Skær bananen i skiver.",
+      "Top med banan, bær og chiafrø."
+    ],
+    "taste": "Banan og bær giver sødme og friskhed; bland det hele sammen, som Heidi plejer.",
+    "child": "",
+    "tip": "Frosne bær kan bruges for en ekstra nem hverdagsmorgenmad.",
+    "why": [
+      "Skyr, græsk yoghurt og proteinpulver giver et proteinrigt voksenmåltid.",
+      "Banan og bær bidrager med frugt, fibre og variation.",
+      "Chiafrø bidrager med fibre og fedt."
+    ],
+    "audience": [
+      "heidi"
+    ],
+    "personalOwner": "heidi",
+    "adultOnly": true,
+    "weekdayFavorite": true
+  },
+  {
+    "id": "heidi-rugbroed-koldroeget-laks",
+    "category": "Frokost",
+    "number": null,
+    "name": "Rugbrød med hytteost, koldrøget laks og dilddressing",
+    "image": "images/heidi-salmon.png",
+    "portion": "1 voksen · kun Heidi",
+    "active": "5 min",
+    "total": "5 min",
+    "ingredients": [
+      "1,5 skive rugbrød (ca. 75 g)",
+      "75 g hytteost",
+      "75 g koldrøget laks",
+      "25 g færdigkøbt dilddressing",
+      "Frisk dild efter smag"
+    ],
+    "steps": [
+      "Fordel hytteosten på rugbrødet.",
+      "Læg den koldrøgede laks ovenpå.",
+      "Fordel dilddressingen over laksen.",
+      "Top med frisk dild og servér."
+    ],
+    "taste": "Brug den færdigkøbte dilddressing, I normalt køber i supermarkedet.",
+    "child": "",
+    "tip": "Heidi-favorit til en hurtig hverdagsfrokost.",
+    "why": [
+      "Laks bidrager med protein og omega-3-fedtsyrer.",
+      "Hytteost giver ekstra protein og en cremet bund.",
+      "Rugbrød bidrager med fuldkorn og fibre."
+    ],
+    "audience": [
+      "heidi"
+    ],
+    "personalOwner": "heidi",
+    "adultOnly": true,
+    "weekdayFavorite": true
   }
 ]

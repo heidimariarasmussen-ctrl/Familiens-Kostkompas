@@ -472,5 +472,68 @@
     "unit": "g",
     "pack": 50,
     "packLabel": "50 g"
+  },
+  "raisins": {
+    "name": "Rosiner",
+    "cat": "Kolonial",
+    "unit": "g",
+    "pack": 250,
+    "packLabel": "250 g"
+  },
+  "skyr": {
+    "name": "Skyr naturel",
+    "cat": "Mejeri & æg",
+    "unit": "g",
+    "pack": 1000,
+    "packLabel": "1 kg"
+  },
+  "greek_yogurt": {
+    "name": "Græsk yoghurt naturel",
+    "cat": "Mejeri & æg",
+    "unit": "g",
+    "pack": 1000,
+    "packLabel": "1 kg"
+  },
+  "protein_powder": {
+    "name": "Proteinpulver",
+    "cat": "Kolonial",
+    "unit": "g",
+    "pack": 500,
+    "packLabel": "500 g"
+  },
+  "chia": {
+    "name": "Chiafrø",
+    "cat": "Kolonial",
+    "unit": "g",
+    "pack": 300,
+    "packLabel": "300 g"
+  },
+  "mixed_berries": {
+    "name": "Blandede bær",
+    "cat": "Frost",
+    "unit": "g",
+    "pack": 500,
+    "packLabel": "500 g"
+  },
+  "cottage_cheese": {
+    "name": "Hytteost",
+    "cat": "Mejeri & æg",
+    "unit": "g",
+    "pack": 200,
+    "packLabel": "200 g"
+  },
+  "cold_smoked_salmon": {
+    "name": "Koldrøget laks",
+    "cat": "Fisk & kød",
+    "unit": "g",
+    "pack": 100,
+    "packLabel": "100 g"
+  },
+  "dill_dressing": {
+    "name": "Dilddressing",
+    "cat": "Køl",
+    "unit": "g",
+    "pack": 250,
+    "packLabel": "250 g"
   }
 }
