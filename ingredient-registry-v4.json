@@ -1,0 +1,476 @@
+{
+  "oats": {
+    "name": "Havregryn",
+    "cat": "Kolonial",
+    "unit": "g",
+    "pack": 1000,
+    "packLabel": "1 kg"
+  },
+  "peanut_butter": {
+    "name": "Peanutbutter",
+    "cat": "Kolonial",
+    "unit": "g",
+    "pack": 350,
+    "packLabel": "350 g"
+  },
+  "almond_butter": {
+    "name": "Mandelsmør",
+    "cat": "Kolonial",
+    "unit": "g",
+    "pack": 200,
+    "packLabel": "200 g"
+  },
+  "tahini": {
+    "name": "Tahin",
+    "cat": "Kolonial",
+    "unit": "g",
+    "pack": 300,
+    "packLabel": "300 g"
+  },
+  "pasta": {
+    "name": "Pasta",
+    "cat": "Kolonial",
+    "unit": "g",
+    "pack": 500,
+    "packLabel": "500 g"
+  },
+  "wholegrain_pasta": {
+    "name": "Fuldkornspasta",
+    "cat": "Kolonial",
+    "unit": "g",
+    "pack": 500,
+    "packLabel": "500 g"
+  },
+  "rice": {
+    "name": "Ris",
+    "cat": "Kolonial",
+    "unit": "g",
+    "pack": 500,
+    "packLabel": "500 g"
+  },
+  "red_lentils": {
+    "name": "Røde linser",
+    "cat": "Kolonial",
+    "unit": "g",
+    "pack": 500,
+    "packLabel": "500 g"
+  },
+  "passata": {
+    "name": "Passata",
+    "cat": "Kolonial",
+    "unit": "g",
+    "pack": 500,
+    "packLabel": "500 g"
+  },
+  "kidney_beans": {
+    "name": "Kidneybønner",
+    "cat": "Kolonial",
+    "unit": "can",
+    "pack": 1,
+    "packLabel": "1 dåse"
+  },
+  "chickpeas": {
+    "name": "Kikærter",
+    "cat": "Kolonial",
+    "unit": "can",
+    "pack": 1,
+    "packLabel": "1 dåse"
+  },
+  "tortilla": {
+    "name": "Bløde tortillas",
+    "cat": "Kolonial",
+    "unit": "piece",
+    "pack": 8,
+    "packLabel": "8 stk"
+  },
+  "wholegrain_tortilla": {
+    "name": "Fuldkornstortillas",
+    "cat": "Kolonial",
+    "unit": "piece",
+    "pack": 8,
+    "packLabel": "8 stk"
+  },
+  "pita": {
+    "name": "Fuldkornspita",
+    "cat": "Kolonial",
+    "unit": "piece",
+    "pack": 4,
+    "packLabel": "4 stk"
+  },
+  "ryebread": {
+    "name": "Rugbrød",
+    "cat": "Kolonial",
+    "unit": "slice",
+    "pack": 1,
+    "packLabel": "1 stk",
+    "presence": true
+  },
+  "bread": {
+    "name": "Brød",
+    "cat": "Kolonial",
+    "unit": "slice",
+    "pack": 1,
+    "packLabel": "1 stk",
+    "presence": true
+  },
+  "a38": {
+    "name": "A38",
+    "cat": "Mejeri & æg",
+    "unit": "g",
+    "pack": 1000,
+    "packLabel": "1 kg"
+  },
+  "yogurt": {
+    "name": "Naturel yoghurt",
+    "cat": "Mejeri & æg",
+    "unit": "g",
+    "pack": 1000,
+    "packLabel": "1 kg"
+  },
+  "milk": {
+    "name": "Mælk",
+    "cat": "Mejeri & æg",
+    "unit": "ml",
+    "pack": 1000,
+    "packLabel": "1 l"
+  },
+  "cream": {
+    "name": "Fløde",
+    "cat": "Mejeri & æg",
+    "unit": "ml",
+    "pack": 250,
+    "packLabel": "250 ml"
+  },
+  "mascarpone": {
+    "name": "Mascarpone",
+    "cat": "Mejeri & æg",
+    "unit": "g",
+    "pack": 250,
+    "packLabel": "250 g"
+  },
+  "cheese": {
+    "name": "Mild ost",
+    "cat": "Mejeri & æg",
+    "unit": "g",
+    "pack": 200,
+    "packLabel": "200 g"
+  },
+  "butter": {
+    "name": "Smør",
+    "cat": "Mejeri & æg",
+    "unit": "g",
+    "pack": 200,
+    "packLabel": "200 g"
+  },
+  "eggs": {
+    "name": "Æg",
+    "cat": "Mejeri & æg",
+    "unit": "piece",
+    "pack": 6,
+    "packLabel": "6 stk"
+  },
+  "salmon": {
+    "name": "Laks",
+    "cat": "Fisk & kød",
+    "unit": "g",
+    "round": 50
+  },
+  "salmon_fillet": {
+    "name": "Laksefilet",
+    "cat": "Fisk & kød",
+    "unit": "g",
+    "round": 50
+  },
+  "cod": {
+    "name": "Torsk/sej",
+    "cat": "Fisk & kød",
+    "unit": "g",
+    "round": 50
+  },
+  "minced_beef": {
+    "name": "Hakket oksekød",
+    "cat": "Fisk & kød",
+    "unit": "g",
+    "round": 100
+  },
+  "minced_chicken": {
+    "name": "Hakket kylling",
+    "cat": "Fisk & kød",
+    "unit": "g",
+    "round": 100
+  },
+  "chicken": {
+    "name": "Kylling",
+    "cat": "Fisk & kød",
+    "unit": "g",
+    "round": 50
+  },
+  "chicken_thigh": {
+    "name": "Kyllingelårfilet",
+    "cat": "Fisk & kød",
+    "unit": "g",
+    "round": 100
+  },
+  "beef_shoulder": {
+    "name": "Oksebov",
+    "cat": "Fisk & kød",
+    "unit": "g",
+    "round": 100
+  },
+  "minced_mixed": {
+    "name": "Hakket kalv/flæsk eller oksekød",
+    "cat": "Fisk & kød",
+    "unit": "g",
+    "round": 100
+  },
+  "fish_cakes": {
+    "name": "Fiskefrikadeller",
+    "cat": "Fisk & kød",
+    "unit": "piece",
+    "pack": 4,
+    "packLabel": "4 stk"
+  },
+  "potatoes": {
+    "name": "Kartofler",
+    "cat": "Frugt & grønt",
+    "unit": "g",
+    "round": 100
+  },
+  "sweet_potato": {
+    "name": "Sød kartoffel",
+    "cat": "Frugt & grønt",
+    "unit": "g",
+    "round": 100
+  },
+  "broccoli": {
+    "name": "Broccoli",
+    "cat": "Frugt & grønt",
+    "unit": "g",
+    "round": 100
+  },
+  "carrot": {
+    "name": "Gulerødder",
+    "cat": "Frugt & grønt",
+    "unit": "piece",
+    "round": 1
+  },
+  "avocado": {
+    "name": "Avocado",
+    "cat": "Frugt & grønt",
+    "unit": "piece",
+    "round": 1
+  },
+  "banana": {
+    "name": "Bananer",
+    "cat": "Frugt & grønt",
+    "unit": "piece",
+    "round": 1
+  },
+  "kiwi": {
+    "name": "Kiwi",
+    "cat": "Frugt & grønt",
+    "unit": "piece",
+    "round": 1
+  },
+  "apple": {
+    "name": "Æbler",
+    "cat": "Frugt & grønt",
+    "unit": "piece",
+    "round": 1
+  },
+  "pear": {
+    "name": "Pærer",
+    "cat": "Frugt & grønt",
+    "unit": "piece",
+    "round": 1
+  },
+  "lemon": {
+    "name": "Citroner",
+    "cat": "Frugt & grønt",
+    "unit": "piece",
+    "round": 1
+  },
+  "lime": {
+    "name": "Lime",
+    "cat": "Frugt & grønt",
+    "unit": "piece",
+    "round": 1
+  },
+  "red_pepper": {
+    "name": "Rød peberfrugt",
+    "cat": "Frugt & grønt",
+    "unit": "piece",
+    "round": 1
+  },
+  "pepper": {
+    "name": "Peberfrugt",
+    "cat": "Frugt & grønt",
+    "unit": "g",
+    "round": 100
+  },
+  "tomato": {
+    "name": "Tomater",
+    "cat": "Frugt & grønt",
+    "unit": "g",
+    "round": 100
+  },
+  "cherry_tomato": {
+    "name": "Cherrytomater",
+    "cat": "Frugt & grønt",
+    "unit": "g",
+    "pack": 250,
+    "packLabel": "250 g"
+  },
+  "peas": {
+    "name": "Ærter",
+    "cat": "Frugt & grønt",
+    "unit": "g",
+    "pack": 500,
+    "packLabel": "500 g"
+  },
+  "cabbage_broccoli": {
+    "name": "Kål eller broccoli",
+    "cat": "Frugt & grønt",
+    "unit": "g",
+    "round": 100
+  },
+  "berries": {
+    "name": "Bær",
+    "cat": "Frugt & grønt",
+    "unit": "g",
+    "pack": 250,
+    "packLabel": "250 g"
+  },
+  "blueberries": {
+    "name": "Blåbær",
+    "cat": "Frugt & grønt",
+    "unit": "g",
+    "pack": 125,
+    "packLabel": "125 g"
+  },
+  "raspberries": {
+    "name": "Hindbær",
+    "cat": "Frugt & grønt",
+    "unit": "g",
+    "pack": 125,
+    "packLabel": "125 g"
+  },
+  "frozen_berries": {
+    "name": "Frosne bær",
+    "cat": "Frugt & grønt",
+    "unit": "g",
+    "pack": 500,
+    "packLabel": "500 g"
+  },
+  "cucumber": {
+    "name": "Agurk",
+    "cat": "Frugt & grønt",
+    "unit": "g",
+    "presence": true,
+    "packLabel": "1 stk"
+  },
+  "onion": {
+    "name": "Løg",
+    "cat": "Frugt & grønt",
+    "unit": "piece",
+    "round": 1
+  },
+  "dill": {
+    "name": "Dild",
+    "cat": "Frugt & grønt",
+    "unit": "bunch",
+    "presence": true,
+    "packLabel": "1 bundt"
+  },
+  "parsley": {
+    "name": "Persille",
+    "cat": "Frugt & grønt",
+    "unit": "bunch",
+    "presence": true,
+    "packLabel": "1 bundt"
+  },
+  "chives": {
+    "name": "Purløg",
+    "cat": "Frugt & grønt",
+    "unit": "bunch",
+    "presence": true,
+    "packLabel": "1 potte/bundt"
+  },
+  "olive_oil": {
+    "name": "Ekstra jomfruolivenolie",
+    "cat": "Andet",
+    "unit": "ml",
+    "pack": 500,
+    "packLabel": "500 ml"
+  },
+  "ketchup": {
+    "name": "Heinz Organic Tomato Ketchup",
+    "cat": "Andet",
+    "unit": "ml",
+    "presence": true,
+    "packLabel": "1 flaske"
+  },
+  "avocado_mayo": {
+    "name": "Avocado-mayo",
+    "cat": "Andet",
+    "unit": "g",
+    "presence": true,
+    "packLabel": "1 glas"
+  },
+  "pickled_cucumber": {
+    "name": "Syltet agurk",
+    "cat": "Andet",
+    "unit": "g",
+    "presence": true,
+    "packLabel": "1 glas"
+  },
+  "coconut_milk": {
+    "name": "Kokosmælk",
+    "cat": "Kolonial",
+    "unit": "ml",
+    "pack": 400,
+    "packLabel": "400 ml"
+  },
+  "spice_curry": {
+    "name": "Mild karry",
+    "cat": "Andet",
+    "unit": "tsp",
+    "presence": true,
+    "packLabel": "1 glas"
+  },
+  "spice_paprika": {
+    "name": "Mild paprika",
+    "cat": "Andet",
+    "unit": "tsp",
+    "presence": true,
+    "packLabel": "1 glas"
+  },
+  "spice_cinnamon": {
+    "name": "Kanel",
+    "cat": "Andet",
+    "unit": "tsp",
+    "presence": true,
+    "packLabel": "1 glas"
+  },
+  "spice_thyme": {
+    "name": "Timian",
+    "cat": "Andet",
+    "unit": "tsp",
+    "presence": true,
+    "packLabel": "1 glas"
+  },
+  "wheat_flour": {
+    "name": "Hvedemel",
+    "cat": "Kolonial",
+    "unit": "g",
+    "pack": 1000,
+    "packLabel": "1 kg"
+  },
+  "yeast": {
+    "name": "Gær",
+    "cat": "Mejeri & æg",
+    "unit": "g",
+    "pack": 50,
+    "packLabel": "50 g"
+  }
+}

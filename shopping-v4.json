@@ -1,0 +1,9718 @@
+{
+  "morgenmad-1": {
+    "adult": [
+      {
+        "id": "oats",
+        "amount": 55.0,
+        "unit": "g",
+        "raw": "55 g havregryn"
+      },
+      {
+        "id": "banana",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 moden banan"
+      },
+      {
+        "id": "blueberries",
+        "amount": 50.0,
+        "unit": "g",
+        "raw": "50 g blåbær"
+      },
+      {
+        "id": "peanut_butter",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g 100 % smooth peanutbutter"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "oats",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g havregryn"
+      },
+      {
+        "id": "banana",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 moden banan"
+      },
+      {
+        "id": "blueberries",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g blåbær"
+      },
+      {
+        "id": "peanut_butter",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g 100 % smooth peanutbutter"
+      }
+    ],
+    "family": [
+      {
+        "id": "oats",
+        "amount": 160.0,
+        "unit": "g",
+        "raw": "160 g havregryn"
+      },
+      {
+        "id": "banana",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 moden banan"
+      },
+      {
+        "id": "blueberries",
+        "amount": 150.0,
+        "unit": "g",
+        "raw": "150 g blåbær"
+      },
+      {
+        "id": "peanut_butter",
+        "amount": 30.0,
+        "unit": "g",
+        "raw": "30 g 100 % smooth peanutbutter"
+      }
+    ]
+  },
+  "morgenmad-2": {
+    "adult": [
+      {
+        "id": "eggs",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 æg"
+      },
+      {
+        "id": "potatoes",
+        "amount": 165.0,
+        "unit": "g",
+        "raw": "165 g kogte kartofler"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 stor avocado"
+      },
+      {
+        "id": "kiwi",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 kiwi"
+      },
+      {
+        "id": "butter",
+        "amount": 5.0,
+        "unit": "g",
+        "raw": "5 g smør"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "eggs",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 æg"
+      },
+      {
+        "id": "potatoes",
+        "amount": 135.0,
+        "unit": "g",
+        "raw": "135 g kogte kartofler"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 stor avocado"
+      },
+      {
+        "id": "kiwi",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 kiwi"
+      },
+      {
+        "id": "butter",
+        "amount": 5.0,
+        "unit": "g",
+        "raw": "5 g smør"
+      }
+    ],
+    "family": [
+      {
+        "id": "eggs",
+        "amount": 6.0,
+        "unit": "piece",
+        "raw": "6 æg"
+      },
+      {
+        "id": "potatoes",
+        "amount": 500.0,
+        "unit": "g",
+        "raw": "500 g kogte kartofler"
+      },
+      {
+        "id": "avocado",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 stor avocado"
+      },
+      {
+        "id": "kiwi",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 kiwier"
+      },
+      {
+        "id": "butter",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g smør"
+      }
+    ]
+  },
+  "morgenmad-3": {
+    "adult": [
+      {
+        "id": "a38",
+        "amount": 200.0,
+        "unit": "g",
+        "raw": "200 g Arla Cultura A38 Øko Naturel 3,5 %"
+      },
+      {
+        "id": "oats",
+        "amount": 35.0,
+        "unit": "g",
+        "raw": "35 g havregryn"
+      },
+      {
+        "id": "berries",
+        "amount": 50.0,
+        "unit": "g",
+        "raw": "50 g bær"
+      },
+      {
+        "id": "banana",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 banan"
+      },
+      {
+        "id": "peanut_butter",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g 100 % smooth peanutbutter"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "a38",
+        "amount": 150.0,
+        "unit": "g",
+        "raw": "150 g Arla Cultura A38 Øko Naturel 3,5 %"
+      },
+      {
+        "id": "oats",
+        "amount": 25.0,
+        "unit": "g",
+        "raw": "25 g havregryn"
+      },
+      {
+        "id": "berries",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g bær"
+      },
+      {
+        "id": "banana",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 banan"
+      },
+      {
+        "id": "peanut_butter",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g 100 % smooth peanutbutter"
+      }
+    ],
+    "family": [
+      {
+        "id": "a38",
+        "amount": 600.0,
+        "unit": "g",
+        "raw": "600 g Arla Cultura A38 Øko Naturel 3,5 %"
+      },
+      {
+        "id": "oats",
+        "amount": 100.0,
+        "unit": "g",
+        "raw": "100 g havregryn"
+      },
+      {
+        "id": "berries",
+        "amount": 150.0,
+        "unit": "g",
+        "raw": "150 g bær"
+      },
+      {
+        "id": "banana",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 banan"
+      },
+      {
+        "id": "peanut_butter",
+        "amount": 30.0,
+        "unit": "g",
+        "raw": "30 g 100 % smooth peanutbutter"
+      }
+    ]
+  },
+  "morgenmad-4": {
+    "adult": [
+      {
+        "id": "banana",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 moden banan"
+      },
+      {
+        "id": "eggs",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 æg"
+      },
+      {
+        "id": "oats",
+        "amount": 70.0,
+        "unit": "g",
+        "raw": "70 g havregryn"
+      },
+      {
+        "id": "peanut_butter",
+        "amount": 15.0,
+        "unit": "g",
+        "raw": "15 g 100 % smooth peanutbutter"
+      },
+      {
+        "id": "butter",
+        "amount": 5.0,
+        "unit": "g",
+        "raw": "5 g smør til panden"
+      },
+      {
+        "id": "berries",
+        "amount": 50.0,
+        "unit": "g",
+        "raw": "50 g bær"
+      },
+      {
+        "id": "a38",
+        "amount": 45.0,
+        "unit": "g",
+        "raw": "45 g Arla Cultura A38 Øko Naturel 3,5 %"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "banana",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 moden banan"
+      },
+      {
+        "id": "eggs",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 æg"
+      },
+      {
+        "id": "oats",
+        "amount": 70.0,
+        "unit": "g",
+        "raw": "70 g havregryn"
+      },
+      {
+        "id": "peanut_butter",
+        "amount": 15.0,
+        "unit": "g",
+        "raw": "15 g 100 % smooth peanutbutter"
+      },
+      {
+        "id": "butter",
+        "amount": 5.0,
+        "unit": "g",
+        "raw": "5 g smør til panden"
+      },
+      {
+        "id": "berries",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g bær"
+      },
+      {
+        "id": "a38",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g Arla Cultura A38 Øko Naturel 3,5 %"
+      }
+    ],
+    "family": [
+      {
+        "id": "banana",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 modne bananer"
+      },
+      {
+        "id": "eggs",
+        "amount": 4.0,
+        "unit": "piece",
+        "raw": "4 æg"
+      },
+      {
+        "id": "oats",
+        "amount": 140.0,
+        "unit": "g",
+        "raw": "140 g havregryn"
+      },
+      {
+        "id": "peanut_butter",
+        "amount": 30.0,
+        "unit": "g",
+        "raw": "30 g 100 % smooth peanutbutter"
+      },
+      {
+        "id": "butter",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g smør til panden"
+      },
+      {
+        "id": "berries",
+        "amount": 150.0,
+        "unit": "g",
+        "raw": "150 g bær"
+      },
+      {
+        "id": "a38",
+        "amount": 120.0,
+        "unit": "g",
+        "raw": "120 g Arla Cultura A38 Øko Naturel 3,5 %"
+      }
+    ]
+  },
+  "morgenmad-5": {
+    "adult": [
+      {
+        "id": "ryebread",
+        "amount": 2.0,
+        "unit": "slice",
+        "raw": "2 små skiver blødt rugbrød"
+      },
+      {
+        "id": "eggs",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 æg"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      },
+      {
+        "id": "potatoes",
+        "amount": 65.0,
+        "unit": "g",
+        "raw": "65 g kogte kartofler"
+      },
+      {
+        "id": "kiwi",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 kiwi"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "ryebread",
+        "amount": 2.0,
+        "unit": "slice",
+        "raw": "2 små skiver blødt rugbrød"
+      },
+      {
+        "id": "eggs",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 æg"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      },
+      {
+        "id": "potatoes",
+        "amount": 55.0,
+        "unit": "g",
+        "raw": "55 g kogte kartofler"
+      },
+      {
+        "id": "kiwi",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 kiwi"
+      }
+    ],
+    "family": [
+      {
+        "id": "ryebread",
+        "amount": 6.0,
+        "unit": "slice",
+        "raw": "6 små skiver blødt rugbrød"
+      },
+      {
+        "id": "eggs",
+        "amount": 4.0,
+        "unit": "piece",
+        "raw": "4 æg"
+      },
+      {
+        "id": "avocado",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 avocado"
+      },
+      {
+        "id": "potatoes",
+        "amount": 200.0,
+        "unit": "g",
+        "raw": "200 g kogte kartofler"
+      },
+      {
+        "id": "kiwi",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 kiwier"
+      }
+    ]
+  },
+  "morgenmad-6": {
+    "adult": [
+      {
+        "id": "oats",
+        "amount": 55.0,
+        "unit": "g",
+        "raw": "55 g havregryn"
+      },
+      {
+        "id": "apple",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 lille æble"
+      },
+      {
+        "id": "raspberries",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g hindbær"
+      },
+      {
+        "id": "almond_butter",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g 100 % mandelsmør"
+      },
+      {
+        "id": "spice_cinnamon",
+        "amount": 0.25,
+        "unit": "tsp",
+        "raw": "1/4 tsk kanel"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "oats",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g havregryn"
+      },
+      {
+        "id": "apple",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 lille æble"
+      },
+      {
+        "id": "raspberries",
+        "amount": 30.0,
+        "unit": "g",
+        "raw": "30 g hindbær"
+      },
+      {
+        "id": "almond_butter",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g 100 % mandelsmør"
+      },
+      {
+        "id": "spice_cinnamon",
+        "amount": 0.25,
+        "unit": "tsp",
+        "raw": "1/4 tsk kanel"
+      }
+    ],
+    "family": [
+      {
+        "id": "oats",
+        "amount": 160.0,
+        "unit": "g",
+        "raw": "160 g havregryn"
+      },
+      {
+        "id": "apple",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 små æbler"
+      },
+      {
+        "id": "raspberries",
+        "amount": 120.0,
+        "unit": "g",
+        "raw": "120 g hindbær"
+      },
+      {
+        "id": "almond_butter",
+        "amount": 30.0,
+        "unit": "g",
+        "raw": "30 g 100 % mandelsmør"
+      },
+      {
+        "id": "spice_cinnamon",
+        "amount": 0.5,
+        "unit": "tsp",
+        "raw": "1/2 tsk kanel"
+      }
+    ]
+  },
+  "morgenmad-7": {
+    "adult": [
+      {
+        "id": "oats",
+        "amount": 60.0,
+        "unit": "g",
+        "raw": "60 g havregryn"
+      },
+      {
+        "id": "banana",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 banan"
+      },
+      {
+        "id": "eggs",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 æg"
+      },
+      {
+        "id": "blueberries",
+        "amount": 50.0,
+        "unit": "g",
+        "raw": "50 g blåbær"
+      },
+      {
+        "id": "peanut_butter",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g 100 % peanutbutter"
+      },
+      {
+        "id": "butter",
+        "amount": 5.0,
+        "unit": "g",
+        "raw": "5 g smør til formen"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "oats",
+        "amount": 60.0,
+        "unit": "g",
+        "raw": "60 g havregryn"
+      },
+      {
+        "id": "banana",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 banan"
+      },
+      {
+        "id": "eggs",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 æg"
+      },
+      {
+        "id": "blueberries",
+        "amount": 50.0,
+        "unit": "g",
+        "raw": "50 g blåbær"
+      },
+      {
+        "id": "peanut_butter",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g 100 % peanutbutter"
+      },
+      {
+        "id": "butter",
+        "amount": 5.0,
+        "unit": "g",
+        "raw": "5 g smør til formen"
+      }
+    ],
+    "family": [
+      {
+        "id": "oats",
+        "amount": 180.0,
+        "unit": "g",
+        "raw": "180 g havregryn"
+      },
+      {
+        "id": "banana",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 bananer"
+      },
+      {
+        "id": "eggs",
+        "amount": 3.0,
+        "unit": "piece",
+        "raw": "3 æg"
+      },
+      {
+        "id": "blueberries",
+        "amount": 150.0,
+        "unit": "g",
+        "raw": "150 g blåbær"
+      },
+      {
+        "id": "peanut_butter",
+        "amount": 30.0,
+        "unit": "g",
+        "raw": "30 g 100 % peanutbutter"
+      },
+      {
+        "id": "butter",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g smør til formen"
+      }
+    ]
+  },
+  "morgenmad-8": {
+    "adult": [
+      {
+        "id": "eggs",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 æg"
+      },
+      {
+        "id": "banana",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 banan"
+      },
+      {
+        "id": "oats",
+        "amount": 70.0,
+        "unit": "g",
+        "raw": "70 g havregryn"
+      },
+      {
+        "id": "butter",
+        "amount": 5.0,
+        "unit": "g",
+        "raw": "5 g smør til vaffeljern"
+      },
+      {
+        "id": "berries",
+        "amount": 50.0,
+        "unit": "g",
+        "raw": "50 g bær"
+      },
+      {
+        "id": "a38",
+        "amount": 55.0,
+        "unit": "g",
+        "raw": "55 g A38 3,5 %"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "eggs",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 æg"
+      },
+      {
+        "id": "banana",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 banan"
+      },
+      {
+        "id": "oats",
+        "amount": 70.0,
+        "unit": "g",
+        "raw": "70 g havregryn"
+      },
+      {
+        "id": "butter",
+        "amount": 5.0,
+        "unit": "g",
+        "raw": "5 g smør til vaffeljern"
+      },
+      {
+        "id": "berries",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g bær"
+      },
+      {
+        "id": "a38",
+        "amount": 50.0,
+        "unit": "g",
+        "raw": "50 g A38 3,5 %"
+      }
+    ],
+    "family": [
+      {
+        "id": "eggs",
+        "amount": 4.0,
+        "unit": "piece",
+        "raw": "4 æg"
+      },
+      {
+        "id": "banana",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 bananer"
+      },
+      {
+        "id": "oats",
+        "amount": 140.0,
+        "unit": "g",
+        "raw": "140 g havregryn"
+      },
+      {
+        "id": "butter",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g smør til vaffeljern"
+      },
+      {
+        "id": "berries",
+        "amount": 150.0,
+        "unit": "g",
+        "raw": "150 g bær"
+      },
+      {
+        "id": "a38",
+        "amount": 150.0,
+        "unit": "g",
+        "raw": "150 g A38 3,5 %"
+      }
+    ]
+  },
+  "morgenmad-9": {
+    "adult": [
+      {
+        "id": "eggs",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 æg"
+      },
+      {
+        "id": "potatoes",
+        "amount": 125.0,
+        "unit": "g",
+        "raw": "125 g kogte kartofler"
+      },
+      {
+        "id": "cherry_tomato",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g cherrytomater"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 5.0,
+        "unit": "ml",
+        "raw": "1 tsk ekstra jomfruolivenolie"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "eggs",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 æg"
+      },
+      {
+        "id": "potatoes",
+        "amount": 125.0,
+        "unit": "g",
+        "raw": "125 g kogte kartofler"
+      },
+      {
+        "id": "cherry_tomato",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g cherrytomater"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 5.0,
+        "unit": "ml",
+        "raw": "1 tsk ekstra jomfruolivenolie"
+      }
+    ],
+    "family": [
+      {
+        "id": "eggs",
+        "amount": 8.0,
+        "unit": "piece",
+        "raw": "8 æg"
+      },
+      {
+        "id": "potatoes",
+        "amount": 500.0,
+        "unit": "g",
+        "raw": "500 g kogte kartofler"
+      },
+      {
+        "id": "cherry_tomato",
+        "amount": 150.0,
+        "unit": "g",
+        "raw": "150 g cherrytomater"
+      },
+      {
+        "id": "avocado",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 avocado"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 15.0,
+        "unit": "ml",
+        "raw": "1 spsk ekstra jomfruolivenolie"
+      }
+    ]
+  },
+  "morgenmad-10": {
+    "adult": [
+      {
+        "id": "eggs",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 æg"
+      },
+      {
+        "id": "ryebread",
+        "amount": 2.0,
+        "unit": "slice",
+        "raw": "2 små skiver blødt rugbrød"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      },
+      {
+        "id": "kiwi",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 kiwi"
+      },
+      {
+        "id": "butter",
+        "amount": 5.0,
+        "unit": "g",
+        "raw": "5 g smør"
+      },
+      {
+        "id": "a38",
+        "amount": 25.0,
+        "unit": "g",
+        "raw": "25 g A38 3,5 %"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "eggs",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 æg"
+      },
+      {
+        "id": "ryebread",
+        "amount": 2.0,
+        "unit": "slice",
+        "raw": "2 små skiver blødt rugbrød"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      },
+      {
+        "id": "kiwi",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 kiwi"
+      },
+      {
+        "id": "butter",
+        "amount": 5.0,
+        "unit": "g",
+        "raw": "5 g smør"
+      },
+      {
+        "id": "a38",
+        "amount": 20.0,
+        "unit": "g",
+        "raw": "20 g A38 3,5 %"
+      }
+    ],
+    "family": [
+      {
+        "id": "eggs",
+        "amount": 6.0,
+        "unit": "piece",
+        "raw": "6 æg"
+      },
+      {
+        "id": "ryebread",
+        "amount": 6.0,
+        "unit": "slice",
+        "raw": "6 små skiver blødt rugbrød"
+      },
+      {
+        "id": "avocado",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 avocado"
+      },
+      {
+        "id": "kiwi",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 kiwier"
+      },
+      {
+        "id": "butter",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g smør"
+      },
+      {
+        "id": "a38",
+        "amount": 60.0,
+        "unit": "g",
+        "raw": "60 g A38 3,5 %"
+      }
+    ]
+  },
+  "morgenmad-11": {
+    "adult": [
+      {
+        "id": "oats",
+        "amount": 55.0,
+        "unit": "g",
+        "raw": "55 g havregryn"
+      },
+      {
+        "id": "a38",
+        "amount": 165.0,
+        "unit": "g",
+        "raw": "165 g A38 3,5 %"
+      },
+      {
+        "id": "raspberries",
+        "amount": 50.0,
+        "unit": "g",
+        "raw": "50 g hindbær"
+      },
+      {
+        "id": "banana",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 banan"
+      },
+      {
+        "id": "peanut_butter",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g 100 % peanutbutter"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "oats",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g havregryn"
+      },
+      {
+        "id": "a38",
+        "amount": 125.0,
+        "unit": "g",
+        "raw": "125 g A38 3,5 %"
+      },
+      {
+        "id": "raspberries",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g hindbær"
+      },
+      {
+        "id": "banana",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 banan"
+      },
+      {
+        "id": "peanut_butter",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g 100 % peanutbutter"
+      }
+    ],
+    "family": [
+      {
+        "id": "oats",
+        "amount": 160.0,
+        "unit": "g",
+        "raw": "160 g havregryn"
+      },
+      {
+        "id": "a38",
+        "amount": 500.0,
+        "unit": "g",
+        "raw": "500 g A38 3,5 %"
+      },
+      {
+        "id": "raspberries",
+        "amount": 150.0,
+        "unit": "g",
+        "raw": "150 g hindbær"
+      },
+      {
+        "id": "banana",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 banan"
+      },
+      {
+        "id": "peanut_butter",
+        "amount": 30.0,
+        "unit": "g",
+        "raw": "30 g 100 % peanutbutter"
+      }
+    ]
+  },
+  "morgenmad-12": {
+    "adult": [
+      {
+        "id": "oats",
+        "amount": 55.0,
+        "unit": "g",
+        "raw": "55 g havregryn"
+      },
+      {
+        "id": "pear",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 moden pære"
+      },
+      {
+        "id": "tahini",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g Rømer Tahin uden salt Ø"
+      },
+      {
+        "id": "berries",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g bær"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "oats",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g havregryn"
+      },
+      {
+        "id": "pear",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 moden pære"
+      },
+      {
+        "id": "tahini",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g Rømer Tahin uden salt Ø"
+      },
+      {
+        "id": "berries",
+        "amount": 30.0,
+        "unit": "g",
+        "raw": "30 g bær"
+      }
+    ],
+    "family": [
+      {
+        "id": "oats",
+        "amount": 160.0,
+        "unit": "g",
+        "raw": "160 g havregryn"
+      },
+      {
+        "id": "pear",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 modne pærer"
+      },
+      {
+        "id": "tahini",
+        "amount": 25.0,
+        "unit": "g",
+        "raw": "25 g Rømer Tahin uden salt Ø"
+      },
+      {
+        "id": "berries",
+        "amount": 120.0,
+        "unit": "g",
+        "raw": "120 g bær"
+      }
+    ]
+  },
+  "morgenmad-13": {
+    "adult": [
+      {
+        "id": "eggs",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 æg"
+      },
+      {
+        "id": "potatoes",
+        "amount": 100.0,
+        "unit": "g",
+        "raw": "100 g kogte kartofler"
+      },
+      {
+        "id": "broccoli",
+        "amount": 45.0,
+        "unit": "g",
+        "raw": "45 g broccoli"
+      },
+      {
+        "id": "cheese",
+        "amount": 15.0,
+        "unit": "g",
+        "raw": "15 g mild ost"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 5.0,
+        "unit": "ml",
+        "raw": "1 tsk ekstra jomfruolivenolie"
+      },
+      {
+        "id": "kiwi",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 kiwi"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "eggs",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 æg"
+      },
+      {
+        "id": "potatoes",
+        "amount": 100.0,
+        "unit": "g",
+        "raw": "100 g kogte kartofler"
+      },
+      {
+        "id": "broccoli",
+        "amount": 45.0,
+        "unit": "g",
+        "raw": "45 g broccoli"
+      },
+      {
+        "id": "cheese",
+        "amount": 15.0,
+        "unit": "g",
+        "raw": "15 g mild ost"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 5.0,
+        "unit": "ml",
+        "raw": "1 tsk ekstra jomfruolivenolie"
+      },
+      {
+        "id": "kiwi",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 kiwi"
+      }
+    ],
+    "family": [
+      {
+        "id": "eggs",
+        "amount": 8.0,
+        "unit": "piece",
+        "raw": "8 æg"
+      },
+      {
+        "id": "potatoes",
+        "amount": 400.0,
+        "unit": "g",
+        "raw": "400 g kogte kartofler"
+      },
+      {
+        "id": "broccoli",
+        "amount": 180.0,
+        "unit": "g",
+        "raw": "180 g broccoli"
+      },
+      {
+        "id": "cheese",
+        "amount": 60.0,
+        "unit": "g",
+        "raw": "60 g mild ost"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 15.0,
+        "unit": "ml",
+        "raw": "1 spsk ekstra jomfruolivenolie"
+      },
+      {
+        "id": "kiwi",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 kiwier"
+      }
+    ]
+  },
+  "morgenmad-14": {
+    "adult": [
+      {
+        "id": "oats",
+        "amount": 60.0,
+        "unit": "g",
+        "raw": "60 g havregryn"
+      },
+      {
+        "id": "banana",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 moden banan"
+      },
+      {
+        "id": "eggs",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 æg"
+      },
+      {
+        "id": "milk",
+        "amount": 50.0,
+        "unit": "ml",
+        "raw": "0,5 dl mælk"
+      },
+      {
+        "id": "spice_cinnamon",
+        "amount": 0.25,
+        "unit": "tsp",
+        "raw": "1/4 tsk kanel"
+      },
+      {
+        "id": "a38",
+        "amount": 55.0,
+        "unit": "g",
+        "raw": "55 g A38 3,5 %"
+      },
+      {
+        "id": "berries",
+        "amount": 50.0,
+        "unit": "g",
+        "raw": "50 g bær"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "oats",
+        "amount": 60.0,
+        "unit": "g",
+        "raw": "60 g havregryn"
+      },
+      {
+        "id": "banana",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 moden banan"
+      },
+      {
+        "id": "eggs",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 æg"
+      },
+      {
+        "id": "milk",
+        "amount": 50.0,
+        "unit": "ml",
+        "raw": "0,5 dl mælk"
+      },
+      {
+        "id": "spice_cinnamon",
+        "amount": 0.25,
+        "unit": "tsp",
+        "raw": "1/4 tsk kanel"
+      },
+      {
+        "id": "a38",
+        "amount": 50.0,
+        "unit": "g",
+        "raw": "50 g A38 3,5 %"
+      },
+      {
+        "id": "berries",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g bær"
+      }
+    ],
+    "family": [
+      {
+        "id": "oats",
+        "amount": 180.0,
+        "unit": "g",
+        "raw": "180 g havregryn"
+      },
+      {
+        "id": "banana",
+        "amount": 3.0,
+        "unit": "piece",
+        "raw": "3 modne bananer"
+      },
+      {
+        "id": "eggs",
+        "amount": 3.0,
+        "unit": "piece",
+        "raw": "3 æg"
+      },
+      {
+        "id": "milk",
+        "amount": 100.0,
+        "unit": "ml",
+        "raw": "1 dl mælk"
+      },
+      {
+        "id": "spice_cinnamon",
+        "amount": 1.0,
+        "unit": "tsp",
+        "raw": "1 tsk kanel"
+      },
+      {
+        "id": "a38",
+        "amount": 150.0,
+        "unit": "g",
+        "raw": "150 g A38 3,5 %"
+      },
+      {
+        "id": "berries",
+        "amount": 150.0,
+        "unit": "g",
+        "raw": "150 g bær"
+      }
+    ]
+  },
+  "morgenmad-15": {
+    "adult": [
+      {
+        "id": "yeast",
+        "amount": 1.07143,
+        "unit": "g",
+        "raw": "15 g gær"
+      },
+      {
+        "id": "eggs",
+        "amount": 0.07143,
+        "unit": "piece",
+        "raw": "1 æg"
+      },
+      {
+        "id": "yogurt",
+        "amount": 7.14286,
+        "unit": "g",
+        "raw": "100 g naturel yoghurt"
+      },
+      {
+        "id": "butter",
+        "amount": 2.5,
+        "unit": "g",
+        "raw": "35 g smør"
+      },
+      {
+        "id": "oats",
+        "amount": 7.14286,
+        "unit": "g",
+        "raw": "100 g havregryn"
+      },
+      {
+        "id": "wheat_flour",
+        "amount": 32.14286,
+        "unit": "g",
+        "raw": "450 g hvedemel"
+      },
+      {
+        "id": "eggs",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 æg"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      },
+      {
+        "id": "kiwi",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 kiwi"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "yeast",
+        "amount": 2.14286,
+        "unit": "g",
+        "raw": "15 g gær"
+      },
+      {
+        "id": "eggs",
+        "amount": 0.14286,
+        "unit": "piece",
+        "raw": "1 æg"
+      },
+      {
+        "id": "yogurt",
+        "amount": 14.28571,
+        "unit": "g",
+        "raw": "100 g naturel yoghurt"
+      },
+      {
+        "id": "butter",
+        "amount": 5.0,
+        "unit": "g",
+        "raw": "35 g smør"
+      },
+      {
+        "id": "oats",
+        "amount": 14.28571,
+        "unit": "g",
+        "raw": "100 g havregryn"
+      },
+      {
+        "id": "wheat_flour",
+        "amount": 64.28571,
+        "unit": "g",
+        "raw": "450 g hvedemel"
+      },
+      {
+        "id": "eggs",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 æg"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      },
+      {
+        "id": "kiwi",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 kiwi"
+      }
+    ],
+    "family": [
+      {
+        "id": "yeast",
+        "amount": 4.28571,
+        "unit": "g",
+        "raw": "15 g gær"
+      },
+      {
+        "id": "eggs",
+        "amount": 0.28571,
+        "unit": "piece",
+        "raw": "1 æg"
+      },
+      {
+        "id": "yogurt",
+        "amount": 28.57143,
+        "unit": "g",
+        "raw": "100 g naturel yoghurt"
+      },
+      {
+        "id": "butter",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "35 g smør"
+      },
+      {
+        "id": "oats",
+        "amount": 28.57143,
+        "unit": "g",
+        "raw": "100 g havregryn"
+      },
+      {
+        "id": "wheat_flour",
+        "amount": 128.57143,
+        "unit": "g",
+        "raw": "450 g hvedemel"
+      },
+      {
+        "id": "eggs",
+        "amount": 4.0,
+        "unit": "piece",
+        "raw": "4 æg"
+      },
+      {
+        "id": "avocado",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 avocado"
+      },
+      {
+        "id": "kiwi",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 kiwier"
+      }
+    ]
+  },
+  "morgenmad-16": {
+    "adult": [
+      {
+        "id": "apple",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 æble"
+      },
+      {
+        "id": "eggs",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 æg"
+      },
+      {
+        "id": "oats",
+        "amount": 70.0,
+        "unit": "g",
+        "raw": "70 g havregryn"
+      },
+      {
+        "id": "banana",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 banan"
+      },
+      {
+        "id": "butter",
+        "amount": 5.0,
+        "unit": "g",
+        "raw": "5 g smør"
+      },
+      {
+        "id": "peanut_butter",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g 100 % peanutbutter"
+      },
+      {
+        "id": "a38",
+        "amount": 30.0,
+        "unit": "g",
+        "raw": "30 g A38 3,5 %"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "apple",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 æble"
+      },
+      {
+        "id": "eggs",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 æg"
+      },
+      {
+        "id": "oats",
+        "amount": 70.0,
+        "unit": "g",
+        "raw": "70 g havregryn"
+      },
+      {
+        "id": "banana",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 banan"
+      },
+      {
+        "id": "butter",
+        "amount": 5.0,
+        "unit": "g",
+        "raw": "5 g smør"
+      },
+      {
+        "id": "peanut_butter",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g 100 % peanutbutter"
+      },
+      {
+        "id": "a38",
+        "amount": 25.0,
+        "unit": "g",
+        "raw": "25 g A38 3,5 %"
+      }
+    ],
+    "family": [
+      {
+        "id": "apple",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 æbler"
+      },
+      {
+        "id": "eggs",
+        "amount": 4.0,
+        "unit": "piece",
+        "raw": "4 æg"
+      },
+      {
+        "id": "oats",
+        "amount": 140.0,
+        "unit": "g",
+        "raw": "140 g havregryn"
+      },
+      {
+        "id": "banana",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 banan"
+      },
+      {
+        "id": "butter",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g smør"
+      },
+      {
+        "id": "peanut_butter",
+        "amount": 30.0,
+        "unit": "g",
+        "raw": "30 g 100 % peanutbutter"
+      },
+      {
+        "id": "a38",
+        "amount": 80.0,
+        "unit": "g",
+        "raw": "80 g A38 3,5 %"
+      }
+    ]
+  },
+  "morgenmad-17": {
+    "adult": [
+      {
+        "id": "a38",
+        "amount": 200.0,
+        "unit": "g",
+        "raw": "200 g A38 3,5 %"
+      },
+      {
+        "id": "banana",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 banan"
+      },
+      {
+        "id": "oats",
+        "amount": 35.0,
+        "unit": "g",
+        "raw": "35 g havregryn"
+      },
+      {
+        "id": "frozen_berries",
+        "amount": 65.0,
+        "unit": "g",
+        "raw": "65 g frosne bær"
+      },
+      {
+        "id": "peanut_butter",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g 100 % peanutbutter"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "a38",
+        "amount": 150.0,
+        "unit": "g",
+        "raw": "150 g A38 3,5 %"
+      },
+      {
+        "id": "banana",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 banan"
+      },
+      {
+        "id": "oats",
+        "amount": 25.0,
+        "unit": "g",
+        "raw": "25 g havregryn"
+      },
+      {
+        "id": "frozen_berries",
+        "amount": 50.0,
+        "unit": "g",
+        "raw": "50 g frosne bær"
+      },
+      {
+        "id": "peanut_butter",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g 100 % peanutbutter"
+      }
+    ],
+    "family": [
+      {
+        "id": "a38",
+        "amount": 600.0,
+        "unit": "g",
+        "raw": "600 g A38 3,5 %"
+      },
+      {
+        "id": "banana",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 bananer"
+      },
+      {
+        "id": "oats",
+        "amount": 100.0,
+        "unit": "g",
+        "raw": "100 g havregryn"
+      },
+      {
+        "id": "frozen_berries",
+        "amount": 200.0,
+        "unit": "g",
+        "raw": "200 g frosne bær"
+      },
+      {
+        "id": "peanut_butter",
+        "amount": 25.0,
+        "unit": "g",
+        "raw": "25 g 100 % peanutbutter"
+      }
+    ]
+  },
+  "morgenmad-18": {
+    "adult": [
+      {
+        "id": "wholegrain_tortilla",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 lille fuldkornstortilla med enkel ingrediensliste"
+      },
+      {
+        "id": "eggs",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 æg"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      },
+      {
+        "id": "red_pepper",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 rød peberfrugt"
+      },
+      {
+        "id": "butter",
+        "amount": 5.0,
+        "unit": "g",
+        "raw": "5 g smør"
+      },
+      {
+        "id": "a38",
+        "amount": 30.0,
+        "unit": "g",
+        "raw": "30 g A38 3,5 %"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "wholegrain_tortilla",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 små fuldkornstortillas med enkel ingrediensliste"
+      },
+      {
+        "id": "eggs",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 æg"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      },
+      {
+        "id": "red_pepper",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 rød peberfrugt"
+      },
+      {
+        "id": "butter",
+        "amount": 5.0,
+        "unit": "g",
+        "raw": "5 g smør"
+      },
+      {
+        "id": "a38",
+        "amount": 25.0,
+        "unit": "g",
+        "raw": "25 g A38 3,5 %"
+      }
+    ],
+    "family": [
+      {
+        "id": "wholegrain_tortilla",
+        "amount": 4.0,
+        "unit": "piece",
+        "raw": "4 små fuldkornstortillas med enkel ingrediensliste"
+      },
+      {
+        "id": "eggs",
+        "amount": 6.0,
+        "unit": "piece",
+        "raw": "6 æg"
+      },
+      {
+        "id": "avocado",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 avocado"
+      },
+      {
+        "id": "red_pepper",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 rød peberfrugt"
+      },
+      {
+        "id": "butter",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g smør"
+      },
+      {
+        "id": "a38",
+        "amount": 80.0,
+        "unit": "g",
+        "raw": "80 g A38 3,5 %"
+      }
+    ]
+  },
+  "morgenmad-19": {
+    "adult": [
+      {
+        "id": "sweet_potato",
+        "amount": 100.0,
+        "unit": "g",
+        "raw": "100 g kogt/bagt sød kartoffel"
+      },
+      {
+        "id": "eggs",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 æg"
+      },
+      {
+        "id": "oats",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g havregryn"
+      },
+      {
+        "id": "banana",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 banan"
+      },
+      {
+        "id": "butter",
+        "amount": 5.0,
+        "unit": "g",
+        "raw": "5 g smør"
+      },
+      {
+        "id": "blueberries",
+        "amount": 50.0,
+        "unit": "g",
+        "raw": "50 g blåbær"
+      },
+      {
+        "id": "a38",
+        "amount": 45.0,
+        "unit": "g",
+        "raw": "45 g A38 3,5 %"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "sweet_potato",
+        "amount": 100.0,
+        "unit": "g",
+        "raw": "100 g kogt/bagt sød kartoffel"
+      },
+      {
+        "id": "eggs",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 æg"
+      },
+      {
+        "id": "oats",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g havregryn"
+      },
+      {
+        "id": "banana",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 banan"
+      },
+      {
+        "id": "butter",
+        "amount": 5.0,
+        "unit": "g",
+        "raw": "5 g smør"
+      },
+      {
+        "id": "blueberries",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g blåbær"
+      },
+      {
+        "id": "a38",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g A38 3,5 %"
+      }
+    ],
+    "family": [
+      {
+        "id": "sweet_potato",
+        "amount": 300.0,
+        "unit": "g",
+        "raw": "300 g kogt/bagt sød kartoffel"
+      },
+      {
+        "id": "eggs",
+        "amount": 3.0,
+        "unit": "piece",
+        "raw": "3 æg"
+      },
+      {
+        "id": "oats",
+        "amount": 120.0,
+        "unit": "g",
+        "raw": "120 g havregryn"
+      },
+      {
+        "id": "banana",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 banan"
+      },
+      {
+        "id": "butter",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g smør"
+      },
+      {
+        "id": "blueberries",
+        "amount": 150.0,
+        "unit": "g",
+        "raw": "150 g blåbær"
+      },
+      {
+        "id": "a38",
+        "amount": 120.0,
+        "unit": "g",
+        "raw": "120 g A38 3,5 %"
+      }
+    ]
+  },
+  "morgenmad-20": {
+    "adult": [
+      {
+        "id": "salmon",
+        "amount": 65.0,
+        "unit": "g",
+        "raw": "65 g tilberedt laks"
+      },
+      {
+        "id": "eggs",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 æg"
+      },
+      {
+        "id": "potatoes",
+        "amount": 150.0,
+        "unit": "g",
+        "raw": "150 g kogte kartofler"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      },
+      {
+        "id": "kiwi",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 kiwi"
+      },
+      {
+        "id": "a38",
+        "amount": 30.0,
+        "unit": "g",
+        "raw": "30 g A38 3,5 %"
+      },
+      {
+        "id": "lemon",
+        "amount": 0.05556,
+        "unit": "piece",
+        "raw": "1/2 tsk citronsaft"
+      },
+      {
+        "id": "dill",
+        "amount": 1,
+        "unit": "bunch",
+        "raw": "1 tsk finthakket dild"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "salmon",
+        "amount": 45.0,
+        "unit": "g",
+        "raw": "45 g tilberedt laks"
+      },
+      {
+        "id": "eggs",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 æg"
+      },
+      {
+        "id": "potatoes",
+        "amount": 120.0,
+        "unit": "g",
+        "raw": "120 g kogte kartofler"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      },
+      {
+        "id": "kiwi",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 kiwi"
+      },
+      {
+        "id": "a38",
+        "amount": 25.0,
+        "unit": "g",
+        "raw": "25 g A38 3,5 %"
+      },
+      {
+        "id": "lemon",
+        "amount": 0.05556,
+        "unit": "piece",
+        "raw": "1/2 tsk citronsaft"
+      },
+      {
+        "id": "dill",
+        "amount": 1,
+        "unit": "bunch",
+        "raw": "1/2 tsk finthakket dild"
+      }
+    ],
+    "family": [
+      {
+        "id": "salmon",
+        "amount": 200.0,
+        "unit": "g",
+        "raw": "200 g tilberedt laks"
+      },
+      {
+        "id": "eggs",
+        "amount": 4.0,
+        "unit": "piece",
+        "raw": "4 æg"
+      },
+      {
+        "id": "potatoes",
+        "amount": 450.0,
+        "unit": "g",
+        "raw": "450 g kogte kartofler"
+      },
+      {
+        "id": "avocado",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 avocado"
+      },
+      {
+        "id": "kiwi",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 kiwier"
+      },
+      {
+        "id": "a38",
+        "amount": 80.0,
+        "unit": "g",
+        "raw": "80 g A38 3,5 %"
+      },
+      {
+        "id": "lemon",
+        "amount": 0.11111,
+        "unit": "piece",
+        "raw": "1 tsk citronsaft"
+      },
+      {
+        "id": "dill",
+        "amount": 1,
+        "unit": "bunch",
+        "raw": "dild"
+      }
+    ]
+  },
+  "frokost-1": {
+    "adult": [
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado eller 1 tsk ekstra jomfruolivenolie"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado eller 1 tsk ekstra jomfruolivenolie"
+      }
+    ],
+    "family": [
+      {
+        "id": "avocado",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 avocado eller 1 spsk ekstra jomfruolivenolie"
+      }
+    ]
+  },
+  "frokost-2": {
+    "adult": [
+      {
+        "id": "salmon",
+        "amount": 100.0,
+        "unit": "g",
+        "raw": "100 g tilberedt laks eller fiskefrikadeller"
+      },
+      {
+        "id": "potatoes",
+        "amount": 165.0,
+        "unit": "g",
+        "raw": "165 g kartofler"
+      },
+      {
+        "id": "peas",
+        "amount": 45.0,
+        "unit": "g",
+        "raw": "45 g ærter"
+      },
+      {
+        "id": "kiwi",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 kiwi"
+      },
+      {
+        "id": "a38",
+        "amount": 30.0,
+        "unit": "g",
+        "raw": "30 g A38 3,5 %"
+      },
+      {
+        "id": "avocado_mayo",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g Chosen Foods Classic Avocado Oil Mayo"
+      },
+      {
+        "id": "pickled_cucumber",
+        "amount": 5.0,
+        "unit": "g",
+        "raw": "5 g finthakket syltet agurk"
+      },
+      {
+        "id": "spice_curry",
+        "amount": 1,
+        "unit": "tsp",
+        "raw": "lidt mild karry"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "salmon",
+        "amount": 65.0,
+        "unit": "g",
+        "raw": "65 g tilberedt laks eller fiskefrikadeller"
+      },
+      {
+        "id": "potatoes",
+        "amount": 135.0,
+        "unit": "g",
+        "raw": "135 g kartofler"
+      },
+      {
+        "id": "peas",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g ærter"
+      },
+      {
+        "id": "kiwi",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 kiwi"
+      },
+      {
+        "id": "a38",
+        "amount": 25.0,
+        "unit": "g",
+        "raw": "25 g A38 3,5 %"
+      },
+      {
+        "id": "avocado_mayo",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g Chosen Foods Classic Avocado Oil Mayo"
+      },
+      {
+        "id": "pickled_cucumber",
+        "amount": 5.0,
+        "unit": "g",
+        "raw": "5 g finthakket syltet agurk"
+      },
+      {
+        "id": "spice_curry",
+        "amount": 1,
+        "unit": "tsp",
+        "raw": "lidt mild karry"
+      }
+    ],
+    "family": [
+      {
+        "id": "salmon",
+        "amount": 300.0,
+        "unit": "g",
+        "raw": "300 g tilberedt laks eller fiskefrikadeller"
+      },
+      {
+        "id": "potatoes",
+        "amount": 500.0,
+        "unit": "g",
+        "raw": "500 g kartofler"
+      },
+      {
+        "id": "peas",
+        "amount": 150.0,
+        "unit": "g",
+        "raw": "150 g ærter"
+      },
+      {
+        "id": "kiwi",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 kiwi"
+      },
+      {
+        "id": "a38",
+        "amount": 80.0,
+        "unit": "g",
+        "raw": "80 g A38 3,5 %"
+      },
+      {
+        "id": "avocado_mayo",
+        "amount": 30.0,
+        "unit": "g",
+        "raw": "30 g Chosen Foods Classic Avocado Oil Mayo"
+      },
+      {
+        "id": "pickled_cucumber",
+        "amount": 20.0,
+        "unit": "g",
+        "raw": "20 g finthakket syltet agurk"
+      },
+      {
+        "id": "spice_curry",
+        "amount": 1,
+        "unit": "tsp",
+        "raw": "lidt mild karry"
+      }
+    ]
+  },
+  "frokost-3": {
+    "adult": [
+      {
+        "id": "eggs",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 æg"
+      },
+      {
+        "id": "ryebread",
+        "amount": 2.0,
+        "unit": "slice",
+        "raw": "2 små skiver blødt rugbrød"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      },
+      {
+        "id": "broccoli",
+        "amount": 60.0,
+        "unit": "g",
+        "raw": "60 g broccoli"
+      },
+      {
+        "id": "apple",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 æble"
+      },
+      {
+        "id": "a38",
+        "amount": 30.0,
+        "unit": "g",
+        "raw": "30 g A38 3,5 %"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "eggs",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 æg"
+      },
+      {
+        "id": "ryebread",
+        "amount": 2.0,
+        "unit": "slice",
+        "raw": "2 små skiver blødt rugbrød"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      },
+      {
+        "id": "broccoli",
+        "amount": 50.0,
+        "unit": "g",
+        "raw": "50 g broccoli"
+      },
+      {
+        "id": "apple",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 æble"
+      },
+      {
+        "id": "a38",
+        "amount": 25.0,
+        "unit": "g",
+        "raw": "25 g A38 3,5 %"
+      }
+    ],
+    "family": [
+      {
+        "id": "eggs",
+        "amount": 6.0,
+        "unit": "piece",
+        "raw": "6 æg"
+      },
+      {
+        "id": "ryebread",
+        "amount": 6.0,
+        "unit": "slice",
+        "raw": "6 små skiver blødt rugbrød"
+      },
+      {
+        "id": "avocado",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 avocado"
+      },
+      {
+        "id": "broccoli",
+        "amount": 200.0,
+        "unit": "g",
+        "raw": "200 g broccoli"
+      },
+      {
+        "id": "apple",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 æble"
+      },
+      {
+        "id": "a38",
+        "amount": 80.0,
+        "unit": "g",
+        "raw": "80 g A38 3,5 %"
+      }
+    ]
+  },
+  "frokost-4": {
+    "adult": [
+      {
+        "id": "ryebread",
+        "amount": 2.0,
+        "unit": "slice",
+        "raw": "2 små skiver blødt rugbrød"
+      },
+      {
+        "id": "eggs",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 æg"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      },
+      {
+        "id": "kiwi",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 kiwi"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "ryebread",
+        "amount": 2.0,
+        "unit": "slice",
+        "raw": "2 små skiver blødt rugbrød"
+      },
+      {
+        "id": "eggs",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 æg"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      },
+      {
+        "id": "kiwi",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 kiwi"
+      }
+    ],
+    "family": [
+      {
+        "id": "ryebread",
+        "amount": 8.0,
+        "unit": "slice",
+        "raw": "8 små skiver blødt rugbrød"
+      },
+      {
+        "id": "eggs",
+        "amount": 4.0,
+        "unit": "piece",
+        "raw": "4 æg"
+      },
+      {
+        "id": "avocado",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 avocado"
+      },
+      {
+        "id": "kiwi",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 kiwier"
+      }
+    ]
+  },
+  "frokost-5": {
+    "adult": [
+      {
+        "id": "eggs",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 æg"
+      },
+      {
+        "id": "potatoes",
+        "amount": 130.0,
+        "unit": "g",
+        "raw": "130 g kartofler"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      },
+      {
+        "id": "banana",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 banan"
+      },
+      {
+        "id": "peas",
+        "amount": 45.0,
+        "unit": "g",
+        "raw": "45 g ærter"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "eggs",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 æg"
+      },
+      {
+        "id": "potatoes",
+        "amount": 110.0,
+        "unit": "g",
+        "raw": "110 g kartofler"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      },
+      {
+        "id": "banana",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 banan"
+      },
+      {
+        "id": "peas",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g ærter"
+      }
+    ],
+    "family": [
+      {
+        "id": "eggs",
+        "amount": 4.0,
+        "unit": "piece",
+        "raw": "4 æg"
+      },
+      {
+        "id": "potatoes",
+        "amount": 400.0,
+        "unit": "g",
+        "raw": "400 g kartofler"
+      },
+      {
+        "id": "avocado",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 avocado"
+      },
+      {
+        "id": "banana",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 banan"
+      },
+      {
+        "id": "peas",
+        "amount": 150.0,
+        "unit": "g",
+        "raw": "150 g ærter"
+      }
+    ]
+  },
+  "frokost-6": {
+    "adult": [
+      {
+        "id": "salmon",
+        "amount": 100.0,
+        "unit": "g",
+        "raw": "100 g tilberedt laks"
+      },
+      {
+        "id": "potatoes",
+        "amount": 150.0,
+        "unit": "g",
+        "raw": "150 g kogte kartofler"
+      },
+      {
+        "id": "eggs",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 lille æg"
+      },
+      {
+        "id": "oats",
+        "amount": 15.0,
+        "unit": "g",
+        "raw": "15 g havregryn"
+      },
+      {
+        "id": "broccoli",
+        "amount": 75.0,
+        "unit": "g",
+        "raw": "75 g broccoli"
+      },
+      {
+        "id": "butter",
+        "amount": 5.0,
+        "unit": "g",
+        "raw": "5 g smør"
+      },
+      {
+        "id": "a38",
+        "amount": 55.0,
+        "unit": "g",
+        "raw": "55 g A38 3,5 %"
+      },
+      {
+        "id": "dill",
+        "amount": 1,
+        "unit": "bunch",
+        "raw": "1 tsk finthakket dild"
+      },
+      {
+        "id": "lemon",
+        "amount": 0.05556,
+        "unit": "piece",
+        "raw": "1/2 tsk citron"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "salmon",
+        "amount": 65.0,
+        "unit": "g",
+        "raw": "65 g tilberedt laks"
+      },
+      {
+        "id": "potatoes",
+        "amount": 120.0,
+        "unit": "g",
+        "raw": "120 g kogte kartofler"
+      },
+      {
+        "id": "eggs",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 lille æg"
+      },
+      {
+        "id": "oats",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g havregryn"
+      },
+      {
+        "id": "broccoli",
+        "amount": 65.0,
+        "unit": "g",
+        "raw": "65 g broccoli"
+      },
+      {
+        "id": "butter",
+        "amount": 5.0,
+        "unit": "g",
+        "raw": "5 g smør"
+      },
+      {
+        "id": "a38",
+        "amount": 50.0,
+        "unit": "g",
+        "raw": "50 g A38 3,5 %"
+      },
+      {
+        "id": "dill",
+        "amount": 1,
+        "unit": "bunch",
+        "raw": "1/2 tsk finthakket dild"
+      },
+      {
+        "id": "lemon",
+        "amount": 0.05556,
+        "unit": "piece",
+        "raw": "1/2 tsk citron"
+      }
+    ],
+    "family": [
+      {
+        "id": "salmon",
+        "amount": 300.0,
+        "unit": "g",
+        "raw": "300 g tilberedt laks"
+      },
+      {
+        "id": "potatoes",
+        "amount": 450.0,
+        "unit": "g",
+        "raw": "450 g kogte kartofler"
+      },
+      {
+        "id": "eggs",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 æg"
+      },
+      {
+        "id": "oats",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g havregryn"
+      },
+      {
+        "id": "broccoli",
+        "amount": 250.0,
+        "unit": "g",
+        "raw": "250 g broccoli"
+      },
+      {
+        "id": "butter",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g smør"
+      },
+      {
+        "id": "a38",
+        "amount": 150.0,
+        "unit": "g",
+        "raw": "150 g A38 3,5 %"
+      },
+      {
+        "id": "dill",
+        "amount": 1,
+        "unit": "bunch",
+        "raw": "dild"
+      },
+      {
+        "id": "lemon",
+        "amount": 0.11111,
+        "unit": "piece",
+        "raw": "1 tsk citron"
+      }
+    ]
+  },
+  "frokost-7": {
+    "adult": [
+      {
+        "id": "chicken",
+        "amount": 100.0,
+        "unit": "g",
+        "raw": "100 g tilberedt kylling"
+      },
+      {
+        "id": "wholegrain_tortilla",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 lille fuldkornstortilla"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      },
+      {
+        "id": "tomato",
+        "amount": 45.0,
+        "unit": "g",
+        "raw": "45 g tomat"
+      },
+      {
+        "id": "cucumber",
+        "amount": 35.0,
+        "unit": "g",
+        "raw": "35 g agurk"
+      },
+      {
+        "id": "a38",
+        "amount": 45.0,
+        "unit": "g",
+        "raw": "45 g A38 3,5 %"
+      },
+      {
+        "id": "avocado_mayo",
+        "amount": 5.0,
+        "unit": "g",
+        "raw": "5 g Chosen Foods Classic Avocado Oil Mayo"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "chicken",
+        "amount": 65.0,
+        "unit": "g",
+        "raw": "65 g tilberedt kylling"
+      },
+      {
+        "id": "wholegrain_tortilla",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 små fuldkornstortillas"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      },
+      {
+        "id": "tomato",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g tomat"
+      },
+      {
+        "id": "cucumber",
+        "amount": 25.0,
+        "unit": "g",
+        "raw": "25 g agurk"
+      },
+      {
+        "id": "a38",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g A38 3,5 %"
+      },
+      {
+        "id": "avocado_mayo",
+        "amount": 5.0,
+        "unit": "g",
+        "raw": "5 g Chosen Foods Classic Avocado Oil Mayo"
+      }
+    ],
+    "family": [
+      {
+        "id": "chicken",
+        "amount": 300.0,
+        "unit": "g",
+        "raw": "300 g tilberedt kylling"
+      },
+      {
+        "id": "wholegrain_tortilla",
+        "amount": 4.0,
+        "unit": "piece",
+        "raw": "4 små fuldkornstortillas"
+      },
+      {
+        "id": "avocado",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 avocado"
+      },
+      {
+        "id": "tomato",
+        "amount": 150.0,
+        "unit": "g",
+        "raw": "150 g tomat"
+      },
+      {
+        "id": "cucumber",
+        "amount": 100.0,
+        "unit": "g",
+        "raw": "100 g agurk"
+      },
+      {
+        "id": "a38",
+        "amount": 120.0,
+        "unit": "g",
+        "raw": "120 g A38 3,5 %"
+      },
+      {
+        "id": "avocado_mayo",
+        "amount": 20.0,
+        "unit": "g",
+        "raw": "20 g Chosen Foods Classic Avocado Oil Mayo"
+      }
+    ]
+  },
+  "frokost-8": {
+    "adult": [
+      {
+        "id": "wholegrain_pasta",
+        "amount": 70.0,
+        "unit": "g",
+        "raw": "70 g fuldkornspasta"
+      },
+      {
+        "id": "chicken",
+        "amount": 85.0,
+        "unit": "g",
+        "raw": "85 g tilberedt kylling"
+      },
+      {
+        "id": "peas",
+        "amount": 45.0,
+        "unit": "g",
+        "raw": "45 g ærter"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      },
+      {
+        "id": "a38",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g A38 3,5 %"
+      },
+      {
+        "id": "lemon",
+        "amount": 0.05556,
+        "unit": "piece",
+        "raw": "1/2 tsk citron"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "wholegrain_pasta",
+        "amount": 50.0,
+        "unit": "g",
+        "raw": "50 g fuldkornspasta"
+      },
+      {
+        "id": "chicken",
+        "amount": 55.0,
+        "unit": "g",
+        "raw": "55 g tilberedt kylling"
+      },
+      {
+        "id": "peas",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g ærter"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      },
+      {
+        "id": "a38",
+        "amount": 35.0,
+        "unit": "g",
+        "raw": "35 g A38 3,5 %"
+      },
+      {
+        "id": "lemon",
+        "amount": 0.05556,
+        "unit": "piece",
+        "raw": "1/2 tsk citron"
+      }
+    ],
+    "family": [
+      {
+        "id": "wholegrain_pasta",
+        "amount": 250.0,
+        "unit": "g",
+        "raw": "250 g fuldkornspasta"
+      },
+      {
+        "id": "chicken",
+        "amount": 250.0,
+        "unit": "g",
+        "raw": "250 g tilberedt kylling"
+      },
+      {
+        "id": "peas",
+        "amount": 150.0,
+        "unit": "g",
+        "raw": "150 g ærter"
+      },
+      {
+        "id": "avocado",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 avocado"
+      },
+      {
+        "id": "a38",
+        "amount": 100.0,
+        "unit": "g",
+        "raw": "100 g A38 3,5 %"
+      },
+      {
+        "id": "lemon",
+        "amount": 0.11111,
+        "unit": "piece",
+        "raw": "1 tsk citron"
+      }
+    ]
+  },
+  "frokost-9": {
+    "adult": [
+      {
+        "id": "ryebread",
+        "amount": 2.0,
+        "unit": "slice",
+        "raw": "2 små skiver rugbrød"
+      },
+      {
+        "id": "potatoes",
+        "amount": 165.0,
+        "unit": "g",
+        "raw": "165 g kogte kartofler"
+      },
+      {
+        "id": "eggs",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 æg"
+      },
+      {
+        "id": "a38",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g A38 3,5 %"
+      },
+      {
+        "id": "avocado_mayo",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g Chosen Foods Classic Avocado Oil Mayo"
+      },
+      {
+        "id": "pickled_cucumber",
+        "amount": 5.0,
+        "unit": "g",
+        "raw": "5 g syltet agurk"
+      },
+      {
+        "id": "spice_curry",
+        "amount": 0.25,
+        "unit": "tsp",
+        "raw": "1/4 tsk mild karry"
+      },
+      {
+        "id": "kiwi",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 kiwi"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "ryebread",
+        "amount": 2.0,
+        "unit": "slice",
+        "raw": "2 små skiver rugbrød"
+      },
+      {
+        "id": "potatoes",
+        "amount": 135.0,
+        "unit": "g",
+        "raw": "135 g kogte kartofler"
+      },
+      {
+        "id": "eggs",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 æg"
+      },
+      {
+        "id": "a38",
+        "amount": 35.0,
+        "unit": "g",
+        "raw": "35 g A38 3,5 %"
+      },
+      {
+        "id": "avocado_mayo",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g Chosen Foods Classic Avocado Oil Mayo"
+      },
+      {
+        "id": "pickled_cucumber",
+        "amount": 5.0,
+        "unit": "g",
+        "raw": "5 g syltet agurk"
+      },
+      {
+        "id": "spice_curry",
+        "amount": 0.25,
+        "unit": "tsp",
+        "raw": "1/4 tsk mild karry"
+      },
+      {
+        "id": "kiwi",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 kiwi"
+      }
+    ],
+    "family": [
+      {
+        "id": "ryebread",
+        "amount": 8.0,
+        "unit": "slice",
+        "raw": "8 små skiver rugbrød"
+      },
+      {
+        "id": "potatoes",
+        "amount": 500.0,
+        "unit": "g",
+        "raw": "500 g kogte kartofler"
+      },
+      {
+        "id": "eggs",
+        "amount": 5.0,
+        "unit": "piece",
+        "raw": "5 æg"
+      },
+      {
+        "id": "a38",
+        "amount": 100.0,
+        "unit": "g",
+        "raw": "100 g A38 3,5 %"
+      },
+      {
+        "id": "avocado_mayo",
+        "amount": 30.0,
+        "unit": "g",
+        "raw": "30 g Chosen Foods Classic Avocado Oil Mayo"
+      },
+      {
+        "id": "pickled_cucumber",
+        "amount": 20.0,
+        "unit": "g",
+        "raw": "20 g syltet agurk"
+      },
+      {
+        "id": "spice_curry",
+        "amount": 1,
+        "unit": "tsp",
+        "raw": "mild karry"
+      },
+      {
+        "id": "kiwi",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 kiwi"
+      }
+    ]
+  },
+  "frokost-10": {
+    "adult": [
+      {
+        "id": "pita",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 lille fuldkornspita"
+      },
+      {
+        "id": "minced_beef",
+        "amount": 83.33333,
+        "unit": "g",
+        "raw": "500 g hakket oksekød"
+      },
+      {
+        "id": "eggs",
+        "amount": 0.16667,
+        "unit": "piece",
+        "raw": "1 æg"
+      },
+      {
+        "id": "oats",
+        "amount": 6.66667,
+        "unit": "g",
+        "raw": "40 g havregryn"
+      },
+      {
+        "id": "tomato",
+        "amount": 45.0,
+        "unit": "g",
+        "raw": "45 g tomat"
+      },
+      {
+        "id": "pepper",
+        "amount": 30.0,
+        "unit": "g",
+        "raw": "30 g meget mør peberfrugt"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      },
+      {
+        "id": "a38",
+        "amount": 55.0,
+        "unit": "g",
+        "raw": "55 g A38 3,5 %"
+      },
+      {
+        "id": "parsley",
+        "amount": 1,
+        "unit": "bunch",
+        "raw": "1 tsk finthakket persille"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "pita",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 små fuldkornspita"
+      },
+      {
+        "id": "minced_beef",
+        "amount": 54.16667,
+        "unit": "g",
+        "raw": "500 g hakket oksekød"
+      },
+      {
+        "id": "eggs",
+        "amount": 0.10833,
+        "unit": "piece",
+        "raw": "1 æg"
+      },
+      {
+        "id": "oats",
+        "amount": 4.33333,
+        "unit": "g",
+        "raw": "40 g havregryn"
+      },
+      {
+        "id": "tomato",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g tomat"
+      },
+      {
+        "id": "pepper",
+        "amount": 25.0,
+        "unit": "g",
+        "raw": "25 g meget mør peberfrugt"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      },
+      {
+        "id": "a38",
+        "amount": 50.0,
+        "unit": "g",
+        "raw": "50 g A38 3,5 %"
+      },
+      {
+        "id": "parsley",
+        "amount": 1,
+        "unit": "bunch",
+        "raw": "1/2 tsk finthakket persille"
+      }
+    ],
+    "family": [
+      {
+        "id": "pita",
+        "amount": 4.0,
+        "unit": "piece",
+        "raw": "4 små fuldkornspita"
+      },
+      {
+        "id": "minced_beef",
+        "amount": 250.0,
+        "unit": "g",
+        "raw": "500 g hakket oksekød"
+      },
+      {
+        "id": "eggs",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1 æg"
+      },
+      {
+        "id": "oats",
+        "amount": 20.0,
+        "unit": "g",
+        "raw": "40 g havregryn"
+      },
+      {
+        "id": "tomato",
+        "amount": 150.0,
+        "unit": "g",
+        "raw": "150 g tomat"
+      },
+      {
+        "id": "pepper",
+        "amount": 100.0,
+        "unit": "g",
+        "raw": "100 g meget mør peberfrugt"
+      },
+      {
+        "id": "avocado",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 avocado"
+      },
+      {
+        "id": "a38",
+        "amount": 150.0,
+        "unit": "g",
+        "raw": "150 g A38 3,5 %"
+      },
+      {
+        "id": "parsley",
+        "amount": 1,
+        "unit": "bunch",
+        "raw": "persille"
+      }
+    ]
+  },
+  "frokost-11": {
+    "adult": [
+      {
+        "id": "eggs",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 æg"
+      },
+      {
+        "id": "broccoli",
+        "amount": 50.0,
+        "unit": "g",
+        "raw": "50 g broccoli"
+      },
+      {
+        "id": "cheese",
+        "amount": 20.0,
+        "unit": "g",
+        "raw": "20 g mild ost"
+      },
+      {
+        "id": "potatoes",
+        "amount": 195.0,
+        "unit": "g",
+        "raw": "195 g kartofler"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 5.0,
+        "unit": "ml",
+        "raw": "1 tsk EVOO"
+      },
+      {
+        "id": "ketchup",
+        "amount": 15,
+        "unit": "ml",
+        "raw": "1 tsk Heinz Organic Tomato Ketchup til servering"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "eggs",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 æg"
+      },
+      {
+        "id": "broccoli",
+        "amount": 50.0,
+        "unit": "g",
+        "raw": "50 g broccoli"
+      },
+      {
+        "id": "cheese",
+        "amount": 20.0,
+        "unit": "g",
+        "raw": "20 g mild ost"
+      },
+      {
+        "id": "potatoes",
+        "amount": 155.0,
+        "unit": "g",
+        "raw": "155 g kartofler"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 5.0,
+        "unit": "ml",
+        "raw": "1 tsk EVOO"
+      },
+      {
+        "id": "ketchup",
+        "amount": 15,
+        "unit": "ml",
+        "raw": "1 tsk Heinz Organic Tomato Ketchup til servering"
+      }
+    ],
+    "family": [
+      {
+        "id": "eggs",
+        "amount": 8.0,
+        "unit": "piece",
+        "raw": "8 æg"
+      },
+      {
+        "id": "broccoli",
+        "amount": 200.0,
+        "unit": "g",
+        "raw": "200 g broccoli"
+      },
+      {
+        "id": "cheese",
+        "amount": 80.0,
+        "unit": "g",
+        "raw": "80 g mild ost"
+      },
+      {
+        "id": "potatoes",
+        "amount": 700.0,
+        "unit": "g",
+        "raw": "700 g kartofler"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 15.0,
+        "unit": "ml",
+        "raw": "1 spsk EVOO"
+      },
+      {
+        "id": "ketchup",
+        "amount": 1,
+        "unit": "ml",
+        "raw": "Heinz Organic Tomato Ketchup til servering"
+      }
+    ]
+  },
+  "frokost-12": {
+    "adult": [
+      {
+        "id": "minced_beef",
+        "amount": 85.0,
+        "unit": "g",
+        "raw": "85 g hakket oksekød"
+      },
+      {
+        "id": "red_lentils",
+        "amount": 35.0,
+        "unit": "g",
+        "raw": "35 g røde linser"
+      },
+      {
+        "id": "potatoes",
+        "amount": 165.0,
+        "unit": "g",
+        "raw": "165 g kartofler"
+      },
+      {
+        "id": "passata",
+        "amount": 100.0,
+        "unit": "g",
+        "raw": "100 g passata"
+      },
+      {
+        "id": "carrot",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 gulerod"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 5.0,
+        "unit": "ml",
+        "raw": "1 tsk EVOO"
+      },
+      {
+        "id": "a38",
+        "amount": 30.0,
+        "unit": "g",
+        "raw": "30 g A38 3,5 %"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "minced_beef",
+        "amount": 55.0,
+        "unit": "g",
+        "raw": "55 g hakket oksekød"
+      },
+      {
+        "id": "red_lentils",
+        "amount": 25.0,
+        "unit": "g",
+        "raw": "25 g røde linser"
+      },
+      {
+        "id": "potatoes",
+        "amount": 135.0,
+        "unit": "g",
+        "raw": "135 g kartofler"
+      },
+      {
+        "id": "passata",
+        "amount": 75.0,
+        "unit": "g",
+        "raw": "75 g passata"
+      },
+      {
+        "id": "carrot",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 gulerod"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 5.0,
+        "unit": "ml",
+        "raw": "1 tsk EVOO"
+      },
+      {
+        "id": "a38",
+        "amount": 25.0,
+        "unit": "g",
+        "raw": "25 g A38 3,5 %"
+      }
+    ],
+    "family": [
+      {
+        "id": "minced_beef",
+        "amount": 250.0,
+        "unit": "g",
+        "raw": "250 g hakket oksekød"
+      },
+      {
+        "id": "red_lentils",
+        "amount": 100.0,
+        "unit": "g",
+        "raw": "100 g røde linser"
+      },
+      {
+        "id": "potatoes",
+        "amount": 500.0,
+        "unit": "g",
+        "raw": "500 g kartofler"
+      },
+      {
+        "id": "passata",
+        "amount": 300.0,
+        "unit": "g",
+        "raw": "300 g passata"
+      },
+      {
+        "id": "carrot",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 gulerod"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 15.0,
+        "unit": "ml",
+        "raw": "1 spsk EVOO"
+      },
+      {
+        "id": "a38",
+        "amount": 80.0,
+        "unit": "g",
+        "raw": "80 g A38 3,5 %"
+      }
+    ]
+  },
+  "frokost-13": {
+    "adult": [
+      {
+        "id": "ryebread",
+        "amount": 2.0,
+        "unit": "slice",
+        "raw": "2 små skiver rugbrød"
+      },
+      {
+        "id": "fish_cakes",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 små fiskefrikadeller"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      },
+      {
+        "id": "a38",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g A38 3,5 %"
+      },
+      {
+        "id": "avocado_mayo",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g Chosen Foods Classic Avocado Oil Mayo"
+      },
+      {
+        "id": "pickled_cucumber",
+        "amount": 5.0,
+        "unit": "g",
+        "raw": "5 g syltet agurk"
+      },
+      {
+        "id": "spice_curry",
+        "amount": 0.25,
+        "unit": "tsp",
+        "raw": "1/4 tsk mild karry"
+      },
+      {
+        "id": "kiwi",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 kiwi"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "ryebread",
+        "amount": 2.0,
+        "unit": "slice",
+        "raw": "2 små skiver rugbrød"
+      },
+      {
+        "id": "fish_cakes",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 små fiskefrikadeller"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      },
+      {
+        "id": "a38",
+        "amount": 35.0,
+        "unit": "g",
+        "raw": "35 g A38 3,5 %"
+      },
+      {
+        "id": "avocado_mayo",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g Chosen Foods Classic Avocado Oil Mayo"
+      },
+      {
+        "id": "pickled_cucumber",
+        "amount": 5.0,
+        "unit": "g",
+        "raw": "5 g syltet agurk"
+      },
+      {
+        "id": "spice_curry",
+        "amount": 0.25,
+        "unit": "tsp",
+        "raw": "1/4 tsk mild karry"
+      },
+      {
+        "id": "kiwi",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 kiwi"
+      }
+    ],
+    "family": [
+      {
+        "id": "ryebread",
+        "amount": 6.0,
+        "unit": "slice",
+        "raw": "6 små skiver rugbrød"
+      },
+      {
+        "id": "fish_cakes",
+        "amount": 6.0,
+        "unit": "piece",
+        "raw": "4-6 små fiskefrikadeller"
+      },
+      {
+        "id": "avocado",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 avocado"
+      },
+      {
+        "id": "a38",
+        "amount": 100.0,
+        "unit": "g",
+        "raw": "100 g A38 3,5 %"
+      },
+      {
+        "id": "avocado_mayo",
+        "amount": 25.0,
+        "unit": "g",
+        "raw": "25 g Chosen Foods Classic Avocado Oil Mayo"
+      },
+      {
+        "id": "pickled_cucumber",
+        "amount": 15.0,
+        "unit": "g",
+        "raw": "15 g syltet agurk"
+      },
+      {
+        "id": "spice_curry",
+        "amount": 1,
+        "unit": "tsp",
+        "raw": "mild karry"
+      },
+      {
+        "id": "kiwi",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 kiwier"
+      }
+    ]
+  },
+  "frokost-14": {
+    "adult": [
+      {
+        "id": "minced_chicken",
+        "amount": 115.0,
+        "unit": "g",
+        "raw": "115 g hakket kylling"
+      },
+      {
+        "id": "eggs",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 lille æg"
+      },
+      {
+        "id": "oats",
+        "amount": 15.0,
+        "unit": "g",
+        "raw": "15 g havregryn"
+      },
+      {
+        "id": "sweet_potato",
+        "amount": 200.0,
+        "unit": "g",
+        "raw": "200 g sød kartoffel"
+      },
+      {
+        "id": "broccoli",
+        "amount": 75.0,
+        "unit": "g",
+        "raw": "75 g broccoli"
+      },
+      {
+        "id": "butter",
+        "amount": 5.0,
+        "unit": "g",
+        "raw": "5 g smør"
+      },
+      {
+        "id": "a38",
+        "amount": 55.0,
+        "unit": "g",
+        "raw": "55 g A38 3,5 %"
+      },
+      {
+        "id": "chives",
+        "amount": 1,
+        "unit": "bunch",
+        "raw": "1 tsk finthakket purløg"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "minced_chicken",
+        "amount": 75.0,
+        "unit": "g",
+        "raw": "75 g hakket kylling"
+      },
+      {
+        "id": "eggs",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 lille æg"
+      },
+      {
+        "id": "oats",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g havregryn"
+      },
+      {
+        "id": "sweet_potato",
+        "amount": 160.0,
+        "unit": "g",
+        "raw": "160 g sød kartoffel"
+      },
+      {
+        "id": "broccoli",
+        "amount": 65.0,
+        "unit": "g",
+        "raw": "65 g broccoli"
+      },
+      {
+        "id": "butter",
+        "amount": 5.0,
+        "unit": "g",
+        "raw": "5 g smør"
+      },
+      {
+        "id": "a38",
+        "amount": 50.0,
+        "unit": "g",
+        "raw": "50 g A38 3,5 %"
+      },
+      {
+        "id": "chives",
+        "amount": 1,
+        "unit": "bunch",
+        "raw": "1/2 tsk finthakket purløg"
+      }
+    ],
+    "family": [
+      {
+        "id": "minced_chicken",
+        "amount": 350.0,
+        "unit": "g",
+        "raw": "350 g hakket kylling"
+      },
+      {
+        "id": "eggs",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 æg"
+      },
+      {
+        "id": "oats",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g havregryn"
+      },
+      {
+        "id": "sweet_potato",
+        "amount": 600.0,
+        "unit": "g",
+        "raw": "600 g sød kartoffel"
+      },
+      {
+        "id": "broccoli",
+        "amount": 250.0,
+        "unit": "g",
+        "raw": "250 g broccoli"
+      },
+      {
+        "id": "butter",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g smør"
+      },
+      {
+        "id": "a38",
+        "amount": 150.0,
+        "unit": "g",
+        "raw": "150 g A38 3,5 %"
+      },
+      {
+        "id": "chives",
+        "amount": 1,
+        "unit": "bunch",
+        "raw": "purløg"
+      }
+    ]
+  },
+  "frokost-15": {
+    "adult": [
+      {
+        "id": "pasta",
+        "amount": 70.0,
+        "unit": "g",
+        "raw": "70 g pasta"
+      },
+      {
+        "id": "salmon",
+        "amount": 85.0,
+        "unit": "g",
+        "raw": "85 g tilberedt laks"
+      },
+      {
+        "id": "broccoli",
+        "amount": 75.0,
+        "unit": "g",
+        "raw": "75 g broccoli"
+      },
+      {
+        "id": "a38",
+        "amount": 55.0,
+        "unit": "g",
+        "raw": "55 g A38 3,5 %"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 5.0,
+        "unit": "ml",
+        "raw": "1 tsk EVOO"
+      },
+      {
+        "id": "lemon",
+        "amount": 0.05556,
+        "unit": "piece",
+        "raw": "1/2 tsk citron"
+      },
+      {
+        "id": "dill",
+        "amount": 1,
+        "unit": "bunch",
+        "raw": "1 tsk finthakket dild"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "pasta",
+        "amount": 50.0,
+        "unit": "g",
+        "raw": "50 g pasta"
+      },
+      {
+        "id": "salmon",
+        "amount": 55.0,
+        "unit": "g",
+        "raw": "55 g tilberedt laks"
+      },
+      {
+        "id": "broccoli",
+        "amount": 65.0,
+        "unit": "g",
+        "raw": "65 g broccoli"
+      },
+      {
+        "id": "a38",
+        "amount": 50.0,
+        "unit": "g",
+        "raw": "50 g A38 3,5 %"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 5.0,
+        "unit": "ml",
+        "raw": "1 tsk EVOO"
+      },
+      {
+        "id": "lemon",
+        "amount": 0.05556,
+        "unit": "piece",
+        "raw": "1/2 tsk citron"
+      },
+      {
+        "id": "dill",
+        "amount": 1,
+        "unit": "bunch",
+        "raw": "1/2 tsk finthakket dild"
+      }
+    ],
+    "family": [
+      {
+        "id": "pasta",
+        "amount": 250.0,
+        "unit": "g",
+        "raw": "250 g pasta"
+      },
+      {
+        "id": "salmon",
+        "amount": 250.0,
+        "unit": "g",
+        "raw": "250 g tilberedt laks"
+      },
+      {
+        "id": "broccoli",
+        "amount": 250.0,
+        "unit": "g",
+        "raw": "250 g broccoli"
+      },
+      {
+        "id": "a38",
+        "amount": 150.0,
+        "unit": "g",
+        "raw": "150 g A38 3,5 %"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 15.0,
+        "unit": "ml",
+        "raw": "1 spsk EVOO"
+      },
+      {
+        "id": "lemon",
+        "amount": 0.11111,
+        "unit": "piece",
+        "raw": "1 tsk citron"
+      },
+      {
+        "id": "dill",
+        "amount": 1,
+        "unit": "bunch",
+        "raw": "dild"
+      }
+    ]
+  },
+  "frokost-16": {
+    "adult": [
+      {
+        "id": "wholegrain_tortilla",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 lille fuldkornstortilla"
+      },
+      {
+        "id": "chicken",
+        "amount": 85.0,
+        "unit": "g",
+        "raw": "85 g tilberedt kylling"
+      },
+      {
+        "id": "cheese",
+        "amount": 35.0,
+        "unit": "g",
+        "raw": "35 g mild ost"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      },
+      {
+        "id": "tomato",
+        "amount": 30.0,
+        "unit": "g",
+        "raw": "30 g tomat"
+      },
+      {
+        "id": "ketchup",
+        "amount": 15,
+        "unit": "ml",
+        "raw": "1 tsk Heinz Organic Tomato Ketchup til servering"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "wholegrain_tortilla",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 små fuldkornstortillas"
+      },
+      {
+        "id": "chicken",
+        "amount": 55.0,
+        "unit": "g",
+        "raw": "55 g tilberedt kylling"
+      },
+      {
+        "id": "cheese",
+        "amount": 25.0,
+        "unit": "g",
+        "raw": "25 g mild ost"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      },
+      {
+        "id": "tomato",
+        "amount": 25.0,
+        "unit": "g",
+        "raw": "25 g tomat"
+      },
+      {
+        "id": "ketchup",
+        "amount": 15,
+        "unit": "ml",
+        "raw": "1 tsk Heinz Organic Tomato Ketchup til servering"
+      }
+    ],
+    "family": [
+      {
+        "id": "wholegrain_tortilla",
+        "amount": 4.0,
+        "unit": "piece",
+        "raw": "4 små fuldkornstortillas"
+      },
+      {
+        "id": "chicken",
+        "amount": 250.0,
+        "unit": "g",
+        "raw": "250 g tilberedt kylling"
+      },
+      {
+        "id": "cheese",
+        "amount": 100.0,
+        "unit": "g",
+        "raw": "100 g mild ost"
+      },
+      {
+        "id": "avocado",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 avocado"
+      },
+      {
+        "id": "tomato",
+        "amount": 100.0,
+        "unit": "g",
+        "raw": "100 g tomat"
+      },
+      {
+        "id": "ketchup",
+        "amount": 1,
+        "unit": "ml",
+        "raw": "Heinz Organic Tomato Ketchup til servering"
+      }
+    ]
+  },
+  "frokost-17": {
+    "adult": [
+      {
+        "id": "minced_beef",
+        "amount": 115.0,
+        "unit": "g",
+        "raw": "115 g hakket oksekød"
+      },
+      {
+        "id": "eggs",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 lille æg"
+      },
+      {
+        "id": "oats",
+        "amount": 15.0,
+        "unit": "g",
+        "raw": "15 g havregryn"
+      },
+      {
+        "id": "ryebread",
+        "amount": 2.0,
+        "unit": "slice",
+        "raw": "2 små skiver rugbrød"
+      },
+      {
+        "id": "broccoli",
+        "amount": 75.0,
+        "unit": "g",
+        "raw": "75 g meget møre grøntsager"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      },
+      {
+        "id": "ketchup",
+        "amount": 15,
+        "unit": "ml",
+        "raw": "1 tsk Heinz Organic Tomato Ketchup"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "minced_beef",
+        "amount": 75.0,
+        "unit": "g",
+        "raw": "75 g hakket oksekød"
+      },
+      {
+        "id": "eggs",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 lille æg"
+      },
+      {
+        "id": "oats",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g havregryn"
+      },
+      {
+        "id": "ryebread",
+        "amount": 2.0,
+        "unit": "slice",
+        "raw": "2 små skiver rugbrød"
+      },
+      {
+        "id": "broccoli",
+        "amount": 65.0,
+        "unit": "g",
+        "raw": "65 g meget møre grøntsager"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      },
+      {
+        "id": "ketchup",
+        "amount": 15,
+        "unit": "ml",
+        "raw": "1 tsk Heinz Organic Tomato Ketchup"
+      }
+    ],
+    "family": [
+      {
+        "id": "minced_beef",
+        "amount": 350.0,
+        "unit": "g",
+        "raw": "350 g hakket oksekød"
+      },
+      {
+        "id": "eggs",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 æg"
+      },
+      {
+        "id": "oats",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g havregryn"
+      },
+      {
+        "id": "ryebread",
+        "amount": 6.0,
+        "unit": "slice",
+        "raw": "6 små skiver rugbrød"
+      },
+      {
+        "id": "broccoli",
+        "amount": 250.0,
+        "unit": "g",
+        "raw": "250 g meget møre grøntsager"
+      },
+      {
+        "id": "avocado",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 avocado"
+      },
+      {
+        "id": "ketchup",
+        "amount": 1,
+        "unit": "ml",
+        "raw": "Heinz Organic Tomato Ketchup"
+      }
+    ]
+  },
+  "frokost-18": {
+    "adult": [
+      {
+        "id": "eggs",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 æg"
+      },
+      {
+        "id": "potatoes",
+        "amount": 125.0,
+        "unit": "g",
+        "raw": "125 g kogte kartofler"
+      },
+      {
+        "id": "tomato",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g tomat"
+      },
+      {
+        "id": "cheese",
+        "amount": 20.0,
+        "unit": "g",
+        "raw": "20 g mild ost"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      },
+      {
+        "id": "a38",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g A38 3,5 %"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "eggs",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 æg"
+      },
+      {
+        "id": "potatoes",
+        "amount": 125.0,
+        "unit": "g",
+        "raw": "125 g kogte kartofler"
+      },
+      {
+        "id": "tomato",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g tomat"
+      },
+      {
+        "id": "cheese",
+        "amount": 20.0,
+        "unit": "g",
+        "raw": "20 g mild ost"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      },
+      {
+        "id": "a38",
+        "amount": 35.0,
+        "unit": "g",
+        "raw": "35 g A38 3,5 %"
+      }
+    ],
+    "family": [
+      {
+        "id": "eggs",
+        "amount": 8.0,
+        "unit": "piece",
+        "raw": "8 æg"
+      },
+      {
+        "id": "potatoes",
+        "amount": 500.0,
+        "unit": "g",
+        "raw": "500 g kogte kartofler"
+      },
+      {
+        "id": "tomato",
+        "amount": 150.0,
+        "unit": "g",
+        "raw": "150 g tomat"
+      },
+      {
+        "id": "cheese",
+        "amount": 80.0,
+        "unit": "g",
+        "raw": "80 g mild ost"
+      },
+      {
+        "id": "avocado",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 avocado"
+      },
+      {
+        "id": "a38",
+        "amount": 100.0,
+        "unit": "g",
+        "raw": "100 g A38 3,5 %"
+      }
+    ]
+  },
+  "frokost-19": {
+    "adult": [
+      {
+        "id": "chickpeas",
+        "amount": 0.33333,
+        "unit": "can",
+        "raw": "80 g kikærter, drænet"
+      },
+      {
+        "id": "tahini",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g Rømer Tahin uden salt Ø"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 5.0,
+        "unit": "ml",
+        "raw": "1 tsk EVOO"
+      },
+      {
+        "id": "lemon",
+        "amount": 0.05556,
+        "unit": "piece",
+        "raw": "1/2 tsk citron"
+      },
+      {
+        "id": "eggs",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 æg"
+      },
+      {
+        "id": "bread",
+        "amount": 2.0,
+        "unit": "slice",
+        "raw": "2 små skiver blødt brød"
+      },
+      {
+        "id": "red_pepper",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 rød peberfrugt"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "chickpeas",
+        "amount": 0.25,
+        "unit": "can",
+        "raw": "60 g kikærter, drænet"
+      },
+      {
+        "id": "tahini",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g Rømer Tahin uden salt Ø"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 5.0,
+        "unit": "ml",
+        "raw": "1 tsk EVOO"
+      },
+      {
+        "id": "lemon",
+        "amount": 0.05556,
+        "unit": "piece",
+        "raw": "1/2 tsk citron"
+      },
+      {
+        "id": "eggs",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 æg"
+      },
+      {
+        "id": "bread",
+        "amount": 2.0,
+        "unit": "slice",
+        "raw": "2 små skiver blødt brød"
+      },
+      {
+        "id": "red_pepper",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 rød peberfrugt"
+      }
+    ],
+    "family": [
+      {
+        "id": "chickpeas",
+        "amount": 1.0,
+        "unit": "can",
+        "raw": "1 dåse kikærter, ca. 240 g drænet"
+      },
+      {
+        "id": "tahini",
+        "amount": 25.0,
+        "unit": "g",
+        "raw": "25 g Rømer Tahin uden salt Ø"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 15.0,
+        "unit": "ml",
+        "raw": "1 spsk EVOO"
+      },
+      {
+        "id": "lemon",
+        "amount": 0.22222,
+        "unit": "piece",
+        "raw": "1-2 tsk citron"
+      },
+      {
+        "id": "eggs",
+        "amount": 4.0,
+        "unit": "piece",
+        "raw": "4 æg"
+      },
+      {
+        "id": "bread",
+        "amount": 6.0,
+        "unit": "slice",
+        "raw": "6 små skiver blødt brød"
+      },
+      {
+        "id": "red_pepper",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 rød peberfrugt"
+      }
+    ]
+  },
+  "frokost-20": {
+    "adult": [
+      {
+        "id": "chicken",
+        "amount": 100.0,
+        "unit": "g",
+        "raw": "100 g tilberedt kylling"
+      },
+      {
+        "id": "potatoes",
+        "amount": 165.0,
+        "unit": "g",
+        "raw": "165 g kogte kartofler"
+      },
+      {
+        "id": "broccoli",
+        "amount": 60.0,
+        "unit": "g",
+        "raw": "60 g broccoli"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      },
+      {
+        "id": "a38",
+        "amount": 45.0,
+        "unit": "g",
+        "raw": "45 g A38 3,5 %"
+      },
+      {
+        "id": "chives",
+        "amount": 1,
+        "unit": "bunch",
+        "raw": "1 tsk finthakket purløg"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 2.5,
+        "unit": "ml",
+        "raw": "1/2 tsk EVOO"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "chicken",
+        "amount": 65.0,
+        "unit": "g",
+        "raw": "65 g tilberedt kylling"
+      },
+      {
+        "id": "potatoes",
+        "amount": 135.0,
+        "unit": "g",
+        "raw": "135 g kogte kartofler"
+      },
+      {
+        "id": "broccoli",
+        "amount": 50.0,
+        "unit": "g",
+        "raw": "50 g broccoli"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      },
+      {
+        "id": "a38",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g A38 3,5 %"
+      },
+      {
+        "id": "chives",
+        "amount": 1,
+        "unit": "bunch",
+        "raw": "1/2 tsk finthakket purløg"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 2.5,
+        "unit": "ml",
+        "raw": "1/2 tsk EVOO"
+      }
+    ],
+    "family": [
+      {
+        "id": "chicken",
+        "amount": 300.0,
+        "unit": "g",
+        "raw": "300 g tilberedt kylling"
+      },
+      {
+        "id": "potatoes",
+        "amount": 500.0,
+        "unit": "g",
+        "raw": "500 g kogte kartofler"
+      },
+      {
+        "id": "broccoli",
+        "amount": 200.0,
+        "unit": "g",
+        "raw": "200 g broccoli"
+      },
+      {
+        "id": "avocado",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 avocado"
+      },
+      {
+        "id": "a38",
+        "amount": 120.0,
+        "unit": "g",
+        "raw": "120 g A38 3,5 %"
+      },
+      {
+        "id": "chives",
+        "amount": 1,
+        "unit": "bunch",
+        "raw": "purløg"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 5.0,
+        "unit": "ml",
+        "raw": "1 tsk EVOO"
+      }
+    ]
+  },
+  "aftensmad-1": {
+    "adult": [
+      {
+        "id": "salmon_fillet",
+        "amount": 165.0,
+        "unit": "g",
+        "raw": "165 g laksefilet"
+      },
+      {
+        "id": "potatoes",
+        "amount": 250.0,
+        "unit": "g",
+        "raw": "250 g kartofler"
+      },
+      {
+        "id": "broccoli",
+        "amount": 120.0,
+        "unit": "g",
+        "raw": "120 g broccoli"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 10.0,
+        "unit": "ml",
+        "raw": "2 tsk EVOO"
+      },
+      {
+        "id": "a38",
+        "amount": 55.0,
+        "unit": "g",
+        "raw": "55 g A38 3,5 %"
+      },
+      {
+        "id": "lemon",
+        "amount": 0.25,
+        "unit": "piece",
+        "raw": "1/4 citron"
+      },
+      {
+        "id": "dill",
+        "amount": 1,
+        "unit": "bunch",
+        "raw": "1 tsk finthakket dild"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "salmon_fillet",
+        "amount": 110.0,
+        "unit": "g",
+        "raw": "110 g laksefilet"
+      },
+      {
+        "id": "potatoes",
+        "amount": 200.0,
+        "unit": "g",
+        "raw": "200 g kartofler"
+      },
+      {
+        "id": "broccoli",
+        "amount": 100.0,
+        "unit": "g",
+        "raw": "100 g broccoli"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 10.0,
+        "unit": "ml",
+        "raw": "2 tsk EVOO"
+      },
+      {
+        "id": "a38",
+        "amount": 50.0,
+        "unit": "g",
+        "raw": "50 g A38 3,5 %"
+      },
+      {
+        "id": "lemon",
+        "amount": 0.25,
+        "unit": "piece",
+        "raw": "1/4 citron"
+      },
+      {
+        "id": "dill",
+        "amount": 1,
+        "unit": "bunch",
+        "raw": "1/2 tsk finthakket dild"
+      }
+    ],
+    "family": [
+      {
+        "id": "salmon_fillet",
+        "amount": 500.0,
+        "unit": "g",
+        "raw": "500 g laksefilet"
+      },
+      {
+        "id": "potatoes",
+        "amount": 900.0,
+        "unit": "g",
+        "raw": "900 g kartofler"
+      },
+      {
+        "id": "broccoli",
+        "amount": 400.0,
+        "unit": "g",
+        "raw": "400 g broccoli"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 30.0,
+        "unit": "ml",
+        "raw": "2 spsk EVOO"
+      },
+      {
+        "id": "a38",
+        "amount": 150.0,
+        "unit": "g",
+        "raw": "150 g A38 3,5 %"
+      },
+      {
+        "id": "lemon",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 citron"
+      },
+      {
+        "id": "dill",
+        "amount": 1,
+        "unit": "bunch",
+        "raw": "dild"
+      }
+    ]
+  },
+  "aftensmad-2": {
+    "adult": [
+      {
+        "id": "cod",
+        "amount": 165.0,
+        "unit": "g",
+        "raw": "165 g hakket torsk/sej"
+      },
+      {
+        "id": "eggs",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 lille æg"
+      },
+      {
+        "id": "oats",
+        "amount": 15.0,
+        "unit": "g",
+        "raw": "15 g havregryn"
+      },
+      {
+        "id": "milk",
+        "amount": 50.0,
+        "unit": "ml",
+        "raw": "0,5 dl mælk"
+      },
+      {
+        "id": "potatoes",
+        "amount": 250.0,
+        "unit": "g",
+        "raw": "250 g kartofler"
+      },
+      {
+        "id": "broccoli",
+        "amount": 90.0,
+        "unit": "g",
+        "raw": "90 g gulerod/broccoli"
+      },
+      {
+        "id": "butter",
+        "amount": 5.0,
+        "unit": "g",
+        "raw": "5 g smør"
+      },
+      {
+        "id": "a38",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g A38"
+      },
+      {
+        "id": "avocado_mayo",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g Chosen Foods Classic Avocado Oil Mayo"
+      },
+      {
+        "id": "pickled_cucumber",
+        "amount": 5.0,
+        "unit": "g",
+        "raw": "5 g syltet agurk"
+      },
+      {
+        "id": "spice_curry",
+        "amount": 0.25,
+        "unit": "tsp",
+        "raw": "1/4 tsk mild karry"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "cod",
+        "amount": 110.0,
+        "unit": "g",
+        "raw": "110 g hakket torsk/sej"
+      },
+      {
+        "id": "eggs",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 lille æg"
+      },
+      {
+        "id": "oats",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g havregryn"
+      },
+      {
+        "id": "milk",
+        "amount": 50.0,
+        "unit": "ml",
+        "raw": "0,5 dl mælk"
+      },
+      {
+        "id": "potatoes",
+        "amount": 200.0,
+        "unit": "g",
+        "raw": "200 g kartofler"
+      },
+      {
+        "id": "broccoli",
+        "amount": 75.0,
+        "unit": "g",
+        "raw": "75 g gulerod/broccoli"
+      },
+      {
+        "id": "butter",
+        "amount": 5.0,
+        "unit": "g",
+        "raw": "5 g smør"
+      },
+      {
+        "id": "a38",
+        "amount": 35.0,
+        "unit": "g",
+        "raw": "35 g A38"
+      },
+      {
+        "id": "avocado_mayo",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g Chosen Foods Classic Avocado Oil Mayo"
+      },
+      {
+        "id": "pickled_cucumber",
+        "amount": 5.0,
+        "unit": "g",
+        "raw": "5 g syltet agurk"
+      },
+      {
+        "id": "spice_curry",
+        "amount": 0.25,
+        "unit": "tsp",
+        "raw": "1/4 tsk mild karry"
+      }
+    ],
+    "family": [
+      {
+        "id": "cod",
+        "amount": 500.0,
+        "unit": "g",
+        "raw": "500 g hakket torsk/sej"
+      },
+      {
+        "id": "eggs",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 æg"
+      },
+      {
+        "id": "oats",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g havregryn"
+      },
+      {
+        "id": "milk",
+        "amount": 100.0,
+        "unit": "ml",
+        "raw": "1 dl mælk"
+      },
+      {
+        "id": "potatoes",
+        "amount": 900.0,
+        "unit": "g",
+        "raw": "900 g kartofler"
+      },
+      {
+        "id": "broccoli",
+        "amount": 300.0,
+        "unit": "g",
+        "raw": "300 g gulerod/broccoli"
+      },
+      {
+        "id": "butter",
+        "amount": 1,
+        "unit": "g",
+        "raw": "smør"
+      },
+      {
+        "id": "a38",
+        "amount": 100.0,
+        "unit": "g",
+        "raw": "100 g A38"
+      },
+      {
+        "id": "avocado_mayo",
+        "amount": 30.0,
+        "unit": "g",
+        "raw": "30 g Chosen Foods Classic Avocado Oil Mayo"
+      },
+      {
+        "id": "pickled_cucumber",
+        "amount": 20.0,
+        "unit": "g",
+        "raw": "20 g syltet agurk"
+      },
+      {
+        "id": "spice_curry",
+        "amount": 1,
+        "unit": "tsp",
+        "raw": "mild karry"
+      }
+    ]
+  },
+  "aftensmad-3": {
+    "adult": [
+      {
+        "id": "cod",
+        "amount": 165.0,
+        "unit": "g",
+        "raw": "165 g torsk/sej"
+      },
+      {
+        "id": "potatoes",
+        "amount": 195.0,
+        "unit": "g",
+        "raw": "195 g kartofler"
+      },
+      {
+        "id": "carrot",
+        "amount": 1.0625,
+        "unit": "piece",
+        "raw": "85 g gulerødder"
+      },
+      {
+        "id": "peas",
+        "amount": 45.0,
+        "unit": "g",
+        "raw": "45 g ærter"
+      },
+      {
+        "id": "cream",
+        "amount": 75.0,
+        "unit": "ml",
+        "raw": "0,75 dl fløde"
+      },
+      {
+        "id": "butter",
+        "amount": 10,
+        "unit": "g",
+        "raw": "1 tsk smør"
+      },
+      {
+        "id": "lemon",
+        "amount": 0.05556,
+        "unit": "piece",
+        "raw": "1/2 tsk citron"
+      },
+      {
+        "id": "dill",
+        "amount": 1,
+        "unit": "bunch",
+        "raw": "1 tsk finthakket dild"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "cod",
+        "amount": 110.0,
+        "unit": "g",
+        "raw": "110 g torsk/sej"
+      },
+      {
+        "id": "potatoes",
+        "amount": 155.0,
+        "unit": "g",
+        "raw": "155 g kartofler"
+      },
+      {
+        "id": "carrot",
+        "amount": 0.8125,
+        "unit": "piece",
+        "raw": "65 g gulerødder"
+      },
+      {
+        "id": "peas",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g ærter"
+      },
+      {
+        "id": "cream",
+        "amount": 75.0,
+        "unit": "ml",
+        "raw": "0,75 dl fløde"
+      },
+      {
+        "id": "butter",
+        "amount": 10,
+        "unit": "g",
+        "raw": "1 tsk smør"
+      },
+      {
+        "id": "lemon",
+        "amount": 0.05556,
+        "unit": "piece",
+        "raw": "1/2 tsk citron"
+      },
+      {
+        "id": "dill",
+        "amount": 1,
+        "unit": "bunch",
+        "raw": "1/2 tsk finthakket dild"
+      }
+    ],
+    "family": [
+      {
+        "id": "cod",
+        "amount": 500.0,
+        "unit": "g",
+        "raw": "500 g torsk/sej"
+      },
+      {
+        "id": "potatoes",
+        "amount": 700.0,
+        "unit": "g",
+        "raw": "700 g kartofler"
+      },
+      {
+        "id": "carrot",
+        "amount": 3.125,
+        "unit": "piece",
+        "raw": "250 g gulerødder"
+      },
+      {
+        "id": "peas",
+        "amount": 150.0,
+        "unit": "g",
+        "raw": "150 g ærter"
+      },
+      {
+        "id": "cream",
+        "amount": 200.0,
+        "unit": "ml",
+        "raw": "2 dl fløde"
+      },
+      {
+        "id": "butter",
+        "amount": 15.0,
+        "unit": "g",
+        "raw": "1 spsk smør"
+      },
+      {
+        "id": "lemon",
+        "amount": 0.11111,
+        "unit": "piece",
+        "raw": "1 tsk citron"
+      },
+      {
+        "id": "dill",
+        "amount": 1,
+        "unit": "bunch",
+        "raw": "dild"
+      }
+    ]
+  },
+  "aftensmad-4": {
+    "adult": [
+      {
+        "id": "minced_beef",
+        "amount": 150.0,
+        "unit": "g",
+        "raw": "150 g hakket oksekød"
+      },
+      {
+        "id": "red_lentils",
+        "amount": 35.0,
+        "unit": "g",
+        "raw": "35 g røde linser"
+      },
+      {
+        "id": "passata",
+        "amount": 165.0,
+        "unit": "g",
+        "raw": "165 g passata"
+      },
+      {
+        "id": "carrot",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 gulerod"
+      },
+      {
+        "id": "onion",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 løg"
+      },
+      {
+        "id": "wholegrain_pasta",
+        "amount": 100.0,
+        "unit": "g",
+        "raw": "100 g fuldkornspasta"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 5.0,
+        "unit": "ml",
+        "raw": "1 tsk EVOO"
+      },
+      {
+        "id": "ketchup",
+        "amount": 15,
+        "unit": "ml",
+        "raw": "1 tsk Heinz Organic Tomato Ketchup efter behov"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "minced_beef",
+        "amount": 100.0,
+        "unit": "g",
+        "raw": "100 g hakket oksekød"
+      },
+      {
+        "id": "red_lentils",
+        "amount": 25.0,
+        "unit": "g",
+        "raw": "25 g røde linser"
+      },
+      {
+        "id": "passata",
+        "amount": 125.0,
+        "unit": "g",
+        "raw": "125 g passata"
+      },
+      {
+        "id": "carrot",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 gulerod"
+      },
+      {
+        "id": "onion",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 løg"
+      },
+      {
+        "id": "wholegrain_pasta",
+        "amount": 70.0,
+        "unit": "g",
+        "raw": "70 g fuldkornspasta"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 5.0,
+        "unit": "ml",
+        "raw": "1 tsk EVOO"
+      },
+      {
+        "id": "ketchup",
+        "amount": 15,
+        "unit": "ml",
+        "raw": "1 tsk Heinz Organic Tomato Ketchup efter behov"
+      }
+    ],
+    "family": [
+      {
+        "id": "minced_beef",
+        "amount": 450.0,
+        "unit": "g",
+        "raw": "450 g hakket oksekød"
+      },
+      {
+        "id": "red_lentils",
+        "amount": 100.0,
+        "unit": "g",
+        "raw": "100 g røde linser"
+      },
+      {
+        "id": "passata",
+        "amount": 500.0,
+        "unit": "g",
+        "raw": "500 g passata"
+      },
+      {
+        "id": "carrot",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 gulerødder"
+      },
+      {
+        "id": "onion",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 løg"
+      },
+      {
+        "id": "wholegrain_pasta",
+        "amount": 350.0,
+        "unit": "g",
+        "raw": "350 g fuldkornspasta"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 15.0,
+        "unit": "ml",
+        "raw": "1 spsk EVOO"
+      },
+      {
+        "id": "ketchup",
+        "amount": 1,
+        "unit": "ml",
+        "raw": "Heinz Organic Tomato Ketchup efter behov"
+      }
+    ]
+  },
+  "aftensmad-5": {
+    "adult": [
+      {
+        "id": "minced_mixed",
+        "amount": 165.0,
+        "unit": "g",
+        "raw": "165 g hakket kalv/flæsk eller oksekød"
+      },
+      {
+        "id": "eggs",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 lille æg"
+      },
+      {
+        "id": "oats",
+        "amount": 15.0,
+        "unit": "g",
+        "raw": "15 g havregryn"
+      },
+      {
+        "id": "milk",
+        "amount": 50.0,
+        "unit": "ml",
+        "raw": "0,5 dl mælk"
+      },
+      {
+        "id": "potatoes",
+        "amount": 250.0,
+        "unit": "g",
+        "raw": "250 g kartofler"
+      },
+      {
+        "id": "broccoli",
+        "amount": 105.0,
+        "unit": "g",
+        "raw": "105 g grønt"
+      },
+      {
+        "id": "butter",
+        "amount": 5.0,
+        "unit": "g",
+        "raw": "5 g smør"
+      },
+      {
+        "id": "cream",
+        "amount": 50.0,
+        "unit": "ml",
+        "raw": "0,5 dl fløde"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "minced_mixed",
+        "amount": 110.0,
+        "unit": "g",
+        "raw": "110 g hakket kalv/flæsk eller oksekød"
+      },
+      {
+        "id": "eggs",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 lille æg"
+      },
+      {
+        "id": "oats",
+        "amount": 15.0,
+        "unit": "g",
+        "raw": "15 g havregryn"
+      },
+      {
+        "id": "milk",
+        "amount": 50.0,
+        "unit": "ml",
+        "raw": "0,5 dl mælk"
+      },
+      {
+        "id": "potatoes",
+        "amount": 200.0,
+        "unit": "g",
+        "raw": "200 g kartofler"
+      },
+      {
+        "id": "broccoli",
+        "amount": 90.0,
+        "unit": "g",
+        "raw": "90 g grønt"
+      },
+      {
+        "id": "butter",
+        "amount": 5.0,
+        "unit": "g",
+        "raw": "5 g smør"
+      },
+      {
+        "id": "cream",
+        "amount": 50.0,
+        "unit": "ml",
+        "raw": "0,5 dl fløde"
+      }
+    ],
+    "family": [
+      {
+        "id": "minced_mixed",
+        "amount": 500.0,
+        "unit": "g",
+        "raw": "500 g hakket kalv/flæsk eller oksekød"
+      },
+      {
+        "id": "eggs",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 æg"
+      },
+      {
+        "id": "oats",
+        "amount": 50.0,
+        "unit": "g",
+        "raw": "50 g havregryn"
+      },
+      {
+        "id": "milk",
+        "amount": 100.0,
+        "unit": "ml",
+        "raw": "1 dl mælk"
+      },
+      {
+        "id": "potatoes",
+        "amount": 900.0,
+        "unit": "g",
+        "raw": "900 g kartofler"
+      },
+      {
+        "id": "broccoli",
+        "amount": 350.0,
+        "unit": "g",
+        "raw": "350 g grønt"
+      },
+      {
+        "id": "butter",
+        "amount": 1,
+        "unit": "g",
+        "raw": "smør"
+      },
+      {
+        "id": "cream",
+        "amount": 100.0,
+        "unit": "ml",
+        "raw": "1 dl fløde"
+      }
+    ]
+  },
+  "aftensmad-6": {
+    "adult": [
+      {
+        "id": "minced_beef",
+        "amount": 150.0,
+        "unit": "g",
+        "raw": "150 g hakket oksekød"
+      },
+      {
+        "id": "kidney_beans",
+        "amount": 0.33333,
+        "unit": "can",
+        "raw": "80 g kidneybønner, drænet"
+      },
+      {
+        "id": "passata",
+        "amount": 165.0,
+        "unit": "g",
+        "raw": "165 g passata"
+      },
+      {
+        "id": "red_pepper",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 rød peberfrugt"
+      },
+      {
+        "id": "onion",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 løg"
+      },
+      {
+        "id": "rice",
+        "amount": 85.0,
+        "unit": "g",
+        "raw": "85 g ris"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 5.0,
+        "unit": "ml",
+        "raw": "1 tsk EVOO"
+      },
+      {
+        "id": "spice_paprika",
+        "amount": 0.25,
+        "unit": "tsp",
+        "raw": "1/4 tsk mild paprika"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      },
+      {
+        "id": "a38",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g A38"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "minced_beef",
+        "amount": 100.0,
+        "unit": "g",
+        "raw": "100 g hakket oksekød"
+      },
+      {
+        "id": "kidney_beans",
+        "amount": 0.25,
+        "unit": "can",
+        "raw": "60 g kidneybønner, drænet"
+      },
+      {
+        "id": "passata",
+        "amount": 125.0,
+        "unit": "g",
+        "raw": "125 g passata"
+      },
+      {
+        "id": "red_pepper",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 rød peberfrugt"
+      },
+      {
+        "id": "onion",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 løg"
+      },
+      {
+        "id": "rice",
+        "amount": 60.0,
+        "unit": "g",
+        "raw": "60 g ris"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 5.0,
+        "unit": "ml",
+        "raw": "1 tsk EVOO"
+      },
+      {
+        "id": "spice_paprika",
+        "amount": 0.25,
+        "unit": "tsp",
+        "raw": "1/4 tsk mild paprika"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      },
+      {
+        "id": "a38",
+        "amount": 35.0,
+        "unit": "g",
+        "raw": "35 g A38"
+      }
+    ],
+    "family": [
+      {
+        "id": "minced_beef",
+        "amount": 450.0,
+        "unit": "g",
+        "raw": "450 g hakket oksekød"
+      },
+      {
+        "id": "kidney_beans",
+        "amount": 1.0,
+        "unit": "can",
+        "raw": "1 dåse kidneybønner, 240 g drænet"
+      },
+      {
+        "id": "passata",
+        "amount": 500.0,
+        "unit": "g",
+        "raw": "500 g passata"
+      },
+      {
+        "id": "red_pepper",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 rød peberfrugt"
+      },
+      {
+        "id": "onion",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 løg"
+      },
+      {
+        "id": "rice",
+        "amount": 300.0,
+        "unit": "g",
+        "raw": "300 g ris"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 15.0,
+        "unit": "ml",
+        "raw": "1 spsk EVOO"
+      },
+      {
+        "id": "spice_paprika",
+        "amount": 1.0,
+        "unit": "tsp",
+        "raw": "1 tsk mild paprika"
+      },
+      {
+        "id": "avocado",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 avocado"
+      },
+      {
+        "id": "a38",
+        "amount": 100.0,
+        "unit": "g",
+        "raw": "100 g A38"
+      }
+    ]
+  },
+  "aftensmad-7": {
+    "adult": [
+      {
+        "id": "chicken_thigh",
+        "amount": 200.0,
+        "unit": "g",
+        "raw": "200 g kyllingelårfilet"
+      },
+      {
+        "id": "potatoes",
+        "amount": 250.0,
+        "unit": "g",
+        "raw": "250 g kartofler"
+      },
+      {
+        "id": "broccoli",
+        "amount": 150.0,
+        "unit": "g",
+        "raw": "150 g gulerod/broccoli"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 10.0,
+        "unit": "ml",
+        "raw": "2 tsk EVOO"
+      },
+      {
+        "id": "spice_thyme",
+        "amount": 0.25,
+        "unit": "tsp",
+        "raw": "1/4 tsk timian"
+      },
+      {
+        "id": "a38",
+        "amount": 55.0,
+        "unit": "g",
+        "raw": "55 g A38"
+      },
+      {
+        "id": "chives",
+        "amount": 1,
+        "unit": "bunch",
+        "raw": "1 tsk finthakket purløg/persille"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "chicken_thigh",
+        "amount": 130.0,
+        "unit": "g",
+        "raw": "130 g kyllingelårfilet"
+      },
+      {
+        "id": "potatoes",
+        "amount": 200.0,
+        "unit": "g",
+        "raw": "200 g kartofler"
+      },
+      {
+        "id": "broccoli",
+        "amount": 125.0,
+        "unit": "g",
+        "raw": "125 g gulerod/broccoli"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 10.0,
+        "unit": "ml",
+        "raw": "2 tsk EVOO"
+      },
+      {
+        "id": "spice_thyme",
+        "amount": 0.25,
+        "unit": "tsp",
+        "raw": "1/4 tsk timian"
+      },
+      {
+        "id": "a38",
+        "amount": 50.0,
+        "unit": "g",
+        "raw": "50 g A38"
+      },
+      {
+        "id": "chives",
+        "amount": 1,
+        "unit": "bunch",
+        "raw": "1/2 tsk finthakket purløg/persille"
+      }
+    ],
+    "family": [
+      {
+        "id": "chicken_thigh",
+        "amount": 600.0,
+        "unit": "g",
+        "raw": "600 g kyllingelårfilet"
+      },
+      {
+        "id": "potatoes",
+        "amount": 900.0,
+        "unit": "g",
+        "raw": "900 g kartofler"
+      },
+      {
+        "id": "broccoli",
+        "amount": 500.0,
+        "unit": "g",
+        "raw": "500 g gulerod/broccoli"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 30.0,
+        "unit": "ml",
+        "raw": "2 spsk EVOO"
+      },
+      {
+        "id": "spice_thyme",
+        "amount": 1.0,
+        "unit": "tsp",
+        "raw": "1 tsk timian"
+      },
+      {
+        "id": "a38",
+        "amount": 150.0,
+        "unit": "g",
+        "raw": "150 g A38"
+      },
+      {
+        "id": "chives",
+        "amount": 1,
+        "unit": "bunch",
+        "raw": "purløg/persille"
+      }
+    ]
+  },
+  "aftensmad-8": {
+    "adult": [
+      {
+        "id": "chicken_thigh",
+        "amount": 180.0,
+        "unit": "g",
+        "raw": "180 g kyllingelårfilet"
+      },
+      {
+        "id": "potatoes",
+        "amount": 195.0,
+        "unit": "g",
+        "raw": "195 g kartofler"
+      },
+      {
+        "id": "carrot",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 gulerod"
+      },
+      {
+        "id": "peas",
+        "amount": 45.0,
+        "unit": "g",
+        "raw": "45 g ærter"
+      },
+      {
+        "id": "cream",
+        "amount": 75.0,
+        "unit": "ml",
+        "raw": "0,75 dl fløde"
+      },
+      {
+        "id": "butter",
+        "amount": 10,
+        "unit": "g",
+        "raw": "1 tsk smør"
+      },
+      {
+        "id": "parsley",
+        "amount": 1,
+        "unit": "bunch",
+        "raw": "1 tsk finthakket persille"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "chicken_thigh",
+        "amount": 120.0,
+        "unit": "g",
+        "raw": "120 g kyllingelårfilet"
+      },
+      {
+        "id": "potatoes",
+        "amount": 155.0,
+        "unit": "g",
+        "raw": "155 g kartofler"
+      },
+      {
+        "id": "carrot",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 gulerod"
+      },
+      {
+        "id": "peas",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g ærter"
+      },
+      {
+        "id": "cream",
+        "amount": 75.0,
+        "unit": "ml",
+        "raw": "0,75 dl fløde"
+      },
+      {
+        "id": "butter",
+        "amount": 10,
+        "unit": "g",
+        "raw": "1 tsk smør"
+      },
+      {
+        "id": "parsley",
+        "amount": 1,
+        "unit": "bunch",
+        "raw": "1/2 tsk finthakket persille"
+      }
+    ],
+    "family": [
+      {
+        "id": "chicken_thigh",
+        "amount": 550.0,
+        "unit": "g",
+        "raw": "550 g kyllingelårfilet"
+      },
+      {
+        "id": "potatoes",
+        "amount": 700.0,
+        "unit": "g",
+        "raw": "700 g kartofler"
+      },
+      {
+        "id": "carrot",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 gulerødder"
+      },
+      {
+        "id": "peas",
+        "amount": 150.0,
+        "unit": "g",
+        "raw": "150 g ærter"
+      },
+      {
+        "id": "cream",
+        "amount": 200.0,
+        "unit": "ml",
+        "raw": "2 dl fløde"
+      },
+      {
+        "id": "butter",
+        "amount": 15.0,
+        "unit": "g",
+        "raw": "1 spsk smør"
+      },
+      {
+        "id": "parsley",
+        "amount": 1,
+        "unit": "bunch",
+        "raw": "persille"
+      }
+    ]
+  },
+  "aftensmad-9": {
+    "adult": [
+      {
+        "id": "minced_chicken",
+        "amount": 165.0,
+        "unit": "g",
+        "raw": "165 g hakket kylling"
+      },
+      {
+        "id": "eggs",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 lille æg"
+      },
+      {
+        "id": "oats",
+        "amount": 15.0,
+        "unit": "g",
+        "raw": "15 g havregryn"
+      },
+      {
+        "id": "sweet_potato",
+        "amount": 225.0,
+        "unit": "g",
+        "raw": "225 g sød kartoffel"
+      },
+      {
+        "id": "broccoli",
+        "amount": 90.0,
+        "unit": "g",
+        "raw": "90 g broccoli"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 5.0,
+        "unit": "ml",
+        "raw": "1 tsk EVOO"
+      },
+      {
+        "id": "butter",
+        "amount": 5.0,
+        "unit": "g",
+        "raw": "5 g smør"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      },
+      {
+        "id": "a38",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g A38"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "minced_chicken",
+        "amount": 110.0,
+        "unit": "g",
+        "raw": "110 g hakket kylling"
+      },
+      {
+        "id": "eggs",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 lille æg"
+      },
+      {
+        "id": "oats",
+        "amount": 15.0,
+        "unit": "g",
+        "raw": "15 g havregryn"
+      },
+      {
+        "id": "sweet_potato",
+        "amount": 175.0,
+        "unit": "g",
+        "raw": "175 g sød kartoffel"
+      },
+      {
+        "id": "broccoli",
+        "amount": 75.0,
+        "unit": "g",
+        "raw": "75 g broccoli"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 5.0,
+        "unit": "ml",
+        "raw": "1 tsk EVOO"
+      },
+      {
+        "id": "butter",
+        "amount": 5.0,
+        "unit": "g",
+        "raw": "5 g smør"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      },
+      {
+        "id": "a38",
+        "amount": 35.0,
+        "unit": "g",
+        "raw": "35 g A38"
+      }
+    ],
+    "family": [
+      {
+        "id": "minced_chicken",
+        "amount": 500.0,
+        "unit": "g",
+        "raw": "500 g hakket kylling"
+      },
+      {
+        "id": "eggs",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 æg"
+      },
+      {
+        "id": "oats",
+        "amount": 50.0,
+        "unit": "g",
+        "raw": "50 g havregryn"
+      },
+      {
+        "id": "sweet_potato",
+        "amount": 800.0,
+        "unit": "g",
+        "raw": "800 g sød kartoffel"
+      },
+      {
+        "id": "broccoli",
+        "amount": 300.0,
+        "unit": "g",
+        "raw": "300 g broccoli"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 15.0,
+        "unit": "ml",
+        "raw": "1 spsk EVOO"
+      },
+      {
+        "id": "butter",
+        "amount": 1,
+        "unit": "g",
+        "raw": "smør"
+      },
+      {
+        "id": "avocado",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 avocado"
+      },
+      {
+        "id": "a38",
+        "amount": 100.0,
+        "unit": "g",
+        "raw": "100 g A38"
+      }
+    ]
+  },
+  "aftensmad-10": {
+    "adult": [
+      {
+        "id": "eggs",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 æg"
+      },
+      {
+        "id": "potatoes",
+        "amount": 150.0,
+        "unit": "g",
+        "raw": "150 g kogte kartofler"
+      },
+      {
+        "id": "broccoli",
+        "amount": 50.0,
+        "unit": "g",
+        "raw": "50 g broccoli"
+      },
+      {
+        "id": "red_pepper",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 rød peberfrugt"
+      },
+      {
+        "id": "cheese",
+        "amount": 20.0,
+        "unit": "g",
+        "raw": "20 g mild ost"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 5.0,
+        "unit": "ml",
+        "raw": "1 tsk EVOO"
+      },
+      {
+        "id": "ketchup",
+        "amount": 15,
+        "unit": "ml",
+        "raw": "1 tsk Heinz Organic Tomato Ketchup"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "eggs",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 æg"
+      },
+      {
+        "id": "potatoes",
+        "amount": 150.0,
+        "unit": "g",
+        "raw": "150 g kogte kartofler"
+      },
+      {
+        "id": "broccoli",
+        "amount": 50.0,
+        "unit": "g",
+        "raw": "50 g broccoli"
+      },
+      {
+        "id": "red_pepper",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 rød peberfrugt"
+      },
+      {
+        "id": "cheese",
+        "amount": 20.0,
+        "unit": "g",
+        "raw": "20 g mild ost"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 5.0,
+        "unit": "ml",
+        "raw": "1 tsk EVOO"
+      },
+      {
+        "id": "ketchup",
+        "amount": 15,
+        "unit": "ml",
+        "raw": "1 tsk Heinz Organic Tomato Ketchup"
+      }
+    ],
+    "family": [
+      {
+        "id": "eggs",
+        "amount": 8.0,
+        "unit": "piece",
+        "raw": "8 æg"
+      },
+      {
+        "id": "potatoes",
+        "amount": 600.0,
+        "unit": "g",
+        "raw": "600 g kogte kartofler"
+      },
+      {
+        "id": "broccoli",
+        "amount": 200.0,
+        "unit": "g",
+        "raw": "200 g broccoli"
+      },
+      {
+        "id": "red_pepper",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 rød peberfrugt"
+      },
+      {
+        "id": "cheese",
+        "amount": 80.0,
+        "unit": "g",
+        "raw": "80 g mild ost"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 15.0,
+        "unit": "ml",
+        "raw": "1 spsk EVOO"
+      },
+      {
+        "id": "ketchup",
+        "amount": 1,
+        "unit": "ml",
+        "raw": "Heinz Organic Tomato Ketchup"
+      }
+    ]
+  },
+  "aftensmad-11": {
+    "adult": [
+      {
+        "id": "beef_shoulder",
+        "amount": 230.0,
+        "unit": "g",
+        "raw": "230 g oksebov"
+      },
+      {
+        "id": "potatoes",
+        "amount": 250.0,
+        "unit": "g",
+        "raw": "250 g kartofler"
+      },
+      {
+        "id": "carrot",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 gulerod"
+      },
+      {
+        "id": "onion",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 løg"
+      },
+      {
+        "id": "passata",
+        "amount": 120.0,
+        "unit": "g",
+        "raw": "120 g hakkede tomater"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 5.0,
+        "unit": "ml",
+        "raw": "1 tsk EVOO"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "beef_shoulder",
+        "amount": 155.0,
+        "unit": "g",
+        "raw": "155 g oksebov"
+      },
+      {
+        "id": "potatoes",
+        "amount": 200.0,
+        "unit": "g",
+        "raw": "200 g kartofler"
+      },
+      {
+        "id": "carrot",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 gulerod"
+      },
+      {
+        "id": "onion",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 løg"
+      },
+      {
+        "id": "passata",
+        "amount": 100.0,
+        "unit": "g",
+        "raw": "100 g hakkede tomater"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 5.0,
+        "unit": "ml",
+        "raw": "1 tsk EVOO"
+      }
+    ],
+    "family": [
+      {
+        "id": "beef_shoulder",
+        "amount": 700.0,
+        "unit": "g",
+        "raw": "700 g oksebov"
+      },
+      {
+        "id": "potatoes",
+        "amount": 900.0,
+        "unit": "g",
+        "raw": "900 g kartofler"
+      },
+      {
+        "id": "carrot",
+        "amount": 3.0,
+        "unit": "piece",
+        "raw": "3 gulerødder"
+      },
+      {
+        "id": "onion",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 løg"
+      },
+      {
+        "id": "passata",
+        "amount": 400.0,
+        "unit": "g",
+        "raw": "400 g hakkede tomater"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 15.0,
+        "unit": "ml",
+        "raw": "1 spsk EVOO"
+      }
+    ]
+  },
+  "aftensmad-12": {
+    "adult": [
+      {
+        "id": "minced_beef",
+        "amount": 165.0,
+        "unit": "g",
+        "raw": "165 g hakket oksekød"
+      },
+      {
+        "id": "eggs",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 lille æg"
+      },
+      {
+        "id": "oats",
+        "amount": 15.0,
+        "unit": "g",
+        "raw": "15 g havregryn"
+      },
+      {
+        "id": "passata",
+        "amount": 165.0,
+        "unit": "g",
+        "raw": "165 g passata"
+      },
+      {
+        "id": "pasta",
+        "amount": 100.0,
+        "unit": "g",
+        "raw": "100 g pasta"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 5.0,
+        "unit": "ml",
+        "raw": "1 tsk EVOO"
+      },
+      {
+        "id": "carrot",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 gulerod"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "minced_beef",
+        "amount": 110.0,
+        "unit": "g",
+        "raw": "110 g hakket oksekød"
+      },
+      {
+        "id": "eggs",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 lille æg"
+      },
+      {
+        "id": "oats",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g havregryn"
+      },
+      {
+        "id": "passata",
+        "amount": 125.0,
+        "unit": "g",
+        "raw": "125 g passata"
+      },
+      {
+        "id": "pasta",
+        "amount": 70.0,
+        "unit": "g",
+        "raw": "70 g pasta"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 5.0,
+        "unit": "ml",
+        "raw": "1 tsk EVOO"
+      },
+      {
+        "id": "carrot",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 gulerod"
+      }
+    ],
+    "family": [
+      {
+        "id": "minced_beef",
+        "amount": 500.0,
+        "unit": "g",
+        "raw": "500 g hakket oksekød"
+      },
+      {
+        "id": "eggs",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 æg"
+      },
+      {
+        "id": "oats",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g havregryn"
+      },
+      {
+        "id": "passata",
+        "amount": 500.0,
+        "unit": "g",
+        "raw": "500 g passata"
+      },
+      {
+        "id": "pasta",
+        "amount": 350.0,
+        "unit": "g",
+        "raw": "350 g pasta"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 15.0,
+        "unit": "ml",
+        "raw": "1 spsk EVOO"
+      },
+      {
+        "id": "carrot",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 gulerod"
+      }
+    ]
+  },
+  "aftensmad-13": {
+    "adult": [
+      {
+        "id": "chicken_thigh",
+        "amount": 180.0,
+        "unit": "g",
+        "raw": "180 g kyllingelårfilet"
+      },
+      {
+        "id": "coconut_milk",
+        "amount": 125.0,
+        "unit": "ml",
+        "raw": "125 ml kokosmælk"
+      },
+      {
+        "id": "carrot",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 gulerod"
+      },
+      {
+        "id": "peas",
+        "amount": 45.0,
+        "unit": "g",
+        "raw": "45 g ærter"
+      },
+      {
+        "id": "rice",
+        "amount": 85.0,
+        "unit": "g",
+        "raw": "85 g ris"
+      },
+      {
+        "id": "spice_curry",
+        "amount": 0.25,
+        "unit": "tsp",
+        "raw": "1/4 tsk mild karry"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "chicken_thigh",
+        "amount": 120.0,
+        "unit": "g",
+        "raw": "120 g kyllingelårfilet"
+      },
+      {
+        "id": "coconut_milk",
+        "amount": 100.0,
+        "unit": "ml",
+        "raw": "100 ml kokosmælk"
+      },
+      {
+        "id": "carrot",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 gulerod"
+      },
+      {
+        "id": "peas",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g ærter"
+      },
+      {
+        "id": "rice",
+        "amount": 60.0,
+        "unit": "g",
+        "raw": "60 g ris"
+      },
+      {
+        "id": "spice_curry",
+        "amount": 0.25,
+        "unit": "tsp",
+        "raw": "1/4 tsk mild karry"
+      }
+    ],
+    "family": [
+      {
+        "id": "chicken_thigh",
+        "amount": 550.0,
+        "unit": "g",
+        "raw": "550 g kyllingelårfilet"
+      },
+      {
+        "id": "coconut_milk",
+        "amount": 400.0,
+        "unit": "ml",
+        "raw": "400 ml kokosmælk"
+      },
+      {
+        "id": "carrot",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 gulerødder"
+      },
+      {
+        "id": "peas",
+        "amount": 150.0,
+        "unit": "g",
+        "raw": "150 g ærter"
+      },
+      {
+        "id": "rice",
+        "amount": 300.0,
+        "unit": "g",
+        "raw": "300 g ris"
+      },
+      {
+        "id": "spice_curry",
+        "amount": 1.0,
+        "unit": "tsp",
+        "raw": "1 tsk mild karry"
+      }
+    ]
+  },
+  "aftensmad-14": {
+    "adult": [
+      {
+        "id": "minced_beef",
+        "amount": 115.0,
+        "unit": "g",
+        "raw": "115 g hakket oksekød"
+      },
+      {
+        "id": "red_lentils",
+        "amount": 50.0,
+        "unit": "g",
+        "raw": "50 g røde linser"
+      },
+      {
+        "id": "passata",
+        "amount": 165.0,
+        "unit": "g",
+        "raw": "165 g passata"
+      },
+      {
+        "id": "carrot",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 gulerod"
+      },
+      {
+        "id": "potatoes",
+        "amount": 195.0,
+        "unit": "g",
+        "raw": "195 g kartofler"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 5.0,
+        "unit": "ml",
+        "raw": "1 tsk EVOO"
+      },
+      {
+        "id": "a38",
+        "amount": 45.0,
+        "unit": "g",
+        "raw": "45 g A38"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "minced_beef",
+        "amount": 75.0,
+        "unit": "g",
+        "raw": "75 g hakket oksekød"
+      },
+      {
+        "id": "red_lentils",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g røde linser"
+      },
+      {
+        "id": "passata",
+        "amount": 125.0,
+        "unit": "g",
+        "raw": "125 g passata"
+      },
+      {
+        "id": "carrot",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 gulerod"
+      },
+      {
+        "id": "potatoes",
+        "amount": 155.0,
+        "unit": "g",
+        "raw": "155 g kartofler"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 5.0,
+        "unit": "ml",
+        "raw": "1 tsk EVOO"
+      },
+      {
+        "id": "a38",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g A38"
+      }
+    ],
+    "family": [
+      {
+        "id": "minced_beef",
+        "amount": 350.0,
+        "unit": "g",
+        "raw": "350 g hakket oksekød"
+      },
+      {
+        "id": "red_lentils",
+        "amount": 150.0,
+        "unit": "g",
+        "raw": "150 g røde linser"
+      },
+      {
+        "id": "passata",
+        "amount": 500.0,
+        "unit": "g",
+        "raw": "500 g passata"
+      },
+      {
+        "id": "carrot",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 gulerødder"
+      },
+      {
+        "id": "potatoes",
+        "amount": 700.0,
+        "unit": "g",
+        "raw": "700 g kartofler"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 15.0,
+        "unit": "ml",
+        "raw": "1 spsk EVOO"
+      },
+      {
+        "id": "a38",
+        "amount": 120.0,
+        "unit": "g",
+        "raw": "120 g A38"
+      }
+    ]
+  },
+  "aftensmad-15": {
+    "adult": [
+      {
+        "id": "pasta",
+        "amount": 200.0,
+        "unit": "g",
+        "raw": "200 g kogt kartoffel/pasta/ris"
+      },
+      {
+        "id": "broccoli",
+        "amount": 90.0,
+        "unit": "g",
+        "raw": "90 g tilberedte grøntsager"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado eller 1 tsk EVOO"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "pasta",
+        "amount": 160.0,
+        "unit": "g",
+        "raw": "160 g kogt kartoffel/pasta/ris"
+      },
+      {
+        "id": "broccoli",
+        "amount": 75.0,
+        "unit": "g",
+        "raw": "75 g tilberedte grøntsager"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado eller 1 tsk EVOO"
+      }
+    ],
+    "family": [
+      {
+        "id": "pasta",
+        "amount": 600.0,
+        "unit": "g",
+        "raw": "600 g kogt kartoffel/pasta/ris"
+      },
+      {
+        "id": "broccoli",
+        "amount": 300.0,
+        "unit": "g",
+        "raw": "300 g tilberedte grøntsager"
+      },
+      {
+        "id": "avocado",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 avocado eller 1-2 spsk EVOO"
+      },
+      {
+        "id": "a38",
+        "amount": 1,
+        "unit": "g",
+        "raw": "A38, Chosen Foods avocado-mayo eller Heinz Organic Tomato Ketchup efter retten"
+      }
+    ]
+  },
+  "aftensmad-16": {
+    "adult": [
+      {
+        "id": "salmon",
+        "amount": 165.0,
+        "unit": "g",
+        "raw": "165 g laks"
+      },
+      {
+        "id": "pasta",
+        "amount": 100.0,
+        "unit": "g",
+        "raw": "100 g pasta"
+      },
+      {
+        "id": "broccoli",
+        "amount": 90.0,
+        "unit": "g",
+        "raw": "90 g broccoli"
+      },
+      {
+        "id": "peas",
+        "amount": 45.0,
+        "unit": "g",
+        "raw": "45 g ærter"
+      },
+      {
+        "id": "cream",
+        "amount": 75.0,
+        "unit": "ml",
+        "raw": "0,75 dl fløde"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 5.0,
+        "unit": "ml",
+        "raw": "1 tsk EVOO"
+      },
+      {
+        "id": "lemon",
+        "amount": 0.25,
+        "unit": "piece",
+        "raw": "1/4 citron"
+      },
+      {
+        "id": "dill",
+        "amount": 1,
+        "unit": "bunch",
+        "raw": "1 tsk finthakket dild"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "salmon",
+        "amount": 110.0,
+        "unit": "g",
+        "raw": "110 g laks"
+      },
+      {
+        "id": "pasta",
+        "amount": 70.0,
+        "unit": "g",
+        "raw": "70 g pasta"
+      },
+      {
+        "id": "broccoli",
+        "amount": 75.0,
+        "unit": "g",
+        "raw": "75 g broccoli"
+      },
+      {
+        "id": "peas",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g ærter"
+      },
+      {
+        "id": "cream",
+        "amount": 75.0,
+        "unit": "ml",
+        "raw": "0,75 dl fløde"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 5.0,
+        "unit": "ml",
+        "raw": "1 tsk EVOO"
+      },
+      {
+        "id": "lemon",
+        "amount": 0.25,
+        "unit": "piece",
+        "raw": "1/4 citron"
+      },
+      {
+        "id": "dill",
+        "amount": 1,
+        "unit": "bunch",
+        "raw": "1/2 tsk finthakket dild"
+      }
+    ],
+    "family": [
+      {
+        "id": "salmon",
+        "amount": 500.0,
+        "unit": "g",
+        "raw": "500 g laks"
+      },
+      {
+        "id": "pasta",
+        "amount": 350.0,
+        "unit": "g",
+        "raw": "350 g pasta"
+      },
+      {
+        "id": "broccoli",
+        "amount": 300.0,
+        "unit": "g",
+        "raw": "300 g broccoli"
+      },
+      {
+        "id": "peas",
+        "amount": 150.0,
+        "unit": "g",
+        "raw": "150 g ærter"
+      },
+      {
+        "id": "cream",
+        "amount": 200.0,
+        "unit": "ml",
+        "raw": "2 dl fløde"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 15.0,
+        "unit": "ml",
+        "raw": "1 spsk EVOO"
+      },
+      {
+        "id": "lemon",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 citron"
+      },
+      {
+        "id": "dill",
+        "amount": 1,
+        "unit": "bunch",
+        "raw": "dild"
+      }
+    ]
+  },
+  "aftensmad-17": {
+    "adult": [
+      {
+        "id": "chicken_thigh",
+        "amount": 200.0,
+        "unit": "g",
+        "raw": "200 g kyllingelårfilet"
+      },
+      {
+        "id": "passata",
+        "amount": 130.0,
+        "unit": "g",
+        "raw": "130 g passata"
+      },
+      {
+        "id": "a38",
+        "amount": 55.0,
+        "unit": "g",
+        "raw": "55 g A38 3,5 %"
+      },
+      {
+        "id": "butter",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g smør"
+      },
+      {
+        "id": "rice",
+        "amount": 85.0,
+        "unit": "g",
+        "raw": "85 g ris"
+      },
+      {
+        "id": "carrot",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 gulerod"
+      },
+      {
+        "id": "spice_curry",
+        "amount": 0.25,
+        "unit": "tsp",
+        "raw": "1/4 tsk mild karry"
+      },
+      {
+        "id": "spice_paprika",
+        "amount": 0.25,
+        "unit": "tsp",
+        "raw": "1/4 tsk paprika"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "chicken_thigh",
+        "amount": 130.0,
+        "unit": "g",
+        "raw": "130 g kyllingelårfilet"
+      },
+      {
+        "id": "passata",
+        "amount": 100.0,
+        "unit": "g",
+        "raw": "100 g passata"
+      },
+      {
+        "id": "a38",
+        "amount": 50.0,
+        "unit": "g",
+        "raw": "50 g A38 3,5 %"
+      },
+      {
+        "id": "butter",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g smør"
+      },
+      {
+        "id": "rice",
+        "amount": 60.0,
+        "unit": "g",
+        "raw": "60 g ris"
+      },
+      {
+        "id": "carrot",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 gulerod"
+      },
+      {
+        "id": "spice_curry",
+        "amount": 0.25,
+        "unit": "tsp",
+        "raw": "1/4 tsk mild karry"
+      },
+      {
+        "id": "spice_paprika",
+        "amount": 0.25,
+        "unit": "tsp",
+        "raw": "1/4 tsk paprika"
+      }
+    ],
+    "family": [
+      {
+        "id": "chicken_thigh",
+        "amount": 600.0,
+        "unit": "g",
+        "raw": "600 g kyllingelårfilet"
+      },
+      {
+        "id": "passata",
+        "amount": 400.0,
+        "unit": "g",
+        "raw": "400 g passata"
+      },
+      {
+        "id": "a38",
+        "amount": 150.0,
+        "unit": "g",
+        "raw": "150 g A38 3,5 %"
+      },
+      {
+        "id": "butter",
+        "amount": 30.0,
+        "unit": "g",
+        "raw": "30 g smør"
+      },
+      {
+        "id": "rice",
+        "amount": 300.0,
+        "unit": "g",
+        "raw": "300 g ris"
+      },
+      {
+        "id": "carrot",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 gulerødder"
+      },
+      {
+        "id": "spice_curry",
+        "amount": 1.0,
+        "unit": "tsp",
+        "raw": "1 tsk mild karry"
+      },
+      {
+        "id": "spice_paprika",
+        "amount": 0.5,
+        "unit": "tsp",
+        "raw": "1/2 tsk paprika"
+      }
+    ]
+  },
+  "aftensmad-18": {
+    "adult": [
+      {
+        "id": "minced_beef",
+        "amount": 165.0,
+        "unit": "g",
+        "raw": "165 g hakket oksekød"
+      },
+      {
+        "id": "eggs",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 lille æg"
+      },
+      {
+        "id": "oats",
+        "amount": 15.0,
+        "unit": "g",
+        "raw": "15 g havregryn"
+      },
+      {
+        "id": "potatoes",
+        "amount": 250.0,
+        "unit": "g",
+        "raw": "250 g kartofler"
+      },
+      {
+        "id": "broccoli",
+        "amount": 90.0,
+        "unit": "g",
+        "raw": "90 g gulerødder/broccoli"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 5.0,
+        "unit": "ml",
+        "raw": "1 tsk EVOO"
+      },
+      {
+        "id": "a38",
+        "amount": 45.0,
+        "unit": "g",
+        "raw": "45 g A38"
+      },
+      {
+        "id": "tahini",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g Rømer Tahin uden salt Ø"
+      },
+      {
+        "id": "lemon",
+        "amount": 0.05556,
+        "unit": "piece",
+        "raw": "1/2 tsk citron"
+      },
+      {
+        "id": "parsley",
+        "amount": 1,
+        "unit": "bunch",
+        "raw": "1 tsk finthakket persille"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "minced_beef",
+        "amount": 110.0,
+        "unit": "g",
+        "raw": "110 g hakket oksekød"
+      },
+      {
+        "id": "eggs",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 lille æg"
+      },
+      {
+        "id": "oats",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g havregryn"
+      },
+      {
+        "id": "potatoes",
+        "amount": 200.0,
+        "unit": "g",
+        "raw": "200 g kartofler"
+      },
+      {
+        "id": "broccoli",
+        "amount": 75.0,
+        "unit": "g",
+        "raw": "75 g gulerødder/broccoli"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 5.0,
+        "unit": "ml",
+        "raw": "1 tsk EVOO"
+      },
+      {
+        "id": "a38",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g A38"
+      },
+      {
+        "id": "tahini",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g Rømer Tahin uden salt Ø"
+      },
+      {
+        "id": "lemon",
+        "amount": 0.05556,
+        "unit": "piece",
+        "raw": "1/2 tsk citron"
+      },
+      {
+        "id": "parsley",
+        "amount": 1,
+        "unit": "bunch",
+        "raw": "1/2 tsk finthakket persille"
+      }
+    ],
+    "family": [
+      {
+        "id": "minced_beef",
+        "amount": 500.0,
+        "unit": "g",
+        "raw": "500 g hakket oksekød"
+      },
+      {
+        "id": "eggs",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 æg"
+      },
+      {
+        "id": "oats",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g havregryn"
+      },
+      {
+        "id": "potatoes",
+        "amount": 900.0,
+        "unit": "g",
+        "raw": "900 g kartofler"
+      },
+      {
+        "id": "broccoli",
+        "amount": 300.0,
+        "unit": "g",
+        "raw": "300 g gulerødder/broccoli"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 15.0,
+        "unit": "ml",
+        "raw": "1 spsk EVOO"
+      },
+      {
+        "id": "a38",
+        "amount": 120.0,
+        "unit": "g",
+        "raw": "120 g A38"
+      },
+      {
+        "id": "tahini",
+        "amount": 25.0,
+        "unit": "g",
+        "raw": "25 g Rømer Tahin uden salt Ø"
+      },
+      {
+        "id": "lemon",
+        "amount": 0.11111,
+        "unit": "piece",
+        "raw": "1 tsk citron"
+      },
+      {
+        "id": "parsley",
+        "amount": 1,
+        "unit": "bunch",
+        "raw": "persille"
+      }
+    ]
+  },
+  "aftensmad-19": {
+    "adult": [
+      {
+        "id": "cod",
+        "amount": 165.0,
+        "unit": "g",
+        "raw": "165 g torsk/sej"
+      },
+      {
+        "id": "tortilla",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 lille blød tortilla"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      },
+      {
+        "id": "cabbage_broccoli",
+        "amount": 60.0,
+        "unit": "g",
+        "raw": "60 g meget mør kål eller broccoli"
+      },
+      {
+        "id": "tomato",
+        "amount": 45.0,
+        "unit": "g",
+        "raw": "45 g tomat"
+      },
+      {
+        "id": "a38",
+        "amount": 55.0,
+        "unit": "g",
+        "raw": "55 g A38"
+      },
+      {
+        "id": "lime",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 lime"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 5.0,
+        "unit": "ml",
+        "raw": "1 tsk EVOO"
+      },
+      {
+        "id": "spice_paprika",
+        "amount": 0.25,
+        "unit": "tsp",
+        "raw": "1/4 tsk mild paprika"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "cod",
+        "amount": 110.0,
+        "unit": "g",
+        "raw": "110 g torsk/sej"
+      },
+      {
+        "id": "tortilla",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 små bløde tortillas"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      },
+      {
+        "id": "cabbage_broccoli",
+        "amount": 50.0,
+        "unit": "g",
+        "raw": "50 g meget mør kål eller broccoli"
+      },
+      {
+        "id": "tomato",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g tomat"
+      },
+      {
+        "id": "a38",
+        "amount": 50.0,
+        "unit": "g",
+        "raw": "50 g A38"
+      },
+      {
+        "id": "lime",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 lime"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 5.0,
+        "unit": "ml",
+        "raw": "1 tsk EVOO"
+      },
+      {
+        "id": "spice_paprika",
+        "amount": 0.25,
+        "unit": "tsp",
+        "raw": "1/4 tsk mild paprika"
+      }
+    ],
+    "family": [
+      {
+        "id": "cod",
+        "amount": 500.0,
+        "unit": "g",
+        "raw": "500 g torsk/sej"
+      },
+      {
+        "id": "tortilla",
+        "amount": 8.0,
+        "unit": "piece",
+        "raw": "8 små bløde tortillas"
+      },
+      {
+        "id": "avocado",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 avocado"
+      },
+      {
+        "id": "cabbage_broccoli",
+        "amount": 200.0,
+        "unit": "g",
+        "raw": "200 g meget mør kål eller broccoli"
+      },
+      {
+        "id": "tomato",
+        "amount": 150.0,
+        "unit": "g",
+        "raw": "150 g tomat"
+      },
+      {
+        "id": "a38",
+        "amount": 150.0,
+        "unit": "g",
+        "raw": "150 g A38"
+      },
+      {
+        "id": "lime",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 lime"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 15.0,
+        "unit": "ml",
+        "raw": "1 spsk EVOO"
+      },
+      {
+        "id": "spice_paprika",
+        "amount": 1,
+        "unit": "tsp",
+        "raw": "mild paprika"
+      }
+    ]
+  },
+  "aftensmad-20": {
+    "adult": [
+      {
+        "id": "chicken_thigh",
+        "amount": 200.0,
+        "unit": "g",
+        "raw": "200 g kyllingelårfilet"
+      },
+      {
+        "id": "pasta",
+        "amount": 100.0,
+        "unit": "g",
+        "raw": "100 g pasta"
+      },
+      {
+        "id": "passata",
+        "amount": 130.0,
+        "unit": "g",
+        "raw": "130 g passata"
+      },
+      {
+        "id": "mascarpone",
+        "amount": 50.0,
+        "unit": "g",
+        "raw": "50 g mascarpone"
+      },
+      {
+        "id": "broccoli",
+        "amount": 90.0,
+        "unit": "g",
+        "raw": "90 g broccoli"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 5.0,
+        "unit": "ml",
+        "raw": "1 tsk EVOO"
+      },
+      {
+        "id": "spice_paprika",
+        "amount": 0.25,
+        "unit": "tsp",
+        "raw": "1/4 tsk mild paprika"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "chicken_thigh",
+        "amount": 130.0,
+        "unit": "g",
+        "raw": "130 g kyllingelårfilet"
+      },
+      {
+        "id": "pasta",
+        "amount": 70.0,
+        "unit": "g",
+        "raw": "70 g pasta"
+      },
+      {
+        "id": "passata",
+        "amount": 100.0,
+        "unit": "g",
+        "raw": "100 g passata"
+      },
+      {
+        "id": "mascarpone",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g mascarpone"
+      },
+      {
+        "id": "broccoli",
+        "amount": 75.0,
+        "unit": "g",
+        "raw": "75 g broccoli"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 5.0,
+        "unit": "ml",
+        "raw": "1 tsk EVOO"
+      },
+      {
+        "id": "spice_paprika",
+        "amount": 0.25,
+        "unit": "tsp",
+        "raw": "1/4 tsk mild paprika"
+      }
+    ],
+    "family": [
+      {
+        "id": "chicken_thigh",
+        "amount": 600.0,
+        "unit": "g",
+        "raw": "600 g kyllingelårfilet"
+      },
+      {
+        "id": "pasta",
+        "amount": 350.0,
+        "unit": "g",
+        "raw": "350 g pasta"
+      },
+      {
+        "id": "passata",
+        "amount": 400.0,
+        "unit": "g",
+        "raw": "400 g passata"
+      },
+      {
+        "id": "mascarpone",
+        "amount": 125.0,
+        "unit": "g",
+        "raw": "125 g mascarpone"
+      },
+      {
+        "id": "broccoli",
+        "amount": 300.0,
+        "unit": "g",
+        "raw": "300 g broccoli"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 15.0,
+        "unit": "ml",
+        "raw": "1 spsk EVOO"
+      },
+      {
+        "id": "spice_paprika",
+        "amount": 1.0,
+        "unit": "tsp",
+        "raw": "1 tsk mild paprika"
+      }
+    ]
+  },
+  "mellemmaltid-1": {
+    "adult": [
+      {
+        "id": "eggs",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 æg"
+      },
+      {
+        "id": "kiwi",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 kiwi"
+      },
+      {
+        "id": "banana",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 banan"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "eggs",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 æg"
+      },
+      {
+        "id": "kiwi",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 kiwi"
+      },
+      {
+        "id": "banana",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 banan"
+      }
+    ],
+    "family": [
+      {
+        "id": "eggs",
+        "amount": 4.0,
+        "unit": "piece",
+        "raw": "4 æg"
+      },
+      {
+        "id": "kiwi",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 kiwier"
+      },
+      {
+        "id": "banana",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 banan"
+      }
+    ]
+  },
+  "mellemmaltid-2": {
+    "adult": [
+      {
+        "id": "ryebread",
+        "amount": 1.0,
+        "unit": "slice",
+        "raw": "1 lille skive blødt rugbrød"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      },
+      {
+        "id": "kiwi",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 kiwi"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "ryebread",
+        "amount": 2.0,
+        "unit": "slice",
+        "raw": "2 små skiver blødt rugbrød"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      },
+      {
+        "id": "kiwi",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 kiwi"
+      }
+    ],
+    "family": [
+      {
+        "id": "ryebread",
+        "amount": 4.0,
+        "unit": "slice",
+        "raw": "4 små skiver blødt rugbrød"
+      },
+      {
+        "id": "avocado",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 avocado"
+      },
+      {
+        "id": "kiwi",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 kiwier"
+      }
+    ]
+  },
+  "mellemmaltid-3": {
+    "adult": [
+      {
+        "id": "a38",
+        "amount": 130.0,
+        "unit": "g",
+        "raw": "130 g A38 3,5 %"
+      },
+      {
+        "id": "oats",
+        "amount": 20.0,
+        "unit": "g",
+        "raw": "20 g havregryn"
+      },
+      {
+        "id": "berries",
+        "amount": 35.0,
+        "unit": "g",
+        "raw": "35 g bær"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "a38",
+        "amount": 100.0,
+        "unit": "g",
+        "raw": "100 g A38 3,5 %"
+      },
+      {
+        "id": "oats",
+        "amount": 15.0,
+        "unit": "g",
+        "raw": "15 g havregryn"
+      },
+      {
+        "id": "berries",
+        "amount": 30.0,
+        "unit": "g",
+        "raw": "30 g bær"
+      }
+    ],
+    "family": [
+      {
+        "id": "a38",
+        "amount": 400.0,
+        "unit": "g",
+        "raw": "400 g A38 3,5 %"
+      },
+      {
+        "id": "oats",
+        "amount": 60.0,
+        "unit": "g",
+        "raw": "60 g havregryn"
+      },
+      {
+        "id": "berries",
+        "amount": 120.0,
+        "unit": "g",
+        "raw": "120 g bær"
+      }
+    ]
+  },
+  "mellemmaltid-4": {
+    "adult": [
+      {
+        "id": "banana",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 banan"
+      },
+      {
+        "id": "peanut_butter",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g 100 % smooth peanutbutter"
+      },
+      {
+        "id": "a38",
+        "amount": 20.0,
+        "unit": "g",
+        "raw": "20 g A38 3,5 %"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "banana",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 banan"
+      },
+      {
+        "id": "peanut_butter",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g 100 % smooth peanutbutter"
+      },
+      {
+        "id": "a38",
+        "amount": 15.0,
+        "unit": "g",
+        "raw": "15 g A38 3,5 %"
+      }
+    ],
+    "family": [
+      {
+        "id": "banana",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 bananer"
+      },
+      {
+        "id": "peanut_butter",
+        "amount": 30.0,
+        "unit": "g",
+        "raw": "30 g 100 % smooth peanutbutter"
+      },
+      {
+        "id": "a38",
+        "amount": 50.0,
+        "unit": "g",
+        "raw": "50 g A38 3,5 %"
+      }
+    ]
+  },
+  "mellemmaltid-5": {
+    "adult": [
+      {
+        "id": "banana",
+        "amount": 0.6,
+        "unit": "piece",
+        "raw": "2 bananer"
+      },
+      {
+        "id": "eggs",
+        "amount": 1.2,
+        "unit": "piece",
+        "raw": "4 æg"
+      },
+      {
+        "id": "oats",
+        "amount": 42.0,
+        "unit": "g",
+        "raw": "140 g havregryn"
+      },
+      {
+        "id": "peanut_butter",
+        "amount": 9.0,
+        "unit": "g",
+        "raw": "30 g peanutbutter"
+      },
+      {
+        "id": "butter",
+        "amount": 3.0,
+        "unit": "g",
+        "raw": "10 g smør"
+      },
+      {
+        "id": "berries",
+        "amount": 35.0,
+        "unit": "g",
+        "raw": "35 g bær"
+      },
+      {
+        "id": "a38",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g A38 3,5 %"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "banana",
+        "amount": 0.8,
+        "unit": "piece",
+        "raw": "2 bananer"
+      },
+      {
+        "id": "eggs",
+        "amount": 1.6,
+        "unit": "piece",
+        "raw": "4 æg"
+      },
+      {
+        "id": "oats",
+        "amount": 56.0,
+        "unit": "g",
+        "raw": "140 g havregryn"
+      },
+      {
+        "id": "peanut_butter",
+        "amount": 12.0,
+        "unit": "g",
+        "raw": "30 g peanutbutter"
+      },
+      {
+        "id": "butter",
+        "amount": 4.0,
+        "unit": "g",
+        "raw": "10 g smør"
+      },
+      {
+        "id": "berries",
+        "amount": 30.0,
+        "unit": "g",
+        "raw": "30 g bær"
+      },
+      {
+        "id": "a38",
+        "amount": 35.0,
+        "unit": "g",
+        "raw": "35 g A38 3,5 %"
+      }
+    ],
+    "family": [
+      {
+        "id": "banana",
+        "amount": 2.4,
+        "unit": "piece",
+        "raw": "2 bananer"
+      },
+      {
+        "id": "eggs",
+        "amount": 4.8,
+        "unit": "piece",
+        "raw": "4 æg"
+      },
+      {
+        "id": "oats",
+        "amount": 168.0,
+        "unit": "g",
+        "raw": "140 g havregryn"
+      },
+      {
+        "id": "peanut_butter",
+        "amount": 36.0,
+        "unit": "g",
+        "raw": "30 g peanutbutter"
+      },
+      {
+        "id": "butter",
+        "amount": 12.0,
+        "unit": "g",
+        "raw": "10 g smør"
+      },
+      {
+        "id": "berries",
+        "amount": 120.0,
+        "unit": "g",
+        "raw": "120 g bær"
+      },
+      {
+        "id": "a38",
+        "amount": 100.0,
+        "unit": "g",
+        "raw": "100 g A38 3,5 %"
+      }
+    ]
+  },
+  "mellemmaltid-6": {
+    "adult": [
+      {
+        "id": "cheese",
+        "amount": 25.0,
+        "unit": "g",
+        "raw": "25 g mild ost"
+      },
+      {
+        "id": "pear",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 stor moden pære"
+      },
+      {
+        "id": "bread",
+        "amount": 1.0,
+        "unit": "slice",
+        "raw": "1 lille skive blødt brød"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "cheese",
+        "amount": 20.0,
+        "unit": "g",
+        "raw": "20 g mild ost"
+      },
+      {
+        "id": "pear",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 stor moden pære"
+      },
+      {
+        "id": "bread",
+        "amount": 2.0,
+        "unit": "slice",
+        "raw": "2 små skiver blødt brød"
+      }
+    ],
+    "family": [
+      {
+        "id": "cheese",
+        "amount": 80.0,
+        "unit": "g",
+        "raw": "80 g mild ost"
+      },
+      {
+        "id": "pear",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 stor moden pære"
+      },
+      {
+        "id": "bread",
+        "amount": 4.0,
+        "unit": "slice",
+        "raw": "4 små skiver blødt brød"
+      }
+    ]
+  },
+  "mellemmaltid-7": {
+    "adult": [
+      {
+        "id": "oats",
+        "amount": 25.0,
+        "unit": "g",
+        "raw": "25 g havregryn"
+      },
+      {
+        "id": "banana",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 banan"
+      },
+      {
+        "id": "berries",
+        "amount": 25.0,
+        "unit": "g",
+        "raw": "25 g bær"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "oats",
+        "amount": 20.0,
+        "unit": "g",
+        "raw": "20 g havregryn"
+      },
+      {
+        "id": "banana",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 banan"
+      },
+      {
+        "id": "berries",
+        "amount": 20.0,
+        "unit": "g",
+        "raw": "20 g bær"
+      }
+    ],
+    "family": [
+      {
+        "id": "oats",
+        "amount": 80.0,
+        "unit": "g",
+        "raw": "80 g havregryn"
+      },
+      {
+        "id": "banana",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 banan"
+      },
+      {
+        "id": "berries",
+        "amount": 80.0,
+        "unit": "g",
+        "raw": "80 g bær"
+      }
+    ]
+  },
+  "mellemmaltid-8": {
+    "adult": [
+      {
+        "id": "fish_cakes",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 lille fiskefrikadelle"
+      },
+      {
+        "id": "kiwi",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 kiwi"
+      },
+      {
+        "id": "broccoli",
+        "amount": 30.0,
+        "unit": "g",
+        "raw": "30 g meget mørt grønt"
+      },
+      {
+        "id": "a38",
+        "amount": 25.0,
+        "unit": "g",
+        "raw": "25 g A38"
+      },
+      {
+        "id": "avocado_mayo",
+        "amount": 5.0,
+        "unit": "g",
+        "raw": "5 g Chosen Foods Classic Avocado Oil Mayo"
+      },
+      {
+        "id": "pickled_cucumber",
+        "amount": 1,
+        "unit": "g",
+        "raw": "lidt syltet agurk/karry"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "fish_cakes",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 små fiskefrikadeller"
+      },
+      {
+        "id": "kiwi",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 kiwi"
+      },
+      {
+        "id": "broccoli",
+        "amount": 25.0,
+        "unit": "g",
+        "raw": "25 g meget mørt grønt"
+      },
+      {
+        "id": "a38",
+        "amount": 20.0,
+        "unit": "g",
+        "raw": "20 g A38"
+      },
+      {
+        "id": "avocado_mayo",
+        "amount": 5.0,
+        "unit": "g",
+        "raw": "5 g Chosen Foods Classic Avocado Oil Mayo"
+      },
+      {
+        "id": "pickled_cucumber",
+        "amount": 1,
+        "unit": "g",
+        "raw": "lidt syltet agurk/karry"
+      }
+    ],
+    "family": [
+      {
+        "id": "fish_cakes",
+        "amount": 4.0,
+        "unit": "piece",
+        "raw": "4 små fiskefrikadeller"
+      },
+      {
+        "id": "kiwi",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 kiwi"
+      },
+      {
+        "id": "broccoli",
+        "amount": 100.0,
+        "unit": "g",
+        "raw": "100 g meget mørt grønt"
+      },
+      {
+        "id": "a38",
+        "amount": 60.0,
+        "unit": "g",
+        "raw": "60 g A38"
+      },
+      {
+        "id": "avocado_mayo",
+        "amount": 15.0,
+        "unit": "g",
+        "raw": "15 g Chosen Foods Classic Avocado Oil Mayo"
+      },
+      {
+        "id": "pickled_cucumber",
+        "amount": 1,
+        "unit": "g",
+        "raw": "lidt syltet agurk/karry"
+      }
+    ]
+  },
+  "mellemmaltid-9": {
+    "adult": [
+      {
+        "id": "minced_mixed",
+        "amount": 41.66667,
+        "unit": "g",
+        "raw": "500 g hakket kalv/flæsk eller oksekød"
+      },
+      {
+        "id": "eggs",
+        "amount": 0.08333,
+        "unit": "piece",
+        "raw": "1 æg"
+      },
+      {
+        "id": "oats",
+        "amount": 4.16667,
+        "unit": "g",
+        "raw": "50 g havregryn"
+      },
+      {
+        "id": "milk",
+        "amount": 8.33333,
+        "unit": "ml",
+        "raw": "100 ml mælk"
+      },
+      {
+        "id": "butter",
+        "amount": 0.83333,
+        "unit": "g",
+        "raw": "10 g smør"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      },
+      {
+        "id": "banana",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 banan"
+      },
+      {
+        "id": "ketchup",
+        "amount": 15,
+        "unit": "ml",
+        "raw": "1 tsk Heinz Organic Tomato Ketchup"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "minced_mixed",
+        "amount": 83.33333,
+        "unit": "g",
+        "raw": "500 g hakket kalv/flæsk eller oksekød"
+      },
+      {
+        "id": "eggs",
+        "amount": 0.16667,
+        "unit": "piece",
+        "raw": "1 æg"
+      },
+      {
+        "id": "oats",
+        "amount": 8.33333,
+        "unit": "g",
+        "raw": "50 g havregryn"
+      },
+      {
+        "id": "milk",
+        "amount": 16.66667,
+        "unit": "ml",
+        "raw": "100 ml mælk"
+      },
+      {
+        "id": "butter",
+        "amount": 1.66667,
+        "unit": "g",
+        "raw": "10 g smør"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      },
+      {
+        "id": "banana",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 banan"
+      },
+      {
+        "id": "ketchup",
+        "amount": 15,
+        "unit": "ml",
+        "raw": "1 tsk Heinz Organic Tomato Ketchup"
+      }
+    ],
+    "family": [
+      {
+        "id": "minced_mixed",
+        "amount": 166.66667,
+        "unit": "g",
+        "raw": "500 g hakket kalv/flæsk eller oksekød"
+      },
+      {
+        "id": "eggs",
+        "amount": 0.33333,
+        "unit": "piece",
+        "raw": "1 æg"
+      },
+      {
+        "id": "oats",
+        "amount": 16.66667,
+        "unit": "g",
+        "raw": "50 g havregryn"
+      },
+      {
+        "id": "milk",
+        "amount": 33.33333,
+        "unit": "ml",
+        "raw": "100 ml mælk"
+      },
+      {
+        "id": "butter",
+        "amount": 3.33333,
+        "unit": "g",
+        "raw": "10 g smør"
+      },
+      {
+        "id": "avocado",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 avocado"
+      },
+      {
+        "id": "banana",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 banan"
+      },
+      {
+        "id": "ketchup",
+        "amount": 1,
+        "unit": "ml",
+        "raw": "Heinz Organic Tomato Ketchup"
+      }
+    ]
+  },
+  "mellemmaltid-10": {
+    "adult": [],
+    "kids2": [],
+    "family": [
+      {
+        "id": "a38",
+        "amount": 1,
+        "unit": "g",
+        "raw": "A38/avocado/Chosen Foods mayo efter retten"
+      }
+    ]
+  },
+  "mellemmaltid-11": {
+    "adult": [
+      {
+        "id": "yeast",
+        "amount": 1.07143,
+        "unit": "g",
+        "raw": "15 g gær"
+      },
+      {
+        "id": "eggs",
+        "amount": 0.07143,
+        "unit": "piece",
+        "raw": "1 æg"
+      },
+      {
+        "id": "yogurt",
+        "amount": 7.14286,
+        "unit": "g",
+        "raw": "100 g naturel yoghurt"
+      },
+      {
+        "id": "butter",
+        "amount": 2.5,
+        "unit": "g",
+        "raw": "35 g smør"
+      },
+      {
+        "id": "oats",
+        "amount": 7.14286,
+        "unit": "g",
+        "raw": "100 g havregryn"
+      },
+      {
+        "id": "wheat_flour",
+        "amount": 32.14286,
+        "unit": "g",
+        "raw": "450 g hvedemel"
+      },
+      {
+        "id": "eggs",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 æg"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "yeast",
+        "amount": 2.14286,
+        "unit": "g",
+        "raw": "15 g gær"
+      },
+      {
+        "id": "eggs",
+        "amount": 0.14286,
+        "unit": "piece",
+        "raw": "1 æg"
+      },
+      {
+        "id": "yogurt",
+        "amount": 14.28571,
+        "unit": "g",
+        "raw": "100 g naturel yoghurt"
+      },
+      {
+        "id": "butter",
+        "amount": 5.0,
+        "unit": "g",
+        "raw": "35 g smør"
+      },
+      {
+        "id": "oats",
+        "amount": 14.28571,
+        "unit": "g",
+        "raw": "100 g havregryn"
+      },
+      {
+        "id": "wheat_flour",
+        "amount": 64.28571,
+        "unit": "g",
+        "raw": "450 g hvedemel"
+      },
+      {
+        "id": "eggs",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 æg"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      }
+    ],
+    "family": [
+      {
+        "id": "yeast",
+        "amount": 4.28571,
+        "unit": "g",
+        "raw": "15 g gær"
+      },
+      {
+        "id": "eggs",
+        "amount": 0.28571,
+        "unit": "piece",
+        "raw": "1 æg"
+      },
+      {
+        "id": "yogurt",
+        "amount": 28.57143,
+        "unit": "g",
+        "raw": "100 g naturel yoghurt"
+      },
+      {
+        "id": "butter",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "35 g smør"
+      },
+      {
+        "id": "oats",
+        "amount": 28.57143,
+        "unit": "g",
+        "raw": "100 g havregryn"
+      },
+      {
+        "id": "wheat_flour",
+        "amount": 128.57143,
+        "unit": "g",
+        "raw": "450 g hvedemel"
+      },
+      {
+        "id": "eggs",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 æg"
+      },
+      {
+        "id": "avocado",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 avocado"
+      }
+    ]
+  },
+  "mellemmaltid-12": {
+    "adult": [
+      {
+        "id": "eggs",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "4 æg"
+      },
+      {
+        "id": "banana",
+        "amount": 0.25,
+        "unit": "piece",
+        "raw": "2 bananer"
+      },
+      {
+        "id": "oats",
+        "amount": 17.5,
+        "unit": "g",
+        "raw": "140 g havregryn"
+      },
+      {
+        "id": "milk",
+        "amount": 12.5,
+        "unit": "ml",
+        "raw": "100 ml mælk"
+      },
+      {
+        "id": "butter",
+        "amount": 1.25,
+        "unit": "g",
+        "raw": "10 g smør"
+      },
+      {
+        "id": "a38",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g A38"
+      },
+      {
+        "id": "berries",
+        "amount": 30.0,
+        "unit": "g",
+        "raw": "30 g bær"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "a38",
+        "amount": 35.0,
+        "unit": "g",
+        "raw": "35 g A38"
+      },
+      {
+        "id": "berries",
+        "amount": 25.0,
+        "unit": "g",
+        "raw": "25 g bær"
+      }
+    ],
+    "family": [
+      {
+        "id": "a38",
+        "amount": 100.0,
+        "unit": "g",
+        "raw": "100 g A38"
+      },
+      {
+        "id": "berries",
+        "amount": 100.0,
+        "unit": "g",
+        "raw": "100 g bær"
+      }
+    ]
+  },
+  "mellemmaltid-13": {
+    "adult": [
+      {
+        "id": "oats",
+        "amount": 22.5,
+        "unit": "g",
+        "raw": "180 g havregryn"
+      },
+      {
+        "id": "banana",
+        "amount": 0.375,
+        "unit": "piece",
+        "raw": "3 bananer"
+      },
+      {
+        "id": "eggs",
+        "amount": 0.375,
+        "unit": "piece",
+        "raw": "3 æg"
+      },
+      {
+        "id": "milk",
+        "amount": 12.5,
+        "unit": "ml",
+        "raw": "100 ml mælk"
+      },
+      {
+        "id": "spice_cinnamon",
+        "amount": 0.125,
+        "unit": "tsp",
+        "raw": "1 tsk kanel"
+      },
+      {
+        "id": "peanut_butter",
+        "amount": 5.0,
+        "unit": "g",
+        "raw": "5 g 100 % peanutbutter"
+      },
+      {
+        "id": "a38",
+        "amount": 20.0,
+        "unit": "g",
+        "raw": "20 g A38"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "oats",
+        "amount": 45.0,
+        "unit": "g",
+        "raw": "180 g havregryn"
+      },
+      {
+        "id": "banana",
+        "amount": 0.75,
+        "unit": "piece",
+        "raw": "3 bananer"
+      },
+      {
+        "id": "eggs",
+        "amount": 0.75,
+        "unit": "piece",
+        "raw": "3 æg"
+      },
+      {
+        "id": "milk",
+        "amount": 25.0,
+        "unit": "ml",
+        "raw": "100 ml mælk"
+      },
+      {
+        "id": "spice_cinnamon",
+        "amount": 0.25,
+        "unit": "tsp",
+        "raw": "1 tsk kanel"
+      },
+      {
+        "id": "peanut_butter",
+        "amount": 5.0,
+        "unit": "g",
+        "raw": "5 g 100 % peanutbutter"
+      },
+      {
+        "id": "a38",
+        "amount": 15.0,
+        "unit": "g",
+        "raw": "15 g A38"
+      }
+    ],
+    "family": [
+      {
+        "id": "oats",
+        "amount": 90.0,
+        "unit": "g",
+        "raw": "180 g havregryn"
+      },
+      {
+        "id": "banana",
+        "amount": 1.5,
+        "unit": "piece",
+        "raw": "3 bananer"
+      },
+      {
+        "id": "eggs",
+        "amount": 1.5,
+        "unit": "piece",
+        "raw": "3 æg"
+      },
+      {
+        "id": "milk",
+        "amount": 50.0,
+        "unit": "ml",
+        "raw": "100 ml mælk"
+      },
+      {
+        "id": "spice_cinnamon",
+        "amount": 0.5,
+        "unit": "tsp",
+        "raw": "1 tsk kanel"
+      },
+      {
+        "id": "peanut_butter",
+        "amount": 20.0,
+        "unit": "g",
+        "raw": "20 g 100 % peanutbutter"
+      },
+      {
+        "id": "a38",
+        "amount": 50.0,
+        "unit": "g",
+        "raw": "50 g A38"
+      }
+    ]
+  },
+  "mellemmaltid-14": {
+    "adult": [
+      {
+        "id": "ryebread",
+        "amount": 1.0,
+        "unit": "slice",
+        "raw": "1 lille skive blødt rugbrød"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      },
+      {
+        "id": "banana",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 banan"
+      },
+      {
+        "id": "lemon",
+        "amount": 0.05556,
+        "unit": "piece",
+        "raw": "1/2 tsk citron"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "ryebread",
+        "amount": 2.0,
+        "unit": "slice",
+        "raw": "2 små skiver blødt rugbrød"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      },
+      {
+        "id": "banana",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 banan"
+      },
+      {
+        "id": "lemon",
+        "amount": 0.05556,
+        "unit": "piece",
+        "raw": "1/2 tsk citron"
+      }
+    ],
+    "family": [
+      {
+        "id": "ryebread",
+        "amount": 4.0,
+        "unit": "slice",
+        "raw": "4 små skiver blødt rugbrød"
+      },
+      {
+        "id": "avocado",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 avocado"
+      },
+      {
+        "id": "banana",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 banan"
+      },
+      {
+        "id": "lemon",
+        "amount": 0.11111,
+        "unit": "piece",
+        "raw": "1 tsk citron"
+      }
+    ]
+  },
+  "mellemmaltid-15": {
+    "adult": [
+      {
+        "id": "eggs",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "8 æg"
+      },
+      {
+        "id": "broccoli",
+        "amount": 25.0,
+        "unit": "g",
+        "raw": "200 g broccoli"
+      },
+      {
+        "id": "cheese",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "80 g mild ost"
+      },
+      {
+        "id": "potatoes",
+        "amount": 65.0,
+        "unit": "g",
+        "raw": "65 g kogte kartofler"
+      },
+      {
+        "id": "broccoli",
+        "amount": 30.0,
+        "unit": "g",
+        "raw": "30 g meget mør broccoli"
+      },
+      {
+        "id": "ketchup",
+        "amount": 15,
+        "unit": "ml",
+        "raw": "1 tsk Heinz Organic Tomato Ketchup"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "eggs",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "8 æg"
+      },
+      {
+        "id": "broccoli",
+        "amount": 50.0,
+        "unit": "g",
+        "raw": "200 g broccoli"
+      },
+      {
+        "id": "cheese",
+        "amount": 20.0,
+        "unit": "g",
+        "raw": "80 g mild ost"
+      },
+      {
+        "id": "potatoes",
+        "amount": 55.0,
+        "unit": "g",
+        "raw": "55 g kogte kartofler"
+      },
+      {
+        "id": "broccoli",
+        "amount": 25.0,
+        "unit": "g",
+        "raw": "25 g meget mør broccoli"
+      },
+      {
+        "id": "ketchup",
+        "amount": 15,
+        "unit": "ml",
+        "raw": "1 tsk Heinz Organic Tomato Ketchup"
+      }
+    ],
+    "family": [
+      {
+        "id": "eggs",
+        "amount": 4.0,
+        "unit": "piece",
+        "raw": "8 æg"
+      },
+      {
+        "id": "broccoli",
+        "amount": 100.0,
+        "unit": "g",
+        "raw": "200 g broccoli"
+      },
+      {
+        "id": "cheese",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "80 g mild ost"
+      },
+      {
+        "id": "potatoes",
+        "amount": 200.0,
+        "unit": "g",
+        "raw": "200 g kogte kartofler"
+      },
+      {
+        "id": "broccoli",
+        "amount": 100.0,
+        "unit": "g",
+        "raw": "100 g meget mør broccoli"
+      },
+      {
+        "id": "ketchup",
+        "amount": 1,
+        "unit": "ml",
+        "raw": "Heinz Organic Tomato Ketchup"
+      }
+    ]
+  },
+  "mellemmaltid-16": {
+    "adult": [
+      {
+        "id": "a38",
+        "amount": 130.0,
+        "unit": "g",
+        "raw": "130 g A38 3,5 %"
+      },
+      {
+        "id": "frozen_berries",
+        "amount": 45.0,
+        "unit": "g",
+        "raw": "45 g frosne bær"
+      },
+      {
+        "id": "oats",
+        "amount": 20.0,
+        "unit": "g",
+        "raw": "20 g havregryn"
+      },
+      {
+        "id": "banana",
+        "amount": 0.25,
+        "unit": "piece",
+        "raw": "1/4 banan"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "a38",
+        "amount": 100.0,
+        "unit": "g",
+        "raw": "100 g A38 3,5 %"
+      },
+      {
+        "id": "frozen_berries",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g frosne bær"
+      },
+      {
+        "id": "oats",
+        "amount": 15.0,
+        "unit": "g",
+        "raw": "15 g havregryn"
+      },
+      {
+        "id": "banana",
+        "amount": 0.25,
+        "unit": "piece",
+        "raw": "1/4 banan"
+      }
+    ],
+    "family": [
+      {
+        "id": "a38",
+        "amount": 400.0,
+        "unit": "g",
+        "raw": "400 g A38 3,5 %"
+      },
+      {
+        "id": "frozen_berries",
+        "amount": 150.0,
+        "unit": "g",
+        "raw": "150 g frosne bær"
+      },
+      {
+        "id": "oats",
+        "amount": 60.0,
+        "unit": "g",
+        "raw": "60 g havregryn"
+      },
+      {
+        "id": "banana",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 banan"
+      }
+    ]
+  },
+  "mellemmaltid-17": {
+    "adult": [
+      {
+        "id": "bread",
+        "amount": 1.0,
+        "unit": "slice",
+        "raw": "1 lille skive blødt brød"
+      },
+      {
+        "id": "chickpeas",
+        "amount": 0.11667,
+        "unit": "can",
+        "raw": "1 dåse kikærter, ca. 240 g drænet"
+      },
+      {
+        "id": "tahini",
+        "amount": 2.91667,
+        "unit": "g",
+        "raw": "25 g tahin"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 1.75,
+        "unit": "ml",
+        "raw": "1 spsk olivenolie"
+      },
+      {
+        "id": "lemon",
+        "amount": 0.02593,
+        "unit": "piece",
+        "raw": "2 tsk citron"
+      },
+      {
+        "id": "kiwi",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 kiwi"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "bread",
+        "amount": 2.0,
+        "unit": "slice",
+        "raw": "2 små skiver blødt brød"
+      },
+      {
+        "id": "chickpeas",
+        "amount": 0.1,
+        "unit": "can",
+        "raw": "1 dåse kikærter, ca. 240 g drænet"
+      },
+      {
+        "id": "tahini",
+        "amount": 2.5,
+        "unit": "g",
+        "raw": "25 g tahin"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 1.5,
+        "unit": "ml",
+        "raw": "1 spsk olivenolie"
+      },
+      {
+        "id": "lemon",
+        "amount": 0.02222,
+        "unit": "piece",
+        "raw": "2 tsk citron"
+      },
+      {
+        "id": "kiwi",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 kiwi"
+      }
+    ],
+    "family": [
+      {
+        "id": "bread",
+        "amount": 4.0,
+        "unit": "slice",
+        "raw": "4 små skiver blødt brød"
+      },
+      {
+        "id": "chickpeas",
+        "amount": 0.4,
+        "unit": "can",
+        "raw": "1 dåse kikærter, ca. 240 g drænet"
+      },
+      {
+        "id": "tahini",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "25 g tahin"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 6.0,
+        "unit": "ml",
+        "raw": "1 spsk olivenolie"
+      },
+      {
+        "id": "lemon",
+        "amount": 0.08889,
+        "unit": "piece",
+        "raw": "2 tsk citron"
+      },
+      {
+        "id": "kiwi",
+        "amount": 2.0,
+        "unit": "piece",
+        "raw": "2 kiwier"
+      }
+    ]
+  },
+  "mellemmaltid-18": {
+    "adult": [
+      {
+        "id": "sweet_potato",
+        "amount": 75.0,
+        "unit": "g",
+        "raw": "300 g sød kartoffel"
+      },
+      {
+        "id": "eggs",
+        "amount": 0.75,
+        "unit": "piece",
+        "raw": "3 æg"
+      },
+      {
+        "id": "oats",
+        "amount": 30.0,
+        "unit": "g",
+        "raw": "120 g havregryn"
+      },
+      {
+        "id": "banana",
+        "amount": 0.25,
+        "unit": "piece",
+        "raw": "1 banan"
+      },
+      {
+        "id": "butter",
+        "amount": 2.5,
+        "unit": "g",
+        "raw": "10 g smør"
+      },
+      {
+        "id": "a38",
+        "amount": 40.0,
+        "unit": "g",
+        "raw": "40 g A38"
+      },
+      {
+        "id": "berries",
+        "amount": 25.0,
+        "unit": "g",
+        "raw": "25 g bær"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "sweet_potato",
+        "amount": 150.0,
+        "unit": "g",
+        "raw": "300 g sød kartoffel"
+      },
+      {
+        "id": "eggs",
+        "amount": 1.5,
+        "unit": "piece",
+        "raw": "3 æg"
+      },
+      {
+        "id": "oats",
+        "amount": 60.0,
+        "unit": "g",
+        "raw": "120 g havregryn"
+      },
+      {
+        "id": "banana",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1 banan"
+      },
+      {
+        "id": "butter",
+        "amount": 5.0,
+        "unit": "g",
+        "raw": "10 g smør"
+      },
+      {
+        "id": "a38",
+        "amount": 35.0,
+        "unit": "g",
+        "raw": "35 g A38"
+      },
+      {
+        "id": "berries",
+        "amount": 20.0,
+        "unit": "g",
+        "raw": "20 g bær"
+      }
+    ],
+    "family": [
+      {
+        "id": "sweet_potato",
+        "amount": 300.0,
+        "unit": "g",
+        "raw": "300 g sød kartoffel"
+      },
+      {
+        "id": "eggs",
+        "amount": 3.0,
+        "unit": "piece",
+        "raw": "3 æg"
+      },
+      {
+        "id": "oats",
+        "amount": 120.0,
+        "unit": "g",
+        "raw": "120 g havregryn"
+      },
+      {
+        "id": "banana",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 banan"
+      },
+      {
+        "id": "butter",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "10 g smør"
+      },
+      {
+        "id": "a38",
+        "amount": 100.0,
+        "unit": "g",
+        "raw": "100 g A38"
+      },
+      {
+        "id": "berries",
+        "amount": 80.0,
+        "unit": "g",
+        "raw": "80 g bær"
+      }
+    ]
+  },
+  "mellemmaltid-19": {
+    "adult": [
+      {
+        "id": "apple",
+        "amount": 0.25,
+        "unit": "piece",
+        "raw": "2 æbler"
+      },
+      {
+        "id": "eggs",
+        "amount": 0.25,
+        "unit": "piece",
+        "raw": "2 æg"
+      },
+      {
+        "id": "oats",
+        "amount": 15.0,
+        "unit": "g",
+        "raw": "120 g havregryn"
+      },
+      {
+        "id": "a38",
+        "amount": 12.5,
+        "unit": "g",
+        "raw": "100 g A38"
+      },
+      {
+        "id": "butter",
+        "amount": 1.25,
+        "unit": "g",
+        "raw": "10 g smør"
+      },
+      {
+        "id": "spice_cinnamon",
+        "amount": 0.125,
+        "unit": "tsp",
+        "raw": "1 tsk kanel"
+      },
+      {
+        "id": "peanut_butter",
+        "amount": 5.0,
+        "unit": "g",
+        "raw": "5 g 100 % peanutbutter"
+      },
+      {
+        "id": "a38",
+        "amount": 20.0,
+        "unit": "g",
+        "raw": "20 g A38"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "apple",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "2 æbler"
+      },
+      {
+        "id": "eggs",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "2 æg"
+      },
+      {
+        "id": "oats",
+        "amount": 30.0,
+        "unit": "g",
+        "raw": "120 g havregryn"
+      },
+      {
+        "id": "a38",
+        "amount": 25.0,
+        "unit": "g",
+        "raw": "100 g A38"
+      },
+      {
+        "id": "butter",
+        "amount": 2.5,
+        "unit": "g",
+        "raw": "10 g smør"
+      },
+      {
+        "id": "spice_cinnamon",
+        "amount": 0.25,
+        "unit": "tsp",
+        "raw": "1 tsk kanel"
+      },
+      {
+        "id": "peanut_butter",
+        "amount": 5.0,
+        "unit": "g",
+        "raw": "5 g 100 % peanutbutter"
+      },
+      {
+        "id": "a38",
+        "amount": 15.0,
+        "unit": "g",
+        "raw": "15 g A38"
+      }
+    ],
+    "family": [
+      {
+        "id": "apple",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "2 æbler"
+      },
+      {
+        "id": "eggs",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "2 æg"
+      },
+      {
+        "id": "oats",
+        "amount": 60.0,
+        "unit": "g",
+        "raw": "120 g havregryn"
+      },
+      {
+        "id": "a38",
+        "amount": 50.0,
+        "unit": "g",
+        "raw": "100 g A38"
+      },
+      {
+        "id": "butter",
+        "amount": 5.0,
+        "unit": "g",
+        "raw": "10 g smør"
+      },
+      {
+        "id": "spice_cinnamon",
+        "amount": 0.5,
+        "unit": "tsp",
+        "raw": "1 tsk kanel"
+      },
+      {
+        "id": "peanut_butter",
+        "amount": 20.0,
+        "unit": "g",
+        "raw": "20 g 100 % peanutbutter"
+      },
+      {
+        "id": "a38",
+        "amount": 50.0,
+        "unit": "g",
+        "raw": "50 g A38"
+      }
+    ]
+  },
+  "mellemmaltid-20": {
+    "adult": [
+      {
+        "id": "salmon",
+        "amount": 37.5,
+        "unit": "g",
+        "raw": "300 g laks"
+      },
+      {
+        "id": "potatoes",
+        "amount": 56.25,
+        "unit": "g",
+        "raw": "450 g kartofler"
+      },
+      {
+        "id": "eggs",
+        "amount": 0.125,
+        "unit": "piece",
+        "raw": "1 æg"
+      },
+      {
+        "id": "oats",
+        "amount": 5.0,
+        "unit": "g",
+        "raw": "40 g havregryn"
+      },
+      {
+        "id": "butter",
+        "amount": 1.25,
+        "unit": "g",
+        "raw": "10 g smør"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      },
+      {
+        "id": "a38",
+        "amount": 25.0,
+        "unit": "g",
+        "raw": "25 g A38"
+      },
+      {
+        "id": "kiwi",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 kiwi"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "salmon",
+        "amount": 75.0,
+        "unit": "g",
+        "raw": "300 g laks"
+      },
+      {
+        "id": "potatoes",
+        "amount": 112.5,
+        "unit": "g",
+        "raw": "450 g kartofler"
+      },
+      {
+        "id": "eggs",
+        "amount": 0.25,
+        "unit": "piece",
+        "raw": "1 æg"
+      },
+      {
+        "id": "oats",
+        "amount": 10.0,
+        "unit": "g",
+        "raw": "40 g havregryn"
+      },
+      {
+        "id": "butter",
+        "amount": 2.5,
+        "unit": "g",
+        "raw": "10 g smør"
+      },
+      {
+        "id": "avocado",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 avocado"
+      },
+      {
+        "id": "a38",
+        "amount": 20.0,
+        "unit": "g",
+        "raw": "20 g A38"
+      },
+      {
+        "id": "kiwi",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1/2 kiwi"
+      }
+    ],
+    "family": [
+      {
+        "id": "salmon",
+        "amount": 150.0,
+        "unit": "g",
+        "raw": "300 g laks"
+      },
+      {
+        "id": "potatoes",
+        "amount": 225.0,
+        "unit": "g",
+        "raw": "450 g kartofler"
+      },
+      {
+        "id": "eggs",
+        "amount": 0.5,
+        "unit": "piece",
+        "raw": "1 æg"
+      },
+      {
+        "id": "oats",
+        "amount": 20.0,
+        "unit": "g",
+        "raw": "40 g havregryn"
+      },
+      {
+        "id": "butter",
+        "amount": 5.0,
+        "unit": "g",
+        "raw": "10 g smør"
+      },
+      {
+        "id": "avocado",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 avocado"
+      },
+      {
+        "id": "a38",
+        "amount": 60.0,
+        "unit": "g",
+        "raw": "60 g A38"
+      },
+      {
+        "id": "kiwi",
+        "amount": 1.0,
+        "unit": "piece",
+        "raw": "1 kiwi"
+      }
+    ]
+  }
+}

@@ -19,7 +19,7 @@ async function installApp(){
   alert('På iPhone/iPad: tryk Del → Føj til hjemmeskærm. På Android/Chrome: brug browsermenuen → Installer app.');
 }
 
-let recipes=[];let baseRecipes=[];let portionData={};let currentCategory=null;let scale=1;let currentPlan=null;let draftPlan=null;let recipeFeedback={};let pantryState={};let shoppingChecks={};let customRecipes=[];let planHistory=[];let recipeViewContext=null;
+let recipes=[];let baseRecipes=[];let portionData={};let shoppingV4={};let ingredientRegistryV4={};let currentCategory=null;let scale=1;let currentPlan=null;let draftPlan=null;let recipeFeedback={};let pantryState={};let shoppingChecks={};let customRecipes=[];let planHistory=[];let recipeViewContext=null;
 const FLEX_OUT='__OUT__';
 const feedbackKey='kostkompas-recipe-feedback';
 const pantryKey='kostkompas-pantry';
@@ -711,58 +711,83 @@ function normalizeShoppingIngredient(p){
   return q;
 }
 function buildShopping(plan){
+  // V4: Indkøbslisten bygges fra strukturerede råvare-id'er, ikke fra visningsteksten i opskrifterne.
   const map=new Map();
-  const addIngredient=(raw,m=1)=>{const p=normalizeShoppingIngredient(parseIngredient(raw,m));const key=p.name+'|'+p.unit;if(!map.has(key))map.set(key,{...p,qty:p.qty||0,count:p.qty?0:1});else{const o=map.get(key);if(p.qty)o.qty+=p.qty;else o.count+=1}};
-  const addRecipe=(r,m=1)=>{if(!r)return;r.ingredients.forEach(s=>addIngredient(s,m))};
-  const addPortion=(r,kind)=>{if(!r)return;const data=portionData[r.id];if(data?.[kind]){const component=preparedComponentLines(r,kind);data[kind].filter(x=>!isPreparedComponentLine(x)).forEach(x=>addIngredient(x,1));if(component)component.forEach(x=>addIngredient(x,1));}else addRecipe(r,1)};
+  const addStructured=(r,kind,m=1)=>{
+    if(!r)return;
+    const rows=shoppingV4?.[r.id]?.[kind];
+    if(Array.isArray(rows)){
+      rows.forEach(x=>{
+        if(!x?.id||!x.amount)return;
+        const key=x.id+'|'+x.unit;
+        if(!map.has(key))map.set(key,{id:x.id,name:ingredientRegistryV4[x.id]?.name||x.id,qty:0,unit:x.unit,raw:x.raw||''});
+        map.get(key).qty+=Number(x.amount||0)*m;
+      });
+      return;
+    }
+    // Egne retter og eventuelle opskrifter uden V4-data bruger den gamle parser som forsigtig fallback.
+    (r.ingredients||[]).forEach(raw=>{
+      const p=normalizeShoppingIngredient(parseIngredient(raw,m));
+      if(!p?.name)return;
+      const key='legacy:'+p.name+'|'+p.unit;
+      if(!map.has(key))map.set(key,{...p,id:null,qty:p.qty||0,count:p.qty?0:1});
+      else{const o=map.get(key);if(p.qty)o.qty+=p.qty;else o.count=(o.count||0)+1}
+    });
+  };
   if(plan.planType==='flex'){
     plan.items.forEach(d=>['breakfast','lunch','dinner','snack'].forEach(key=>{
       const st=flexMealState(d,key);
-      if(st.mode==='shared'){addPortion(flexRecipe(st.sharedId)||d[key],'family');return}
+      if(st.mode==='shared'){addStructured(flexRecipe(st.sharedId)||d[key],'family');return}
       const ids=st.assignments||{};
-      if(ids.alex&&ids.alex!==FLEX_OUT&&ids.alex===ids.heidi&&ids.alex===ids.kids){addPortion(flexRecipe(ids.alex),'family');return}
-      if(ids.alex&&ids.alex!==FLEX_OUT)addPortion(flexRecipe(ids.alex),'adult');
-      if(ids.heidi&&ids.heidi!==FLEX_OUT)addPortion(flexRecipe(ids.heidi),'adult');
-      if(ids.kids&&ids.kids!==FLEX_OUT)addPortion(flexRecipe(ids.kids),'kids2');
+      if(ids.alex&&ids.alex!==FLEX_OUT&&ids.alex===ids.heidi&&ids.alex===ids.kids){addStructured(flexRecipe(ids.alex),'family');return}
+      if(ids.alex&&ids.alex!==FLEX_OUT)addStructured(flexRecipe(ids.alex),'adult');
+      if(ids.heidi&&ids.heidi!==FLEX_OUT)addStructured(flexRecipe(ids.heidi),'adult');
+      if(ids.kids&&ids.kids!==FLEX_OUT)addStructured(flexRecipe(ids.kids),'kids2');
     }));
   }else{
     plan.items.forEach((d,i)=>{
-      if(!mealIsOut(d,'breakfast'))addRecipe(d.breakfast,1);
-      if(!mealIsOut(d,'lunch')&&(i===0||!d.leftoverLunch))addRecipe(d.lunch,1);
-      if(!mealIsOut(d,'dinner'))addRecipe(d.dinner,d.makeDouble?2:1)
-      if(!mealIsOut(d,'snack'))addRecipe(d.snack,1)
+      if(!mealIsOut(d,'breakfast'))addStructured(d.breakfast,'family');
+      if(!mealIsOut(d,'lunch')&&(i===0||!d.leftoverLunch))addStructured(d.lunch,'family');
+      if(!mealIsOut(d,'dinner'))addStructured(d.dinner,'family',d.makeDouble?2:1);
+      if(!mealIsOut(d,'snack'))addStructured(d.snack,'family');
     });
   }
-  const groups={};for(const v of map.values()){const c=categoryFor(v.name);(groups[c]??=[]).push(v)}return groups
-}
-function shoppingPackSize(name,unit){
-  const n=name.toLowerCase();
-  if(unit==='g'){
-    if(/havregryn/.test(n))return 1000;
-    if(/peanutbutter/.test(n))return 350;
-    if(/mandelsmør/.test(n))return 200;
-    if(/tahin/.test(n))return 300;
-    if(/pasta/.test(n))return 500;
-    if(/ris\b/.test(n))return 500;
+  const groups={};
+  for(const v of map.values()){
+    const reg=v.id?ingredientRegistryV4[v.id]:null;
+    const c=reg?.cat||categoryFor(v.name);
+    (groups[c]??=[]).push(v);
   }
-  return null;
+  return groups;
+}
+function fmtPurchaseAmount(q,unit){
+  if(unit==='g'&&q>=1000)return `${String(Math.round(q/100)/10).replace('.',',')} kg`;
+  if(unit==='ml'&&q>=1000)return `${String(Math.round(q/100)/10).replace('.',',')} l`;
+  return `${String(Math.round(q*10)/10).replace('.',',')} ${unit}`;
 }
 function fmtItem(v){
-  if(v.qty){
-    let q=v.qty;
-    let unit=v.unit;
-    // Varer, der købes stykvis, rundes altid op til hele enheder.
-    if(unit==='stk')q=Math.ceil(q-1e-9);
-    // Tørvarer/nøddesmør rundes op til en realistisk standardpakke.
-    const pack=shoppingPackSize(v.name,unit);
-    if(pack)q=Math.ceil(q/pack)*pack;
-    q=Math.round(q*10)/10;
-    if(unit==='g'&&q>=1000){q=Math.round(q/100)/10;unit='kg'}
-    if(unit==='ml'&&q>=1000){q=Math.round(q/100)/10;unit='l'}
-    const pretty=v.name.charAt(0).toUpperCase()+v.name.slice(1);
-    return `${String(q).replace('.',',')} ${unit} ${pretty}`;
+  if(!v?.id){
+    if(v.qty){let q=v.qty,unit=v.unit;if(unit==='stk')q=Math.ceil(q-1e-9);return `${String(Math.round(q*10)/10).replace('.',',')} ${unit} ${v.name.charAt(0).toUpperCase()+v.name.slice(1)}`}
+    return v.raw||v.name;
   }
-  return v.raw||v.name;
+  const reg=ingredientRegistryV4[v.id]||{};
+  const name=reg.name||v.name;
+  let q=Number(v.qty||0),unit=v.unit;
+  if(reg.presence)return `${reg.packLabel||'1 pakke'} ${name}`;
+  if(reg.pack){
+    const packs=Math.max(1,Math.ceil(q/reg.pack-1e-9));
+    if(packs===1){
+      if(reg.pack===1000&&reg.unit==='g')return `1 kg ${name}`;
+      if(reg.pack===1000&&reg.unit==='ml')return `1 l ${name}`;
+      return `1 × ${reg.packLabel||fmtPurchaseAmount(reg.pack,reg.unit)} ${name}`;
+    }
+    return `${packs} × ${reg.packLabel||fmtPurchaseAmount(reg.pack,reg.unit)} ${name}`;
+  }
+  if(unit==='piece')return `${Math.max(1,Math.ceil(q-1e-9))} stk ${name}`;
+  if(unit==='can')return `${Math.max(1,Math.ceil(q-1e-9))} ${Math.ceil(q-1e-9)===1?'dåse':'dåser'} ${name}`;
+  if(unit==='bunch')return `${Math.max(1,Math.ceil(q-1e-9))} ${Math.ceil(q-1e-9)===1?'bundt':'bundter'} ${name}`;
+  if(reg.round)q=Math.ceil(q/reg.round-1e-9)*reg.round;
+  return `${fmtPurchaseAmount(q,unit)} ${name}`;
 }
 
 function shoppingPlanMeal(label,r,note=''){
@@ -845,7 +870,7 @@ function shoppingList(){
     <div class="section-title"><h2>Indkøbsliste</h2><button class="btn secondary" onclick="renderCurrentPlan()">← Madplan</button></div>
     ${shoppingPlanOverview()}
     <div class="shopping-list-toolbar"><div><span class="eyebrow">Klar til butikken</span><h2>Det skal du handle</h2><p class="muted">${neededCount} varelinjer · ${Math.min(checkedCount,neededCount)} afkrydset</p></div><div class="actions"><button class="btn secondary" onclick="pantry()">🏡 Basislager</button><button class="btn secondary" onclick="clearShoppingChecks()">Nulstil flueben</button></div></div>
-    <p class="muted">${currentPlan.planType==='flex'?'Samme ingrediens samles på tværs af de tre profiler. Personer markeret som “Spiser ude” tælles ikke med. Indkøbslisten samler også fx citronsaft og citron og runder stykvarer samt udvalgte kolonialvarer op til realistiske købsmængder. De 80 Kostkompas-opskrifter skaleres med MASTER v3-portionsmængderne; egne retter beholder de mængder, I selv har skrevet.':'Samme ingrediens samles så vidt muligt på tværs af retterne. Planlagte restefrokoster tælles ikke dobbelt. Måltider markeret som “Spiser ude” fjernes automatisk.'} Flueben og basislager synkroniseres mellem jeres enheder.</p>
+    <p class="muted">${currentPlan.planType==='flex'?'Samme ingrediens samles på tværs af de tre profiler. Personer markeret som “Spiser ude” tælles ikke med. Indkøbslisten bruger nu et fast råvareregister: samme råvare samles på tværs af opskrifter og vises som en realistisk købsmængde. De 80 Kostkompas-opskrifter skaleres med de kuraterede portionsmængder; egne retter beholder de mængder, I selv har skrevet.':'Samme ingrediens samles så vidt muligt på tværs af retterne. Planlagte restefrokoster tælles ikke dobbelt. Måltider markeret som “Spiser ude” fjernes automatisk.'} Flueben og basislager synkroniseres mellem jeres enheder.</p>
     <div class="shopping-wrap">
       <div class="shop-card">
         ${order.filter(c=>groups[c]?.length).map(c=>`<div class="shop-cat"><h4>${c}</h4>${groups[c].sort((a,b)=>a.name.localeCompare(b.name)).map(v=>{const key=`shop:${c}:${v.name}:${v.unit}`;return `<label class="shop-item"><input type="checkbox" ${shoppingChecks[key]?'checked':''} onchange="saveShoppingCheck('${encodeURIComponent(key)}',this.checked)"><span>${fmtItem(v)}</span></label>`}).join('')}</div>`).join('')||'<div class="empty">Alt på listen er enten afkrydset eller markeret som basislager.</div>'}
@@ -859,4 +884,4 @@ function saveShoppingCheck(encoded,checkedValue){
 }
 function clearShoppingChecks(){shoppingChecks={};saveHouseholdStateLocal();saveHouseholdStateCloud().then(shoppingList).catch(()=>shoppingList())}
 function knowledge(){app.innerHTML=`<div class="shell">${siteHeader()}<div class="section-title"><h2>Kostkompasset</h2><button class="btn secondary" onclick="home()">← Tilbage</button></div><p class="muted">Den korte hverdagsretning fra familiens Kostsystem.</p><div class="knowledge"><div class="note"><b>🌿 Rigtig mad først</b><br><br>Genkendelige, minimalt forarbejdede råvarer er fundamentet.</div><div class="note"><b>🍽️ Fire byggesten</b><br><br>Jern/protein + energi/stivelse + grønt/frugt + fedt.</div><div class="note"><b>🔄 Variation</b><br><br>Vurder dagen og især ugen frem for hvert enkelt måltid.</div><div class="note"><b>👨‍👩‍👧‍👦 Én grundmad</b><br><br>Børnene spiser familiens mad tilpasset salt, styrke, konsistens og størrelse.</div><div class="note"><b>🐟 Fisk fast i ugen</b><br><br>Variér fed og mager fisk; fed fisk regelmæssigt.</div><div class="note"><b>🥑 Fedtvariation</b><br><br>Fed fisk, olivenolie, avocado, nøddesmør, æg, smør og mejeri.</div><div class="note"><b>🩸 Jern hver dag</b><br><br>Tænk C-vitamin sammen med relevante plantejernskilder.</div><div class="note"><b>👶 Alderssikkerhed</b><br><br>Tilpas hårde/runde fødevarer, hele nødder og andre kvælningsrisici.</div></div></div>${nav()}`}
-Promise.all([fetch('recipes.json').then(r=>r.json()),fetch('portions-v3.json').then(r=>r.ok?r.json():{}).catch(()=>({}))]).then(([d,p])=>{baseRecipes=d;portionData=p||{};loadHouseholdState();rebuildRecipes();startApp()}).catch(()=>loginScreen('Opskrifterne kunne ikke indlæses. Prøv at genindlæse siden.'));
+Promise.all([fetch('recipes.json').then(r=>r.json()),fetch('portions-v3.json').then(r=>r.ok?r.json():{}).catch(()=>({})),fetch('shopping-v4.json').then(r=>r.ok?r.json():{}).catch(()=>({})),fetch('ingredient-registry-v4.json').then(r=>r.ok?r.json():{}).catch(()=>({}))]).then(([d,p,s4,reg4])=>{baseRecipes=d;portionData=p||{};shoppingV4=s4||{};ingredientRegistryV4=reg4||{};loadHouseholdState();rebuildRecipes();startApp()}).catch(()=>loginScreen('Opskrifterne kunne ikke indlæses. Prøv at genindlæse siden.'));
