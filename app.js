@@ -26,25 +26,54 @@ const pantryKey='kostkompas-pantry';
 const shoppingChecksKey='kostkompas-shop-checked';
 const customRecipesKey='kostkompas-custom-recipes';
 const planHistoryKey='kostkompas-plan-history';
+const PANTRY_CATEGORIES=['Fedt & smag','Køl','Kolonial','Brød','Frugt & grønt','Frost','Børn','Husholdning','Personlig pleje','Andet'];
 const defaultPantryItems=[
   {id:'oliveoil',name:'Ekstra jomfruolivenolie',category:'Fedt & smag',keywords:['olivenolie','ekstra jomfruolivenolie']},
-  {id:'butter',name:'Smør',category:'Køl',keywords:['smør']},
   {id:'spices',name:'Milde krydderier',category:'Fedt & smag',keywords:['paprika','karry','timian','oregano','kanel','spidskommen','krydderi']},
+  {id:'salt',name:'Salt',category:'Fedt & smag',keywords:['salt']},
+  {id:'butter',name:'Smør',category:'Køl',keywords:['smør']},
+  {id:'yoghurt',name:'A38 / naturel yoghurt',category:'Køl',keywords:['a38','yoghurt']},
+  {id:'eggs',name:'Æg',category:'Køl',keywords:['æg']},
+  {id:'cheese',name:'Ost',category:'Køl',keywords:['ost','cheddar','mozzarella']},
   {id:'oats',name:'Havregryn',category:'Kolonial',keywords:['havregryn']},
   {id:'rice',name:'Ris',category:'Kolonial',keywords:['ris']},
   {id:'pasta',name:'Pasta',category:'Kolonial',keywords:['pasta']},
-  {id:'ryebread',name:'Rugbrød',category:'Brød',keywords:['rugbrød']},
   {id:'passata',name:'Passata / tomatprodukter',category:'Kolonial',keywords:['passata','hakkede tomater','tomatpuré','tomatprodukter']},
   {id:'nutbutter',name:'100 % nøddesmør / peanutbutter',category:'Kolonial',keywords:['nøddesmør','peanutbutter','mandelsmør']},
-  {id:'yoghurt',name:'A38 / naturel yoghurt',category:'Køl',keywords:['a38','yoghurt']},
-  {id:'flour',name:'Mel',category:'Kolonial',keywords:['mel']}
+  {id:'flour',name:'Mel',category:'Kolonial',keywords:['mel']},
+  {id:'lentils',name:'Linser / bønner',category:'Kolonial',keywords:['linser','bønner','kikærter']},
+  {id:'ryebread',name:'Rugbrød',category:'Brød',keywords:['rugbrød']},
+  {id:'potatoes',name:'Kartofler',category:'Frugt & grønt',keywords:['kartofler','kartoffel']},
+  {id:'onions',name:'Løg',category:'Frugt & grønt',keywords:['løg']},
+  {id:'frozenberries',name:'Frosne bær',category:'Frost',keywords:['frosne bær']},
+  {id:'frozenpeas',name:'Frosne ærter',category:'Frost',keywords:['frosne ærter']},
+  {id:'diapers',name:'Bleer',category:'Børn',keywords:['bleer','ble']},
+  {id:'wipes',name:'Vådservietter',category:'Børn',keywords:['vådservietter','vådserviet']},
+  {id:'toiletpaper',name:'Toiletpapir',category:'Husholdning',keywords:['toiletpapir']},
+  {id:'kitchenroll',name:'Køkkenrulle',category:'Husholdning',keywords:['køkkenrulle']},
+  {id:'toothpaste',name:'Tandpasta',category:'Personlig pleje',keywords:['tandpasta']},
+  {id:'toothbrush',name:'Tandbørster',category:'Personlig pleje',keywords:['tandbørste','tandbørster']}
 ];
+function inferPantryCategory(name){
+  const n=String(name||'').toLowerCase();
+  if(/ketchup|mayo|mayonnaise|pasta|havre|ris|mel|passata|tomat|tahin|nødde|peanut|linse|bønne|kikært/.test(n))return 'Kolonial';
+  if(/smør|yoghurt|a38|ost|æg/.test(n))return 'Køl';
+  if(/rugbrød|brød|pita|tortilla/.test(n))return 'Brød';
+  if(/olivenolie|krydder|salt|eddike/.test(n))return 'Fedt & smag';
+  if(/kartoff|løg|frugt|grønt|banan|citron|lime|avocado/.test(n))return 'Frugt & grønt';
+  if(/fross|frost/.test(n))return 'Frost';
+  if(/ble|vådserviet/.test(n))return 'Børn';
+  if(/toiletpapir|køkkenrulle|opvask|rengøring|affaldspose/.test(n))return 'Husholdning';
+  if(/tandpasta|tandbørst|shampoo|sæbe|deodorant/.test(n))return 'Personlig pleje';
+  return 'Andet';
+}
 function loadHouseholdState(){
   try{pantryState=JSON.parse(localStorage.getItem(pantryKey)||'{}')||{}}catch(e){pantryState={}}
   try{shoppingChecks=JSON.parse(localStorage.getItem(shoppingChecksKey)||'{}')||{}}catch(e){shoppingChecks={}}
   try{customRecipes=JSON.parse(localStorage.getItem(customRecipesKey)||'[]')||[]}catch(e){customRecipes=[]}
   try{planHistory=JSON.parse(localStorage.getItem(planHistoryKey)||'[]')||[]}catch(e){planHistory=[]}
   if(!Array.isArray(pantryState.custom))pantryState.custom=[];
+  pantryState.custom=pantryState.custom.map(item=>({...item,category:(!item.category||item.category==='Egne varer')?inferPantryCategory(item.name):item.category}));
   if(!pantryState.items||typeof pantryState.items!=='object')pantryState.items={};
   if(!Array.isArray(customRecipes))customRecipes=[];
   if(!Array.isArray(planHistory))planHistory=[];
@@ -177,7 +206,7 @@ async function syncAfterLogin(){
   const remoteChecks=remote.shoppingChecks&&typeof remote.shoppingChecks==='object'?remote.shoppingChecks:null;
   const remoteCustom=Array.isArray(remote.customRecipes)?remote.customRecipes:null;
   const remoteHistory=Array.isArray(remote.planHistory)?remote.planHistory:null;
-  if(remotePantry){pantryState=remotePantry;if(!Array.isArray(pantryState.custom))pantryState.custom=[];if(!pantryState.items)pantryState.items={}}
+  if(remotePantry){pantryState=remotePantry;if(!Array.isArray(pantryState.custom))pantryState.custom=[];pantryState.custom=pantryState.custom.map(item=>({...item,category:(!item.category||item.category==='Egne varer')?inferPantryCategory(item.name):item.category}));if(!pantryState.items)pantryState.items={}}
   else if(Object.keys(pantryState.items||{}).length||(pantryState.custom||[]).length)remote.pantryState=pantryState;
   if(remoteChecks)shoppingChecks=remoteChecks;else if(Object.keys(shoppingChecks).length)remote.shoppingChecks=shoppingChecks;
   if(remoteCustom){customRecipes=remoteCustom}else if(customRecipes.length)remote.customRecipes=customRecipes;
@@ -785,18 +814,19 @@ async function deleteCustomRecipe(id){
 function pantry(){
   loadHouseholdState();
   const items=allPantryItems();
-  const cats=[...new Set(items.map(x=>x.category||'Andet'))];
+  const cats=PANTRY_CATEGORIES.filter(cat=>items.some(x=>(x.category||'Andet')===cat));
   app.innerHTML=`<div class="shell">${siteHeader()}<div class="section-title"><div><span class="eyebrow">Det har vi hjemme</span><h2>Basislager</h2></div><button class="btn secondary" onclick="home()">← Tilbage</button></div>
   <p class="muted">Markér de varer, I normalt har hjemme lige nu. Når de er markeret, holder Kostkompasset dem ude af hovedindkøbslisten og viser dem i stedet som “har hjemme”. Status synkroniseres mellem computer og telefon.</p>
   <div class="pantry-summary"><div><strong>${items.filter(x=>pantryHas(x.id)).length}</strong><span>varer markeret hjemme</span></div><button class="btn secondary" onclick="setAllPantry(false)">Ryd markeringer</button></div>
   <div class="pantry-groups">${cats.map(cat=>`<section class="shop-card pantry-card"><h3>${cat}</h3><div class="basis-list">${items.filter(x=>(x.category||'Andet')===cat).map(x=>`<label class="pantry-item"><input type="checkbox" ${pantryHas(x.id)?'checked':''} onchange="togglePantry('${x.id}',this.checked)"><span>${escapeHtml(x.name)}</span>${String(x.id).startsWith('custom-')?`<button type="button" class="feedback-delete" onclick="event.preventDefault();event.stopPropagation();removeCustomPantry('${x.id}')">Slet</button>`:''}</label>`).join('')}</div></section>`).join('')}</div>
-  <section class="shop-card add-pantry"><h3>Tilføj jeres egen basisvare</h3><div class="add-pantry-row"><input id="pantry-new" class="search" placeholder="Fx chiafrø eller kokosmælk"><button class="btn" onclick="addCustomPantry()">Tilføj</button></div><p class="small muted">Egne varer bliver også brugt til at sortere indkøbslisten, når navnet matcher en ingrediens.</p></section></div>${nav()}`;
+  <section class="shop-card add-pantry"><h3>Tilføj jeres egen basisvare</h3><div class="add-pantry-row"><input id="pantry-new" class="search" placeholder="Fx chiafrø eller kokosmælk"><select id="pantry-category" class="search pantry-category-select" aria-label="Vælg kategori">${PANTRY_CATEGORIES.map(c=>`<option value="${escapeHtml(c)}">${escapeHtml(c)}</option>`).join('')}</select><button class="btn" onclick="addCustomPantry()">Tilføj</button></div><p class="small muted">Vælg hvor varen hører hjemme. Den bliver vist sammen med de øvrige varer i kategorien og bruges også til at sortere indkøbslisten, når navnet matcher en ingrediens.</p></section></div>${nav()}`;
 }
 function togglePantry(id,value){pantryState.items[id]=value;saveHouseholdStateCloud().catch(console.warn)}
 function setAllPantry(value){allPantryItems().forEach(x=>pantryState.items[x.id]=value);saveHouseholdStateCloud().then(pantry).catch(()=>pantry())}
 function addCustomPantry(){
   const input=document.getElementById('pantry-new');const name=(input?.value||'').trim();if(!name)return;
-  const id='custom-'+Date.now();pantryState.custom.push({id,name,category:'Egne varer',keywords:[name.toLowerCase()]});pantryState.items[id]=true;
+  const category=document.getElementById('pantry-category')?.value||inferPantryCategory(name);
+  const id='custom-'+Date.now();pantryState.custom.push({id,name,category,keywords:[name.toLowerCase()]});pantryState.items[id]=true;
   saveHouseholdStateCloud().then(pantry).catch(()=>pantry());
 }
 function removeCustomPantry(id){pantryState.custom=(pantryState.custom||[]).filter(x=>x.id!==id);delete pantryState.items[id];saveHouseholdStateCloud().then(pantry).catch(()=>pantry())}
