@@ -315,6 +315,15 @@ function planToday(){
   ];
   app.innerHTML=`<div class="shell">${siteHeader()}<div class="section-title"><h2>Planlæg i dag</h2><button class="btn secondary" onclick="home()">← Tilbage</button></div><p class="muted">Vælg dagens fem måltider inkl. både formiddags- og eftermiddagsmellemmåltid. Dine valg gemmes på denne enhed.</p><div class="plan-grid">${slots.map(x=>{const opts=recipes.filter(r=>r.category===x.cat&&!r.adultOnly);return `<div class="plan-slot"><h3>${x.emoji} ${x.label}</h3><select style="width:100%;padding:12px;border-radius:12px;border:1px solid #d9ddd6" onchange="localStorage.setItem('plan-${x.key}',this.value)"><option value="">Vælg ret…</option>${opts.map(r=>`<option ${localStorage.getItem('plan-'+x.key)===r.id?'selected':''} value="${r.id}">${r.name}</option>`).join('')}</select></div>`}).join('')}</div></div>${nav()}`;
 }
+// ----- V2: Kostsystemets madplansmotor -----
+const dinnerPools={fatFish:[1,16],leanFish:[2,3,19],beef:[4,5,6,11,12,14,18],chicken:[7,8,9,13,17,20],egg:[10],leftover:[15]};
+const patterns={3:['fatFish','beef','chicken'],4:['fatFish','beef','chicken','leanFish'],5:['fatFish','beef','chicken','leanFish','egg'],7:['fatFish','beef','chicken','leanFish','egg','beef','leftover']};
+const breakfastByBusy={high:[3,11,17,1,10,5,2],normal:[1,2,3,4,10,6,5],low:[4,7,8,13,14,16,19]};
+const firstLunchByBusy={high:[1,3,5,20,4],normal:[3,5,19,4,9],low:[6,10,11,18,19]};
+const lunchMap={1:15,16:15,2:13,3:2,19:13,4:12,5:17,6:12,11:12,12:10,14:12,18:17,7:20,8:20,9:14,13:7,17:8,20:16,10:18,15:1};
+function rBy(cat,n){return recipes.find(r=>r.category===cat && Number(r.number)===Number(n))}
+function minutes(s){const m=(s||'').match(/(\d+)/);return m?Number(m[1]):99}
+
 function recentRecipeIds(){
   const ids=[];(planHistory||[]).slice(-5).forEach(p=>(p.recipeIds||[]).forEach(id=>ids.push(id)));return ids;
 }
