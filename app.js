@@ -305,17 +305,16 @@ function quickMeal(category){
   if(!r){library(category);return}
   app.innerHTML=`<div class="shell">${siteHeader()}<div class="section-title"><div><span class="eyebrow">Hurtigt ${category==='Mellemmåltider'?'mellemmåltid':category.toLowerCase()}</span><h2>Prøv denne</h2></div><button class="btn secondary" onclick="quickNow()">← Vælg måltid</button></div><section class="quick-result">${recipeMedia(r,'quick-result-media')}<div><span class="quick-time">⚡ ${r.active||'Kort aktiv tid'}</span><h2>${r.name}</h2><p>${r.why?.[0]||'En hurtig ret fra familiens eget opskriftsbibliotek.'}</p><div class="actions"><button class="btn" onclick="showRecipe('${r.id}')">Se opskrift</button><button class="btn secondary" onclick="quickMeal('${category}')">↻ Foreslå en anden</button></div></div></section>${quickShoppingHtml(r)}</div>${nav()}`;
 }
-function planToday(){const cats=["Morgenmad","Frokost","Aftensmad","Mellemmåltider"];app.innerHTML=`<div class="shell">${siteHeader()}<div class="section-title"><h2>Planlæg i dag</h2><button class="btn secondary" onclick="home()">← Tilbage</button></div><p class="muted">Vælg dagens fire måltider. Dine valg gemmes på denne enhed.</p><div class="plan-grid">${cats.map(c=>{const opts=recipes.filter(r=>r.category===c&&!r.adultOnly);return `<div class="plan-slot"><h3>${emoji[c]} ${c}</h3><select style="width:100%;padding:12px;border-radius:12px;border:1px solid #d9ddd6" onchange="localStorage.setItem('plan-${c}',this.value)"><option value="">Vælg ret…</option>${opts.map(r=>`<option ${localStorage.getItem('plan-'+c)===r.id?'selected':''} value="${r.id}">${r.name}</option>`).join('')}</select></div>`}).join('')}</div></div>${nav()}`}
-
-// ----- V2: Kostsystemets madplansmotor -----
-const dinnerPools={fatFish:[1,16],leanFish:[2,3,19],beef:[4,5,6,11,12,14,18],chicken:[7,8,9,13,17,20],egg:[10],leftover:[15]};
-const patterns={3:['fatFish','beef','chicken'],4:['fatFish','beef','chicken','leanFish'],5:['fatFish','beef','chicken','leanFish','egg'],7:['fatFish','beef','chicken','leanFish','egg','beef','leftover']};
-const breakfastByBusy={high:[3,11,17,1,10,5,2],normal:[1,2,3,4,10,6,5],low:[4,7,8,13,14,16,19]};
-const firstLunchByBusy={high:[1,3,5,20,4],normal:[3,5,19,4,9],low:[6,10,11,18,19]};
-const lunchMap={1:15,16:15,2:13,3:2,19:13,4:12,5:17,6:12,11:12,12:10,14:12,18:17,7:20,8:20,9:14,13:7,17:8,20:16,10:18,15:1};
-function rBy(cat,n){return recipes.find(r=>r.category===cat && Number(r.number)===Number(n))}
-function minutes(s){const m=(s||'').match(/(\d+)/);return m?Number(m[1]):99}
-
+function planToday(){
+  const slots=[
+    {key:'Morgenmad',label:'Morgenmad',cat:'Morgenmad',emoji:'☀️'},
+    {key:'Formiddagssnack',label:'Formiddagsmellemmåltid',cat:'Mellemmåltider',emoji:'🍎'},
+    {key:'Frokost',label:'Frokost',cat:'Frokost',emoji:'🥪'},
+    {key:'Eftermiddagssnack',label:'Eftermiddagsmellemmåltid',cat:'Mellemmåltider',emoji:'🍌'},
+    {key:'Aftensmad',label:'Aftensmad',cat:'Aftensmad',emoji:'🍲'}
+  ];
+  app.innerHTML=`<div class="shell">${siteHeader()}<div class="section-title"><h2>Planlæg i dag</h2><button class="btn secondary" onclick="home()">← Tilbage</button></div><p class="muted">Vælg dagens fem måltider inkl. både formiddags- og eftermiddagsmellemmåltid. Dine valg gemmes på denne enhed.</p><div class="plan-grid">${slots.map(x=>{const opts=recipes.filter(r=>r.category===x.cat&&!r.adultOnly);return `<div class="plan-slot"><h3>${x.emoji} ${x.label}</h3><select style="width:100%;padding:12px;border-radius:12px;border:1px solid #d9ddd6" onchange="localStorage.setItem('plan-${x.key}',this.value)"><option value="">Vælg ret…</option>${opts.map(r=>`<option ${localStorage.getItem('plan-'+x.key)===r.id?'selected':''} value="${r.id}">${r.name}</option>`).join('')}</select></div>`}).join('')}</div></div>${nav()}`;
+}
 function recentRecipeIds(){
   const ids=[];(planHistory||[]).slice(-5).forEach(p=>(p.recipeIds||[]).forEach(id=>ids.push(id)));return ids;
 }
@@ -339,6 +338,26 @@ function pickPersonalized(candidates,used=new Set(),seed=0){
 function customDinnersForPool(pool){return customRecipes.filter(r=>r.category==='Aftensmad'&&r.planGroup===pool)}
 function chooseDinner(pool,used,busy,seed){let ids=dinnerPools[pool]||[];let candidates=[...ids.map(n=>rBy('Aftensmad',n)).filter(Boolean),...customDinnersForPool(pool)];if(busy==='high'){const quick=candidates.filter(r=>minutes(r.active)<=20&&!/timer|2,5|3 timer/i.test(r.total||''));if(quick.length)candidates=quick}return pickPersonalized(candidates,used,seed)}
 function pickSnack(dayMeals,index){const text=dayMeals.map(r=>r?.ingredients?.join(' ')||'').join(' ').toLowerCase();let ids=[];if(text.includes('bær'))ids.push(3,5,16);if(text.includes('banan'))ids.push(4,7);if(text.includes('avocado'))ids.push(2,9);if(text.includes('laks')||text.includes('fisk'))ids.push(8,20);if(text.includes('æg'))ids.push(1,15);ids.push(3,4,7,2,1);const ingredientMatches=ids.map(n=>rBy('Mellemmåltider',n)).filter(Boolean);const customs=customRecipes.filter(r=>r.category==='Mellemmåltider');return pickPersonalized([...ingredientMatches,...customs],new Set(),index)||rBy('Mellemmåltider',3)}
+
+const PLAN_MEAL_KEYS=['breakfast','snackMorning','lunch','snackAfternoon','dinner'];
+function isoLocalDate(d){const x=new Date(d);x.setMinutes(x.getMinutes()-x.getTimezoneOffset());return x.toISOString().slice(0,10)}
+function tomorrowISO(){const d=new Date();d.setDate(d.getDate()+1);return isoLocalDate(d)}
+function normalizePlanStructure(plan){
+  if(!plan?.items)return plan;
+  if(!plan.startDate)plan.startDate=isoLocalDate(new Date());
+  plan.items.forEach((d,i)=>{
+    if(!d.snackMorning)d.snackMorning=d.snack||pickSnack([d.breakfast,d.lunch,d.dinner],i*2);
+    if(!d.snackAfternoon)d.snackAfternoon=d.snack||pickSnack([d.breakfast,d.lunch,d.dinner],i*2+1);
+    if(!d.flex&&plan.planType==='flex')d.flex=seedFlexForDay(d);
+    if(d.flex){
+      if(!d.flex.snackMorning)d.flex.snackMorning=d.flex.snack||{mode:'shared',sharedId:d.snackMorning?.id||'',assignments:{alex:d.snackMorning?.id||'',heidi:d.snackMorning?.id||'',kids:d.snackMorning?.id||''}};
+      if(!d.flex.snackAfternoon)d.flex.snackAfternoon=d.flex.snack||{mode:'shared',sharedId:d.snackAfternoon?.id||'',assignments:{alex:d.snackAfternoon?.id||'',heidi:d.snackAfternoon?.id||'',kids:d.snackAfternoon?.id||''}};
+    }
+    if(!d.outMeals)d.outMeals={};
+    if(!d.manual)d.manual={};
+  });
+  return plan;
+}
 function planner(){
   const activeLabel=currentPlan?.planType==='flex'?'Fleksibel madplan':'Fælles madplan';
   app.innerHTML=`<div class="shell">${siteHeader()}<div class="section-title"><div><span class="eyebrow">Madplan</span><h2>Hvordan skal I spise?</h2></div><button class="btn secondary" onclick="home()">← Tilbage</button></div>
@@ -350,7 +369,11 @@ function planner(){
     </div>
   </div>${nav()}`;
 }
-function commonPlanner(){const saved=JSON.parse(localStorage.getItem('kostkompas-plan-settings')||'{"days":4}');app.innerHTML=`<div class="shell">${siteHeader()}<div class="section-title"><div><span class="eyebrow">Fælles madplan</span><h2>Madplan</h2></div><button class="btn secondary" onclick="planner()">← Tilbage</button></div><p class="muted">Motoren følger Kostsystemets rækkefølge og bruger nu også børnenes tidligere reaktioner og de seneste madplaner. Favoritter får et lille løft, mens nyligt brugte retter nedprioriteres – uden at afviste retter forsvinder permanent.</p><div class="planner-controls"><div class="control"><label>Antal dage</label><select id="days"><option ${saved.days==3?'selected':''}>3</option><option ${saved.days==4?'selected':''}>4</option><option ${saved.days==5?'selected':''}>5</option><option ${saved.days==7?'selected':''}>7</option></select></div><div class="control"><label>Familie</label><select disabled><option>2 voksne + 2 små børn</option></select></div></div><div class="plan-actions">${currentPlan?'<button class="btn" onclick="renderCurrentPlan()">📅 Nuværende madplan</button>':''}<button class="btn secondary" onclick="generatePlan()">✨ Lav forslag til ny madplan</button></div><div class="engine-note"><b>Personlig motor er aktiv.</b> Børnenes reaktioner påvirker forslagene nænsomt, og tidligere retter hjælper med variation.<br><br><b>Rester er aktive.</b> Når næste dags frokost bygges af aftensmaden, markeres aftensmaden som “lav dobbelt”, og frokosten tælles ikke dobbelt i indkøbslisten.</div></div>${nav()}`}
+function commonPlanner(){
+  const saved=JSON.parse(localStorage.getItem('kostkompas-plan-settings')||'{}');
+  const startDate=saved.startDate||tomorrowISO();
+  app.innerHTML=`<div class="shell">${siteHeader()}<div class="section-title"><div><span class="eyebrow">Fælles madplan</span><h2>Madplan</h2></div><button class="btn secondary" onclick="planner()">← Tilbage</button></div><p class="muted">Motoren følger Kostsystemets rækkefølge og bruger nu også børnenes tidligere reaktioner og de seneste madplaner. Favoritter får et lille løft, mens nyligt brugte retter nedprioriteres – uden at afviste retter forsvinder permanent.</p><div class="planner-controls"><div class="control"><label>Antal dage</label><select id="days"><option ${saved.days==3?'selected':''}>3</option><option ${!saved.days||saved.days==4?'selected':''}>4</option><option ${saved.days==5?'selected':''}>5</option><option ${saved.days==7?'selected':''}>7</option></select></div><div class="control"><label>Startdato</label><input id="plan-start-date" type="date" value="${startDate}"><small>Vælg fx i morgen, hvis varerne først leveres i morgen.</small></div><div class="control"><label>Familie</label><select disabled><option>2 voksne + 2 små børn</option></select></div></div><div class="plan-actions">${currentPlan?'<button class="btn" onclick="renderCurrentPlan()">📅 Nuværende madplan</button>':''}<button class="btn secondary" onclick="generatePlan()">✨ Lav forslag til ny madplan</button></div><div class="engine-note"><b>Personlig motor er aktiv.</b> Børnenes reaktioner påvirker forslagene nænsomt, og tidligere retter hjælper med variation.<br><br><b>To mellemmåltider hver dag.</b> Planen har både formiddags- og eftermiddagsmellemmåltid.<br><br><b>Rester er aktive.</b> Når næste dags frokost bygges af aftensmaden, markeres aftensmaden som “lav dobbelt”, og frokosten tælles ikke dobbelt i indkøbslisten.</div></div>${nav()}`;
+}
 
 
 const flexPeople=[
@@ -372,23 +395,34 @@ function createBasePlanItems(days){
     if(i===0){const base=firstLunchByBusy.normal.map(n=>rBy('Frokost',n)).filter(Boolean);lunch=pickPersonalized([...base,...customRecipes.filter(r=>r.category==='Frokost')],new Set(),i)}
     else{const prev=out[i-1].dinner;if(prev.isCustom)lunch=prev;else lunch=rBy('Frokost',lunchMap[prev.number]||1);leftover=true;out[i-1].makeDouble=true}
     const breakfast=pickPersonalized([...breakfastByBusy.normal.map(n=>rBy('Morgenmad',n)).filter(Boolean),...customRecipes.filter(r=>r.category==='Morgenmad')],new Set(),i);
-    const snack=pickSnack([breakfast,lunch,dinner],i);
-    out.push({day:i+1,breakfast,lunch,dinner,snack,leftoverLunch:leftover,makeDouble:false,outMeals:{},manual:{}});
+    const snackMorning=pickSnack([breakfast,lunch],i*2);
+    let snackAfternoon=pickSnack([lunch,dinner],i*2+1);
+    if(snackAfternoon?.id===snackMorning?.id){const alt=recipes.filter(r=>r.category==='Mellemmåltider'&&!r.adultOnly&&r.id!==snackMorning.id);snackAfternoon=pickPersonalized(alt,new Set(),i+3)||snackAfternoon}
+    out.push({day:i+1,breakfast,snackMorning,lunch,snackAfternoon,dinner,leftoverLunch:leftover,makeDouble:false,outMeals:{},manual:{}});
   }
   return out;
 }
-function seedFlexForDay(d){const make=(r)=>({mode:'shared',sharedId:r?.id||'',assignments:{alex:r?.id||'',heidi:r?.id||'',kids:r?.id||''}});return {breakfast:make(d.breakfast),lunch:make(d.lunch),dinner:make(d.dinner),snack:make(d.snack)}}
+function seedFlexForDay(d){const make=(r)=>({mode:'shared',sharedId:r?.id||'',assignments:{alex:r?.id||'',heidi:r?.id||'',kids:r?.id||''}});return {breakfast:make(d.breakfast),snackMorning:make(d.snackMorning||d.snack),lunch:make(d.lunch),snackAfternoon:make(d.snackAfternoon||d.snack),dinner:make(d.dinner)}}
 function flexiblePlanner(){
-  const saved=JSON.parse(localStorage.getItem('kostkompas-flex-settings')||'{"days":4}');
+  const saved=JSON.parse(localStorage.getItem('kostkompas-flex-settings')||'{}');
+  const startDate=saved.startDate||tomorrowISO();
   app.innerHTML=`<div class="shell">${siteHeader()}<div class="section-title"><div><span class="eyebrow">Fleksibel madplan</span><h2>Planlæg til jeres virkelige hverdag</h2></div><button class="btn secondary" onclick="planner()">← Tilbage</button></div>
-    <p class="muted">Alex og Heidi kan få hver sin ret. Sophia + Carlo står altid sammen som én fast børnegruppe. Når alle får det samme, vises retten som én rolig linje på tværs.</p>
+    <p class="muted">Alex og Heidi kan få hver sin ret. Sophia + Carlo står altid sammen som én fast børnegruppe. Det gælder også både formiddags- og eftermiddagsmellemmåltid. Når alle får det samme, vises retten som én rolig linje på tværs.</p>
     ${flexProfileHeader(true)}
-    <div class="planner-controls"><div class="control"><label>Antal dage</label><select id="flex-days"><option ${saved.days==3?'selected':''}>3</option><option ${saved.days==4?'selected':''}>4</option><option ${saved.days==5?'selected':''}>5</option><option ${saved.days==7?'selected':''}>7</option></select></div><div class="control"><label>Familie</label><select disabled><option>Alex · Heidi · Sophia + Carlo</option></select></div></div>
+    <div class="planner-controls"><div class="control"><label>Antal dage</label><select id="flex-days"><option ${saved.days==3?'selected':''}>3</option><option ${!saved.days||saved.days==4?'selected':''}>4</option><option ${saved.days==5?'selected':''}>5</option><option ${saved.days==7?'selected':''}>7</option></select></div><div class="control"><label>Startdato</label><input id="flex-start-date" type="date" value="${startDate}"><small>Vælg fx i morgen ved levering i morgen.</small></div><div class="control"><label>Familie</label><select disabled><option>Alex · Heidi · Sophia + Carlo</option></select></div></div>
     <div class="plan-actions">${currentPlan?'<button class="btn" onclick="renderCurrentPlan()">📅 Nuværende madplan</button>':''}<button class="btn secondary" onclick="generateFlexiblePlan()">✨ Lav fleksibelt forslag</button></div>
   </div>${nav()}`;
 }
-function generateFlexiblePlan(){const days=Number(document.getElementById('flex-days').value);localStorage.setItem('kostkompas-flex-settings',JSON.stringify({days}));const items=createBasePlanItems(days);items.forEach((d,i)=>{d.leftoverLunch=false;d.makeDouble=false;d.flex=seedFlexForDay(d);['breakfast','lunch'].forEach(key=>{const a=personalFlexDefault('alex',key,i),h=personalFlexDefault('heidi',key,i);if(a||h){const st=d.flex[key];st.mode='individual';if(a)st.assignments.alex=a.id;if(h)st.assignments.heidi=h.id;}})});draftPlan={planType:'flex',days,busy:'normal',items,created:Date.now()};renderFlexibleDraft()}
-function flexPlanBoard(plan,source,editableProfiles=false){return `<div class="flex-plan-board">${flexProfileHeader(editableProfiles)}<div class="week flex-week">${plan.items.map((d,i)=>`<section class="day-card flex-day"><div class="day-head"><h3>${dayName(d.day)}</h3></div>${flexMealRow(d,i,'breakfast',source)}${flexMealRow(d,i,'lunch',source)}${flexMealRow(d,i,'dinner',source)}${flexMealRow(d,i,'snack',source)}</section>`).join('')}</div></div>`}
+function generateFlexiblePlan(){
+  const days=Number(document.getElementById('flex-days').value);
+  const startDate=document.getElementById('flex-start-date')?.value||tomorrowISO();
+  localStorage.setItem('kostkompas-flex-settings',JSON.stringify({days,startDate}));
+  const items=createBasePlanItems(days);
+  items.forEach((d,i)=>{d.leftoverLunch=false;d.makeDouble=false;d.flex=seedFlexForDay(d);['breakfast','lunch'].forEach(key=>{const a=personalFlexDefault('alex',key,i),h=personalFlexDefault('heidi',key,i);if(a||h){const st=d.flex[key];st.mode='individual';if(a)st.assignments.alex=a.id;if(h)st.assignments.heidi=h.id;}})});
+  draftPlan={planType:'flex',days,busy:'normal',startDate,items,created:Date.now()};
+  normalizePlanStructure(draftPlan);renderFlexibleDraft();
+}
+function flexPlanBoard(plan,source,editableProfiles=false){normalizePlanStructure(plan);return `<div class="flex-plan-board">${flexProfileHeader(editableProfiles)}<div class="week flex-week">${plan.items.map((d,i)=>`<section class="day-card flex-day"><div class="day-head"><h3>${dayName(d.day,plan.startDate)}</h3></div>${flexMealRow(d,i,'breakfast',source)}${flexMealRow(d,i,'snackMorning',source)}${flexMealRow(d,i,'lunch',source)}${flexMealRow(d,i,'snackAfternoon',source)}${flexMealRow(d,i,'dinner',source)}</section>`).join('')}</div></div>`}
 function renderFlexibleDraft(){if(!draftPlan||draftPlan.planType!=='flex'){flexiblePlanner();return}app.innerHTML=`<div class="shell">${siteHeader()}<div class="section-title"><div><span class="eyebrow">Forslag · fleksibel</span><h2>${draftPlan.days}-dages madplan</h2></div><button class="btn secondary" onclick="flexiblePlanner()">← Tilbage</button></div><div class="engine-note"><b>Din nuværende madplan er ikke ændret.</b> Du kan tilpasse hver række allerede nu. Tryk “Tilpas / spiser ude” for at vælge separat til Alex, Heidi og Sophia + Carlo eller markere, hvem der spiser ude. Først når du trykker “Brug denne madplan”, bliver forslaget aktivt.</div><div class="plan-actions"><button class="btn" onclick="activateDraftPlan()">✓ Brug denne madplan</button><button class="btn secondary" onclick="generateFlexiblePlan()">↻ Lav et andet forslag</button>${currentPlan?'<button class="btn secondary" onclick="renderCurrentPlan()">📅 Behold nuværende</button>':''}</div>${flexPlanBoard(draftPlan,'draft',false)}</div>${nav()}`}
 function flexMealState(d,key){if(!d.flex)d.flex=seedFlexForDay(d);if(!d.flex[key])d.flex[key]={mode:'shared',sharedId:d[key]?.id||'',assignments:{alex:d[key]?.id||'',heidi:d[key]?.id||'',kids:d[key]?.id||''}};return d.flex[key]}
 function flexRecipe(id){return recipes.find(r=>r.id===id)||null}
@@ -416,18 +450,19 @@ function personalFlexDefault(personId,key,dayIndex){
   if(personId==='heidi'&&key==='lunch')return favorites.find(r=>r.id==='heidi-rugbroed-koldroeget-laks')||favorites[0];
   return null;
 }
-function openFlexPicker(dayIndex,key,target,source='current'){closeManualPicker();const plan=flexPlanForSource(source);if(!plan)return;const category=categoryForPlanKey(key),rs=recipesForFlexTarget(category,target);const overlay=document.createElement('div');overlay.id='manual-picker';overlay.className='picker-overlay';overlay.innerHTML=`<div class="picker-panel"><div class="picker-head"><div><div class="eyebrow">${dayName(plan.items[dayIndex].day)}</div><h2>Vælg ${keyLabel(key).toLowerCase()}</h2><p>${target==='shared'?'Til hele familien':target==='kids'?'Til Sophia + Carlo':target==='alex'?'Til Alex':'Til Heidi'}</p></div><button class="picker-close" onclick="closeManualPicker()">×</button></div><input class="search" id="flex-picker-q" placeholder="Søg…" oninput="filterFlexPicker(${dayIndex},'${key}','${target}','${source}')"><div class="picker-grid" id="flex-picker-grid">${rs.map(r=>flexPickCard(r,dayIndex,key,target,source)).join('')}</div></div>`;overlay.addEventListener('click',e=>{if(e.target===overlay)closeManualPicker()});document.body.appendChild(overlay);document.body.style.overflow='hidden'}
+function openFlexPicker(dayIndex,key,target,source='current'){closeManualPicker();const plan=flexPlanForSource(source);if(!plan)return;const category=categoryForPlanKey(key),rs=recipesForFlexTarget(category,target);const overlay=document.createElement('div');overlay.id='manual-picker';overlay.className='picker-overlay';overlay.innerHTML=`<div class="picker-panel"><div class="picker-head"><div><div class="eyebrow">${dayName(plan.items[dayIndex].day,plan.startDate)}</div><h2>Vælg ${keyLabel(key).toLowerCase()}</h2><p>${target==='shared'?'Til hele familien':target==='kids'?'Til Sophia + Carlo':target==='alex'?'Til Alex':'Til Heidi'}</p></div><button class="picker-close" onclick="closeManualPicker()">×</button></div><input class="search" id="flex-picker-q" placeholder="Søg…" oninput="filterFlexPicker(${dayIndex},'${key}','${target}','${source}')"><div class="picker-grid" id="flex-picker-grid">${rs.map(r=>flexPickCard(r,dayIndex,key,target,source)).join('')}</div></div>`;overlay.addEventListener('click',e=>{if(e.target===overlay)closeManualPicker()});document.body.appendChild(overlay);document.body.style.overflow='hidden'}
 function flexPickCard(r,dayIndex,key,target,source='current'){return `<article class="picker-card">${recipeMedia(r,'picker-media')}<div class="picker-card-body"><h3>${escapeHtml(r.name)}</h3><div class="meta">${r.active||''} aktiv · ${r.total||''}</div><button class="btn" onclick="chooseFlexMeal(${dayIndex},'${key}','${target}','${r.id}','${source}')">Vælg denne</button></div></article>`}
 function filterFlexPicker(dayIndex,key,target,source='current'){const q=(document.getElementById('flex-picker-q')?.value||'').toLowerCase(),category=categoryForPlanKey(key),rs=recipesForFlexTarget(category,target).filter(r=>r.name.toLowerCase().includes(q)||r.ingredients.join(' ').toLowerCase().includes(q));const grid=document.getElementById('flex-picker-grid');if(grid)grid.innerHTML=rs.map(r=>flexPickCard(r,dayIndex,key,target,source)).join('')||'<div class="empty">Ingen retter matcher søgningen.</div>'}
 function chooseFlexMeal(dayIndex,key,target,recipeId,source='current'){const plan=flexPlanForSource(source);if(!plan)return;const d=plan.items[dayIndex],st=flexMealState(d,key),r=flexRecipe(recipeId);if(!r)return;if(target==='shared'){st.mode='shared';st.sharedId=recipeId;st.assignments={alex:recipeId,heidi:recipeId,kids:recipeId};st.lastHome={alex:recipeId,heidi:recipeId,kids:recipeId};d[key]=r}else{st.mode='individual';st.assignments[target]=recipeId;if(!st.lastHome)st.lastHome={};st.lastHome[target]=recipeId}if(source!=='draft')persistPlan();closeManualPicker();rerenderFlexSource(source)}
-function renderFlexibleCurrentPlan(){currentPlan.items.forEach(d=>{flexMealState(d,'breakfast');flexMealState(d,'lunch');flexMealState(d,'dinner');flexMealState(d,'snack')});const f=nutritionCheckFlexible(currentPlan),passed=f.filter(x=>x.ok).length;app.innerHTML=`<div class="shell">${siteHeader()}<div class="section-title"><div><span class="eyebrow">Nuværende madplan · fleksibel</span><h2>${currentPlan.days}-dages madplan</h2></div><button class="btn secondary" onclick="planner()">← Madplan</button></div><div class="plan-actions"><button class="btn" onclick="shoppingList()">🛒 Indkøbsliste</button><button class="btn secondary" onclick="flexiblePlanner()">＋ Lav ny fleksibel madplan</button></div><section class="nutrition-summary"><div><span class="eyebrow">Ernæringsfilter · Sophia + Carlo</span><h3>${passed} af ${f.length} pejlemærker ser gode ud</h3><p>Børnegruppen vurderes samlet, fordi Sophia + Carlo altid planlægges som 2 små børn.</p></div><div class="nutrition-chips">${f.slice(0,5).map(x=>`<span class="nutrition-chip ${x.ok?'ok':'attention'}">${x.ok?'✓':'•'} ${x.label}</span>`).join('')}</div></section><div class="engine-note"><b>Sådan læses planen:</b> Fælles ret står én gang på én linje hen over alle tre profiler. Kun når nogen får noget andet eller spiser ude, åbner måltidet sig i tre kolonner.</div>${flexPlanBoard(currentPlan,'current',true)}<div class="section-title"><h2>Ernæringsfilter · Sophia + Carlo</h2></div><div class="filter-check">${f.map(x=>`<div class="check-card ${x.ok?'':'warn'}"><strong>${x.ok?'✓':'•'} ${x.label}</strong>${x.text}</div>`).join('')}</div></div>${nav()}`}
-function flexRecipesForPerson(plan,personId){return plan.items.flatMap(d=>['breakfast','lunch','dinner','snack'].map(k=>{const st=flexMealState(d,k);return flexRecipe(st.mode==='shared'?st.sharedId:st.assignments[personId])}).filter(Boolean))}
-function nutritionCheckFlexible(plan){const all=flexRecipesForPerson(plan,'kids'),text=all.map(r=>(r.name+' '+r.ingredients.join(' ')+' '+(r.why||[]).join(' ')).toLowerCase()).join(' '),dinners=plan.items.map(d=>{const st=flexMealState(d,'dinner');return flexRecipe(st.mode==='shared'?st.sharedId:st.assignments.kids)}).filter(Boolean),fish=dinners.filter(r=>/laks|fisk|torsk|sej/i.test(r.name)).length,fatFish=dinners.filter(r=>/laks/i.test(r.name)).length,roles=new Set(dinners.map(dinnerRole));const ironDays=plan.items.filter(d=>['breakfast','lunch','dinner','snack'].some(k=>{const st=flexMealState(d,k),r=flexRecipe(st.mode==='shared'?st.sharedId:st.assignments.kids);return r&&/oksekød|kød|æg|laks|fisk|havre|linser|bønner|rugbrød/i.test(r.name+' '+r.ingredients.join(' '))})).length;return [{label:'Jern hver dag',ok:ironDays===plan.days,text:`Sophia + Carlo har tydelige jernkilder på ${ironDays} af ${plan.days} dage.`},{label:'C-vitamin ved plantejern',ok:/bær|kiwi|tomat|passata|peberfrugt|broccoli/.test(text),text:'Børnenes plan indeholder C-vitaminrige råvarer sammen med ugens relevante plantejernskilder.'},{label:'Fisk og omega-3',ok:fatFish>=1&&fish>=(plan.days<5?1:2),text:`Børnegruppen har ${fish} fiskeaftener, heraf ${fatFish} med laks/fed fisk.`},{label:'Energi nok',ok:/kartoffel|pasta|ris|havre|rugbrød|banan|tortilla|brød/.test(text),text:'Børnenes måltider indeholder tydelige energikilder.'},{label:'Fedtvariation',ok:/olivenolie|evoo|avocado|peanutbutter|tahin|laks|smør|æg|yoghurt/.test(text),text:'Planen rummer flere af Kostkompassets fedtkilder.'},{label:'Mejeri i balance',ok:true,text:'Mejeri indgår som del af en varieret plan og ikke som eneste næringskilde.'},{label:'Variation over ugen',ok:roles.size>=Math.min(3,Math.max(1,dinners.length)),text:`Børnenes aftensmad varierer mellem ${roles.size} måltidsroller/proteintyper.`},{label:'Salt og forarbejdning',ok:true,text:'Brug fortsat opskrifternes børnetilpasning og hold ekstra salt lavt.'},{label:'Alderssikkerhed',ok:true,text:'Sophia + Carlo serveres efter opskrifternes småbørnstilpasninger.'},{label:'D-vitaminrutine',ok:true,text:'Håndteres separat efter familiens faste rutine.'}]}
+function renderFlexibleCurrentPlan(){normalizePlanStructure(currentPlan);currentPlan.items.forEach(d=>PLAN_MEAL_KEYS.forEach(k=>flexMealState(d,k)));const f=nutritionCheckFlexible(currentPlan),passed=f.filter(x=>x.ok).length;app.innerHTML=`<div class="shell">${siteHeader()}<div class="section-title"><div><span class="eyebrow">Nuværende madplan · fleksibel</span><h2>${currentPlan.days}-dages madplan</h2></div><button class="btn secondary" onclick="planner()">← Madplan</button></div><div class="plan-actions"><button class="btn" onclick="shoppingList()">🛒 Indkøbsliste</button><button class="btn secondary" onclick="flexiblePlanner()">＋ Lav ny fleksibel madplan</button></div><section class="nutrition-summary"><div><span class="eyebrow">Ernæringsfilter · Sophia + Carlo</span><h3>${passed} af ${f.length} pejlemærker ser gode ud</h3><p>Børnegruppen vurderes samlet, fordi Sophia + Carlo altid planlægges som 2 små børn.</p></div><div class="nutrition-chips">${f.slice(0,5).map(x=>`<span class="nutrition-chip ${x.ok?'ok':'attention'}">${x.ok?'✓':'•'} ${x.label}</span>`).join('')}</div></section><div class="engine-note"><b>Sådan læses planen:</b> Fælles ret står én gang på én linje hen over alle tre profiler. Kun når nogen får noget andet eller spiser ude, åbner måltidet sig i tre kolonner.</div>${flexPlanBoard(currentPlan,'current',true)}<div class="section-title"><h2>Ernæringsfilter · Sophia + Carlo</h2></div><div class="filter-check">${f.map(x=>`<div class="check-card ${x.ok?'':'warn'}"><strong>${x.ok?'✓':'•'} ${x.label}</strong>${x.text}</div>`).join('')}</div></div>${nav()}`}
+function flexRecipesForPerson(plan,personId){normalizePlanStructure(plan);return plan.items.flatMap(d=>PLAN_MEAL_KEYS.map(k=>{const st=flexMealState(d,k);return flexRecipe(st.mode==='shared'?st.sharedId:st.assignments[personId])}).filter(Boolean))}
+function nutritionCheckFlexible(plan){const all=flexRecipesForPerson(plan,'kids'),text=all.map(r=>(r.name+' '+r.ingredients.join(' ')+' '+(r.why||[]).join(' ')).toLowerCase()).join(' '),dinners=plan.items.map(d=>{const st=flexMealState(d,'dinner');return flexRecipe(st.mode==='shared'?st.sharedId:st.assignments.kids)}).filter(Boolean),fish=dinners.filter(r=>/laks|fisk|torsk|sej/i.test(r.name)).length,fatFish=dinners.filter(r=>/laks/i.test(r.name)).length,roles=new Set(dinners.map(dinnerRole));const ironDays=plan.items.filter(d=>PLAN_MEAL_KEYS.some(k=>{const st=flexMealState(d,k),r=flexRecipe(st.mode==='shared'?st.sharedId:st.assignments.kids);return r&&/oksekød|kød|æg|laks|fisk|havre|linser|bønner|rugbrød/i.test(r.name+' '+r.ingredients.join(' '))})).length;return [{label:'Jern hver dag',ok:ironDays===plan.days,text:`Sophia + Carlo har tydelige jernkilder på ${ironDays} af ${plan.days} dage.`},{label:'C-vitamin ved plantejern',ok:/bær|kiwi|tomat|passata|peberfrugt|broccoli/.test(text),text:'Børnenes plan indeholder C-vitaminrige råvarer sammen med ugens relevante plantejernskilder.'},{label:'Fisk og omega-3',ok:fatFish>=1&&fish>=(plan.days<5?1:2),text:`Børnegruppen har ${fish} fiskeaftener, heraf ${fatFish} med laks/fed fisk.`},{label:'Energi nok',ok:/kartoffel|pasta|ris|havre|rugbrød|banan|tortilla|brød/.test(text),text:'Børnenes måltider indeholder tydelige energikilder.'},{label:'Fedtvariation',ok:/olivenolie|evoo|avocado|peanutbutter|tahin|laks|smør|æg|yoghurt/.test(text),text:'Planen rummer flere af Kostkompassets fedtkilder.'},{label:'Mejeri i balance',ok:true,text:'Mejeri indgår som del af en varieret plan og ikke som eneste næringskilde.'},{label:'Variation over ugen',ok:roles.size>=Math.min(3,Math.max(1,dinners.length)),text:`Børnenes aftensmad varierer mellem ${roles.size} måltidsroller/proteintyper.`},{label:'Salt og forarbejdning',ok:true,text:'Brug fortsat opskrifternes børnetilpasning og hold ekstra salt lavt.'},{label:'Alderssikkerhed',ok:true,text:'Sophia + Carlo serveres efter opskrifternes småbørnstilpasninger.'},{label:'D-vitaminrutine',ok:true,text:'Håndteres separat efter familiens faste rutine.'}]}
 
-function archiveCurrentPlan(){if(!currentPlan?.items?.length)return;const recipeIds=[];currentPlan.items.forEach(d=>['breakfast','lunch','dinner','snack'].forEach(k=>{if(d[k]?.id&&!recipeIds.includes(d[k].id))recipeIds.push(d[k].id)}));planHistory=[...(planHistory||[]),{created:currentPlan.created||Date.now(),recipeIds}].slice(-8);saveHouseholdStateLocal()}
+function archiveCurrentPlan(){if(!currentPlan?.items?.length)return;normalizePlanStructure(currentPlan);const recipeIds=[];currentPlan.items.forEach(d=>PLAN_MEAL_KEYS.forEach(k=>{if(d[k]?.id&&!recipeIds.includes(d[k].id))recipeIds.push(d[k].id)}));planHistory=[...(planHistory||[]),{created:currentPlan.created||Date.now(),recipeIds}].slice(-8);saveHouseholdStateLocal()}
 function generatePlan(){
   const days=Number(document.getElementById('days').value),busy='normal';
-  localStorage.setItem('kostkompas-plan-settings',JSON.stringify({days}));
+  const startDate=document.getElementById('plan-start-date')?.value||tomorrowISO();
+  localStorage.setItem('kostkompas-plan-settings',JSON.stringify({days,startDate}));
   const pattern=patterns[days];const used=new Set();const out=[];
   for(let i=0;i<days;i++){
     const dinner=chooseDinner(pattern[i],used,busy,i);used.add(dinner.id);
@@ -435,17 +470,18 @@ function generatePlan(){
     if(i===0){const ids=firstLunchByBusy[busy];const base=ids.map(n=>rBy('Frokost',n)).filter(Boolean);lunch=pickPersonalized([...base,...customRecipes.filter(r=>r.category==='Frokost')],new Set(),i)}
     else{const prev=out[i-1].dinner;if(prev.isCustom){lunch=prev}else{const ln=lunchMap[prev.number]||1;lunch=rBy('Frokost',ln)}leftover=true;out[i-1].makeDouble=true}
     const bIds=breakfastByBusy[busy];const breakfast=pickPersonalized([...bIds.map(n=>rBy('Morgenmad',n)).filter(Boolean),...customRecipes.filter(r=>r.category==='Morgenmad')],new Set(),i);
-    const snack=pickSnack([breakfast,lunch,dinner],i);
-    out.push({day:i+1,breakfast,lunch,dinner,snack,leftoverLunch:leftover,makeDouble:false,outMeals:{},manual:{}})
+    const snackMorning=pickSnack([breakfast,lunch],i*2);
+    let snackAfternoon=pickSnack([lunch,dinner],i*2+1);
+    if(snackAfternoon?.id===snackMorning?.id){const alt=recipes.filter(r=>r.category==='Mellemmåltider'&&!r.adultOnly&&r.id!==snackMorning.id);snackAfternoon=pickPersonalized(alt,new Set(),i+5)||snackAfternoon}
+    out.push({day:i+1,breakfast,snackMorning,lunch,snackAfternoon,dinner,leftoverLunch:leftover,makeDouble:false,outMeals:{},manual:{}})
   }
-  draftPlan={planType:'shared',days,busy:'normal',items:out,created:Date.now()};
-  renderDraftPlan()
+  draftPlan={planType:'shared',days,busy:'normal',startDate,items:out,created:Date.now()};
+  normalizePlanStructure(draftPlan);renderDraftPlan();
 }
-
 function renderDraftPlan(){
   if(draftPlan?.planType==='flex'){renderFlexibleDraft();return}
   if(!draftPlan){planner();return}
-  app.innerHTML=`<div class="shell">${siteHeader()}<div class="section-title"><div><span class="eyebrow">Forslag</span><h2>${draftPlan.days}-dages ny madplan</h2></div><button class="btn secondary" onclick="planner()">← Tilbage</button></div><div class="engine-note"><b>Din nuværende madplan er ikke ændret.</b> Dette er kun et forslag. Den bliver først familiens Nuværende madplan, når du vælger “Brug denne madplan”.</div><div class="plan-actions"><button class="btn" onclick="activateDraftPlan()">✓ Brug denne madplan</button><button class="btn secondary" onclick="planner()">↻ Lav et andet forslag</button>${currentPlan?'<button class="btn secondary" onclick="renderCurrentPlan()">📅 Behold nuværende madplan</button>':''}</div><div class="week">${draftPlan.items.map(d=>`<section class="day-card"><div class="day-head"><h3>${dayName(d.day)}</h3></div><div class="draft-meal"><b>Morgenmad</b><span>${escapeHtml(d.breakfast?.name||'')}</span></div><div class="draft-meal"><b>Frokost</b><span>${escapeHtml(d.lunch?.name||'')}</span></div><div class="draft-meal"><b>Aftensmad</b><span>${escapeHtml(d.dinner?.name||'')}</span></div><div class="draft-meal"><b>Mellemmåltid</b><span>${escapeHtml(d.snack?.name||'')}</span></div></section>`).join('')}</div></div>${nav()}`;
+  app.innerHTML=`<div class="shell">${siteHeader()}<div class="section-title"><div><span class="eyebrow">Forslag</span><h2>${draftPlan.days}-dages ny madplan</h2></div><button class="btn secondary" onclick="planner()">← Tilbage</button></div><div class="engine-note"><b>Din nuværende madplan er ikke ændret.</b> Dette er kun et forslag. Den bliver først familiens Nuværende madplan, når du vælger “Brug denne madplan”.</div><div class="plan-actions"><button class="btn" onclick="activateDraftPlan()">✓ Brug denne madplan</button><button class="btn secondary" onclick="planner()">↻ Lav et andet forslag</button>${currentPlan?'<button class="btn secondary" onclick="renderCurrentPlan()">📅 Behold nuværende madplan</button>':''}</div><div class="week">${draftPlan.items.map(d=>`<section class="day-card"><div class="day-head"><h3>${dayName(d.day,draftPlan.startDate)}</h3></div><div class="draft-meal"><b>Morgenmad</b><span>${escapeHtml(d.breakfast?.name||'')}</span></div><div class="draft-meal"><b>Formiddagsmellemmåltid</b><span>${escapeHtml(d.snackMorning?.name||'')}</span></div><div class="draft-meal"><b>Frokost</b><span>${escapeHtml(d.lunch?.name||'')}</span></div><div class="draft-meal"><b>Eftermiddagsmellemmåltid</b><span>${escapeHtml(d.snackAfternoon?.name||'')}</span></div><div class="draft-meal"><b>Aftensmad</b><span>${escapeHtml(d.dinner?.name||'')}</span></div></section>`).join('')}</div></div>${nav()}`;
 }
 function activateDraftPlan(){
   if(!draftPlan)return;
@@ -460,10 +496,11 @@ function quickShoppingHtml(recipe){
   return `<section class="quick-shopping"><div class="section-title compact"><div><span class="eyebrow">Til netop denne ret</span><h2>🛒 Indkøbsliste</h2></div><button class="btn secondary" onclick="pantry()">🏡 Basislager</button></div><p class="muted">Listen er til den hurtige ret og ændrer ikke indkøbslisten til Nuværende madplan.</p><div class="quick-shopping-grid"><div class="shop-card"><h3>Det skal du købe</h3>${need.length?need.map(({c,v})=>{const key=`quick:${recipe.id}:${c}:${v.name}:${v.unit}`;return `<label class="shop-item"><input type="checkbox" ${shoppingChecks[key]?'checked':''} onchange="saveShoppingCheck('${encodeURIComponent(key)}',this.checked)"><span>${fmtItem(v)}</span></label>`}).join(''):'<p class="muted">Alt er markeret som basislager.</p>'}</div><aside class="shop-card"><h3>✓ Har hjemme / tjek basislager</h3>${home.length?home.map(({v})=>`<div class="home-item"><span>✓</span><span>${fmtItem(v)}</span></div>`).join(''):'<p class="muted small">Ingen af ingredienserne er markeret som basislager.</p>'}</aside></div></section>`;
 }
 function restorePlan(){try{currentPlan=JSON.parse(localStorage.getItem('kostkompas-current-plan')||'null')}catch(e){currentPlan=null}}
-function dayName(i){
-  const d=new Date();
-  d.setHours(12,0,0,0);
-  d.setDate(d.getDate()+i-1);
+function dayName(i,startDate=null){
+  const base=startDate||currentPlan?.startDate||isoLocalDate(new Date());
+  const parts=String(base).split('-').map(Number);
+  const d=parts.length===3?new Date(parts[0],parts[1]-1,parts[2],12,0,0):new Date();
+  d.setDate(d.getDate()+Number(i||1)-1);
   const weekday=d.toLocaleDateString('da-DK',{weekday:'long'});
   const date=d.toLocaleDateString('da-DK',{day:'numeric',month:'short'});
   return `${weekday.charAt(0).toUpperCase()+weekday.slice(1)} · ${date}`;
@@ -519,15 +556,15 @@ function dinnerPlanRow(d,i){
   const notes=[];if(d.makeDouble)notes.push('Lav dobbelt: aftensmad i dag → frokost i morgen');
   return mealRow('Aftensmad',d.dinner,notes.join(' · '),i,'dinner',mealOutButton(i,'dinner'));
 }
-function categoryForPlanKey(key){return {breakfast:'Morgenmad',lunch:'Frokost',dinner:'Aftensmad',snack:'Mellemmåltider'}[key]}
-function keyLabel(key){return {breakfast:'morgenmad',lunch:'frokost',dinner:'aftensmad',snack:'mellemmåltid'}[key]}
+function categoryForPlanKey(key){return {breakfast:'Morgenmad',snackMorning:'Mellemmåltider',lunch:'Frokost',snackAfternoon:'Mellemmåltider',dinner:'Aftensmad'}[key]}
+function keyLabel(key){return {breakfast:'morgenmad',snackMorning:'formiddagsmellemmåltid',lunch:'frokost',snackAfternoon:'eftermiddagsmellemmåltid',dinner:'aftensmad'}[key]}
 function openManualPicker(dayIndex,key){
   const category=categoryForPlanKey(key);
-  const rs=recipes.filter(r=>r.category===category);
+  const rs=recipes.filter(r=>r.category===category&&recipeAllowedForTarget(r,'shared'));
   closeManualPicker();
   const overlay=document.createElement('div');overlay.id='manual-picker';overlay.className='picker-overlay';
   overlay.innerHTML=`<div class="picker-panel">
-    <div class="picker-head"><div><div class="eyebrow">${dayName(currentPlan?.items?.[dayIndex]?.day||dayIndex+1)}</div><h2>Vælg selv ${keyLabel(key)}</h2><p>Vælg frit fra de ${rs.length} retter i kategorien.</p></div><button class="picker-close" onclick="closeManualPicker()">×</button></div>
+    <div class="picker-head"><div><div class="eyebrow">${dayName(currentPlan?.items?.[dayIndex]?.day||dayIndex+1,currentPlan?.startDate)}</div><h2>Vælg selv ${keyLabel(key)}</h2><p>Vælg frit fra de ${rs.length} retter i kategorien.</p></div><button class="picker-close" onclick="closeManualPicker()">×</button></div>
     <input class="search" id="manual-q" placeholder="Søg…" oninput="filterManualPicker(${dayIndex},'${key}')">
     <div class="picker-grid" id="manual-picker-grid">${rs.map(r=>manualPickCard(r,dayIndex,key)).join('')}</div>
   </div>`;
@@ -540,7 +577,7 @@ function manualPickCard(r,dayIndex,key){
 }
 function filterManualPicker(dayIndex,key){
   const q=(document.getElementById('manual-q')?.value||'').toLowerCase();const category=categoryForPlanKey(key);
-  const rs=recipes.filter(r=>r.category===category&&(r.name.toLowerCase().includes(q)||r.ingredients.join(' ').toLowerCase().includes(q)));
+  const rs=recipes.filter(r=>r.category===category&&recipeAllowedForTarget(r,'shared')&&(r.name.toLowerCase().includes(q)||r.ingredients.join(' ').toLowerCase().includes(q)));
   const grid=document.getElementById('manual-picker-grid');if(grid)grid.innerHTML=rs.map(r=>manualPickCard(r,dayIndex,key)).join('')||'<div class="empty">Ingen retter matcher søgningen.</div>';
 }
 function closeManualPicker(){const el=document.getElementById('manual-picker');if(el)el.remove();document.body.style.overflow=''}
@@ -560,8 +597,11 @@ function chooseManualMeal(dayIndex,key,recipeId){
       }
     }else d.makeDouble=false;
   }
-  // A manually chosen snack is never overwritten. Otherwise let snack continue to follow the day's ingredients.
-  if((key==='breakfast'||key==='lunch'||key==='dinner')&&!d.manual.snack)d.snack=pickSnack([d.breakfast,d.lunch,d.dinner],dayIndex);
+  // Manuelt valgte mellemmåltider bevares. Ellers følger de dagens øvrige råvarer.
+  if(key==='breakfast'||key==='lunch'||key==='dinner'){
+    if(!d.manual.snackMorning)d.snackMorning=pickSnack([d.breakfast,d.lunch],dayIndex*2);
+    if(!d.manual.snackAfternoon)d.snackAfternoon=pickSnack([d.lunch,d.dinner],dayIndex*2+1);
+  }
   persistPlan();closeManualPicker();renderCurrentPlan();
 }
 
@@ -572,14 +612,14 @@ function randomOther(list,currentId){
 }
 function candidatesForMeal(dayIndex,key){
   const d=currentPlan.items[dayIndex];
-  if(key==='breakfast')return recipes.filter(r=>r.category==='Morgenmad');
-  if(key==='snack')return recipes.filter(r=>r.category==='Mellemmåltider'&&!r.adultOnly);
-  if(key==='lunch')return recipes.filter(r=>r.category==='Frokost');
+  if(key==='breakfast')return recipes.filter(r=>r.category==='Morgenmad'&&recipeAllowedForTarget(r,'shared'));
+  if(key==='snackMorning'||key==='snackAfternoon')return recipes.filter(r=>r.category==='Mellemmåltider'&&recipeAllowedForTarget(r,'shared'));
+  if(key==='lunch')return recipes.filter(r=>r.category==='Frokost'&&recipeAllowedForTarget(r,'shared'));
   if(key==='dinner'){
     const role=dinnerRole(d.dinner);
     let ids=dinnerPools[role]||[];
     let pool=ids.map(n=>rBy('Aftensmad',n)).filter(Boolean);
-    if(pool.length<2)pool=recipes.filter(r=>r.category==='Aftensmad');
+    if(pool.length<2)pool=recipes.filter(r=>r.category==='Aftensmad'&&recipeAllowedForTarget(r,'shared'));
     return pool;
   }
   return [];
@@ -597,12 +637,13 @@ function swapMeal(dayIndex,key){
       }else d.makeDouble=false;
     }else d.makeDouble=false;
   }
-  if((key==='breakfast'||key==='lunch'||key==='dinner')&&!d.manual.snack)d.snack=pickSnack([d.breakfast,d.lunch,d.dinner],dayIndex+Math.floor(Math.random()*5));
+  if(key==='breakfast'||key==='lunch'||key==='dinner'){if(!d.manual.snackMorning)d.snackMorning=pickSnack([d.breakfast,d.lunch],dayIndex*2+Math.floor(Math.random()*3));if(!d.manual.snackAfternoon)d.snackAfternoon=pickSnack([d.lunch,d.dinner],dayIndex*2+1+Math.floor(Math.random()*3));}
   persistPlan();renderCurrentPlan();
 }
 function renderCurrentPlan(){
   closeManualPicker();
   if(!currentPlan){planner();return}
+  normalizePlanStructure(currentPlan);
   if(currentPlan.planType==='flex'){renderFlexibleCurrentPlan();return}
   currentPlan.items.forEach(d=>{if(!d.outMeals||typeof d.outMeals!=='object')d.outMeals={};});
   const f=nutritionCheck(currentPlan),passed=f.filter(x=>x.ok).length;
@@ -620,25 +661,26 @@ function renderCurrentPlan(){
     <div class="engine-note"><b>Planen er fleksibel.</b> Markér “Spiser ude” på det enkelte måltid, hvis I ikke spiser hjemme. Rester og indkøbsliste justeres automatisk.</div>
     <div class="week">
       ${currentPlan.items.map((d,i)=>`<section class="day-card ${Object.values(d.outMeals||{}).some(Boolean)?'day-adjusted':''}">
-        <div class="day-head"><h3>${dayName(d.day)}</h3>${Object.values(d.outMeals||{}).some(Boolean)?'<span class="day-tag">Tilpasset</span>':''}</div>
+        <div class="day-head"><h3>${dayName(d.day,currentPlan.startDate)}</h3>${Object.values(d.outMeals||{}).some(Boolean)?'<span class="day-tag">Tilpasset</span>':''}</div>
         ${plannedMealRow('Morgenmad',d,i,'breakfast')}
+        ${plannedMealRow('Formiddagsmellemmåltid',d,i,'snackMorning')}
         ${plannedMealRow('Frokost',d,i,'lunch',d.leftoverLunch?'Planlagt fra gårsdagens aftensmad · indkøb tælles via dobbelt aftensmad':'')}
+        ${plannedMealRow('Eftermiddagsmellemmåltid',d,i,'snackAfternoon')}
         ${dinnerPlanRow(d,i)}
-        ${plannedMealRow('Mellemmåltid',d,i,'snack')}
       </section>`).join('')}
     </div>
     <div class="section-title"><h2>Ernæringsfilter · detaljer</h2></div>
     <div class="filter-check">${f.map(x=>`<div class="check-card ${x.ok?'':'warn'}"><strong>${x.ok?'✓':'•'} ${x.label}</strong>${x.text}</div>`).join('')}</div>
   </div>${nav()}`;
 }
-function generatePlanFromStored(){const s=JSON.parse(localStorage.getItem('kostkompas-plan-settings')||'{"days":4}');planner();setTimeout(()=>{document.getElementById('days').value=s.days;generatePlan()},0)}
+function generatePlanFromStored(){const s=JSON.parse(localStorage.getItem('kostkompas-plan-settings')||'{"days":4}');planner();setTimeout(()=>{document.getElementById('days').value=s.days||4;const date=document.getElementById('plan-start-date');if(date)date.value=s.startDate||tomorrowISO();generatePlan()},0)}
 function nutritionCheck(plan){
   const activeDinners=plan.items.filter(d=>!mealIsOut(d,'dinner')).map(x=>x.dinner).filter(Boolean);
-  const all=plan.items.flatMap(d=>[['breakfast',d.breakfast],['lunch',d.lunch],['dinner',d.dinner],['snack',d.snack]].filter(([k])=>!mealIsOut(d,k)).map(([,r])=>r)).filter(Boolean);
+  const all=plan.items.flatMap(d=>[['breakfast',d.breakfast],['snackMorning',d.snackMorning],['lunch',d.lunch],['snackAfternoon',d.snackAfternoon],['dinner',d.dinner]].filter(([k])=>!mealIsOut(d,k)).map(([,r])=>r)).filter(Boolean);
   const text=all.map(r=>(r.name+' '+r.ingredients.join(' ')+' '+(r.why||[]).join(' ')).toLowerCase()).join(' ');
   const fish=activeDinners.filter(r=>/laks|fisk|torsk|sej/.test(r.name.toLowerCase())).length;
   const fatFish=activeDinners.filter(r=>/laks/.test(r.name.toLowerCase())).length;
-  const ironDays=plan.items.filter(d=>[['breakfast',d.breakfast],['lunch',d.lunch],['dinner',d.dinner],['snack',d.snack]].filter(([k])=>!mealIsOut(d,k)).map(([,r])=>r).filter(Boolean).some(r=>/oksekød|kød|æg|laks|fisk|havre|linser|bønner|rugbrød/i.test((r.name+' '+r.ingredients.join(' '))))).length;
+  const ironDays=plan.items.filter(d=>[['breakfast',d.breakfast],['snackMorning',d.snackMorning],['lunch',d.lunch],['snackAfternoon',d.snackAfternoon],['dinner',d.dinner]].filter(([k])=>!mealIsOut(d,k)).map(([,r])=>r).filter(Boolean).some(r=>/oksekød|kød|æg|laks|fisk|havre|linser|bønner|rugbrød/i.test((r.name+' '+r.ingredients.join(' '))))).length;
   const roles=new Set(activeDinners.map(r=>dinnerRole(r)));
   const fishTarget=plan.days<5?1:2;
   return [
@@ -751,7 +793,7 @@ function buildShopping(plan){
     });
   };
   if(plan.planType==='flex'){
-    plan.items.forEach(d=>['breakfast','lunch','dinner','snack'].forEach(key=>{
+    normalizePlanStructure(plan);plan.items.forEach(d=>PLAN_MEAL_KEYS.forEach(key=>{
       const st=flexMealState(d,key);
       if(st.mode==='shared'){addStructured(flexRecipe(st.sharedId)||d[key],'family');return}
       const ids=st.assignments||{};
@@ -765,7 +807,8 @@ function buildShopping(plan){
       if(!mealIsOut(d,'breakfast'))addStructured(d.breakfast,'family');
       if(!mealIsOut(d,'lunch')&&(i===0||!d.leftoverLunch))addStructured(d.lunch,'family');
       if(!mealIsOut(d,'dinner'))addStructured(d.dinner,'family',d.makeDouble?2:1);
-      if(!mealIsOut(d,'snack'))addStructured(d.snack,'family');
+      if(!mealIsOut(d,'snackMorning'))addStructured(d.snackMorning,'family');
+      if(!mealIsOut(d,'snackAfternoon'))addStructured(d.snackAfternoon,'family');
     });
   }
   const groups={};
@@ -811,9 +854,9 @@ function shoppingPlanMeal(label,r,note=''){
   return `<div class="shop-plan-meal">${r.image?`<img src="${r.image}" alt="">`:`<div class="shop-plan-placeholder">🍽️</div>`}<div><span>${label}</span><strong>${r.name}</strong>${note?`<small>${note}</small>`:''}</div></div>`
 }
 function shoppingPlanOverview(){
-  if(currentPlan?.planType==='flex')return `<section class="shopping-plan-section"><div class="shopping-plan-head"><div><span class="eyebrow">Overblik · fleksibel</span><h2>Madplanen du handler til</h2><p>Mængderne følger MASTER v3: 1 voksen til Alex, 1 voksen til Heidi og 2 små børn til Sophia + Carlo. Når alle får samme ret, bruges familieportionen direkte.</p></div><button class="btn secondary" onclick="renderCurrentPlan()">Redigér madplan</button></div><div class="shopping-days">${currentPlan.items.map(d=>`<article class="shopping-day flex-shopping-day"><h3>${dayName(d.day)}</h3>${['breakfast','lunch','dinner','snack'].map(k=>{const st=flexMealState(d,k);if(st.mode==='shared'){const r=flexRecipe(st.sharedId);return shoppingPlanMeal(keyLabel(k),r,'Alle får det samme')}return `<div class="shop-flex-group"><span>${keyLabel(k)}</span>${flexPeople.map(p=>`<small><b>${p.name}:</b> ${st.assignments[p.id]===FLEX_OUT?'🍽️ Spiser ude':escapeHtml(flexRecipe(st.assignments[p.id])?.name||'Ikke planlagt')}</small>`).join('')}</div>`}).join('')}</article>`).join('')}</div></section>`;
+  if(currentPlan?.planType==='flex')return `<section class="shopping-plan-section"><div class="shopping-plan-head"><div><span class="eyebrow">Overblik · fleksibel</span><h2>Madplanen du handler til</h2><p>Mængderne følger MASTER v3: 1 voksen til Alex, 1 voksen til Heidi og 2 små børn til Sophia + Carlo. Når alle får samme ret, bruges familieportionen direkte.</p></div><button class="btn secondary" onclick="renderCurrentPlan()">Redigér madplan</button></div><div class="shopping-days">${currentPlan.items.map(d=>`<article class="shopping-day flex-shopping-day"><h3>${dayName(d.day,currentPlan.startDate)}</h3>${PLAN_MEAL_KEYS.map(k=>{const st=flexMealState(d,k);if(st.mode==='shared'){const r=flexRecipe(st.sharedId);return shoppingPlanMeal(keyLabel(k),r,'Alle får det samme')}return `<div class="shop-flex-group"><span>${keyLabel(k)}</span>${flexPeople.map(p=>`<small><b>${p.name}:</b> ${st.assignments[p.id]===FLEX_OUT?'🍽️ Spiser ude':escapeHtml(flexRecipe(st.assignments[p.id])?.name||'Ikke planlagt')}</small>`).join('')}</div>`}).join('')}</article>`).join('')}</div></section>`;
   return `<section class="shopping-plan-section"><div class="shopping-plan-head"><div><span class="eyebrow">Overblik</span><h2>Madplanen du handler til</h2><p>Her kan du hurtigt se, hvilke måltider indkøbslisten dækker – inkl. jeres tilpassede dage.</p></div><button class="btn secondary" onclick="renderCurrentPlan()">Redigér madplan</button></div>
-    <div class="shopping-days">${currentPlan.items.map((d,i)=>`<article class="shopping-day"><h3>${dayName(d.day)}</h3>${mealIsOut(d,'breakfast')?shoppingPlanMeal('Morgenmad',null,'Spiser ude · intet indkøb'):shoppingPlanMeal('Morgenmad',d.breakfast)}${mealIsOut(d,'lunch')?shoppingPlanMeal('Frokost',null,'Spiser ude · intet indkøb'):shoppingPlanMeal('Frokost',d.lunch,d.leftoverLunch?'Rester fra dagen før':'')}${mealIsOut(d,'dinner')?shoppingPlanMeal('Aftensmad',null,'Spiser ude · intet indkøb'):shoppingPlanMeal('Aftensmad',d.dinner,d.makeDouble?'Lav dobbelt → frokost i morgen':'')}${mealIsOut(d,'snack')?shoppingPlanMeal('Mellemmåltid',null,'Spiser ude · intet indkøb'):shoppingPlanMeal('Mellemmåltid',d.snack)}</article>`).join('')}</div>
+    <div class="shopping-days">${currentPlan.items.map((d,i)=>`<article class="shopping-day"><h3>${dayName(d.day,currentPlan.startDate)}</h3>${mealIsOut(d,'breakfast')?shoppingPlanMeal('Morgenmad',null,'Spiser ude · intet indkøb'):shoppingPlanMeal('Morgenmad',d.breakfast)}${mealIsOut(d,'snackMorning')?shoppingPlanMeal('Formiddagsmellemmåltid',null,'Spiser ude · intet indkøb'):shoppingPlanMeal('Formiddagsmellemmåltid',d.snackMorning)}${mealIsOut(d,'lunch')?shoppingPlanMeal('Frokost',null,'Spiser ude · intet indkøb'):shoppingPlanMeal('Frokost',d.lunch,d.leftoverLunch?'Rester fra dagen før':'')}${mealIsOut(d,'snackAfternoon')?shoppingPlanMeal('Eftermiddagsmellemmåltid',null,'Spiser ude · intet indkøb'):shoppingPlanMeal('Eftermiddagsmellemmåltid',d.snackAfternoon)}${mealIsOut(d,'dinner')?shoppingPlanMeal('Aftensmad',null,'Spiser ude · intet indkøb'):shoppingPlanMeal('Aftensmad',d.dinner,d.makeDouble?'Lav dobbelt → frokost i morgen':'')}</article>`).join('')}</div>
   </section>`
 }
 
@@ -845,11 +888,11 @@ async function saveCustomRecipe(e,id=''){
   e.preventDefault();const category=document.getElementById('cr-category').value;const existing=id?customRecipes.find(r=>r.id===id):null;
   const recipe={id:existing?.id||`egen-${Date.now()}`,name:document.getElementById('cr-name').value.trim(),category,number:null,portion:'2 voksne + 2 børn',active:document.getElementById('cr-active').value.trim()||'20 min',total:document.getElementById('cr-total').value.trim()||document.getElementById('cr-active').value.trim()||'20 min',ingredients:linesFrom('cr-ingredients'),steps:linesFrom('cr-steps'),taste:document.getElementById('cr-taste').value.trim(),child:document.getElementById('cr-child').value.trim(),tip:'',why:linesFrom('cr-why'),image:'',isCustom:true,planGroup:category==='Aftensmad'?document.getElementById('cr-plan-group').value:''};
   if(existing)customRecipes=customRecipes.map(r=>r.id===id?recipe:r);else customRecipes.push(recipe);
-  if(currentPlan?.items?.length)currentPlan.items.forEach(d=>['breakfast','lunch','dinner','snack'].forEach(k=>{if(d[k]?.id===recipe.id)d[k]=recipe}));
+  if(currentPlan?.items?.length)currentPlan.items.forEach(d=>PLAN_MEAL_KEYS.forEach(k=>{if(d[k]?.id===recipe.id)d[k]=recipe}));
   rebuildRecipes();saveHouseholdStateLocal();await saveHouseholdStateCloud();if(currentPlan)persistPlan();showRecipe(recipe.id);
 }
 async function deleteCustomRecipe(id){
-  const r=customRecipes.find(x=>x.id===id);if(!r)return;const inPlan=currentPlan?.items?.some(d=>['breakfast','lunch','dinner','snack'].some(k=>d[k]?.id===id));if(inPlan){alert('Retten er med i den aktive madplan. Byt den først ud i madplanen, og slet den derefter.');return}if(!confirm(`Slet “${r.name}”?`))return;
+  const r=customRecipes.find(x=>x.id===id);if(!r)return;const inPlan=currentPlan?.items?.some(d=>PLAN_MEAL_KEYS.some(k=>d[k]?.id===id));if(inPlan){alert('Retten er med i den aktive madplan. Byt den først ud i madplanen, og slet den derefter.');return}if(!confirm(`Slet “${r.name}”?`))return;
   customRecipes=customRecipes.filter(x=>x.id!==id);delete recipeFeedback[id];let f=favs().filter(x=>x!==id);saveFavs(f);rebuildRecipes();saveHouseholdStateLocal();await saveHouseholdStateCloud();library();
 }
 function pantry(){
