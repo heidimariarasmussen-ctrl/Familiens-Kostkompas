@@ -2179,5 +2179,108 @@
       "25 g færdigkøbt dilddressing",
       "Frisk dild efter smag"
     ]
+  },
+  "comfort-yoghurt-chokolademousse": {
+    "adult": [
+      "150 g græsk yoghurt 10 %",
+      "15 g usødet kakao",
+      "10 g sukkerfri mørk chokolade",
+      "15 g piskefløde",
+      "½ tsk vanilje",
+      "Sødemiddel efter smag",
+      "Et lille nip salt"
+    ]
+  },
+  "comfort-lettere-yoghurt-chokolademousse": {
+    "adult": [
+      "150 g græsk yoghurt 10 %",
+      "15 g usødet kakao",
+      "½ tsk vanilje",
+      "Sødemiddel efter smag",
+      "1–2 spsk mælk efter behov",
+      "Et lille nip salt"
+    ]
+  },
+  "comfort-fudgy-brownie": {
+    "adult": [
+      "1 æg",
+      "8 g smør",
+      "8 g sukkerfri mørk chokolade",
+      "5 g kakao",
+      "8 g mandelmel",
+      "Sødemiddel efter smag",
+      "Lidt vanilje",
+      "Et nip salt"
+    ]
+  },
+  "comfort-brownie-valnoedder": {
+    "adult": [
+      "1 æg",
+      "8 g smør",
+      "8 g sukkerfri mørk chokolade",
+      "5 g kakao",
+      "8 g mandelmel",
+      "5 g hakkede valnødder",
+      "Sødemiddel efter smag",
+      "Lidt vanilje",
+      "Et nip salt"
+    ]
+  },
+  "comfort-chokoladekage-frosting": {
+    "adult": [
+      "1 æg",
+      "25 g græsk yoghurt 10 %",
+      "8 g mandelmel",
+      "5 g kakao",
+      "5 g smør",
+      "5 g sukkerfri mørk chokolade",
+      "Sødemiddel efter smag",
+      "Lidt vanilje",
+      "En lille knivspids bagepulver",
+      "12 g naturel flødeost",
+      "2 g kakao til frosting",
+      "2–3 g fløde",
+      "Lidt sødemiddel til frosting"
+    ]
+  },
+  "comfort-chokolade-kokos-bites": {
+    "adult": [
+      "15 g kokosmel eller fintrevet kokos",
+      "8 g kokosolie",
+      "8 g sukkerfri mørk chokolade",
+      "Lidt vanilje",
+      "Sødemiddel efter smag",
+      "Et nip salt"
+    ]
+  },
+  "comfort-chokolade-crunch": {
+    "adult": [
+      "20 g sukkerfri mørk chokolade",
+      "10 g valnødder",
+      "5 g kokosflager",
+      "Et lille nip salt"
+    ]
+  },
+  "comfort-graesk-yoghurt-kakao-baer": {
+    "adult": [
+      "150 g græsk yoghurt 10 %",
+      "5 g kakao",
+      "50 g hindbær eller blåbær",
+      "Vanilje efter smag",
+      "Sødemiddel efter smag",
+      "Evt. 5 g hakket mørk chokolade"
+    ]
+  },
+  "comfort-lun-bolle-smoer": {
+    "adult": [
+      "1 mindre god bolle, ca. 60 g",
+      "10 g rigtig smør"
+    ]
+  },
+  "comfort-bolle-chokolade": {
+    "adult": [
+      "1 mindre bolle, ca. 60 g",
+      "15 g mørk eller sukkerfri chokolade/pålægschokolade"
+    ]
   }
 }

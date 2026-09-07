@@ -535,5 +535,80 @@
     "unit": "g",
     "pack": 250,
     "packLabel": "250 g"
+  },
+  "greek_yogurt_10": {
+    "name": "Græsk yoghurt 10 %",
+    "cat": "Mejeri & æg",
+    "unit": "g",
+    "pack": 1000,
+    "packLabel": "1 kg"
+  },
+  "cocoa_unsweetened": {
+    "name": "Usødet kakao",
+    "cat": "Kolonial",
+    "unit": "g",
+    "pack": 200,
+    "packLabel": "200 g"
+  },
+  "sugarfree_dark_chocolate": {
+    "name": "Sukkerfri mørk chokolade",
+    "cat": "Kolonial",
+    "unit": "g",
+    "pack": 100,
+    "packLabel": "100 g"
+  },
+  "almond_flour": {
+    "name": "Mandelmel",
+    "cat": "Kolonial",
+    "unit": "g",
+    "pack": 250,
+    "packLabel": "250 g"
+  },
+  "walnuts": {
+    "name": "Valnødder",
+    "cat": "Kolonial",
+    "unit": "g",
+    "pack": 200,
+    "packLabel": "200 g"
+  },
+  "cream_cheese": {
+    "name": "Naturel flødeost",
+    "cat": "Mejeri & æg",
+    "unit": "g",
+    "pack": 200,
+    "packLabel": "200 g"
+  },
+  "coconut_shredded": {
+    "name": "Kokosmel / fintrevet kokos",
+    "cat": "Kolonial",
+    "unit": "g",
+    "pack": 200,
+    "packLabel": "200 g"
+  },
+  "coconut_oil": {
+    "name": "Kokosolie",
+    "cat": "Kolonial",
+    "unit": "g",
+    "pack": 500,
+    "packLabel": "500 g"
+  },
+  "coconut_flakes": {
+    "name": "Kokosflager",
+    "cat": "Kolonial",
+    "unit": "g",
+    "pack": 150,
+    "packLabel": "150 g"
+  },
+  "small_bun": {
+    "name": "Mindre bolle",
+    "cat": "Brød",
+    "unit": "piece"
+  },
+  "dark_chocolate": {
+    "name": "Mørk chokolade",
+    "cat": "Kolonial",
+    "unit": "g",
+    "pack": 100,
+    "packLabel": "100 g"
   }
 }

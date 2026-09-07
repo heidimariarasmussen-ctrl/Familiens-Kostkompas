@@ -9810,5 +9810,279 @@
         "raw": "frisk dild"
       }
     ]
+  },
+  "comfort-yoghurt-chokolademousse": {
+    "adult": [
+      {
+        "id": "greek_yogurt_10",
+        "amount": 150,
+        "unit": "g",
+        "raw": "150 g græsk yoghurt 10 %"
+      },
+      {
+        "id": "cocoa_unsweetened",
+        "amount": 15,
+        "unit": "g",
+        "raw": "15 g usødet kakao"
+      },
+      {
+        "id": "sugarfree_dark_chocolate",
+        "amount": 10,
+        "unit": "g",
+        "raw": "10 g sukkerfri mørk chokolade"
+      },
+      {
+        "id": "cream",
+        "amount": 15,
+        "unit": "ml",
+        "raw": "15 g piskefløde"
+      }
+    ]
+  },
+  "comfort-lettere-yoghurt-chokolademousse": {
+    "adult": [
+      {
+        "id": "greek_yogurt_10",
+        "amount": 150,
+        "unit": "g",
+        "raw": "150 g græsk yoghurt 10 %"
+      },
+      {
+        "id": "cocoa_unsweetened",
+        "amount": 15,
+        "unit": "g",
+        "raw": "15 g usødet kakao"
+      },
+      {
+        "id": "milk",
+        "amount": 30,
+        "unit": "ml",
+        "raw": "1–2 spsk mælk"
+      }
+    ]
+  },
+  "comfort-fudgy-brownie": {
+    "adult": [
+      {
+        "id": "eggs",
+        "amount": 1,
+        "unit": "piece",
+        "raw": "1 æg"
+      },
+      {
+        "id": "butter",
+        "amount": 8,
+        "unit": "g",
+        "raw": "8 g smør"
+      },
+      {
+        "id": "sugarfree_dark_chocolate",
+        "amount": 8,
+        "unit": "g",
+        "raw": "8 g sukkerfri mørk chokolade"
+      },
+      {
+        "id": "cocoa_unsweetened",
+        "amount": 5,
+        "unit": "g",
+        "raw": "5 g kakao"
+      },
+      {
+        "id": "almond_flour",
+        "amount": 8,
+        "unit": "g",
+        "raw": "8 g mandelmel"
+      }
+    ]
+  },
+  "comfort-brownie-valnoedder": {
+    "adult": [
+      {
+        "id": "eggs",
+        "amount": 1,
+        "unit": "piece",
+        "raw": "1 æg"
+      },
+      {
+        "id": "butter",
+        "amount": 8,
+        "unit": "g",
+        "raw": "8 g smør"
+      },
+      {
+        "id": "sugarfree_dark_chocolate",
+        "amount": 8,
+        "unit": "g",
+        "raw": "8 g sukkerfri mørk chokolade"
+      },
+      {
+        "id": "cocoa_unsweetened",
+        "amount": 5,
+        "unit": "g",
+        "raw": "5 g kakao"
+      },
+      {
+        "id": "almond_flour",
+        "amount": 8,
+        "unit": "g",
+        "raw": "8 g mandelmel"
+      },
+      {
+        "id": "walnuts",
+        "amount": 5,
+        "unit": "g",
+        "raw": "5 g valnødder"
+      }
+    ]
+  },
+  "comfort-chokoladekage-frosting": {
+    "adult": [
+      {
+        "id": "eggs",
+        "amount": 1,
+        "unit": "piece",
+        "raw": "1 æg"
+      },
+      {
+        "id": "greek_yogurt_10",
+        "amount": 25,
+        "unit": "g",
+        "raw": "25 g græsk yoghurt 10 %"
+      },
+      {
+        "id": "almond_flour",
+        "amount": 8,
+        "unit": "g",
+        "raw": "8 g mandelmel"
+      },
+      {
+        "id": "cocoa_unsweetened",
+        "amount": 7,
+        "unit": "g",
+        "raw": "7 g kakao i alt"
+      },
+      {
+        "id": "butter",
+        "amount": 5,
+        "unit": "g",
+        "raw": "5 g smør"
+      },
+      {
+        "id": "sugarfree_dark_chocolate",
+        "amount": 5,
+        "unit": "g",
+        "raw": "5 g sukkerfri mørk chokolade"
+      },
+      {
+        "id": "cream_cheese",
+        "amount": 12,
+        "unit": "g",
+        "raw": "12 g naturel flødeost"
+      },
+      {
+        "id": "cream",
+        "amount": 3,
+        "unit": "ml",
+        "raw": "2–3 g fløde"
+      }
+    ]
+  },
+  "comfort-chokolade-kokos-bites": {
+    "adult": [
+      {
+        "id": "coconut_shredded",
+        "amount": 15,
+        "unit": "g",
+        "raw": "15 g kokosmel eller fintrevet kokos"
+      },
+      {
+        "id": "coconut_oil",
+        "amount": 8,
+        "unit": "g",
+        "raw": "8 g kokosolie"
+      },
+      {
+        "id": "sugarfree_dark_chocolate",
+        "amount": 8,
+        "unit": "g",
+        "raw": "8 g sukkerfri mørk chokolade"
+      }
+    ]
+  },
+  "comfort-chokolade-crunch": {
+    "adult": [
+      {
+        "id": "sugarfree_dark_chocolate",
+        "amount": 20,
+        "unit": "g",
+        "raw": "20 g sukkerfri mørk chokolade"
+      },
+      {
+        "id": "walnuts",
+        "amount": 10,
+        "unit": "g",
+        "raw": "10 g valnødder"
+      },
+      {
+        "id": "coconut_flakes",
+        "amount": 5,
+        "unit": "g",
+        "raw": "5 g kokosflager"
+      }
+    ]
+  },
+  "comfort-graesk-yoghurt-kakao-baer": {
+    "adult": [
+      {
+        "id": "greek_yogurt_10",
+        "amount": 150,
+        "unit": "g",
+        "raw": "150 g græsk yoghurt 10 %"
+      },
+      {
+        "id": "cocoa_unsweetened",
+        "amount": 5,
+        "unit": "g",
+        "raw": "5 g kakao"
+      },
+      {
+        "id": "berries",
+        "amount": 50,
+        "unit": "g",
+        "raw": "50 g hindbær eller blåbær"
+      }
+    ]
+  },
+  "comfort-lun-bolle-smoer": {
+    "adult": [
+      {
+        "id": "small_bun",
+        "amount": 1,
+        "unit": "piece",
+        "raw": "1 mindre bolle, ca. 60 g"
+      },
+      {
+        "id": "butter",
+        "amount": 10,
+        "unit": "g",
+        "raw": "10 g smør"
+      }
+    ]
+  },
+  "comfort-bolle-chokolade": {
+    "adult": [
+      {
+        "id": "small_bun",
+        "amount": 1,
+        "unit": "piece",
+        "raw": "1 mindre bolle, ca. 60 g"
+      },
+      {
+        "id": "dark_chocolate",
+        "amount": 15,
+        "unit": "g",
+        "raw": "15 g mørk eller sukkerfri chokolade"
+      }
+    ]
   }
 }

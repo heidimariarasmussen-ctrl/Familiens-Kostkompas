@@ -2671,5 +2671,383 @@
     "personalOwner": "heidi",
     "adultOnly": true,
     "weekdayFavorite": true
+  },
+  {
+    "id": "comfort-yoghurt-chokolademousse",
+    "name": "Yoghurt-chokolademousse",
+    "image": "images/comfort-01.webp",
+    "active": "5 min",
+    "total": "25–35 min",
+    "ingredients": [
+      "150 g græsk yoghurt 10 %",
+      "15 g usødet kakao",
+      "10 g sukkerfri mørk chokolade",
+      "15 g piskefløde",
+      "½ tsk vanilje",
+      "Sødemiddel efter smag",
+      "Et lille nip salt"
+    ],
+    "steps": [
+      "Smelt chokoladen.",
+      "Rør eller blend alle ingredienser helt glatte.",
+      "Stil moussen på køl i 20–30 minutter."
+    ],
+    "why": [
+      "Ingen tilsat sukker, mere protein end klassisk mousse og langt mindre fløde/chokolade end en traditionel version.",
+      "Ca. 350 kcal · 13 g protein · 12 g kulhydrat · 28 g fedt."
+    ],
+    "kcal": "ca. 350 kcal",
+    "category": "Mellemmåltider",
+    "number": null,
+    "portion": "1 voksen · kun Alex eller Heidi",
+    "taste": "",
+    "child": "",
+    "tip": "Voksenvalg til eftermiddagssnack.",
+    "audience": [
+      "alex",
+      "heidi"
+    ],
+    "adultOnly": true,
+    "comfortOption": true
+  },
+  {
+    "id": "comfort-lettere-yoghurt-chokolademousse",
+    "name": "Lettere yoghurt-chokolademousse",
+    "image": "images/comfort-02.webp",
+    "active": "5 min",
+    "total": "20–35 min",
+    "ingredients": [
+      "150 g græsk yoghurt 10 %",
+      "15 g usødet kakao",
+      "½ tsk vanilje",
+      "Sødemiddel efter smag",
+      "1–2 spsk mælk efter behov",
+      "Et lille nip salt"
+    ],
+    "steps": [
+      "Pisk eller blend det hele grundigt.",
+      "Tilsæt kun lidt mælk ad gangen, så moussen forbliver tyk.",
+      "Køl 15–30 minutter."
+    ],
+    "why": [
+      "Ingen chokolade eller fløde er nødvendig, så du sparer en del kcal, men beholder kakao og den cremede konsistens. Ingen tilsat sukker.",
+      "Ca. 290–300 kcal · 12 g protein · 10 g kulhydrat · 23 g fedt."
+    ],
+    "kcal": "ca. 290–300 kcal",
+    "category": "Mellemmåltider",
+    "number": null,
+    "portion": "1 voksen · kun Alex eller Heidi",
+    "taste": "",
+    "child": "",
+    "tip": "Voksenvalg til eftermiddagssnack.",
+    "audience": [
+      "alex",
+      "heidi"
+    ],
+    "adultOnly": true,
+    "comfortOption": true
+  },
+  {
+    "id": "comfort-fudgy-brownie",
+    "name": "Fudgy brownie",
+    "image": "images/comfort-03.webp",
+    "active": "8 min",
+    "total": "18–22 min",
+    "ingredients": [
+      "1 æg",
+      "8 g smør",
+      "8 g sukkerfri mørk chokolade",
+      "5 g kakao",
+      "8 g mandelmel",
+      "Sødemiddel efter smag",
+      "Lidt vanilje",
+      "Et nip salt"
+    ],
+    "steps": [
+      "Smelt smør og chokolade.",
+      "Rør æg, sødning og vanilje i.",
+      "Vend kakao, mandelmel og salt i.",
+      "Hæld i en lille ramekin eller form.",
+      "Bag ved 170°C i ca. 10–14 minutter. Midten må gerne være lidt blød."
+    ],
+    "why": [
+      "Portionsstyret, ingen tilsat sukker og mindre smør/chokolade end klassisk brownie. Mandelmel giver mere næring og mæthed end almindeligt hvidt mel.",
+      "Ca. 190 kcal · 7 g protein · 4 g kulhydrat · 16 g fedt."
+    ],
+    "kcal": "ca. 190 kcal",
+    "category": "Mellemmåltider",
+    "number": null,
+    "portion": "1 voksen · kun Alex eller Heidi",
+    "taste": "",
+    "child": "",
+    "tip": "Voksenvalg til eftermiddagssnack.",
+    "audience": [
+      "alex",
+      "heidi"
+    ],
+    "adultOnly": true,
+    "comfortOption": true
+  },
+  {
+    "id": "comfort-brownie-valnoedder",
+    "name": "Brownie med valnødder",
+    "image": "images/comfort-04.webp",
+    "active": "8 min",
+    "total": "18–22 min",
+    "ingredients": [
+      "1 æg",
+      "8 g smør",
+      "8 g sukkerfri mørk chokolade",
+      "5 g kakao",
+      "8 g mandelmel",
+      "5 g hakkede valnødder",
+      "Sødemiddel efter smag",
+      "Lidt vanilje",
+      "Et nip salt"
+    ],
+    "steps": [
+      "Smelt smør og chokolade.",
+      "Rør æg, sødning og vanilje i.",
+      "Vend kakao, mandelmel, salt og valnødder i.",
+      "Hæld i en lille ramekin eller form.",
+      "Bag ved 170°C i ca. 10–14 minutter. Midten må gerne være lidt blød."
+    ],
+    "why": [
+      "Ingen tilsat sukker og en kontrolleret portion. Valnødder giver knas og umættede fedtsyrer, så en lille mængde gør desserten mere tilfredsstillende.",
+      "Ca. 225 kcal · 8 g protein · 5 g kulhydrat · 20 g fedt."
+    ],
+    "kcal": "ca. 225 kcal",
+    "category": "Mellemmåltider",
+    "number": null,
+    "portion": "1 voksen · kun Alex eller Heidi",
+    "taste": "",
+    "child": "",
+    "tip": "Voksenvalg til eftermiddagssnack.",
+    "audience": [
+      "alex",
+      "heidi"
+    ],
+    "adultOnly": true,
+    "comfortOption": true
+  },
+  {
+    "id": "comfort-chokoladekage-frosting",
+    "name": "Saftig chokoladekage med frosting",
+    "image": "images/comfort-05.webp",
+    "active": "12 min",
+    "total": "25–30 min",
+    "ingredients": [
+      "1 æg",
+      "25 g græsk yoghurt 10 %",
+      "8 g mandelmel",
+      "5 g kakao",
+      "5 g smør",
+      "5 g sukkerfri mørk chokolade",
+      "Sødemiddel efter smag",
+      "Lidt vanilje",
+      "En lille knivspids bagepulver",
+      "12 g naturel flødeost",
+      "2 g kakao til frosting",
+      "2–3 g fløde",
+      "Lidt sødemiddel til frosting"
+    ],
+    "steps": [
+      "Smelt smør og chokolade.",
+      "Rør resten af kagedejen sammen og bag i en lille form ved 175°C i ca. 12–16 minutter.",
+      "Køl kagen af.",
+      "Rør flødeost, kakao, fløde og sødemiddel til en glat frosting og fordel ovenpå."
+    ],
+    "why": [
+      "Du får både kage og frosting, men i en portionsstørrelse med mindre smør, sukker og frosting end traditionel chokoladekage.",
+      "Ca. 230 kcal · 9 g protein · 6 g kulhydrat · 19 g fedt."
+    ],
+    "kcal": "ca. 230 kcal",
+    "category": "Mellemmåltider",
+    "number": null,
+    "portion": "1 voksen · kun Alex eller Heidi",
+    "taste": "",
+    "child": "",
+    "tip": "Voksenvalg til eftermiddagssnack.",
+    "audience": [
+      "alex",
+      "heidi"
+    ],
+    "adultOnly": true,
+    "comfortOption": true
+  },
+  {
+    "id": "comfort-chokolade-kokos-bites",
+    "name": "Chokolade-kokos-bites",
+    "image": "images/comfort-06.webp",
+    "active": "10 min",
+    "total": "20 min",
+    "ingredients": [
+      "15 g kokosmel eller fintrevet kokos",
+      "8 g kokosolie",
+      "8 g sukkerfri mørk chokolade",
+      "Lidt vanilje",
+      "Sødemiddel efter smag",
+      "Et nip salt"
+    ],
+    "steps": [
+      "Bland kokos med smeltet kokosolie, vanilje og sødning.",
+      "Form 2–3 små bites.",
+      "Stil dem koldt eller frys 10 minutter.",
+      "Smelt chokoladen og dyp eller dryp den over.",
+      "Køl til chokoladen er fast."
+    ],
+    "why": [
+      "Ingen tilsat sukker og små, portionskontrollerede bites. Intens smag gør, at du ikke behøver en stor portion.",
+      "Ca. 200 kcal · 2 g protein · 5 g kulhydrat · 19 g fedt."
+    ],
+    "kcal": "ca. 200 kcal",
+    "category": "Mellemmåltider",
+    "number": null,
+    "portion": "1 voksen · kun Alex eller Heidi",
+    "taste": "",
+    "child": "",
+    "tip": "Voksenvalg til eftermiddagssnack.",
+    "audience": [
+      "alex",
+      "heidi"
+    ],
+    "adultOnly": true,
+    "comfortOption": true
+  },
+  {
+    "id": "comfort-chokolade-crunch",
+    "name": "Chokolade-crunch med valnød og kokos",
+    "image": "images/comfort-07.webp",
+    "active": "8 min",
+    "total": "20 min",
+    "ingredients": [
+      "20 g sukkerfri mørk chokolade",
+      "10 g valnødder",
+      "5 g kokosflager",
+      "Et lille nip salt"
+    ],
+    "steps": [
+      "Smelt chokoladen.",
+      "Hak valnødderne groft og bland dem med kokos.",
+      "Vend det i chokoladen og lav små klatter på bagepapir.",
+      "Køl til de er faste."
+    ],
+    "why": [
+      "Ingen tilsat sukker og en lille portion med nødder fremfor fx kiks, karamel eller cornflakes.",
+      "Ca. 210 kcal · 4 g protein · 6 g kulhydrat · 20 g fedt."
+    ],
+    "kcal": "ca. 200–220 kcal",
+    "category": "Mellemmåltider",
+    "number": null,
+    "portion": "1 voksen · kun Alex eller Heidi",
+    "taste": "",
+    "child": "",
+    "tip": "Voksenvalg til eftermiddagssnack.",
+    "audience": [
+      "alex",
+      "heidi"
+    ],
+    "adultOnly": true,
+    "comfortOption": true
+  },
+  {
+    "id": "comfort-graesk-yoghurt-kakao-baer",
+    "name": "Græsk yoghurt med kakao og bær",
+    "image": "images/comfort-08.webp",
+    "active": "5 min",
+    "total": "5 min",
+    "ingredients": [
+      "150 g græsk yoghurt 10 %",
+      "5 g kakao",
+      "50 g hindbær eller blåbær",
+      "Vanilje efter smag",
+      "Sødemiddel efter smag",
+      "Evt. 5 g hakket mørk chokolade"
+    ],
+    "steps": [
+      "Rør yoghurt med kakao, vanilje og sødning.",
+      "Top med bærrene og evt. lidt hakket chokolade."
+    ],
+    "why": [
+      "Bær giver naturlig sødme, fibre og volumen. Yoghurten giver protein og fedt, så den mætter bedre end fx is eller budding. Ingen tilsat sukker.",
+      "Ca. 280–320 kcal · 13 g protein · 14–18 g kulhydrat · 21–24 g fedt."
+    ],
+    "kcal": "ca. 280–320 kcal",
+    "category": "Mellemmåltider",
+    "number": null,
+    "portion": "1 voksen · kun Alex eller Heidi",
+    "taste": "",
+    "child": "",
+    "tip": "Voksenvalg til eftermiddagssnack.",
+    "audience": [
+      "alex",
+      "heidi"
+    ],
+    "adultOnly": true,
+    "comfortOption": true
+  },
+  {
+    "id": "comfort-lun-bolle-smoer",
+    "name": "Lun bolle med smør",
+    "image": "images/comfort-09.webp",
+    "active": "3 min",
+    "total": "5 min",
+    "ingredients": [
+      "1 mindre god bolle, ca. 60 g",
+      "10 g rigtig smør"
+    ],
+    "steps": [
+      "Lun bollen godt.",
+      "Skær den over og fordel 10 g smør på den varme bolle, så smørret smelter."
+    ],
+    "why": [
+      "Her er sundificeringen primært portionen, ikke at erstatte det, du faktisk craver. En mindre bolle og afmålt smør giver den rigtige smag uden at portionen løber af sted.",
+      "Ca. 240 kcal · 5 g protein · 30 g kulhydrat · 11 g fedt."
+    ],
+    "kcal": "ca. 240 kcal",
+    "category": "Mellemmåltider",
+    "number": null,
+    "portion": "1 voksen · kun Alex eller Heidi",
+    "taste": "",
+    "child": "",
+    "tip": "Voksenvalg til eftermiddagssnack.",
+    "audience": [
+      "alex",
+      "heidi"
+    ],
+    "adultOnly": true,
+    "comfortOption": true
+  },
+  {
+    "id": "comfort-bolle-chokolade",
+    "name": "Bolle med chokolade",
+    "image": "images/comfort-10.webp",
+    "active": "3 min",
+    "total": "5 min",
+    "ingredients": [
+      "1 mindre bolle, ca. 60 g",
+      "15 g mørk eller sukkerfri chokolade/pålægschokolade"
+    ],
+    "steps": [
+      "Lun gerne bollen en smule.",
+      "Læg chokoladen på med det samme, så den bliver en anelse blød og smelter ind i bollen."
+    ],
+    "why": [
+      "Her handler det om at tilfredsstille den rigtige craving med en kontrolleret mængde. 15 g chokolade giver tydelig chokoladesmag uden, at du behøver en stor mængde pålæg.",
+      "Ca. 250 kcal · 5 g protein · 34 g kulhydrat · 9 g fedt."
+    ],
+    "kcal": "ca. 245–260 kcal",
+    "category": "Mellemmåltider",
+    "number": null,
+    "portion": "1 voksen · kun Alex eller Heidi",
+    "taste": "",
+    "child": "",
+    "tip": "Voksenvalg til eftermiddagssnack.",
+    "audience": [
+      "alex",
+      "heidi"
+    ],
+    "adultOnly": true,
+    "comfortOption": true
   }
 ]
