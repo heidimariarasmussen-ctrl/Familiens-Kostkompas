@@ -1,8 +1,9 @@
-const CACHE = 'kostkompas-v4-1-2-rollback';
+const CACHE = 'kostkompas-v4-1-3-hotfix';
 const CORE = [
   './',
   './index.html',
   './styles.css',
+  './hotfix-v413.css',
   './app.js',
   './recipes.json',
   './manifest.webmanifest',
