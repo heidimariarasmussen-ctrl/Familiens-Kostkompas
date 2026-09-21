@@ -26,46 +26,1079 @@ const pantryKey='kostkompas-pantry';
 const shoppingChecksKey='kostkompas-shop-checked';
 const customRecipesKey='kostkompas-custom-recipes';
 const planHistoryKey='kostkompas-plan-history';
-const PANTRY_CATEGORIES=['Fedt & smag','Køl','Kolonial','Brød','Frugt & grønt','Frost','Børn','Husholdning','Personlig pleje','Andet'];
+const PANTRY_CATEGORIES=["Mad · Tørvarer & køkkenskab","Mad · Køl & frisk","Fryser","Voksne · Kaffe & drikke","Børn","Papirvarer & husholdning","Rengøring","Tøjvask","Bad & personlig pleje","Husapotek","Småting & praktisk"];
 const defaultPantryItems=[
-  {id:'oliveoil',name:'Ekstra jomfruolivenolie',category:'Fedt & smag',keywords:['olivenolie','ekstra jomfruolivenolie']},
-  {id:'spices',name:'Milde krydderier',category:'Fedt & smag',keywords:['paprika','karry','timian','oregano','kanel','spidskommen','krydderi']},
-  {id:'salt',name:'Salt',category:'Fedt & smag',keywords:['salt']},
-  {id:'butter',name:'Smør',category:'Køl',keywords:['smør']},
-  {id:'yoghurt',name:'A38 / naturel yoghurt',category:'Køl',keywords:['a38','yoghurt']},
-  {id:'eggs',name:'Æg',category:'Køl',keywords:['æg']},
-  {id:'cheese',name:'Ost',category:'Køl',keywords:['ost','cheddar','mozzarella']},
-  {id:'oats',name:'Havregryn',category:'Kolonial',keywords:['havregryn']},
-  {id:'rice',name:'Ris',category:'Kolonial',keywords:['ris']},
-  {id:'pasta',name:'Pasta',category:'Kolonial',keywords:['pasta']},
-  {id:'passata',name:'Passata / tomatprodukter',category:'Kolonial',keywords:['passata','hakkede tomater','tomatpuré','tomatprodukter']},
-  {id:'nutbutter',name:'100 % nøddesmør / peanutbutter',category:'Kolonial',keywords:['nøddesmør','peanutbutter','mandelsmør']},
-  {id:'flour',name:'Mel',category:'Kolonial',keywords:['mel']},
-  {id:'lentils',name:'Linser / bønner',category:'Kolonial',keywords:['linser','bønner','kikærter']},
-  {id:'ryebread',name:'Rugbrød',category:'Brød',keywords:['rugbrød']},
-  {id:'potatoes',name:'Kartofler',category:'Frugt & grønt',keywords:['kartofler','kartoffel']},
-  {id:'onions',name:'Løg',category:'Frugt & grønt',keywords:['løg']},
-  {id:'frozenberries',name:'Frosne bær',category:'Frost',keywords:['frosne bær']},
-  {id:'frozenpeas',name:'Frosne ærter',category:'Frost',keywords:['frosne ærter']},
-  {id:'diapers',name:'Bleer',category:'Børn',keywords:['bleer','ble']},
-  {id:'wipes',name:'Vådservietter',category:'Børn',keywords:['vådservietter','vådserviet']},
-  {id:'toiletpaper',name:'Toiletpapir',category:'Husholdning',keywords:['toiletpapir']},
-  {id:'kitchenroll',name:'Køkkenrulle',category:'Husholdning',keywords:['køkkenrulle']},
-  {id:'toothpaste',name:'Tandpasta',category:'Personlig pleje',keywords:['tandpasta']},
-  {id:'toothbrush',name:'Tandbørster',category:'Personlig pleje',keywords:['tandbørste','tandbørster']}
+  {
+    "id": "pantry-havregryn",
+    "name": "Havregryn",
+    "category": "Mad · Tørvarer & køkkenskab",
+    "keywords": [
+      "havregryn"
+    ]
+  },
+  {
+    "id": "pantry-rugbroed",
+    "name": "Rugbrød",
+    "category": "Mad · Tørvarer & køkkenskab",
+    "keywords": [
+      "rugbrød"
+    ]
+  },
+  {
+    "id": "pantry-pasta",
+    "name": "Pasta",
+    "category": "Mad · Tørvarer & køkkenskab",
+    "keywords": [
+      "pasta"
+    ]
+  },
+  {
+    "id": "pantry-ris",
+    "name": "Ris",
+    "category": "Mad · Tørvarer & køkkenskab",
+    "keywords": [
+      "ris"
+    ]
+  },
+  {
+    "id": "pantry-mel",
+    "name": "Mel",
+    "category": "Mad · Tørvarer & køkkenskab",
+    "keywords": [
+      "mel"
+    ]
+  },
+  {
+    "id": "pantry-bagepulver",
+    "name": "Bagepulver",
+    "category": "Mad · Tørvarer & køkkenskab",
+    "keywords": [
+      "bagepulver"
+    ]
+  },
+  {
+    "id": "pantry-toergaer",
+    "name": "Tørgær",
+    "category": "Mad · Tørvarer & køkkenskab",
+    "keywords": [
+      "tørgær"
+    ]
+  },
+  {
+    "id": "pantry-roede-linser",
+    "name": "Røde linser",
+    "category": "Mad · Tørvarer & køkkenskab",
+    "keywords": [
+      "røde linser"
+    ]
+  },
+  {
+    "id": "pantry-kikaerter",
+    "name": "Kikærter",
+    "category": "Mad · Tørvarer & køkkenskab",
+    "keywords": [
+      "kikærter"
+    ]
+  },
+  {
+    "id": "pantry-boenner",
+    "name": "Bønner",
+    "category": "Mad · Tørvarer & køkkenskab",
+    "keywords": [
+      "bønner"
+    ]
+  },
+  {
+    "id": "pantry-letmaelk",
+    "name": "Letmælk",
+    "category": "Mad · Tørvarer & køkkenskab",
+    "keywords": [
+      "letmælk"
+    ]
+  },
+  {
+    "id": "pantry-mandelmaelk",
+    "name": "Mandelmælk",
+    "category": "Mad · Tørvarer & køkkenskab",
+    "keywords": [
+      "mandelmælk"
+    ]
+  },
+  {
+    "id": "pantry-hakkede-flaede-tomater",
+    "name": "Hakkede/flåede tomater",
+    "category": "Mad · Tørvarer & køkkenskab",
+    "keywords": [
+      "hakkede/flåede tomater"
+    ]
+  },
+  {
+    "id": "pantry-tomatpure",
+    "name": "Tomatpuré",
+    "category": "Mad · Tørvarer & køkkenskab",
+    "keywords": [
+      "tomatpuré"
+    ]
+  },
+  {
+    "id": "pantry-kokosmaelk",
+    "name": "Kokosmælk",
+    "category": "Mad · Tørvarer & køkkenskab",
+    "keywords": [
+      "kokosmælk"
+    ]
+  },
+  {
+    "id": "pantry-100-smooth-peanutbutter",
+    "name": "100 % smooth peanutbutter",
+    "category": "Mad · Tørvarer & køkkenskab",
+    "keywords": [
+      "100 % smooth peanutbutter"
+    ]
+  },
+  {
+    "id": "pantry-mandelsmoer",
+    "name": "Mandelsmør",
+    "category": "Mad · Tørvarer & køkkenskab",
+    "keywords": [
+      "mandelsmør"
+    ]
+  },
+  {
+    "id": "pantry-ekstra-jomfruolivenolie",
+    "name": "Ekstra jomfruolivenolie",
+    "category": "Mad · Tørvarer & køkkenskab",
+    "keywords": [
+      "ekstra jomfruolivenolie"
+    ]
+  },
+  {
+    "id": "pantry-eddike",
+    "name": "Eddike",
+    "category": "Mad · Tørvarer & køkkenskab",
+    "keywords": [
+      "eddike"
+    ]
+  },
+  {
+    "id": "pantry-kanel",
+    "name": "Kanel",
+    "category": "Mad · Tørvarer & køkkenskab",
+    "keywords": [
+      "kanel"
+    ]
+  },
+  {
+    "id": "pantry-mild-karry",
+    "name": "Mild karry",
+    "category": "Mad · Tørvarer & køkkenskab",
+    "keywords": [
+      "mild karry"
+    ]
+  },
+  {
+    "id": "pantry-paprika",
+    "name": "Paprika",
+    "category": "Mad · Tørvarer & køkkenskab",
+    "keywords": [
+      "paprika"
+    ]
+  },
+  {
+    "id": "pantry-spidskommen",
+    "name": "Spidskommen",
+    "category": "Mad · Tørvarer & køkkenskab",
+    "keywords": [
+      "spidskommen"
+    ]
+  },
+  {
+    "id": "pantry-oregano",
+    "name": "Oregano",
+    "category": "Mad · Tørvarer & køkkenskab",
+    "keywords": [
+      "oregano"
+    ]
+  },
+  {
+    "id": "pantry-basilikum",
+    "name": "Basilikum",
+    "category": "Mad · Tørvarer & køkkenskab",
+    "keywords": [
+      "basilikum"
+    ]
+  },
+  {
+    "id": "pantry-hvidloegspulver",
+    "name": "Hvidløgspulver",
+    "category": "Mad · Tørvarer & køkkenskab",
+    "keywords": [
+      "hvidløgspulver"
+    ]
+  },
+  {
+    "id": "pantry-peber",
+    "name": "Peber",
+    "category": "Mad · Tørvarer & køkkenskab",
+    "keywords": [
+      "peber"
+    ]
+  },
+  {
+    "id": "pantry-salt",
+    "name": "Salt",
+    "category": "Mad · Tørvarer & køkkenskab",
+    "keywords": [
+      "salt"
+    ]
+  },
+  {
+    "id": "pantry-bouillon",
+    "name": "Bouillon",
+    "category": "Mad · Tørvarer & køkkenskab",
+    "keywords": [
+      "bouillon"
+    ]
+  },
+  {
+    "id": "pantry-heinz-organic-tomato-ketchup",
+    "name": "Heinz Organic Tomato Ketchup",
+    "category": "Mad · Tørvarer & køkkenskab",
+    "keywords": [
+      "heinz organic tomato ketchup"
+    ]
+  },
+  {
+    "id": "pantry-chosen-foods-classic-mayo-med-avocado-olie",
+    "name": "Chosen Foods Classic Mayo med avocado-olie",
+    "category": "Mad · Tørvarer & køkkenskab",
+    "keywords": [
+      "chosen foods classic mayo med avocado-olie"
+    ]
+  },
+  {
+    "id": "pantry-aeg",
+    "name": "Æg",
+    "category": "Mad · Køl & frisk",
+    "keywords": [
+      "æg"
+    ]
+  },
+  {
+    "id": "pantry-smoer",
+    "name": "Smør",
+    "category": "Mad · Køl & frisk",
+    "keywords": [
+      "smør"
+    ]
+  },
+  {
+    "id": "pantry-graesk-yoghurt",
+    "name": "Græsk yoghurt",
+    "category": "Mad · Køl & frisk",
+    "keywords": [
+      "græsk yoghurt"
+    ]
+  },
+  {
+    "id": "pantry-maelk",
+    "name": "Mælk",
+    "category": "Mad · Køl & frisk",
+    "keywords": [
+      "mælk"
+    ]
+  },
+  {
+    "id": "pantry-mild-ost",
+    "name": "Mild ost",
+    "category": "Mad · Køl & frisk",
+    "keywords": [
+      "mild ost"
+    ]
+  },
+  {
+    "id": "pantry-parmesan",
+    "name": "Parmesan",
+    "category": "Mad · Køl & frisk",
+    "keywords": [
+      "parmesan"
+    ]
+  },
+  {
+    "id": "pantry-avocado",
+    "name": "Avocado",
+    "category": "Mad · Køl & frisk",
+    "keywords": [
+      "avocado"
+    ]
+  },
+  {
+    "id": "pantry-citron",
+    "name": "Citron",
+    "category": "Mad · Køl & frisk",
+    "keywords": [
+      "citron"
+    ]
+  },
+  {
+    "id": "pantry-lime",
+    "name": "Lime",
+    "category": "Mad · Køl & frisk",
+    "keywords": [
+      "lime"
+    ]
+  },
+  {
+    "id": "pantry-guleroedder",
+    "name": "Gulerødder",
+    "category": "Mad · Køl & frisk",
+    "keywords": [
+      "gulerødder"
+    ]
+  },
+  {
+    "id": "pantry-kartofler",
+    "name": "Kartofler",
+    "category": "Mad · Køl & frisk",
+    "keywords": [
+      "kartofler"
+    ]
+  },
+  {
+    "id": "pantry-soede-kartofler",
+    "name": "Søde kartofler",
+    "category": "Mad · Køl & frisk",
+    "keywords": [
+      "søde kartofler"
+    ]
+  },
+  {
+    "id": "pantry-agurk",
+    "name": "Agurk",
+    "category": "Mad · Køl & frisk",
+    "keywords": [
+      "agurk"
+    ]
+  },
+  {
+    "id": "pantry-loeg",
+    "name": "Løg",
+    "category": "Mad · Køl & frisk",
+    "keywords": [
+      "løg"
+    ]
+  },
+  {
+    "id": "pantry-hvidloeg",
+    "name": "Hvidløg",
+    "category": "Mad · Køl & frisk",
+    "keywords": [
+      "hvidløg"
+    ]
+  },
+  {
+    "id": "pantry-bananer",
+    "name": "Bananer",
+    "category": "Mad · Køl & frisk",
+    "keywords": [
+      "bananer"
+    ]
+  },
+  {
+    "id": "pantry-aebler",
+    "name": "Æbler",
+    "category": "Mad · Køl & frisk",
+    "keywords": [
+      "æbler"
+    ]
+  },
+  {
+    "id": "pantry-paerer",
+    "name": "Pærer",
+    "category": "Mad · Køl & frisk",
+    "keywords": [
+      "pærer"
+    ]
+  },
+  {
+    "id": "pantry-friske-baer",
+    "name": "Friske bær",
+    "category": "Mad · Køl & frisk",
+    "keywords": [
+      "friske bær"
+    ]
+  },
+  {
+    "id": "pantry-rugbroed-pa-frost",
+    "name": "Rugbrød på frost",
+    "category": "Fryser",
+    "keywords": [
+      "rugbrød på frost"
+    ]
+  },
+  {
+    "id": "pantry-aerter",
+    "name": "Ærter",
+    "category": "Fryser",
+    "keywords": [
+      "ærter"
+    ]
+  },
+  {
+    "id": "pantry-croissant",
+    "name": "Croissant",
+    "category": "Fryser",
+    "keywords": [
+      "croissant"
+    ]
+  },
+  {
+    "id": "pantry-kaffeboenner",
+    "name": "Kaffebønner",
+    "category": "Voksne · Kaffe & drikke",
+    "keywords": [
+      "kaffebønner"
+    ]
+  },
+  {
+    "id": "pantry-te",
+    "name": "Te",
+    "category": "Voksne · Kaffe & drikke",
+    "keywords": [
+      "te"
+    ]
+  },
+  {
+    "id": "pantry-danskvand",
+    "name": "Danskvand",
+    "category": "Voksne · Kaffe & drikke",
+    "keywords": [
+      "danskvand"
+    ]
+  },
+  {
+    "id": "pantry-usoedet-kakao",
+    "name": "Usødet kakao",
+    "category": "Voksne · Kaffe & drikke",
+    "keywords": [
+      "usødet kakao"
+    ]
+  },
+  {
+    "id": "pantry-sodavand",
+    "name": "Sodavand",
+    "category": "Voksne · Kaffe & drikke",
+    "keywords": [
+      "sodavand"
+    ]
+  },
+  {
+    "id": "pantry-bleer",
+    "name": "Bleer",
+    "category": "Børn",
+    "keywords": [
+      "bleer"
+    ]
+  },
+  {
+    "id": "pantry-vadservietter",
+    "name": "Vådservietter",
+    "category": "Børn",
+    "keywords": [
+      "vådservietter"
+    ]
+  },
+  {
+    "id": "pantry-skumklude",
+    "name": "Skumklude",
+    "category": "Børn",
+    "keywords": [
+      "skumklude"
+    ]
+  },
+  {
+    "id": "pantry-bleposer",
+    "name": "Bleposer",
+    "category": "Børn",
+    "keywords": [
+      "bleposer"
+    ]
+  },
+  {
+    "id": "pantry-blecreme-barrierecreme-olivy",
+    "name": "Blecreme/barrierecreme Olivy",
+    "category": "Børn",
+    "keywords": [
+      "blecreme/barrierecreme olivy"
+    ]
+  },
+  {
+    "id": "pantry-boerneshampoo-badesaebe",
+    "name": "Børneshampoo/badesæbe",
+    "category": "Børn",
+    "keywords": [
+      "børneshampoo/badesæbe"
+    ]
+  },
+  {
+    "id": "pantry-tandpasta-til-boern",
+    "name": "Tandpasta til børn",
+    "category": "Børn",
+    "keywords": [
+      "tandpasta til børn"
+    ]
+  },
+  {
+    "id": "pantry-ekstra-tandboerster",
+    "name": "Ekstra tandbørster",
+    "category": "Børn",
+    "keywords": [
+      "ekstra tandbørster"
+    ]
+  },
+  {
+    "id": "pantry-solcreme",
+    "name": "Solcreme",
+    "category": "Børn",
+    "keywords": [
+      "solcreme"
+    ]
+  },
+  {
+    "id": "pantry-klemmeposer",
+    "name": "Klemmeposer",
+    "category": "Børn",
+    "keywords": [
+      "klemmeposer"
+    ]
+  },
+  {
+    "id": "pantry-nemme-snacks",
+    "name": "Nemme snacks",
+    "category": "Børn",
+    "keywords": [
+      "nemme snacks"
+    ]
+  },
+  {
+    "id": "pantry-toiletpapir",
+    "name": "Toiletpapir",
+    "category": "Papirvarer & husholdning",
+    "keywords": [
+      "toiletpapir"
+    ]
+  },
+  {
+    "id": "pantry-koekkenrulle",
+    "name": "Køkkenrulle",
+    "category": "Papirvarer & husholdning",
+    "keywords": [
+      "køkkenrulle"
+    ]
+  },
+  {
+    "id": "pantry-servietter",
+    "name": "Servietter",
+    "category": "Papirvarer & husholdning",
+    "keywords": [
+      "servietter"
+    ]
+  },
+  {
+    "id": "pantry-bagepapir",
+    "name": "Bagepapir",
+    "category": "Papirvarer & husholdning",
+    "keywords": [
+      "bagepapir"
+    ]
+  },
+  {
+    "id": "pantry-stanniol",
+    "name": "Stanniol",
+    "category": "Papirvarer & husholdning",
+    "keywords": [
+      "stanniol"
+    ]
+  },
+  {
+    "id": "pantry-fryseposer",
+    "name": "Fryseposer",
+    "category": "Papirvarer & husholdning",
+    "keywords": [
+      "fryseposer"
+    ]
+  },
+  {
+    "id": "pantry-affaldsposer",
+    "name": "Affaldsposer",
+    "category": "Papirvarer & husholdning",
+    "keywords": [
+      "affaldsposer"
+    ]
+  },
+  {
+    "id": "pantry-ziplockposer",
+    "name": "Ziplockposer",
+    "category": "Papirvarer & husholdning",
+    "keywords": [
+      "ziplockposer"
+    ]
+  },
+  {
+    "id": "pantry-elastikker-klemmer-til-poser",
+    "name": "Elastikker/klemmer til poser",
+    "category": "Papirvarer & husholdning",
+    "keywords": [
+      "elastikker/klemmer til poser"
+    ]
+  },
+  {
+    "id": "pantry-opvasketabs",
+    "name": "Opvasketabs",
+    "category": "Rengøring",
+    "keywords": [
+      "opvasketabs"
+    ]
+  },
+  {
+    "id": "pantry-opvaskemiddel",
+    "name": "Opvaskemiddel",
+    "category": "Rengøring",
+    "keywords": [
+      "opvaskemiddel"
+    ]
+  },
+  {
+    "id": "pantry-afspaendingsmiddel",
+    "name": "Afspændingsmiddel",
+    "category": "Rengøring",
+    "keywords": [
+      "afspændingsmiddel"
+    ]
+  },
+  {
+    "id": "pantry-filtersalt",
+    "name": "Filtersalt",
+    "category": "Rengøring",
+    "keywords": [
+      "filtersalt"
+    ]
+  },
+  {
+    "id": "pantry-universalrengoering",
+    "name": "Universalrengøring",
+    "category": "Rengøring",
+    "keywords": [
+      "universalrengøring"
+    ]
+  },
+  {
+    "id": "pantry-koekkenrens",
+    "name": "Køkkenrens",
+    "category": "Rengøring",
+    "keywords": [
+      "køkkenrens"
+    ]
+  },
+  {
+    "id": "pantry-badevaerelsesrens",
+    "name": "Badeværelsesrens",
+    "category": "Rengøring",
+    "keywords": [
+      "badeværelsesrens"
+    ]
+  },
+  {
+    "id": "pantry-toiletrens",
+    "name": "Toiletrens",
+    "category": "Rengøring",
+    "keywords": [
+      "toiletrens"
+    ]
+  },
+  {
+    "id": "pantry-kalkfjerner",
+    "name": "Kalkfjerner",
+    "category": "Rengøring",
+    "keywords": [
+      "kalkfjerner"
+    ]
+  },
+  {
+    "id": "pantry-glasrens",
+    "name": "Glasrens",
+    "category": "Rengøring",
+    "keywords": [
+      "glasrens"
+    ]
+  },
+  {
+    "id": "pantry-svampe",
+    "name": "Svampe",
+    "category": "Rengøring",
+    "keywords": [
+      "svampe"
+    ]
+  },
+  {
+    "id": "pantry-opvaskeboerster",
+    "name": "Opvaskebørster",
+    "category": "Rengøring",
+    "keywords": [
+      "opvaskebørster"
+    ]
+  },
+  {
+    "id": "pantry-gummihandsker",
+    "name": "Gummihandsker",
+    "category": "Rengøring",
+    "keywords": [
+      "gummihandsker"
+    ]
+  },
+  {
+    "id": "pantry-vaskemiddel-til-kuloert",
+    "name": "Vaskemiddel til kulørt",
+    "category": "Tøjvask",
+    "keywords": [
+      "vaskemiddel til kulørt"
+    ]
+  },
+  {
+    "id": "pantry-vaskemiddel-til-hvidt",
+    "name": "Vaskemiddel til hvidt",
+    "category": "Tøjvask",
+    "keywords": [
+      "vaskemiddel til hvidt"
+    ]
+  },
+  {
+    "id": "pantry-pletfjerner",
+    "name": "Pletfjerner",
+    "category": "Tøjvask",
+    "keywords": [
+      "pletfjerner"
+    ]
+  },
+  {
+    "id": "pantry-uldvaskemiddel",
+    "name": "Uldvaskemiddel",
+    "category": "Tøjvask",
+    "keywords": [
+      "uldvaskemiddel"
+    ]
+  },
+  {
+    "id": "pantry-skyllemiddel",
+    "name": "Skyllemiddel",
+    "category": "Tøjvask",
+    "keywords": [
+      "skyllemiddel"
+    ]
+  },
+  {
+    "id": "pantry-vaskeposer-til-sarte-ting",
+    "name": "Vaskeposer til sarte ting",
+    "category": "Tøjvask",
+    "keywords": [
+      "vaskeposer til sarte ting"
+    ]
+  },
+  {
+    "id": "pantry-handsaebe",
+    "name": "Håndsæbe",
+    "category": "Bad & personlig pleje",
+    "keywords": [
+      "håndsæbe"
+    ]
+  },
+  {
+    "id": "pantry-shampoo",
+    "name": "Shampoo",
+    "category": "Bad & personlig pleje",
+    "keywords": [
+      "shampoo"
+    ]
+  },
+  {
+    "id": "pantry-balsam",
+    "name": "Balsam",
+    "category": "Bad & personlig pleje",
+    "keywords": [
+      "balsam"
+    ]
+  },
+  {
+    "id": "pantry-bodywash",
+    "name": "Bodywash",
+    "category": "Bad & personlig pleje",
+    "keywords": [
+      "bodywash"
+    ]
+  },
+  {
+    "id": "pantry-deodorant",
+    "name": "Deodorant",
+    "category": "Bad & personlig pleje",
+    "keywords": [
+      "deodorant"
+    ]
+  },
+  {
+    "id": "pantry-tandpasta",
+    "name": "Tandpasta",
+    "category": "Bad & personlig pleje",
+    "keywords": [
+      "tandpasta"
+    ]
+  },
+  {
+    "id": "pantry-tandboerster",
+    "name": "Tandbørster",
+    "category": "Bad & personlig pleje",
+    "keywords": [
+      "tandbørster"
+    ]
+  },
+  {
+    "id": "pantry-tandtrad",
+    "name": "Tandtråd",
+    "category": "Bad & personlig pleje",
+    "keywords": [
+      "tandtråd"
+    ]
+  },
+  {
+    "id": "pantry-barberblade",
+    "name": "Barberblade",
+    "category": "Bad & personlig pleje",
+    "keywords": [
+      "barberblade"
+    ]
+  },
+  {
+    "id": "pantry-barbergel",
+    "name": "Barbergel",
+    "category": "Bad & personlig pleje",
+    "keywords": [
+      "barbergel"
+    ]
+  },
+  {
+    "id": "pantry-bodylotion",
+    "name": "Bodylotion",
+    "category": "Bad & personlig pleje",
+    "keywords": [
+      "bodylotion"
+    ]
+  },
+  {
+    "id": "pantry-laebepomade",
+    "name": "Læbepomade",
+    "category": "Bad & personlig pleje",
+    "keywords": [
+      "læbepomade"
+    ]
+  },
+  {
+    "id": "pantry-vatpinde",
+    "name": "Vatpinde",
+    "category": "Bad & personlig pleje",
+    "keywords": [
+      "vatpinde"
+    ]
+  },
+  {
+    "id": "pantry-vatrondeller",
+    "name": "Vatrondeller",
+    "category": "Bad & personlig pleje",
+    "keywords": [
+      "vatrondeller"
+    ]
+  },
+  {
+    "id": "pantry-plastre-i-forskellige-stoerrelser",
+    "name": "Plastre i forskellige størrelser",
+    "category": "Husapotek",
+    "keywords": [
+      "plastre i forskellige størrelser"
+    ]
+  },
+  {
+    "id": "pantry-sarvask",
+    "name": "Sårvask",
+    "category": "Husapotek",
+    "keywords": [
+      "sårvask"
+    ]
+  },
+  {
+    "id": "pantry-sterile-kompresser",
+    "name": "Sterile kompresser",
+    "category": "Husapotek",
+    "keywords": [
+      "sterile kompresser"
+    ]
+  },
+  {
+    "id": "pantry-forbinding",
+    "name": "Forbinding",
+    "category": "Husapotek",
+    "keywords": [
+      "forbinding"
+    ]
+  },
+  {
+    "id": "pantry-termometer",
+    "name": "Termometer",
+    "category": "Husapotek",
+    "keywords": [
+      "termometer"
+    ]
+  },
+  {
+    "id": "pantry-pincet",
+    "name": "Pincet",
+    "category": "Husapotek",
+    "keywords": [
+      "pincet"
+    ]
+  },
+  {
+    "id": "pantry-saltvand",
+    "name": "Saltvand",
+    "category": "Husapotek",
+    "keywords": [
+      "saltvand"
+    ]
+  },
+  {
+    "id": "pantry-smertestillende-til-voksne",
+    "name": "Smertestillende til voksne",
+    "category": "Husapotek",
+    "keywords": [
+      "smertestillende til voksne"
+    ]
+  },
+  {
+    "id": "pantry-alderssvarende-feber-smertestillende-til-boern",
+    "name": "Alderssvarende feber-/smertestillende til børn",
+    "category": "Husapotek",
+    "keywords": [
+      "alderssvarende feber-/smertestillende til børn"
+    ]
+  },
+  {
+    "id": "pantry-koelepose",
+    "name": "Kølepose",
+    "category": "Husapotek",
+    "keywords": [
+      "kølepose"
+    ]
+  },
+  {
+    "id": "pantry-myggemiddel-efter-behov",
+    "name": "Myggemiddel efter behov",
+    "category": "Husapotek",
+    "keywords": [
+      "myggemiddel efter behov"
+    ]
+  },
+  {
+    "id": "pantry-aa-batterier",
+    "name": "AA-batterier",
+    "category": "Småting & praktisk",
+    "keywords": [
+      "aa-batterier"
+    ]
+  },
+  {
+    "id": "pantry-aaa-batterier",
+    "name": "AAA-batterier",
+    "category": "Småting & praktisk",
+    "keywords": [
+      "aaa-batterier"
+    ]
+  },
+  {
+    "id": "pantry-taendstikker-lighter",
+    "name": "Tændstikker/lighter",
+    "category": "Småting & praktisk",
+    "keywords": [
+      "tændstikker/lighter"
+    ]
+  },
+  {
+    "id": "pantry-tape",
+    "name": "Tape",
+    "category": "Småting & praktisk",
+    "keywords": [
+      "tape"
+    ]
+  },
+  {
+    "id": "pantry-pakketape",
+    "name": "Pakketape",
+    "category": "Småting & praktisk",
+    "keywords": [
+      "pakketape"
+    ]
+  },
+  {
+    "id": "pantry-saks",
+    "name": "Saks",
+    "category": "Småting & praktisk",
+    "keywords": [
+      "saks"
+    ]
+  },
+  {
+    "id": "pantry-lim",
+    "name": "Lim",
+    "category": "Småting & praktisk",
+    "keywords": [
+      "lim"
+    ]
+  },
+  {
+    "id": "pantry-kuglepenne",
+    "name": "Kuglepenne",
+    "category": "Småting & praktisk",
+    "keywords": [
+      "kuglepenne"
+    ]
+  },
+  {
+    "id": "pantry-permanent-marker",
+    "name": "Permanent marker",
+    "category": "Småting & praktisk",
+    "keywords": [
+      "permanent marker"
+    ]
+  },
+  {
+    "id": "pantry-handsprit",
+    "name": "Håndsprit",
+    "category": "Småting & praktisk",
+    "keywords": [
+      "håndsprit"
+    ]
+  }
 ];
+
 function inferPantryCategory(name){
   const n=String(name||'').toLowerCase();
-  if(/ketchup|mayo|mayonnaise|pasta|havre|ris|mel|passata|tomat|tahin|nødde|peanut|linse|bønne|kikært/.test(n))return 'Kolonial';
-  if(/smør|yoghurt|a38|ost|æg/.test(n))return 'Køl';
-  if(/rugbrød|brød|pita|tortilla/.test(n))return 'Brød';
-  if(/olivenolie|krydder|salt|eddike/.test(n))return 'Fedt & smag';
-  if(/kartoff|løg|frugt|grønt|banan|citron|lime|avocado/.test(n))return 'Frugt & grønt';
-  if(/fross|frost/.test(n))return 'Frost';
-  if(/ble|vådserviet/.test(n))return 'Børn';
-  if(/toiletpapir|køkkenrulle|opvask|rengøring|affaldspose/.test(n))return 'Husholdning';
-  if(/tandpasta|tandbørst|shampoo|sæbe|deodorant/.test(n))return 'Personlig pleje';
-  return 'Andet';
+  if(/ble|vådserviet|skumklud|blepose|olivy|børneshampoo|børnetand|klemmepose|nemme snacks/.test(n))return 'Børn';
+  if(/opvask|afspænd|filtersalt|rengøring|rens|kalkfjerner|glasrens|svamp|gummihandsk/.test(n))return 'Rengøring';
+  if(/vaskemiddel|pletfjerner|uldvask|skyllemiddel|vaskepose/.test(n))return 'Tøjvask';
+  if(/plaster|sårvask|kompres|forbinding|termometer|pincet|saltvand|smertestillende|feber|kølepose|myggemiddel/.test(n))return 'Husapotek';
+  if(/toiletpapir|køkkenrulle|serviet|bagepapir|stanniol|frysepose|affaldspose|ziplock|elastik|klemme/.test(n))return 'Papirvarer & husholdning';
+  if(/shampoo|balsam|bodywash|deodorant|tandpasta|tandbørst|tandtråd|barber|bodylotion|læbepomade|vatpind|vatrondel|håndsæbe/.test(n))return 'Bad & personlig pleje';
+  if(/batteri|tændstik|lighter|tape|saks|lim|kuglepen|marker|håndsprit/.test(n))return 'Småting & praktisk';
+  if(/kaffe|\bte\b|danskvand|kakao|sodavand/.test(n))return 'Voksne · Kaffe & drikke';
+  if(/frost|ærter|croissant/.test(n))return 'Fryser';
+  if(/æg|smør|yoghurt|mælk|ost|parmesan|avocado|citron|lime|gulerod|kartoff|agurk|løg|hvidløg|banan|æble|pære|bær/.test(n))return 'Mad · Køl & frisk';
+  return 'Mad · Tørvarer & køkkenskab';
 }
 function loadHouseholdState(){
   try{pantryState=JSON.parse(localStorage.getItem(pantryKey)||'{}')||{}}catch(e){pantryState={}}
@@ -93,7 +1126,7 @@ async function saveHouseholdStateCloud(){
     if(currentPlan){currentPlan.pantryState=pantryState;currentPlan.shoppingChecks=shoppingChecks;currentPlan.customRecipes=customRecipes;currentPlan.planHistory=planHistory;localStorage.setItem('kostkompas-current-plan',JSON.stringify(currentPlan))}
   }catch(e){console.warn('Household cloud save failed',e)}
 }
-function allPantryItems(){return [...defaultPantryItems,...(pantryState.custom||[])]}
+function allPantryItems(){const seen=new Set();return [...defaultPantryItems,...(pantryState.custom||[])].filter(item=>{const k=String(item.name||'').trim().toLowerCase();if(!k||seen.has(k))return false;seen.add(k);return true})}
 function pantryHas(id){return !!pantryState.items?.[id]}
 function pantryMatches(name){
   const n=normName(name).toLowerCase();
