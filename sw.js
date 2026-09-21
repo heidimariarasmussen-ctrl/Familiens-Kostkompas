@@ -1,4 +1,4 @@
-const CACHE = 'kostkompas-v4-5';
+const CACHE = 'kostkompas-v4-6';
 const CORE = [
   './',
   './index.html',
@@ -6,6 +6,7 @@ const CORE = [
   './hotfix-v413.css',
   './fix-v414.css',
   './app.js',
+  './sync-v46.js',
   './recipes.json',
   './manifest.webmanifest',
   './icons/icon-192.png',
