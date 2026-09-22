@@ -3111,5 +3111,58 @@
       "Fedtvariation: Ekstra jomfruolivenolie, æg, smør og mejeri giver flere forskellige fedtkilder.",
       "Grønt og frugt: Porre, løg, citron og kiwi giver variation på tværs af måltidet."
     ]
+  },
+  {
+    "id": "mellemmaltid-banan-blaabaermuffins-mandelsmoer",
+    "category": "Mellemmåltider",
+    "number": null,
+    "name": "Banan-blåbærmuffins med mandelsmør",
+    "image": "",
+    "portion": "ca. 12 små muffins",
+    "active": "10 min",
+    "total": "ca. 30 min",
+    "bake": "18–20 min",
+    "freezer": "Ja",
+    "tags": [
+      "Børnefavorit",
+      "banan",
+      "blåbær",
+      "havre",
+      "mandelsmør",
+      "uden tilsat sukker",
+      "fryseegnet"
+    ],
+    "description": "Bløde banan-blåbærmuffins med havre, æg og mandelsmør. Naturligt søde, næringstætte og frysevenlige – en nem børnefavorit uden tilsat sukker.",
+    "ingredients": [
+      "180 g havregryn",
+      "60 g hvedemel",
+      "2 meget modne bananer",
+      "3 æg",
+      "40 g 100 % smooth mandelsmør",
+      "25 g smeltet smør",
+      "1 dl vand eller mælk passende til børnene",
+      "120 g blåbær",
+      "1½ tsk bagepulver",
+      "½ tsk kanel",
+      "Lidt vanilje"
+    ],
+    "steps": [
+      "Tænd ovnen på 180 °C varmluft.",
+      "Blend 120 g af havregrynene til havremel. Lad de sidste 60 g være hele eller blend dem ganske let.",
+      "Blend bananer, æg, mandelsmør, smeltet smør og væske sammen til en ensartet masse.",
+      "Rør havremel, de resterende havregryn, hvedemel, bagepulver, kanel og vanilje i.",
+      "Mos større blåbær let, især hvis muffinsene er til små børn, og vend bærrene forsigtigt i dejen.",
+      "Fordel dejen i ca. 12 små muffinforme.",
+      "Bag muffinsene i 18–20 minutter, til de netop er gennembagte. Undgå at bage dem for længe – de skal gerne forblive bløde og saftige.",
+      "Lad dem køle lidt af inden servering."
+    ],
+    "taste": "Server fx 1 lille muffin med friske eller mosede bær. Til et mere mættende mellemmåltid kan den suppleres med lidt A38 eller et tyndt lag mandelsmørcreme.",
+    "child": "Muffinsene skal være bløde og nemme at tygge. Mos eller tryk store blåbær let, og brug smooth mandelsmør blandet helt ind i dejen. Ingen hele nødder eller tykke klatter nøddesmør.",
+    "tip": "Opbevar i lukket beholder i køleskabet. Kan fryses enkeltvis og tøs op i køleskabet eller lunes kort. Bag gerne dobbelt portion og frys halvdelen.",
+    "why": [
+      "Havre bidrager med energi, fibre og plantejern, mens æg giver protein og øvrige næringsstoffer.",
+      "Blåbær giver frugtvariation, og mandelsmør, æg og lidt smør bidrager med energi og fedt.",
+      "Råvarebaseret og uden behov for tilsat sukker."
+    ]
   }
 ]
