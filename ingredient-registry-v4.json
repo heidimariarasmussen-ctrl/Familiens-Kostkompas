@@ -635,5 +635,10 @@
     "unit": "g",
     "pack": 1000,
     "packLabel": "1 kg"
+  },
+  "rye_bread": {
+    "name": "Rugbrød",
+    "cat": "Kolonial",
+    "unit": "slice"
   }
 }
