@@ -640,5 +640,19 @@
     "name": "Rugbrød",
     "cat": "Kolonial",
     "unit": "slice"
+  },
+  "baking_powder": {
+    "name": "Bagepulver",
+    "cat": "Kolonial",
+    "unit": "tsp",
+    "presence": true,
+    "packLabel": "1 dåse/pose"
+  },
+  "vanilla": {
+    "name": "Vanilje",
+    "cat": "Kolonial",
+    "unit": "tsp",
+    "presence": true,
+    "packLabel": "1 glas"
   }
 }
