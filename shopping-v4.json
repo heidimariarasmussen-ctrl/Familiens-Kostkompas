@@ -10160,5 +10160,143 @@
         "raw": "2 kiwier"
       }
     ]
+  },
+  "mellemmaltid-banan-blaabaermuffins-mandelsmoer": {
+    "family": [
+      {
+        "id": "oats",
+        "amount": 180,
+        "unit": "g",
+        "raw": "180 g havregryn"
+      },
+      {
+        "id": "wheat_flour",
+        "amount": 60,
+        "unit": "g",
+        "raw": "60 g hvedemel"
+      },
+      {
+        "id": "banana",
+        "amount": 2,
+        "unit": "piece",
+        "raw": "2 meget modne bananer"
+      },
+      {
+        "id": "eggs",
+        "amount": 3,
+        "unit": "piece",
+        "raw": "3 æg"
+      },
+      {
+        "id": "almond_butter",
+        "amount": 40,
+        "unit": "g",
+        "raw": "40 g 100 % smooth mandelsmør"
+      },
+      {
+        "id": "butter",
+        "amount": 25,
+        "unit": "g",
+        "raw": "25 g smør"
+      },
+      {
+        "id": "milk",
+        "amount": 100,
+        "unit": "ml",
+        "raw": "1 dl mælk (vand kan bruges i stedet)"
+      },
+      {
+        "id": "blueberries",
+        "amount": 120,
+        "unit": "g",
+        "raw": "120 g blåbær"
+      },
+      {
+        "id": "baking_powder",
+        "amount": 1.5,
+        "unit": "tsp",
+        "raw": "1½ tsk bagepulver"
+      },
+      {
+        "id": "spice_cinnamon",
+        "amount": 0.5,
+        "unit": "tsp",
+        "raw": "½ tsk kanel"
+      },
+      {
+        "id": "vanilla",
+        "amount": 1,
+        "unit": "tsp",
+        "raw": "lidt vanilje"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "oats",
+        "amount": 180,
+        "unit": "g",
+        "raw": "180 g havregryn"
+      },
+      {
+        "id": "wheat_flour",
+        "amount": 60,
+        "unit": "g",
+        "raw": "60 g hvedemel"
+      },
+      {
+        "id": "banana",
+        "amount": 2,
+        "unit": "piece",
+        "raw": "2 meget modne bananer"
+      },
+      {
+        "id": "eggs",
+        "amount": 3,
+        "unit": "piece",
+        "raw": "3 æg"
+      },
+      {
+        "id": "almond_butter",
+        "amount": 40,
+        "unit": "g",
+        "raw": "40 g 100 % smooth mandelsmør"
+      },
+      {
+        "id": "butter",
+        "amount": 25,
+        "unit": "g",
+        "raw": "25 g smør"
+      },
+      {
+        "id": "milk",
+        "amount": 100,
+        "unit": "ml",
+        "raw": "1 dl mælk (vand kan bruges i stedet)"
+      },
+      {
+        "id": "blueberries",
+        "amount": 120,
+        "unit": "g",
+        "raw": "120 g blåbær"
+      },
+      {
+        "id": "baking_powder",
+        "amount": 1.5,
+        "unit": "tsp",
+        "raw": "1½ tsk bagepulver"
+      },
+      {
+        "id": "spice_cinnamon",
+        "amount": 0.5,
+        "unit": "tsp",
+        "raw": "½ tsk kanel"
+      },
+      {
+        "id": "vanilla",
+        "amount": 1,
+        "unit": "tsp",
+        "raw": "lidt vanilje"
+      }
+    ]
   }
 }
