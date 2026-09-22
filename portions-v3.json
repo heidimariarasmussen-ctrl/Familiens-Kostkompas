@@ -2303,5 +2303,34 @@
       "4–6 små skiver blødt rugbrød",
       "2 kiwier"
     ]
+  },
+  "mellemmaltid-banan-blaabaermuffins-mandelsmoer": {
+    "name": "Banan-blåbærmuffins med mandelsmør",
+    "family": [
+      "180 g havregryn",
+      "60 g hvedemel",
+      "2 meget modne bananer",
+      "3 æg",
+      "40 g 100 % smooth mandelsmør",
+      "25 g smeltet smør",
+      "1 dl vand eller mælk passende til børnene",
+      "120 g blåbær",
+      "1½ tsk bagepulver",
+      "½ tsk kanel",
+      "Lidt vanilje"
+    ],
+    "kids2": [
+      "180 g havregryn",
+      "60 g hvedemel",
+      "2 meget modne bananer",
+      "3 æg",
+      "40 g 100 % smooth mandelsmør",
+      "25 g smeltet smør",
+      "1 dl vand eller mælk passende til børnene",
+      "120 g blåbær",
+      "1½ tsk bagepulver",
+      "½ tsk kanel",
+      "Lidt vanilje"
+    ]
   }
 }
