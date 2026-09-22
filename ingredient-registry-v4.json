@@ -269,8 +269,7 @@
   "kiwi": {
     "name": "Kiwi",
     "cat": "Frugt & grønt",
-    "unit": "piece",
-    "round": 1
+    "unit": "piece"
   },
   "apple": {
     "name": "Æbler",
@@ -610,5 +609,31 @@
     "unit": "g",
     "pack": 100,
     "packLabel": "100 g"
+  },
+  "leeks": {
+    "name": "Porrer",
+    "cat": "Frugt & grønt",
+    "unit": "piece"
+  },
+  "white_beans": {
+    "name": "Hvide bønner",
+    "cat": "Kolonial",
+    "unit": "g",
+    "pack": 240,
+    "packLabel": "1 dåse"
+  },
+  "whipping_cream": {
+    "name": "Piskefløde",
+    "cat": "Mejeri & æg",
+    "unit": "ml",
+    "pack": 250,
+    "packLabel": "250 ml"
+  },
+  "a38_cultura": {
+    "name": "Arla Cultura A38 Øko Naturel 3,5 %",
+    "cat": "Mejeri & æg",
+    "unit": "g",
+    "pack": 1000,
+    "packLabel": "1 kg"
   }
 }
