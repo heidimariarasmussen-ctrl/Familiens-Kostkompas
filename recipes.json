@@ -3049,5 +3049,67 @@
     ],
     "adultOnly": true,
     "comfortOption": true
+  },
+  {
+    "id": "aftensmad-kartoffel-porresuppe-hvide-boenner",
+    "category": "Aftensmad",
+    "number": null,
+    "name": "Kartoffel-porresuppe med hvide bønner, æg og rugbrød",
+    "image": "images/kartoffel-porresuppe-hvide-boenner.jpg",
+    "portion": "2 voksne + 2 små børn",
+    "active": "15 min",
+    "total": "30 min",
+    "difficulty": "Nem",
+    "freezer": "Ja – selve suppen",
+    "tags": [
+      "Kartoffel",
+      "porre",
+      "bønner",
+      "æg",
+      "vegetarisk",
+      "børnevenlig",
+      "fryseegnet"
+    ],
+    "description": "Mild og cremet kartoffel-porresuppe med hvide bønner blendet direkte i suppen. Serveret med æg, rugbrød og kiwi bliver den et næringstæt og børnevenligt familiemåltid med jern, C-vitamin, energi og fedtvariation.",
+    "ingredients": [
+      "800 g kartofler",
+      "2 porrer, ca. 350–400 g",
+      "1 lille løg",
+      "240 g drænede hvide bønner",
+      "15 g smør",
+      "1 spsk ekstra jomfruolivenolie",
+      "900 ml vand",
+      "1½ dl piskefløde",
+      "1–2 spsk citronsaft",
+      "Evt. lidt purløg eller persille",
+      "100 g Arla Cultura A38 Øko Naturel 3,5 %",
+      "1 tsk ekstra jomfruolivenolie til A38-creme",
+      "Lidt fintklippet purløg eller persille til A38-creme",
+      "4 æg",
+      "4–6 små skiver blødt rugbrød",
+      "2 kiwier"
+    ],
+    "steps": [
+      "Kog æggene i ca. 8–9 minutter. Køl dem let af og pil dem.",
+      "Skræl kartoflerne og skær dem i små tern. Skyl porrerne grundigt og skær dem i tynde skiver. Hak løget.",
+      "Varm smør og ekstra jomfruolivenolie op i en stor gryde. Tilsæt løg og porre og steg forsigtigt i ca. 5 minutter, til de er bløde uden at brune.",
+      "Tilsæt kartofler og 900 ml vand. Bring i kog og lad suppen simre under låg i ca. 15 minutter, til kartofler og porrer er helt møre.",
+      "Skyl de hvide bønner grundigt, kom dem i gryden og lad dem koge med i 2–3 minutter.",
+      "Blend suppen helt glat med en stavblender.",
+      "Rør fløden i og varm suppen forsigtigt igennem. Justér eventuelt konsistensen med lidt ekstra vand.",
+      "Tag gryden af varmen og rør 1–2 spsk citronsaft i. Tag børnenes portion fra, før de voksnes eventuelt smages til med lidt salt og peber.",
+      "Rør A38 sammen med 1 tsk olivenolie og fintklippede urter.",
+      "Server suppen med A38-creme, kogt æg, blødt rugbrød og kiwi ved siden af."
+    ],
+    "taste": "A38-creme: 100 g Arla Cultura A38 Øko Naturel 3,5 % + 1 tsk ekstra jomfruolivenolie + fintklippet purløg eller persille.",
+    "child": "Server suppen lun og helt glat. Æg i små, bløde stykker; rugbrød blødt og let at tygge; kiwi i passende små stykker. Lad gerne komponenterne ligge hver for sig. Undgå ekstra salt i børnenes portion.",
+    "tip": "Fryser: Selve suppen kan fryses i portionsbokse. Afkøl hurtigt og frys uden æg, rugbrød, kiwi og A38-creme. Optø i køleskab, varm forsigtigt igennem og rør eller blend kort igen. Friskt tilbehør og dip laves ved servering.",
+    "why": [
+      "Jern og protein: Hvide bønner og rugbrød giver plantejern, mens æg bidrager med protein og andre næringsstoffer.",
+      "C-vitamin: Kiwi og citron giver C-vitamin sammen med plantejernskilderne.",
+      "Energi: Kartoffel og rugbrød giver tydelige energikilder.",
+      "Fedtvariation: Ekstra jomfruolivenolie, æg, smør og mejeri giver flere forskellige fedtkilder.",
+      "Grønt og frugt: Porre, løg, citron og kiwi giver variation på tværs af måltidet."
+    ]
   }
 ]
