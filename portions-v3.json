@@ -2348,5 +2348,28 @@
       "4 små stykker hvidløgsbrød",
       "Evt. Heinz Organic Tomato Ketchup, ca. 1 tsk i børneportionen"
     ]
+  },
+  "morgenmad-proteinrig-overnight-oats-chia": {
+    "name": "Proteinrig overnight oats med chia",
+    "adult": [
+      "50 g havregryn",
+      "250 g skyr naturel",
+      "1½ dl mælk",
+      "15 g chiafrø",
+      "15 g 100 % peanutbutter",
+      "100 g hindbær eller blåbær",
+      "½ banan",
+      "Evt. ¼ tsk kanel eller vaniljepulver"
+    ],
+    "adults2": [
+      "100 g havregryn",
+      "500 g skyr naturel",
+      "3 dl mælk",
+      "30 g chiafrø",
+      "30 g 100 % peanutbutter",
+      "200 g hindbær eller blåbær",
+      "1 banan",
+      "Evt. ½ tsk kanel eller vaniljepulver"
+    ]
   }
 }
