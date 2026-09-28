@@ -654,5 +654,13 @@
     "unit": "tsp",
     "presence": true,
     "packLabel": "1 glas"
+  },
+  "garlic_bread": {
+    "name": "Hvidløgsbrød",
+    "cat": "Brød",
+    "unit": "piece",
+    "pack": 1,
+    "packLabel": "1 pakke",
+    "presence": true
   }
 }
