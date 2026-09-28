@@ -3164,5 +3164,56 @@
       "Blåbær giver frugtvariation, og mandelsmør, æg og lidt smør bidrager med energi og fedt.",
       "Råvarebaseret og uden behov for tilsat sukker."
     ]
+  },
+  {
+    "id": "aftensmad-cremet-tomatpasta-mini-koedboller",
+    "category": "Aftensmad",
+    "number": null,
+    "name": "Cremet tomatpasta med mini-kødboller",
+    "image": "",
+    "portion": "2 voksne + 2 små børn",
+    "active": "15–20 min",
+    "total": "ca. 25 min",
+    "freezer": "Ja – kødboller og sauce",
+    "tags": [
+      "Børnefavorit",
+      "oksekød",
+      "jernrig",
+      "pasta",
+      "fryseegnet",
+      "20 min aktiv tid"
+    ],
+    "description": "Blød pasta i en mild, tyk og cremet tomat-mascarponesauce med små saftige oksekødsboller. Serveres med hvidløgsbrød. En børnevenlig hverdagsret med fokus på accept først, jern, energi og fedt.",
+    "ingredients": [
+      "500 g hakket oksekød",
+      "1 æg",
+      "40 g finvalsede havregryn",
+      "1–2 spsk vand",
+      "1 spsk ekstra jomfruolivenolie",
+      "350 g små pastaer, fx makaroni, suppehorn eller små skruer",
+      "500 g passata",
+      "125 g mascarpone",
+      "½–1 dl pastavand efter behov",
+      "4 små stykker hvidløgsbrød",
+      "Evt. Heinz Organic Tomato Ketchup, ca. 1 tsk i børneportionen"
+    ],
+    "steps": [
+      "Tilbered hvidløgsbrødet efter anvisningen, så det er klar sammen med pastaen.",
+      "Kog pastaen efter pakken, gerne lidt blødere end al dente til børnene. Gem ca. 1 dl pastavand.",
+      "Rør oksekød, æg, havregryn og 1–2 spsk vand hurtigt sammen. Form farsen til meget små, bløde kødboller.",
+      "Varm ekstra jomfruolivenolie på en stor pande eller i en bred gryde. Brun kødbollerne let i ca. 4–5 minutter. De behøver ikke være gennemstegte endnu.",
+      "Tilsæt passata og lad kødbollerne simre forsigtigt i tomatsaucen i ca. 8–10 minutter, til de er gennemtilberedte.",
+      "Skru ned for varmen og rør mascarpone i. Justér med lidt pastavand, til saucen er tyk og cremet.",
+      "Vend pastaen direkte i saucen og lad retten stå 1–2 minutter, så saucen hænger godt fast. Den skal være cremet og fast, ikke suppeagtig.",
+      "Server med hvidløgsbrød. Hvis den velkendte smag hjælper accepten, kan børneportionen få ca. 1 tsk Heinz Organic Tomato Ketchup."
+    ],
+    "child": "Server gerne tomatpasta og kødboller lidt adskilt første gang. Lav kødbollerne meget små og bløde og del eller tryk dem flade inden servering. Kog pastaen godt mør. Hvidløgsbrød skæres i små, håndterbare stykker. Hvis pastaen accepteres, men kødbollerne ikke gør, er det stadig en god start.",
+    "tip": "Gradvis variation: Når retten er accepteret, kan ½–1 lille gulerod rives meget fint og simre helt mør i tomatsaucen. Fryser: Lav gerne dobbelt portion kødboller og sauce og frys uden pasta og hvidløgsbrød. Optø i køleskab, varm grundigt igennem og kog frisk pasta ved servering.",
+    "why": [
+      "Oksekød giver jern og protein.",
+      "Havregryn bidrager med plantejern og hjælper med at gøre kødbollerne bløde.",
+      "Pasta og hvidløgsbrød giver tydelige energikilder, mens tomat bidrager med grønt og C-vitamin.",
+      "Ekstra jomfruolivenolie og mascarpone giver fedt, energi og en cremet konsistens, der kan støtte accepten."
+    ]
   }
 ]
