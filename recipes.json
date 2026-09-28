@@ -3223,7 +3223,7 @@
     "name": "Proteinrig overnight oats med chia",
     "image": "",
     "portion": "2 voksne",
-    "active": "ca. 5 min aftenen før + 5 min om morgenen",
+    "active": "ca. 10 min i alt",
     "total": "Natten over",
     "freezer": "Nej",
     "audience": [
@@ -3252,12 +3252,12 @@
     ],
     "steps": [
       "Aftenen før: Rør havregryn, skyr, mælk og chiafrø grundigt sammen.",
-      "Lad blandingen stå 5 minutter, rør igen, og sæt den på køl natten over. Den ekstra omrøring hjælper chiafrøene med ikke at samle sig i klumper.",
-      "Om morgenen: Rør grøden igennem. Tilsæt lidt ekstra mælk, hvis den er blevet meget tyk.",
+      "Lad stå 5 minutter, rør igen, og sæt på køl natten over.",
+      "Om morgenen: Rør grøden igennem og tilsæt lidt ekstra mælk, hvis den er meget tyk.",
       "Fordel i to skåle og top med banan, bær og 15 g peanutbutter pr. person."
     ],
     "taste": "Brug hindbær eller blåbær og evt. ½ tsk kanel eller vaniljepulver.",
-    "tip": "Afhængigt af de konkrete mærker er opskriften beregnet til omkring 45 g protein pr. voksen. Det præcise næringsindhold varierer med produkterne.",
+    "tip": "Afhængigt af mærkerne lander opskriften omkring 45 g protein pr. voksen; det præcise indhold varierer.",
     "why": [
       "Skyr og mælk giver en proteinrig base.",
       "Havre og chia bidrager med fibre og energi.",
