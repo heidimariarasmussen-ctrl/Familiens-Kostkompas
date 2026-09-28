@@ -3215,5 +3215,53 @@
       "Pasta og hvidløgsbrød giver tydelige energikilder, mens tomat bidrager med grønt og C-vitamin.",
       "Ekstra jomfruolivenolie og mascarpone giver fedt, energi og en cremet konsistens, der kan støtte accepten."
     ]
+  },
+  {
+    "id": "morgenmad-proteinrig-overnight-oats-chia",
+    "category": "Morgenmad",
+    "number": null,
+    "name": "Proteinrig overnight oats med chia",
+    "image": "",
+    "portion": "2 voksne",
+    "active": "ca. 5 min aftenen før + 5 min om morgenen",
+    "total": "Natten over",
+    "freezer": "Nej",
+    "audience": [
+      "alex",
+      "heidi"
+    ],
+    "owner": "adults",
+    "tags": [
+      "Voksenopskrift",
+      "overnight oats",
+      "proteinrig",
+      "chia",
+      "skyr",
+      "peanutbutter"
+    ],
+    "description": "Proteinrig overnight oats med skyr, chia, bær, banan og peanutbutter. Forberedes aftenen før og er klar som nem morgenmad til Alex og Heidi.",
+    "ingredients": [
+      "100 g havregryn",
+      "500 g skyr naturel",
+      "3 dl mælk",
+      "30 g chiafrø",
+      "30 g 100 % peanutbutter",
+      "200 g hindbær eller blåbær",
+      "1 banan",
+      "Evt. ½ tsk kanel eller vaniljepulver"
+    ],
+    "steps": [
+      "Aftenen før: Rør havregryn, skyr, mælk og chiafrø grundigt sammen.",
+      "Lad blandingen stå 5 minutter, rør igen, og sæt den på køl natten over. Den ekstra omrøring hjælper chiafrøene med ikke at samle sig i klumper.",
+      "Om morgenen: Rør grøden igennem. Tilsæt lidt ekstra mælk, hvis den er blevet meget tyk.",
+      "Fordel i to skåle og top med banan, bær og 15 g peanutbutter pr. person."
+    ],
+    "taste": "Brug hindbær eller blåbær og evt. ½ tsk kanel eller vaniljepulver.",
+    "tip": "Afhængigt af de konkrete mærker er opskriften beregnet til omkring 45 g protein pr. voksen. Det præcise næringsindhold varierer med produkterne.",
+    "why": [
+      "Skyr og mælk giver en proteinrig base.",
+      "Havre og chia bidrager med fibre og energi.",
+      "Bær og banan giver frugtvariation, mens peanutbutter bidrager med fedt og energi."
+    ]
   }
 ]
