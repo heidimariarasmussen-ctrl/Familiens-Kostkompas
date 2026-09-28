@@ -10298,5 +10298,57 @@
         "raw": "lidt vanilje"
       }
     ]
+  },
+  "aftensmad-cremet-tomatpasta-mini-koedboller": {
+    "family": [
+      {
+        "id": "minced_beef",
+        "amount": 500,
+        "unit": "g",
+        "raw": "500 g hakket oksekød"
+      },
+      {
+        "id": "eggs",
+        "amount": 1,
+        "unit": "piece",
+        "raw": "1 æg"
+      },
+      {
+        "id": "oats",
+        "amount": 40,
+        "unit": "g",
+        "raw": "40 g finvalsede havregryn"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 15,
+        "unit": "ml",
+        "raw": "1 spsk ekstra jomfruolivenolie"
+      },
+      {
+        "id": "pasta",
+        "amount": 350,
+        "unit": "g",
+        "raw": "350 g små pastaer"
+      },
+      {
+        "id": "passata",
+        "amount": 500,
+        "unit": "g",
+        "raw": "500 g passata"
+      },
+      {
+        "id": "mascarpone",
+        "amount": 125,
+        "unit": "g",
+        "raw": "125 g mascarpone"
+      },
+      {
+        "id": "garlic_bread",
+        "amount": 4,
+        "unit": "piece",
+        "raw": "4 små stykker hvidløgsbrød"
+      }
+    ]
   }
 }
