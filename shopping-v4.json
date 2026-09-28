@@ -10350,5 +10350,81 @@
         "raw": "4 små stykker hvidløgsbrød"
       }
     ]
+  },
+  "morgenmad-proteinrig-overnight-oats-chia": {
+    "adult": [
+      {
+        "id": "oats",
+        "amount": 50,
+        "unit": "g"
+      },
+      {
+        "id": "skyr",
+        "amount": 250,
+        "unit": "g"
+      },
+      {
+        "id": "milk",
+        "amount": 150,
+        "unit": "ml"
+      },
+      {
+        "id": "chia",
+        "amount": 15,
+        "unit": "g"
+      },
+      {
+        "id": "peanut_butter",
+        "amount": 15,
+        "unit": "g"
+      },
+      {
+        "id": "blueberries",
+        "amount": 100,
+        "unit": "g"
+      },
+      {
+        "id": "banana",
+        "amount": 0.5,
+        "unit": "piece"
+      }
+    ],
+    "adults2": [
+      {
+        "id": "oats",
+        "amount": 100,
+        "unit": "g"
+      },
+      {
+        "id": "skyr",
+        "amount": 500,
+        "unit": "g"
+      },
+      {
+        "id": "milk",
+        "amount": 300,
+        "unit": "ml"
+      },
+      {
+        "id": "chia",
+        "amount": 30,
+        "unit": "g"
+      },
+      {
+        "id": "peanut_butter",
+        "amount": 30,
+        "unit": "g"
+      },
+      {
+        "id": "blueberries",
+        "amount": 200,
+        "unit": "g"
+      },
+      {
+        "id": "banana",
+        "amount": 1,
+        "unit": "piece"
+      }
+    ]
   }
 }
