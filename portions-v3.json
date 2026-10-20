@@ -2371,5 +2371,147 @@
       "1 banan",
       "Evt. ½ tsk kanel eller vaniljepulver"
     ]
+  },
+  "v417-1": {
+    "name": "Varm Apple Pie Chiagrød",
+    "adult": [
+      "20 g chiafrø",
+      "200 ml mælk",
+      "25 g vaniljeproteinpulver",
+      "75 g æble",
+      "5 g smør",
+      "Kanel",
+      "Evt. hakkede valnødder"
+    ]
+  },
+  "v417-2": {
+    "name": "Varm æble-kanel-proteingrød",
+    "adult": [
+      "50 g certificerede glutenfri havregryn",
+      "200 ml mælk",
+      "25 g vaniljeproteinpulver",
+      "75 g revet æble",
+      "Kanel",
+      "Evt. ekstra vand"
+    ]
+  },
+  "v417-3": {
+    "name": "Cremede scrambled eggs",
+    "adult": [
+      "2 æg",
+      "100 g hytteost",
+      "50 g spinat",
+      "60 g glutenfrit brød",
+      "5 g smør"
+    ]
+  },
+  "v417-4": {
+    "name": "Lune bananpandekager med blåbær",
+    "adult": [
+      "100 g banan",
+      "2 æg",
+      "35 g glutenfri havregryn",
+      "20 g proteinpulver",
+      "75 g blåbær",
+      "50 g naturel yoghurt"
+    ]
+  },
+  "v417-5": {
+    "name": "Cremet kyllingesuppe med porrer og ris",
+    "family": [
+      "600 g kyllingebryst",
+      "350 g porrer",
+      "300 g gulerødder",
+      "250 g knoldselleri",
+      "180 g tørre ris",
+      "150 ml madlavningsfløde 15 %",
+      "10 g ekstra jomfruolivenolie",
+      "1,4 liter vand",
+      "Mild bouillon",
+      "Timian og persille"
+    ]
+  },
+  "v417-6": {
+    "name": "Ovnbagt laks med cremede porrer",
+    "family": [
+      "600 g laksefilet",
+      "450 g porrer",
+      "400 g gulerødder",
+      "400 g pastinak",
+      "150 ml madlavningsfløde 15 %",
+      "15 g ekstra jomfruolivenolie",
+      "Citron og frisk dild"
+    ]
+  },
+  "v417-7": {
+    "name": "Langtidssimret oksegryde med knoldselleripuré",
+    "family": [
+      "650 g magert oksekød til gryderet",
+      "350 g champignon",
+      "400 g gulerødder",
+      "250 g løg",
+      "900 g knoldselleri",
+      "150 ml mælk",
+      "20 g smør",
+      "15 g ekstra jomfruolivenolie",
+      "400–500 ml mild bouillon",
+      "Timian og laurbærblad"
+    ]
+  },
+  "v417-8": {
+    "name": "Kyllingefrikadeller med blomkålsmos og brun sovs",
+    "family": [
+      "650 g hakket kylling",
+      "1 æg",
+      "40 g glutenfri havregryn",
+      "800 g blomkål",
+      "700 g gulerødder",
+      "150 ml mælk",
+      "100 ml madlavningsfløde 15 %",
+      "20 g smør",
+      "15 g ekstra jomfruolivenolie",
+      "200 ml mild bouillon",
+      "12 g majsstivelse",
+      "Lidt muskatnød"
+    ]
+  },
+  "v417-9": {
+    "name": "Cremet græskarsuppe med trevlet kylling",
+    "family": [
+      "1200 g renset Hokkaidogræskar",
+      "650 g kyllingebryst",
+      "200 g løg",
+      "200 ml kokosmælk",
+      "160 g tørre ris",
+      "10 g ekstra jomfruolivenolie",
+      "Ca. 1 liter vand eller mild bouillon",
+      "10 g frisk ingefær"
+    ]
+  },
+  "v417-10": {
+    "name": "Torsk med citronsmør og cremet spinat",
+    "family": [
+      "700 g torskefilet",
+      "240 g tørre ris",
+      "600 g spinat",
+      "150 ml madlavningsfløde 15 %",
+      "35 g smør",
+      "1 citron",
+      "Persille"
+    ]
+  },
+  "v417-11": {
+    "name": "Cremet kyllingefad med champignon og ris",
+    "family": [
+      "600 g kyllingebryst",
+      "220 g tørre ris",
+      "400 g porrer",
+      "350 g champignon",
+      "250 g spinat",
+      "200 ml madlavningsfløde 15 %",
+      "10 g ekstra jomfruolivenolie",
+      "150 ml mild bouillon",
+      "Timian og lidt hvidløg"
+    ]
   }
 }
