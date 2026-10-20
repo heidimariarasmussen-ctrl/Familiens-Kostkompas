@@ -10458,11 +10458,6 @@
         "id": "spice_cinnamon",
         "amount": 1,
         "unit": "tsp"
-      },
-      {
-        "id": "walnuts",
-        "amount": 1,
-        "unit": "piece"
       }
     ]
   },
