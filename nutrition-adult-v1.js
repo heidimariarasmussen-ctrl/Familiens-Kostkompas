@@ -61,7 +61,7 @@ const specials={
  'bornefavorit-2':{basis:'Ca. 30 g kiks (anslået 1/10 af portionen)',rows:[['wheat_flour',12.5,'g'],['oats',7.5,'g'],['butter',5,'g'],['eggs',0.1,'piece'],['sugar',1.75,'g']]},
  'bornefavorit-3':{basis:'4 af ca. 20 mini-pandekager',rows:[['banana',0.4,'piece'],['eggs',0.6,'piece'],['oats',20,'g'],['peanut_butter',6,'g'],['butter',2,'g']]},
  'aftensmad-kartoffel-porresuppe-hvide-boenner':{basis:'Anslået 1/3 af familieportionen, inkl. æg, rugbrød og dip',familyFactor:1/3},
- 'mellemmaltid-banan-blaabaermuffins-mandelsmoer':{basis:'2 af ca. 12 små muffins; vand som standard',familyFactor:2/12},
+ 'mellemmaltid-banan-blaabaermuffins-mandelsmoer':{basis:'2 af ca. 12 små muffins; vand som standard',familyFactor:2/12,exclude:['milk']},
  'aftensmad-cremet-tomatpasta-mini-koedboller':{basis:'Anslået 1/3 af familieportionen inkl. hvidløgsbrød',familyFactor:1/3},
  'v417-5':{basis:'Anslået 1/3 af familieportionen',familyFactor:1/3},
  'v417-6':{basis:'Anslået 1/3 af familieportionen',familyFactor:1/3},
@@ -111,6 +111,7 @@ function estimate(recipe,shopping){
  let base=shopping?.[recipe.id]||{},s=specials[recipe.id]||{},rows=s.rows||(s.familyFactor?base.family?.map(r=>({...r,amount:r.amount*s.familyFactor})):base.adult);
  if(!Array.isArray(rows)||!rows.length)return {status:'unavailable',note:'Voksenmængderne er ikke tilstrækkeligt angivet til beregning.'};
  rows=rows.map(r=>Array.isArray(r)?r:{...r});
+ if(s.exclude)rows=rows.filter(r=>!s.exclude.includes(Array.isArray(r)?r[0]:r.id));
  if(s.replace)for(const [id,newRows] of Object.entries(s.replace)){rows=rows.filter(r=>(Array.isArray(r)?r[0]:r.id)!==id).concat(newRows)}
  if(s.extra)rows=rows.concat(s.extra);
  const n=metrics(rows),p=Math.round(n.protein*10)/10,c=Math.round(n.carbs*10)/10,f=Math.round(n.fat*10)/10;
