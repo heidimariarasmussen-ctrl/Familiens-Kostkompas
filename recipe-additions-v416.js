@@ -1,6 +1,6 @@
 (() => {
   const originalFetch = window.fetch.bind(window);
-  const image = 'images/surdejsbroed-avocado-aeg-tomat-feta-kiwi.jpg';
+  const image = 'images/Avocadomad med æg, feta og kiwi.png';
   const common = {
     number: null,
     name: 'Surdejsbrød med avocado, æg, tomat, feta & kiwi',
