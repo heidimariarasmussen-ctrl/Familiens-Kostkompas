@@ -14,7 +14,7 @@ const foods={
  avocado_mayo:[1,1,77],banana:[1.1,20,0.3],beef_shoulder:[20,0,11],
  berries:[0.8,9,0.3],blueberries:[0.7,12,0.3],bread:[9,48,3],
  broccoli:[2.8,4,0.4],butter:[0.6,0.6,82],cabbage_broccoli:[2.2,4,0.2],
- carrot:[0.8,7,0.2],cheese:[25,1.5,27],cherry_tomato:[0.9,3.5,0.2],
+ carrot:[0.8,7,0.2],cauliflower:[2,3,0.3],celeriac:[1.5,7,0.3],cheese:[25,1.5,27],cherry_tomato:[0.9,3.5,0.2],
  chia:[17,7.7,31],chicken:[24,0,4],chicken_thigh:[18,0,9],
  chickpeas:[7,18,2.5],chives:[2.7,1,0.5],cocoa_unsweetened:[20,12,21],
  coconut_flakes:[6,8,64],coconut_milk:[2,3,18],coconut_oil:[0,0,100],
