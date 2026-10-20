@@ -51,3 +51,9 @@ Fuld browser/E2E-test på isoleret instans med fixture for gammel fælles og fle
 - Forsøg på at hente den isolerede gren til lokal Chromium-test fejlede pga. netværksadgang i kørselsmiljøet. Den offentlige GitHub Pages-adresse peger på main og er ikke en egnet test af arbejdsgrenen. Browser/E2E er fortsat uafsluttet.
 - Backup af produktionsdata er **ikke udført**. Den autoriserede ejer skal eksportere privat via Supabase dashboard og separat gennemgå relevante browserlokale data før merge; ingen tokens eller private data må lægges i GitHub.
 - Fortsat **DO NOT MERGE / DO NOT DEPLOY** uden brugers særskilte godkendelse og afsluttet QA.
+
+## Arbejde uden Supabase-forbindelse
+- Tilføjet en reproducerbar, read-only regressionstest: `tests/plan-slots.test.cjs` (lokalt: `node tests/plan-slots.test.cjs`). Den kræver ingen konto, token, cloudforbindelse eller produktionsdata.
+- Data-/kontrakttests er tidligere gennemført på de faktiske grenfiler (39/39). Den nye testfil er skrevet, men GitHub-værktøjet kan ikke eksekvere Node/Chromium på en isoleret gren i denne session; dens afvikling skal verificeres i et egentligt testmiljø.
+- Brugers ønske: fortsæt uden Supabase-adgang. Derfor foretages **ingen cloudbackup**, ingen hentning af private data og ingen cloud-gendannelsestest. Dette er en kendt residual risiko, ikke noget der skal markeres som bestået.
+- Før eventuel senere offentliggørelse anbefales minimum en brugerbeholdt lokal eksport af de aktuelle browserdata uden credentials og en isoleret test med syntetiske planer. Brugeren skal særskilt godkende merge/deploy; der er ikke givet en sådan godkendelse.
