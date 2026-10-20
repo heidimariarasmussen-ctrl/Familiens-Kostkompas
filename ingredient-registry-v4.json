@@ -662,5 +662,93 @@
     "pack": 1,
     "packLabel": "1 pakke",
     "presence": true
+  },
+  "spinach": {
+    "name": "Spinat",
+    "cat": "Frugt & grønt",
+    "unit": "g",
+    "presence": false
+  },
+  "glutenfree_bread": {
+    "name": "Glutenfrit brød",
+    "cat": "Brød",
+    "unit": "g",
+    "presence": false
+  },
+  "celeriac": {
+    "name": "Knoldselleri",
+    "cat": "Frugt & grønt",
+    "unit": "g",
+    "presence": false
+  },
+  "cooking_cream": {
+    "name": "Madlavningsfløde 15 %",
+    "cat": "Køl",
+    "unit": "ml",
+    "presence": false
+  },
+  "bouillon": {
+    "name": "Mild bouillon",
+    "cat": "Kolonial",
+    "unit": "piece",
+    "presence": true,
+    "packLabel": "1 pakke"
+  },
+  "parsnip": {
+    "name": "Pastinak",
+    "cat": "Frugt & grønt",
+    "unit": "g",
+    "presence": false
+  },
+  "mushrooms": {
+    "name": "Champignon",
+    "cat": "Frugt & grønt",
+    "unit": "g",
+    "presence": false
+  },
+  "bay_leaf": {
+    "name": "Laurbærblad",
+    "cat": "Kolonial",
+    "unit": "piece",
+    "presence": true,
+    "packLabel": "1 pakke"
+  },
+  "cauliflower": {
+    "name": "Blomkål",
+    "cat": "Frugt & grønt",
+    "unit": "g",
+    "presence": false
+  },
+  "cornstarch": {
+    "name": "Majsstivelse",
+    "cat": "Kolonial",
+    "unit": "g",
+    "presence": false
+  },
+  "nutmeg": {
+    "name": "Muskatnød",
+    "cat": "Kolonial",
+    "unit": "piece",
+    "presence": true,
+    "packLabel": "1 pakke"
+  },
+  "pumpkin": {
+    "name": "Hokkaidogræskar",
+    "cat": "Frugt & grønt",
+    "unit": "g",
+    "presence": false
+  },
+  "ginger": {
+    "name": "Frisk ingefær",
+    "cat": "Frugt & grønt",
+    "unit": "g",
+    "presence": false
+  },
+  "garlic": {
+    "name": "Hvidløg",
+    "cat": "Frugt & grønt",
+    "unit": "piece",
+    "presence": true,
+    "packLabel": "1 pakke"
   }
 }
