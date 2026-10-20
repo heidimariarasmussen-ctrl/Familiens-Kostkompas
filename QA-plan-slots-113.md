@@ -28,3 +28,19 @@ Denne fil er QA-status og ændrer ikke brugerdata.
 - Fire tidligere voksenopskrifter har kun `adult` i `portions-v3.json`: `alex-havregryn-maelk-rosiner`, `v417-1`, `v417-3`, `comfort-lun-bolle-smoer`. Dette er en frigivelsesblokering for familievalg, ikke et bestået punkt.
 - `v417-1` (Apple Pie Chiagrød) indeholder proteinpulver og har udtrykkelig børneadvarsel; en særskilt børnevariant og tilsvarende indkøbsberegning kræves før frigivelse. `v417-3` har en fejlagtig børneadvarsel om proteinpulver, selvom ingredienslisten ikke har proteinpulver; dette skal gennemgås.
 - Browser/E2E og autentificeret eksport af privat cloudplan er stadig ikke udført; ingen Supabase-forespørgsler er sendt.
+
+## Tredje testfase – portions- og indkøbskonsistens
+- Opdateret `portions-v3.json`, `shopping-v4.json` og børneanvisninger i `recipes.json` for alle fire tidligere voksenopskrifter.
+- Automatisk datakontrol: `adult`, `kids2`, `family` findes for alle fire; alle strukturerede familieposter er summen af to voksne og to-børns-portion (repræsenteret ved `kids2`). Ingen differencer i de kontrollerede poster.
+- Barnets Apple Pie-indkøb (`kids2`) har ingen `protein_powder`. Opskriftstrinene kræver opdeling før proteinpulver tilsættes til voksne. Børnenes æble er blødt/revet; ingen hele/hakkede nødder.
+- Testet regelgrundlag: 113 regler, 111 baseret på `recipes.json` og to indlæst via runtime-addons. Ingen produktionsdata rørt.
+
+## Sikker backup-procedure (skal udføres af autoriseret indlogget ejer, før merge)
+1. Benyt en privat/autentificeret session eller Supabase-projektets dashboard; lav en eksport af den aktuelle `active_plan`-rækkes `plan_data` (id 1) og `updated_at` som JSON og noter eksporttid. Denne kan indeholde personlige data; opbevar den privat, ikke i GitHub eller en offentlig issue/PR.
+2. Sammenhold eksporten med den aktive madplan på hjemmesiden, inkl. fleksible tildelinger, rester, `customRecipes`, `planHistory`, `shoppingChecks`, `pantryState` og `recipeFeedback`. Kontrollér at backupen kan parses og at felterne findes, hvor de forventes.
+3. Eksportér eventuelt browserlokale data på den relevante enhed separat, især `kostkompas-current-plan`, egne opskrifter, favoritter og feedback (som ikke nødvendigvis er dækket af én cloud-eksport). Udlever aldrig adgangskoder, adgangstokens eller sessionsnøgler.
+4. Test gendannelse på en isoleret testinstans eller ved offline-læsning af backupen, aldrig ved overskrivning af produktionsrækken. Tag en ny backup umiddelbart før enhver senere godkendt udrulning.
+5. Stop udrulning hvis autentificeret sikkerhedskopi eller prøveindlæsning ikke kan verificeres.
+
+## Resterende frigivelsesblokering
+Fuld browser/E2E-test på isoleret instans med fixture for gammel fælles og fleksibel madplan, rester, indkøb og cache/mobil. Backend-eksport kræver autoriseret ejeradgang og er **ikke foretaget**. Der er ikke foretaget merge, deploy eller ændring af produktionsdata.
