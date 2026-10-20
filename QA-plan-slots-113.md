@@ -44,3 +44,10 @@ Denne fil er QA-status og ændrer ikke brugerdata.
 
 ## Resterende frigivelsesblokering
 Fuld browser/E2E-test på isoleret instans med fixture for gammel fælles og fleksibel madplan, rester, indkøb og cache/mobil. Backend-eksport kræver autoriseret ejeradgang og er **ikke foretaget**. Der er ikke foretaget merge, deploy eller ændring af produktionsdata.
+
+## Fjerde testfase – isolerede data-/kontrakttests
+- 39 af 39 kontroller bestået på arbejdsgrenens filer (regelantal, målgrupper, hver af de fem slot-tællinger for fælles/Alex/Heidi/børn, portionsdata, indkøbs-summer, barnets chia uden proteinpulver, eksisterende fixture-ID'er og relevante kompatibilitetskontrakter i app.js).
+- To syntetiske fixture-eksempler (gammel fælles og fleksibel plan) er kontrolleret for opskrifts-ID-opslag. Dette er **ikke** en fuld browserafvikling eller en test af rigtig privat plan_data.
+- Forsøg på at hente den isolerede gren til lokal Chromium-test fejlede pga. netværksadgang i kørselsmiljøet. Den offentlige GitHub Pages-adresse peger på main og er ikke en egnet test af arbejdsgrenen. Browser/E2E er fortsat uafsluttet.
+- Backup af produktionsdata er **ikke udført**. Den autoriserede ejer skal eksportere privat via Supabase dashboard og separat gennemgå relevante browserlokale data før merge; ingen tokens eller private data må lægges i GitHub.
+- Fortsat **DO NOT MERGE / DO NOT DEPLOY** uden brugers særskilte godkendelse og afsluttet QA.
