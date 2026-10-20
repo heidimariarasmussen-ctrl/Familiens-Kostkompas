@@ -55,7 +55,7 @@
     if (url.includes('recipes.json')) {
       const data = await response.clone().json();
       if (!data.some(r => r.id === breakfast.id)) data.push(breakfast);
-      if (!data.some(r => r.id === lunch.id)) data.push(lunch);
+      // One visible recipe card only; retain lunch portion data for older saved plans.
       return new Response(JSON.stringify(data), {status:response.status, statusText:response.statusText, headers:{'Content-Type':'application/json'}});
     }
     if (url.includes('portions-v3.json')) {
