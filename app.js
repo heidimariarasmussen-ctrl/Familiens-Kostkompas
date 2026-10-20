@@ -1406,7 +1406,7 @@ function hydrateRecipeRef(ref){
   if(!ref)return null;
   const id=typeof ref==='string'?ref:ref.id;
   if(id){const fresh=recipes.find(r=>r.id===id);if(fresh)return fresh}
-  if(typeof ref==='object'&&ref.name){const fresh=recipes.find(r=>r.name===ref.name);if(fresh)return fresh;return {...ref,ingredients:safeRecipeIngredients(ref),why:safeRecipeWhy(ref)}}
+  if(typeof ref==='object'&&ref.name){const fresh=recipes.find(r=>r.name===ref.name);if(fresh)return fresh;const legacyTitles={'Rugbrødsmorgenmad med æg, avocado og kiwi':'morgenmad-5','Morgenmadstortilla med æg og avocado':'morgenmad-18','Fiskefrokost med kartoffel og avocado-remoulade':'frokost-2','Æggefrokost med rugbrød og avocadocreme':'frokost-3'};const previousId=legacyTitles[ref.name];if(previousId){const current=recipes.find(r=>r.id===previousId);if(current)return current}return {...ref,ingredients:safeRecipeIngredients(ref),why:safeRecipeWhy(ref)}}
   return null;
 }
 const PLAN_MEAL_KEYS=['breakfast','snackMorning','lunch','snackAfternoon','dinner'];
