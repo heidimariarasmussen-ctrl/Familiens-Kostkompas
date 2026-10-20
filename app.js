@@ -1346,7 +1346,7 @@ function planToday(){
     {key:'Eftermiddagssnack',label:'Eftermiddagsmellemmåltid',cat:'Mellemmåltider',emoji:'🍌'},
     {key:'Aftensmad',label:'Aftensmad',cat:'Aftensmad',emoji:'🍲'}
   ];
-  app.innerHTML=`<div class="shell">${siteHeader()}<div class="section-title"><h2>Planlæg i dag</h2><button class="btn secondary" onclick="home()">← Tilbage</button></div><p class="muted">Vælg dagens fem måltider inkl. både formiddags- og eftermiddagsmellemmåltid. Dine valg gemmes på denne enhed.</p><div class="plan-grid">${slots.map(x=>{const opts=recipes.filter(r=>r.category===x.cat&&!r.adultOnly);return `<div class="plan-slot"><h3>${x.emoji} ${x.label}</h3><select style="width:100%;padding:12px;border-radius:12px;border:1px solid #d9ddd6" onchange="localStorage.setItem('plan-${x.key}',this.value)"><option value="">Vælg ret…</option>${opts.map(r=>`<option ${localStorage.getItem('plan-'+x.key)===r.id?'selected':''} value="${r.id}">${r.name}</option>`).join('')}</select></div>`}).join('')}</div></div>${nav()}`;
+  app.innerHTML=`<div class="shell">${siteHeader()}<div class="section-title"><h2>Planlæg i dag</h2><button class="btn secondary" onclick="home()">← Tilbage</button></div><p class="muted">Vælg dagens fem måltider inkl. både formiddags- og eftermiddagsmellemmåltid. Dine valg gemmes på denne enhed.</p><div class="plan-grid">${slots.map(x=>{const opts=recipes.filter(r=>recipeAllowedForPlanSlot(r,x.key,'shared'));return `<div class="plan-slot"><h3>${x.emoji} ${x.label}</h3><select style="width:100%;padding:12px;border-radius:12px;border:1px solid #d9ddd6" onchange="localStorage.setItem('plan-${x.key}',this.value)"><option value="">Vælg ret…</option>${opts.map(r=>`<option ${localStorage.getItem('plan-'+x.key)===r.id?'selected':''} value="${r.id}">${r.name}</option>`).join('')}</select></div>`}).join('')}</div></div>${nav()}`;
 }
 // ----- V2: Kostsystemets madplansmotor -----
 const dinnerPools={fatFish:[1,16],leanFish:[2,3,19],beef:[4,5,6,11,12,14,18],chicken:[7,8,9,13,17,20],egg:[10],leftover:[15]};
@@ -1532,11 +1532,27 @@ function splitFlexMeal(dayIndex,key,source='current'){const plan=flexPlanForSour
 function collapseFlexMeal(dayIndex,key,source='current'){const plan=flexPlanForSource(source);if(!plan)return;const d=plan.items[dayIndex],st=flexMealState(d,key);const ids=Object.values(st.assignments).filter(id=>id&&id!==FLEX_OUT);const shared=ids[0]||st.sharedId||d[key]?.id||'',useVals=['alex','heidi','kids'].map(t=>st.leftoverUseIds?.[t]||'');const commonUse=useVals[0]&&useVals.every(x=>x===useVals[0])?useVals[0]:'';if(commonUse){delete st.leftoverUseIds;st.leftoverUseId=commonUse;refreshLeftoverUsage(plan,commonUse)}else clearAllLeftoverUsesForMeal(plan,d,key);st.mode='shared';st.sharedId=shared;st.assignments={alex:shared,heidi:shared,kids:shared};d[key]=flexRecipe(shared)||d[key];if(source!=='draft')persistPlan();rerenderFlexSource(source)}
 function recipeAllowedForTarget(r,target){
   if(!r)return false;
+  const rule=window.PLAN_RECIPE_RULES?.[r.id];
+  if(rule){
+    if(rule.audience==='family')return true;
+    if(target==='shared')return false;
+    if(rule.audience==='adults')return target==='alex'||target==='heidi';
+    if(rule.audience==='kids')return target==='kids';
+    return rule.audience===target;
+  }
   if(!Array.isArray(r.audience)||!r.audience.length)return true;
   if(target==='shared')return false;
   return r.audience.includes(target);
 }
-function recipesForFlexTarget(category,target){return recipes.filter(r=>r.category===category&&recipeAllowedForTarget(r,target))}
+function planSlotForKey(key){return {breakfast:'breakfast',lunch:'lunch',dinner:'dinner',snackMorning:'snackMorning',snackAfternoon:'snackAfternoon',Morgenmad:'breakfast',Frokost:'lunch',Aftensmad:'dinner',Formiddagssnack:'snackMorning',Eftermiddagssnack:'snackAfternoon'}[key]||key}
+function recipeAllowedForPlanSlot(r,key,target){
+  if(!r||!recipeAllowedForTarget(r,target))return false;
+  const rule=window.PLAN_RECIPE_RULES?.[r.id];
+  if(rule)return rule.slots.includes(planSlotForKey(key));
+  const category=categoryForPlanKey(planSlotForKey(key));
+  return r.category===category;
+}
+function recipesForFlexTarget(key,target){return recipes.filter(r=>recipeAllowedForPlanSlot(r,key,target))}
 function personalFlexDefault(personId,key,dayIndex){
   const cat=categoryForPlanKey(key);
   const favorites=recipes.filter(r=>r.category===cat&&r.personalOwner===personId&&r.weekdayFavorite);
@@ -1546,9 +1562,9 @@ function personalFlexDefault(personId,key,dayIndex){
   if(personId==='heidi'&&key==='lunch')return favorites.find(r=>r.id==='heidi-rugbroed-koldroeget-laks')||favorites[0];
   return null;
 }
-function openFlexPicker(dayIndex,key,target,source='current'){closeManualPicker();const plan=flexPlanForSource(source);if(!plan)return;const category=categoryForPlanKey(key),rs=recipesForFlexTarget(category,target);const overlay=document.createElement('div');overlay.id='manual-picker';overlay.className='picker-overlay';overlay.innerHTML=`<div class="picker-panel"><div class="picker-head"><div><div class="eyebrow">${dayName(plan.items[dayIndex].day,plan.startDate)}</div><h2>Vælg ${keyLabel(key).toLowerCase()}</h2><p>${target==='shared'?'Til hele familien':target==='kids'?'Til Sophia + Carlo':target==='alex'?'Til Alex':'Til Heidi'}</p></div><button class="picker-close" onclick="closeManualPicker()">×</button></div><input class="search" id="flex-picker-q" placeholder="Søg…" oninput="filterFlexPicker(${dayIndex},'${key}','${target}','${source}')"><div class="picker-grid" id="flex-picker-grid">${rs.map(r=>flexPickCard(r,dayIndex,key,target,source)).join('')}</div></div>`;overlay.addEventListener('click',e=>{if(e.target===overlay)closeManualPicker()});document.body.appendChild(overlay);document.body.style.overflow='hidden'}
+function openFlexPicker(dayIndex,key,target,source='current'){closeManualPicker();const plan=flexPlanForSource(source);if(!plan)return;const rs=recipesForFlexTarget(key,target);const overlay=document.createElement('div');overlay.id='manual-picker';overlay.className='picker-overlay';overlay.innerHTML=`<div class="picker-panel"><div class="picker-head"><div><div class="eyebrow">${dayName(plan.items[dayIndex].day,plan.startDate)}</div><h2>Vælg ${keyLabel(key).toLowerCase()}</h2><p>${target==='shared'?'Til hele familien':target==='kids'?'Til Sophia + Carlo':target==='alex'?'Til Alex':'Til Heidi'}</p></div><button class="picker-close" onclick="closeManualPicker()">×</button></div><input class="search" id="flex-picker-q" placeholder="Søg…" oninput="filterFlexPicker(${dayIndex},'${key}','${target}','${source}')"><div class="picker-grid" id="flex-picker-grid">${rs.map(r=>flexPickCard(r,dayIndex,key,target,source)).join('')}</div></div>`;overlay.addEventListener('click',e=>{if(e.target===overlay)closeManualPicker()});document.body.appendChild(overlay);document.body.style.overflow='hidden'}
 function flexPickCard(r,dayIndex,key,target,source='current'){return `<article class="picker-card">${recipeMedia(r,'picker-media')}<div class="picker-card-body"><h3>${escapeHtml(r.name)}</h3><div class="meta">${r.active||''} aktiv · ${r.total||''}</div><button class="btn" onclick="chooseFlexMeal(${dayIndex},'${key}','${target}','${r.id}','${source}')">Vælg denne</button></div></article>`}
-function filterFlexPicker(dayIndex,key,target,source='current'){const q=(document.getElementById('flex-picker-q')?.value||'').toLowerCase(),category=categoryForPlanKey(key),rs=recipesForFlexTarget(category,target).filter(r=>r.name.toLowerCase().includes(q)||safeRecipeIngredients(r).join(' ').toLowerCase().includes(q));const grid=document.getElementById('flex-picker-grid');if(grid)grid.innerHTML=rs.map(r=>flexPickCard(r,dayIndex,key,target,source)).join('')||'<div class="empty">Ingen retter matcher søgningen.</div>'}
+function filterFlexPicker(dayIndex,key,target,source='current'){const q=(document.getElementById('flex-picker-q')?.value||'').toLowerCase(),rs=recipesForFlexTarget(key,target).filter(r=>r.name.toLowerCase().includes(q)||safeRecipeIngredients(r).join(' ').toLowerCase().includes(q));const grid=document.getElementById('flex-picker-grid');if(grid)grid.innerHTML=rs.map(r=>flexPickCard(r,dayIndex,key,target,source)).join('')||'<div class="empty">Ingen retter matcher søgningen.</div>'}
 function chooseFlexMeal(dayIndex,key,target,recipeId,source='current'){const plan=flexPlanForSource(source);if(!plan)return;const d=plan.items[dayIndex],st=flexMealState(d,key),r=flexRecipe(recipeId);if(!r)return;if(target==='shared')clearAllLeftoverUsesForMeal(plan,d,key);else clearLeftoverUseForTarget(plan,d,key,target);if(target==='shared'){st.mode='shared';st.sharedId=recipeId;st.assignments={alex:recipeId,heidi:recipeId,kids:recipeId};st.lastHome={alex:recipeId,heidi:recipeId,kids:recipeId};d[key]=r}else{st.mode='individual';st.assignments[target]=recipeId;if(!st.lastHome)st.lastHome={};st.lastHome[target]=recipeId}if(source!=='draft')persistPlan();closeManualPicker();rerenderFlexSource(source)}
 function renderFlexibleCurrentPlan(){normalizePlanStructure(currentPlan);currentPlan.items.forEach(d=>PLAN_MEAL_KEYS.forEach(k=>flexMealState(d,k)));const f=nutritionCheckFlexible(currentPlan),passed=f.filter(x=>x.ok).length;app.innerHTML=`<div class="shell">${siteHeader()}<div class="section-title"><div><span class="eyebrow">Nuværende madplan · fleksibel</span><h2>${currentPlan.days}-dages madplan</h2></div><button class="btn secondary" onclick="planner()">← Madplan</button></div><div class="plan-actions"><button class="btn" onclick="shoppingList()">🛒 Indkøbsliste</button><button class="btn secondary" onclick="flexiblePlanner()">＋ Lav ny fleksibel madplan</button></div><section class="nutrition-summary"><div><span class="eyebrow">Ernæringsfilter · Sophia + Carlo</span><h3>${passed} af ${f.length} pejlemærker ser gode ud</h3><p>Børnegruppen vurderes samlet, fordi Sophia + Carlo altid planlægges som 2 små børn.</p></div><div class="nutrition-chips">${f.slice(0,5).map(x=>`<span class="nutrition-chip ${x.ok?'ok':'attention'}">${x.ok?'✓':'•'} ${x.label}</span>`).join('')}</div></section><div class="engine-note"><b>Sådan læses planen:</b> Fælles ret står én gang på én linje. Brug <b>Gem som rester</b>, når der er mad tilbage eller I laver dobbelt, og vælg senere <b>Rester</b> på det måltid, hvor maden skal spises.</div>${flexPlanBoard(currentPlan,'current',true)}<div class="section-title"><h2>Ernæringsfilter · Sophia + Carlo</h2></div><div class="filter-check">${f.map(x=>`<div class="check-card ${x.ok?'':'warn'}"><strong>${x.ok?'✓':'•'} ${x.label}</strong>${x.text}</div>`).join('')}</div></div>${nav()}`}
 function flexRecipesForPerson(plan,personId){normalizePlanStructure(plan);return plan.items.flatMap(d=>PLAN_MEAL_KEYS.map(k=>{const st=flexMealState(d,k);return flexRecipe(st.mode==='shared'?st.sharedId:st.assignments[personId])}).filter(Boolean))}
@@ -1656,7 +1672,7 @@ function categoryForPlanKey(key){return {breakfast:'Morgenmad',snackMorning:'Mel
 function keyLabel(key){return {breakfast:'morgenmad',snackMorning:'formiddagsmellemmåltid',lunch:'frokost',snackAfternoon:'eftermiddagsmellemmåltid',dinner:'aftensmad'}[key]}
 function openManualPicker(dayIndex,key){
   const category=categoryForPlanKey(key);
-  const rs=recipes.filter(r=>r.category===category&&recipeAllowedForTarget(r,'shared'));
+  const rs=recipes.filter(r=>recipeAllowedForPlanSlot(r,key,'shared'));
   closeManualPicker();
   const overlay=document.createElement('div');overlay.id='manual-picker';overlay.className='picker-overlay';
   overlay.innerHTML=`<div class="picker-panel">
@@ -1673,7 +1689,7 @@ function manualPickCard(r,dayIndex,key){
 }
 function filterManualPicker(dayIndex,key){
   const q=(document.getElementById('manual-q')?.value||'').toLowerCase();const category=categoryForPlanKey(key);
-  const rs=recipes.filter(r=>r.category===category&&recipeAllowedForTarget(r,'shared')&&(r.name.toLowerCase().includes(q)||safeRecipeIngredients(r).join(' ').toLowerCase().includes(q)));
+  const rs=recipes.filter(r=>recipeAllowedForPlanSlot(r,key,'shared')&&(r.name.toLowerCase().includes(q)||safeRecipeIngredients(r).join(' ').toLowerCase().includes(q)));
   const grid=document.getElementById('manual-picker-grid');if(grid)grid.innerHTML=rs.map(r=>manualPickCard(r,dayIndex,key)).join('')||'<div class="empty">Ingen retter matcher søgningen.</div>';
 }
 function closeManualPicker(){const el=document.getElementById('manual-picker');if(el)el.remove();document.body.style.overflow=''}
