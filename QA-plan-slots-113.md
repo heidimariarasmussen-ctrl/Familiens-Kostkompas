@@ -21,3 +21,10 @@ Status: Arbejdsgren alene. Ingen merge, publicering eller Supabase-mutation.
 6. Frigiv kun efter ny udtrykkelig brugeraccept.
 
 Denne fil er QA-status og ændrer ikke brugerdata.
+
+## Ekstra validering (anden testfase)
+- 113 regler verificeret mod den godkendte rækkefølge; 13 voksenbegrænsede, ingen ukendte måltidsnøgler.
+- Forventet synlighed: fælles/børn 45/87/62/45/45; pr. voksen 48/89/63/54/54.
+- Fire tidligere voksenopskrifter har kun `adult` i `portions-v3.json`: `alex-havregryn-maelk-rosiner`, `v417-1`, `v417-3`, `comfort-lun-bolle-smoer`. Dette er en frigivelsesblokering for familievalg, ikke et bestået punkt.
+- `v417-1` (Apple Pie Chiagrød) indeholder proteinpulver og har udtrykkelig børneadvarsel; en særskilt børnevariant og tilsvarende indkøbsberegning kræves før frigivelse. `v417-3` har en fejlagtig børneadvarsel om proteinpulver, selvom ingredienslisten ikke har proteinpulver; dette skal gennemgås.
+- Browser/E2E og autentificeret eksport af privat cloudplan er stadig ikke udført; ingen Supabase-forespørgsler er sendt.
