@@ -1,4 +1,4 @@
-const CACHE = 'kostkompas-v4-22-adult-macros';
+const CACHE = 'kostkompas-v4-23-title-cleanup';
 const CORE = [
   './',
   './index.html',
