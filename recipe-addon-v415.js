@@ -6,7 +6,7 @@ const recipe={
   id:'aftensmad-kyllingebowl-soed-kartoffel-guacamole',
   category:'Aftensmad',number:null,
   name:'Kyllingebowl med sød kartoffel, rød peberfrugt, guacamole, creme fraiche og nachos',
-  image:'images/kyllingebowl-soed-kartoffel-guacamole.jpg',
+  image:'images/Farverig burrito bowl med kylling og avocado.png',
   portion:'2 voksne + 2 små børn',active:'ca. 20 min',total:'ca. 30–35 min',
   freezer:'Delvist',
   tags:['Kylling','sød kartoffel','rød peberfrugt','guacamole','børnevenlig','bowl'],
