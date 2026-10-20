@@ -2583,8 +2583,8 @@
       "Drys eventuelt med lidt kanel."
     ],
     "taste": "Rosiner giver sødme; et lille drys kanel kan bruges efter smag.",
-    "child": "",
-    "tip": "Alex-favorit til hverdagsmorgener.",
+    "child": "Til Sophia og Carlo: brug børneportionen; udblød og finthak rosinerne, og servér havregrynene bløde. Tilpas mælketype efter alder og familiens anbefalinger.",
+    "tip": "Tidligere Alex-favorit; i madplanen kan retten nu også vælges til hele familien. Se de individuelle portionsmængder.",
     "why": [
       "Havregryn giver fuldkorn, fibre og en enkel energikilde.",
       "Mælk bidrager med protein og calcium.",
@@ -3009,8 +3009,8 @@
     "number": null,
     "portion": "1 voksen · kun Alex eller Heidi",
     "taste": "",
-    "child": "",
-    "tip": "Voksenvalg til eftermiddagssnack.",
+    "child": "Til Sophia og Carlo: server bløde, små stykker bolle uden hård skorpe med et tyndt lag smør. Det er hyggemad/supplement og behøver ikke stå alene som et fuldt hovedmåltid.",
+    "tip": "Familieportioner og separat børneportion er tilføjet; dette ændrer ikke rettens karakter som hyggemad.",
     "audience": [
       "alex",
       "heidi"
@@ -3292,12 +3292,12 @@
       "Evt. hakkede valnødder"
     ],
     "steps": [
-      "Bland chiafrø og mælk, rør igen efter 5 minutter og stil på køl natten over.",
-      "Varm grøden forsigtigt. Rør proteinpulver ud i lidt mælk og tilsæt.",
-      "Steg æbletern kort i smør og kanel og top med æbler og eventuelt finthakkede valnødder."
+      "Rør chiafrø og mælk sammen. Rør igen efter 5 minutter, og lad blandingen blive helt opblødt, gerne natten over.",
+      "Varm grøden forsigtigt og del straks op i voksen- og børneportioner. Rør kun proteinpulver i de voksnes portioner, efter det er rørt ud i lidt mælk.",
+      "Tilbered æble blødt med smør og kanel. Riv eller mos børnenes æble til passende konsistens. Eventuelle nødder serveres kun til voksne."
     ],
-    "child": "Kun voksenopskrift; proteinpulver er ikke tiltænkt børn.",
-    "tip": "Begynd eventuelt med ca. 1 spsk chia og øg gradvist ved tendens til forstoppelse. Chia skal være tilstrækkeligt opblødt.",
+    "child": "Familieversion: fordel den helt opblødte chiagrød, før proteinpulver tilsættes. Tilsæt kun proteinpulver til de voksnes skåle. Børnenes portion er uden proteinpulver og hele/hakkede nødder; brug revet eller blødt tilberedt æble og små, passende portioner chia. Følg børnenes portionsliste.",
+    "tip": "Helt opblødte chiafrø er vigtige. Brug særskilt børneportion uden proteinpulver; voksne kan tilføje proteinpulver efter opdeling.",
     "why": [
       "Protein og energi fra måltidets ingredienser."
     ]
@@ -3369,7 +3369,7 @@
       "Tilsæt spinat og lad den falde sammen. Vend hytteosten i.",
       "Tilbered æggene helt, men uden at tørre dem ud. Server med glutenfrit brød."
     ],
-    "child": "Kun voksenopskrift; proteinpulver er ikke tiltænkt børn.",
+    "child": "Til Sophia og Carlo: gennemtilbered æggene, men hold konsistensen blød; varm spinaten godt igennem og hak den fint. Server med blødt brød i håndterbare stykker. Ingen proteinpulver indgår i denne opskrift.",
     "tip": "Hold varmen lav for blød konsistens.",
     "why": [
       "Protein og energi fra måltidets ingredienser."

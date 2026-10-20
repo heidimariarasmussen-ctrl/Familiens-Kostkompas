@@ -2159,6 +2159,18 @@
       "250 ml mælk",
       "25 g rosiner",
       "Evt. et nip kanel"
+    ],
+    "kids2": [
+      "40 g havregryn",
+      "150 ml mælk passende til børnene",
+      "10 g rosiner, udblødte og finthakkede",
+      "Evt. lidt kanel"
+    ],
+    "family": [
+      "200 g havregryn",
+      "650 ml mælk passende til børnene",
+      "60 g rosiner; børnenes andel udblødes og finthakkes",
+      "Evt. lidt kanel"
     ]
   },
   "heidi-skyr-yoghurt-protein-chia": {
@@ -2275,6 +2287,15 @@
     "adult": [
       "1 mindre god bolle, ca. 60 g",
       "10 g rigtig smør"
+    ],
+    "kids2": [
+      "2 små bløde bollestykker, ca. 60 g i alt; fjern hård skorpe",
+      "10 g smør i alt"
+    ],
+    "family": [
+      "2 mindre boller til voksne, ca. 120 g i alt",
+      "2 små bløde bollestykker til børnene, ca. 60 g i alt",
+      "30 g smør i alt"
     ]
   },
   "comfort-bolle-chokolade": {
@@ -2382,6 +2403,23 @@
       "5 g smør",
       "Kanel",
       "Evt. hakkede valnødder"
+    ],
+    "kids2": [
+      "20 g chiafrø, helt opblødte",
+      "160 ml mælk passende til børnene",
+      "100 g revet eller blødt tilberedt æble",
+      "5 g smør",
+      "Lidt kanel",
+      "Ingen proteinpulver eller hele/hakkede nødder"
+    ],
+    "family": [
+      "60 g chiafrø, helt opblødte",
+      "560 ml mælk passende til børnene",
+      "50 g vaniljeproteinpulver, kun i de to voksnes portioner efter opdeling",
+      "250 g revet eller blødt tilberedt æble",
+      "15 g smør",
+      "Kanel",
+      "Evt. fintmalede valnødder kun til voksne; ingen hele/hakkede nødder til børn"
     ]
   },
   "v417-2": {
@@ -2403,6 +2441,20 @@
       "50 g spinat",
       "60 g glutenfrit brød",
       "5 g smør"
+    ],
+    "kids2": [
+      "2 æg, gennemtilberedte men bløde",
+      "60 g hytteost",
+      "30 g finthakket, gennemvarmet spinat",
+      "70 g blødt brød",
+      "5 g smør"
+    ],
+    "family": [
+      "6 æg, heraf børnenes gennemtilberedte",
+      "260 g hytteost",
+      "130 g spinat, finthakket og gennemvarmet til børnene",
+      "190 g blødt brød",
+      "15 g smør"
     ]
   },
   "v417-4": {

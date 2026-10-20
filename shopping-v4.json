@@ -9735,6 +9735,40 @@
         "unit": "g",
         "raw": "25 g rosiner"
       }
+    ],
+    "kids2": [
+      {
+        "id": "oats",
+        "amount": 40,
+        "unit": "g"
+      },
+      {
+        "id": "milk",
+        "amount": 150,
+        "unit": "ml"
+      },
+      {
+        "id": "raisins",
+        "amount": 10,
+        "unit": "g"
+      }
+    ],
+    "family": [
+      {
+        "id": "oats",
+        "amount": 200,
+        "unit": "g"
+      },
+      {
+        "id": "milk",
+        "amount": 650,
+        "unit": "ml"
+      },
+      {
+        "id": "raisins",
+        "amount": 60,
+        "unit": "g"
+      }
     ]
   },
   "heidi-skyr-yoghurt-protein-chia": {
@@ -10066,6 +10100,30 @@
         "amount": 10,
         "unit": "g",
         "raw": "10 g smør"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "small_bun",
+        "amount": 1,
+        "unit": "piece"
+      },
+      {
+        "id": "butter",
+        "amount": 10,
+        "unit": "g"
+      }
+    ],
+    "family": [
+      {
+        "id": "small_bun",
+        "amount": 3,
+        "unit": "piece"
+      },
+      {
+        "id": "butter",
+        "amount": 30,
+        "unit": "g"
       }
     ]
   },
@@ -10459,6 +10517,65 @@
         "amount": 1,
         "unit": "tsp"
       }
+    ],
+    "kids2": [
+      {
+        "id": "chia",
+        "amount": 20,
+        "unit": "g"
+      },
+      {
+        "id": "milk",
+        "amount": 160,
+        "unit": "ml"
+      },
+      {
+        "id": "apple",
+        "amount": 100,
+        "unit": "g"
+      },
+      {
+        "id": "butter",
+        "amount": 5,
+        "unit": "g"
+      },
+      {
+        "id": "spice_cinnamon",
+        "amount": 0.5,
+        "unit": "tsp"
+      }
+    ],
+    "family": [
+      {
+        "id": "chia",
+        "amount": 60,
+        "unit": "g"
+      },
+      {
+        "id": "milk",
+        "amount": 560,
+        "unit": "ml"
+      },
+      {
+        "id": "protein_powder",
+        "amount": 50,
+        "unit": "g"
+      },
+      {
+        "id": "apple",
+        "amount": 250,
+        "unit": "g"
+      },
+      {
+        "id": "butter",
+        "amount": 15,
+        "unit": "g"
+      },
+      {
+        "id": "spice_cinnamon",
+        "amount": 1.5,
+        "unit": "tsp"
+      }
     ]
   },
   "v417-2": {
@@ -10515,6 +10632,60 @@
       {
         "id": "butter",
         "amount": 5,
+        "unit": "g"
+      }
+    ],
+    "kids2": [
+      {
+        "id": "eggs",
+        "amount": 2,
+        "unit": "piece"
+      },
+      {
+        "id": "cottage_cheese",
+        "amount": 60,
+        "unit": "g"
+      },
+      {
+        "id": "spinach",
+        "amount": 30,
+        "unit": "g"
+      },
+      {
+        "id": "glutenfree_bread",
+        "amount": 70,
+        "unit": "g"
+      },
+      {
+        "id": "butter",
+        "amount": 5,
+        "unit": "g"
+      }
+    ],
+    "family": [
+      {
+        "id": "eggs",
+        "amount": 6,
+        "unit": "piece"
+      },
+      {
+        "id": "cottage_cheese",
+        "amount": 260,
+        "unit": "g"
+      },
+      {
+        "id": "spinach",
+        "amount": 130,
+        "unit": "g"
+      },
+      {
+        "id": "glutenfree_bread",
+        "amount": 190,
+        "unit": "g"
+      },
+      {
+        "id": "butter",
+        "amount": 15,
         "unit": "g"
       }
     ]
