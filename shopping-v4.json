@@ -10426,5 +10426,494 @@
         "unit": "piece"
       }
     ]
+  },
+  "v417-1": {
+    "adult": [
+      {
+        "id": "chia",
+        "amount": 20,
+        "unit": "g"
+      },
+      {
+        "id": "milk",
+        "amount": 200,
+        "unit": "ml"
+      },
+      {
+        "id": "protein_powder",
+        "amount": 25,
+        "unit": "g"
+      },
+      {
+        "id": "apple",
+        "amount": 75,
+        "unit": "g"
+      },
+      {
+        "id": "butter",
+        "amount": 5,
+        "unit": "g"
+      },
+      {
+        "id": "spice_cinnamon",
+        "amount": 1,
+        "unit": "tsp"
+      },
+      {
+        "id": "walnuts",
+        "amount": 1,
+        "unit": "piece"
+      }
+    ]
+  },
+  "v417-2": {
+    "adult": [
+      {
+        "id": "oats",
+        "amount": 50,
+        "unit": "g"
+      },
+      {
+        "id": "milk",
+        "amount": 200,
+        "unit": "ml"
+      },
+      {
+        "id": "protein_powder",
+        "amount": 25,
+        "unit": "g"
+      },
+      {
+        "id": "apple",
+        "amount": 75,
+        "unit": "g"
+      },
+      {
+        "id": "spice_cinnamon",
+        "amount": 1,
+        "unit": "tsp"
+      }
+    ]
+  },
+  "v417-3": {
+    "adult": [
+      {
+        "id": "eggs",
+        "amount": 2,
+        "unit": "piece"
+      },
+      {
+        "id": "cottage_cheese",
+        "amount": 100,
+        "unit": "g"
+      },
+      {
+        "id": "spinach",
+        "amount": 50,
+        "unit": "g"
+      },
+      {
+        "id": "glutenfree_bread",
+        "amount": 60,
+        "unit": "g"
+      },
+      {
+        "id": "butter",
+        "amount": 5,
+        "unit": "g"
+      }
+    ]
+  },
+  "v417-4": {
+    "adult": [
+      {
+        "id": "banana",
+        "amount": 100,
+        "unit": "g"
+      },
+      {
+        "id": "eggs",
+        "amount": 2,
+        "unit": "piece"
+      },
+      {
+        "id": "oats",
+        "amount": 35,
+        "unit": "g"
+      },
+      {
+        "id": "protein_powder",
+        "amount": 20,
+        "unit": "g"
+      },
+      {
+        "id": "blueberries",
+        "amount": 75,
+        "unit": "g"
+      },
+      {
+        "id": "yogurt",
+        "amount": 50,
+        "unit": "g"
+      }
+    ]
+  },
+  "v417-5": {
+    "family": [
+      {
+        "id": "chicken",
+        "amount": 600,
+        "unit": "g"
+      },
+      {
+        "id": "leeks",
+        "amount": 350,
+        "unit": "g"
+      },
+      {
+        "id": "carrot",
+        "amount": 300,
+        "unit": "g"
+      },
+      {
+        "id": "celeriac",
+        "amount": 250,
+        "unit": "g"
+      },
+      {
+        "id": "rice",
+        "amount": 180,
+        "unit": "g"
+      },
+      {
+        "id": "cooking_cream",
+        "amount": 150,
+        "unit": "ml"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 10,
+        "unit": "ml"
+      },
+      {
+        "id": "bouillon",
+        "amount": 1,
+        "unit": "piece"
+      },
+      {
+        "id": "spice_thyme",
+        "amount": 1,
+        "unit": "tsp"
+      },
+      {
+        "id": "parsley",
+        "amount": 1,
+        "unit": "piece"
+      }
+    ]
+  },
+  "v417-6": {
+    "family": [
+      {
+        "id": "salmon_fillet",
+        "amount": 600,
+        "unit": "g"
+      },
+      {
+        "id": "leeks",
+        "amount": 450,
+        "unit": "g"
+      },
+      {
+        "id": "carrot",
+        "amount": 400,
+        "unit": "g"
+      },
+      {
+        "id": "parsnip",
+        "amount": 400,
+        "unit": "g"
+      },
+      {
+        "id": "cooking_cream",
+        "amount": 150,
+        "unit": "ml"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 15,
+        "unit": "ml"
+      },
+      {
+        "id": "lemon",
+        "amount": 1,
+        "unit": "piece"
+      },
+      {
+        "id": "dill",
+        "amount": 1,
+        "unit": "piece"
+      }
+    ]
+  },
+  "v417-7": {
+    "family": [
+      {
+        "id": "beef_shoulder",
+        "amount": 650,
+        "unit": "g"
+      },
+      {
+        "id": "mushrooms",
+        "amount": 350,
+        "unit": "g"
+      },
+      {
+        "id": "carrot",
+        "amount": 400,
+        "unit": "g"
+      },
+      {
+        "id": "onion",
+        "amount": 250,
+        "unit": "g"
+      },
+      {
+        "id": "celeriac",
+        "amount": 900,
+        "unit": "g"
+      },
+      {
+        "id": "milk",
+        "amount": 150,
+        "unit": "ml"
+      },
+      {
+        "id": "butter",
+        "amount": 20,
+        "unit": "g"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 15,
+        "unit": "ml"
+      },
+      {
+        "id": "bouillon",
+        "amount": 1,
+        "unit": "piece"
+      },
+      {
+        "id": "spice_thyme",
+        "amount": 1,
+        "unit": "tsp"
+      },
+      {
+        "id": "bay_leaf",
+        "amount": 1,
+        "unit": "piece"
+      }
+    ]
+  },
+  "v417-8": {
+    "family": [
+      {
+        "id": "minced_chicken",
+        "amount": 650,
+        "unit": "g"
+      },
+      {
+        "id": "eggs",
+        "amount": 1,
+        "unit": "piece"
+      },
+      {
+        "id": "oats",
+        "amount": 40,
+        "unit": "g"
+      },
+      {
+        "id": "cauliflower",
+        "amount": 800,
+        "unit": "g"
+      },
+      {
+        "id": "carrot",
+        "amount": 700,
+        "unit": "g"
+      },
+      {
+        "id": "milk",
+        "amount": 150,
+        "unit": "ml"
+      },
+      {
+        "id": "cooking_cream",
+        "amount": 100,
+        "unit": "ml"
+      },
+      {
+        "id": "butter",
+        "amount": 20,
+        "unit": "g"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 15,
+        "unit": "ml"
+      },
+      {
+        "id": "bouillon",
+        "amount": 1,
+        "unit": "piece"
+      },
+      {
+        "id": "cornstarch",
+        "amount": 12,
+        "unit": "g"
+      },
+      {
+        "id": "nutmeg",
+        "amount": 1,
+        "unit": "piece"
+      }
+    ]
+  },
+  "v417-9": {
+    "family": [
+      {
+        "id": "pumpkin",
+        "amount": 1200,
+        "unit": "g"
+      },
+      {
+        "id": "chicken",
+        "amount": 650,
+        "unit": "g"
+      },
+      {
+        "id": "onion",
+        "amount": 200,
+        "unit": "g"
+      },
+      {
+        "id": "coconut_milk",
+        "amount": 200,
+        "unit": "ml"
+      },
+      {
+        "id": "rice",
+        "amount": 160,
+        "unit": "g"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 10,
+        "unit": "ml"
+      },
+      {
+        "id": "ginger",
+        "amount": 10,
+        "unit": "g"
+      },
+      {
+        "id": "bouillon",
+        "amount": 1,
+        "unit": "piece"
+      }
+    ]
+  },
+  "v417-10": {
+    "family": [
+      {
+        "id": "cod",
+        "amount": 700,
+        "unit": "g"
+      },
+      {
+        "id": "rice",
+        "amount": 240,
+        "unit": "g"
+      },
+      {
+        "id": "spinach",
+        "amount": 600,
+        "unit": "g"
+      },
+      {
+        "id": "cooking_cream",
+        "amount": 150,
+        "unit": "ml"
+      },
+      {
+        "id": "butter",
+        "amount": 35,
+        "unit": "g"
+      },
+      {
+        "id": "lemon",
+        "amount": 1,
+        "unit": "piece"
+      },
+      {
+        "id": "parsley",
+        "amount": 1,
+        "unit": "piece"
+      }
+    ]
+  },
+  "v417-11": {
+    "family": [
+      {
+        "id": "chicken",
+        "amount": 600,
+        "unit": "g"
+      },
+      {
+        "id": "rice",
+        "amount": 220,
+        "unit": "g"
+      },
+      {
+        "id": "leeks",
+        "amount": 400,
+        "unit": "g"
+      },
+      {
+        "id": "mushrooms",
+        "amount": 350,
+        "unit": "g"
+      },
+      {
+        "id": "spinach",
+        "amount": 250,
+        "unit": "g"
+      },
+      {
+        "id": "cooking_cream",
+        "amount": 200,
+        "unit": "ml"
+      },
+      {
+        "id": "olive_oil",
+        "amount": 10,
+        "unit": "ml"
+      },
+      {
+        "id": "bouillon",
+        "amount": 1,
+        "unit": "piece"
+      },
+      {
+        "id": "spice_thyme",
+        "amount": 1,
+        "unit": "tsp"
+      },
+      {
+        "id": "garlic",
+        "amount": 1,
+        "unit": "piece"
+      }
+    ]
   }
 }
