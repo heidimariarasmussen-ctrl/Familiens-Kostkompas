@@ -1,4 +1,4 @@
-const CACHE = 'kostkompas-v4-23-title-cleanup';
+const CACHE = 'kostkompas-v4-24-sync';
 const CORE = [
   './',
   './index.html',
@@ -57,7 +57,7 @@ self.addEventListener('activate', event => {
 self.addEventListener('fetch', event => {
   if (event.request.method !== 'GET') return;
   const url = new URL(event.request.url);
-  const changing = /\/(?:index\.html|app\.js|nutrition-adult-v1\.js|plan-recipe-rules-v1\.js|recipe-addon-v415\.js|recipe-additions-v416\.js|styles\.css|recipes\.json|shopping-v4\.json|ingredient-registry-v4\.json)$/.test(url.pathname) || event.request.mode === 'navigate';
+  const changing = /\/(?:index\.html|app\.js|nutrition-adult-v1\.js|plan-recipe-rules-v1\.js|recipe-addon-v415\.js|recipe-additions-v416\.js|sync-v46\.js|styles\.css|recipes\.json|shopping-v4\.json|ingredient-registry-v4\.json)$/.test(url.pathname) || event.request.mode === 'navigate';
   if (changing) {
     event.respondWith(fetch(event.request).then(response => {
       const clone=response.clone(); caches.open(CACHE).then(cache=>cache.put(event.request,clone)); return response;
